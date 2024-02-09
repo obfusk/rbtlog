@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import zipfile
 
 from dataclasses import dataclass
@@ -54,8 +55,7 @@ class Provisioning:
         return dict(
             build_tools=self.build_tools, cmdline_tools=self.cmdline_tools.for_json(),
             image=self.image, jdk=self.jdk, ndk=self.ndk, platform=self.platform,
-            platform_tools=self.platform_tools, tools=self.tools,
-        )
+            platform_tools=self.platform_tools, tools=self.tools)
 
 
 @dataclass(frozen=True)
@@ -70,8 +70,7 @@ class BuildRecipe:
     def for_json(self) -> Dict[str, Any]:
         return dict(
             repository=self.repository, tag=self.tag, apk_url=self.apk_url,
-            build=self.build, provisioning=self.provisioning.for_json(),
-        )
+            build=self.build, provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
@@ -105,18 +104,20 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                     ndk=v["provisioning"]["ndk"],
                     platform=v["provisioning"]["platform"],
                     platform_tools=v["provisioning"]["platform_tools"],
-                    tools=v["provisioning"]["tools"],
-                )
+                    tools=v["provisioning"]["tools"])
             ))
         return AppRecipe(repository=data["repository"], versions=tuple(versions))
 
 
 # FIXME
+# FIXME: log hashes of .sh & .py
 def build_with_docker(appid: str, recipe: BuildRecipe, *,
                       verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with docker."""
-    result: Dict[str, Any] = dict(appid=appid, recipe=recipe.for_json(),
-                                  reproducible=None, error=None)
+    result: Dict[str, Any] = dict(
+        appid=appid, version_code=None, version_name=None,
+        recipe=recipe.for_json(), timestamp=int(time.time()),
+        reproducible=None, error=None)
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs = os.path.join(tmpdir, "outputs")
@@ -174,6 +175,7 @@ def prepare_tmpdir(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[
     return outputs, scripts
 
 
+# FIXME: configure timeout
 def docker_cmd(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create docker run command line from recipe."""
     env = []
@@ -184,7 +186,8 @@ def docker_cmd(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str,
         "--volume", f"{outputs}:/outputs",
         "--volume", f"{scripts}:/scripts",
         *env, "--", recipe.provisioning.image,
-        "bash", "-c", "/scripts/provision.sh && cd /build/repo && /scripts/build.sh"
+        "bash", "-c", "timeout 10m /scripts/provision.sh && cd /build/repo "
+                      "&& timeout 20m /scripts/build.sh"
     )
 
 
@@ -199,8 +202,7 @@ def build_env(recipe: BuildRecipe) -> Dict[str, str]:
         PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
         PROVISIONING_CMDLINE_TOOLS_URL=recipe.provisioning.cmdline_tools.url,
         PROVISIONING_CMDLINE_TOOLS_SHA256=recipe.provisioning.cmdline_tools.sha256,
-        PROVISIONING_JDK=recipe.provisioning.jdk,
-    )
+        PROVISIONING_JDK=recipe.provisioning.jdk)
 
 
 def download_apk(recipe: BuildRecipe, tmpdir: str, *,
@@ -247,6 +249,7 @@ def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
 
 
 # FIXME
+# FIXME: error when tag not found
 def build(*specs: str, verbose: bool = False) -> None:
     """Parse YAML & build apps."""
     outputs = []
