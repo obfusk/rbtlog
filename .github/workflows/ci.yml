@@ -1,5 +1,19 @@
 name: CI
 on: [push, pull_request, workflow_dispatch]
+permissions:
+  actions: none
+  checks: none
+  contents: none
+  deployments: none
+  discussions: none
+  id-token: none
+  issues: none
+  packages: none
+  pages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
 jobs:
   build:
     runs-on: ubuntu-22.04
