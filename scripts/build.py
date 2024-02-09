@@ -26,11 +26,12 @@ import yaml
 @dataclass(frozen=True)
 class Download:
     """Download."""
+    version: str
     url: str
     sha256: str
 
     def for_json(self) -> Dict[str, Any]:
-        return dict(url=self.url, sha256=self.sha256)
+        return dict(version=self.version, url=self.url, sha256=self.sha256)
 
 
 @dataclass(frozen=True)
@@ -91,6 +92,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                 provisioning=Provisioning(
                     build_tools=v["provisioning"]["build_tools"],
                     cmdline_tools=Download(
+                        version=v["provisioning"]["cmdline_tools"]["version"],
                         url=v["provisioning"]["cmdline_tools"]["url"],
                         sha256=v["provisioning"]["cmdline_tools"]["sha256"],
                     ),
@@ -116,8 +118,8 @@ def build_with_docker(recipe: BuildRecipe, *, verbose: bool = False) -> Dict[Any
             prepare_tmpdir(recipe, outputs=outputs, scripts=scripts)
             pull_cmd = ("docker", "pull", "--", recipe.provisioning.image)
             run_cmd = docker_cmd(recipe, outputs=outputs, scripts=scripts)
-            subprocess.run(pull_cmd, check=True)
-            subprocess.run(run_cmd, check=True)
+            subprocess.run(pull_cmd, check=True, stdout=sys.stderr)
+            subprocess.run(run_cmd, check=True, stdout=sys.stderr)
             signed_sha, unsigned_sha, copied_sha, error = compare_apks(
                 recipe, tmpdir, verbose=verbose)
             result.update(
@@ -146,7 +148,10 @@ def prepare_tmpdir(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[
     shutil.copy("scripts/provision.sh", scripts)
     build_sh = os.path.join(scripts, "build.sh")
     with open(build_sh, "w", encoding="utf-8") as fh:
-        fh.write(f"#!/bin/bash\nset -euo pipefail\n{recipe.build}\n")
+        fh.write("#!/bin/bash\nset -euo pipefail\n")
+        fh.write('export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/'
+                 '${PROVISIONING_CMDLINE_TOOLS_VERSION}/bin"\n')
+        fh.write(recipe.build + "\n")
     os.chmod(build_sh, 0o755)
     return outputs, scripts
 
@@ -169,9 +174,11 @@ def docker_cmd(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str,
 def build_env(recipe: BuildRecipe) -> Dict[str, str]:
     """Create build env from recipe."""
     return dict(
+        ANDROID_HOME="/opt/sdk",
         APP_REPOSITORY=recipe.repository,
         APP_TAG=recipe.tag,
         APP_APK_URL=recipe.apk_url,
+        PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
         PROVISIONING_CMDLINE_TOOLS_URL=recipe.provisioning.cmdline_tools.url,
         PROVISIONING_CMDLINE_TOOLS_SHA256=recipe.provisioning.cmdline_tools.sha256,
         PROVISIONING_JDK=recipe.provisioning.jdk,
