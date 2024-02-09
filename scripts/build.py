@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Depends: apt install apksigcopier python3-requests python3-yaml
+# Depends: apt install aapt apksigcopier docker.io python3-requests python3-yaml
 
 import argparse
 import hashlib
@@ -21,6 +21,10 @@ from typing import Any, Dict, Optional, Tuple
 import apksigcopier
 import requests
 import yaml
+
+
+class Error(Exception):
+    """Base class for errors."""
 
 
 @dataclass(frozen=True)
@@ -111,22 +115,29 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
 def build_with_docker(appid: str, recipe: BuildRecipe, *,
                       verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with docker."""
-    result: Dict[str, Any] = dict(appid=appid, recipe=recipe.for_json(), error=None)
+    result: Dict[str, Any] = dict(appid=appid, recipe=recipe.for_json(),
+                                  reproducible=None, error=None)
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs = os.path.join(tmpdir, "outputs")
             scripts = os.path.join(tmpdir, "scripts")
             prepare_tmpdir(recipe, outputs=outputs, scripts=scripts)
+            vercode, vername = download_apk(recipe, tmpdir, verbose=verbose)
+            result.update(version_code=vercode, version_name=vername)
             pull_cmd = ("docker", "pull", "--", recipe.provisioning.image)
             run_cmd = docker_cmd(recipe, outputs=outputs, scripts=scripts)
-            if verbose:
-                print(f"Running {' '.join(pull_cmd)!r}...", file=sys.stderr)
-            subprocess.run(pull_cmd, check=True, stdout=sys.stderr)
-            if verbose:
-                print(f"Running {' '.join(run_cmd)!r}...", file=sys.stderr)
-            subprocess.run(run_cmd, check=True, stdout=sys.stderr)
-            signed_sha, unsigned_sha, copied_sha, error = compare_apks(
-                recipe, tmpdir, verbose=verbose)
+            result["build_log"] = ""
+            try:
+                result["build_log"] += run_command(*pull_cmd, verbose=verbose)
+                result["build_log"] += run_command(*run_cmd, verbose=verbose)
+            except subprocess.CalledProcessError as e:
+                result["build_log"] += e.stdout
+                raise
+            finally:
+                if verbose:
+                    print(f"--- BEGIN BUILD LOG ---\n{result['build_log']}\n"
+                          "--- END BUILD LOG ---", file=sys.stderr)
+            signed_sha, unsigned_sha, copied_sha, error = compare_apks(tmpdir)
             result.update(
                 reproducible=signed_sha == copied_sha,  # FIXME
                 upstream_signed_apk_sha256=signed_sha,
@@ -141,6 +152,8 @@ def build_with_docker(appid: str, recipe: BuildRecipe, *,
         error = f"command or file not found: {e}"
     except requests.RequestException as e:
         error = f"http error: {e}"
+    except Error as e:
+        error = str(e)
     if verbose:
         print(f"Error: {error}", file=sys.stderr)
     return dict(result, error=error)
@@ -190,15 +203,38 @@ def build_env(recipe: BuildRecipe) -> Dict[str, str]:
     )
 
 
-def compare_apks(recipe: BuildRecipe, tmpdir: str, *, verbose: bool = False) \
-        -> Tuple[str, str, Optional[str], Optional[str]]:
+def download_apk(recipe: BuildRecipe, tmpdir: str, *,
+                 verbose: bool = False) -> Tuple[int, str]:
+    """Download APK and get versionCode and versionName."""
+    signed_apk = os.path.join(tmpdir, "upstream.apk")
+    if verbose:
+        print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
+    download_file(recipe.apk_url, signed_apk)
+    return apk_version_info(signed_apk)
+
+
+# FIXME: use repro-apk?
+def apk_version_info(apkfile: str) -> Tuple[int, str]:
+    """Get APK versionCode and versionName."""
+    badging = subprocess.run(("aapt2", "dump", "badging", apkfile),
+                             check=True, capture_output=True).stdout.decode()
+    vercode = vername = None
+    for x in badging.split("\n", 1)[0].split(" ")[1:]:
+        k, v = x.split("=", 1)
+        if k == "versionCode":
+            vercode = int(v[1:-1])
+        elif k == "versionName":
+            vername = v[1:-1]
+    if vercode is None or vername is None:
+        raise Error("could not extract versionCode and versionName from aapt2 output")
+    return vercode, vername
+
+
+def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
     """Download upstream APK and compare to built APK."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     unsigned_apk = os.path.join(tmpdir, "outputs/unsigned.apk")
     output_apk = os.path.join(tmpdir, "copied.apk")
-    if verbose:
-        print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
-    download_file(recipe.apk_url, signed_apk)
     signed_sha, unsigned_sha = sha256_file(signed_apk), sha256_file(unsigned_apk)
     try:
         apksigcopier.do_copy(signed_apk, unsigned_apk, output_apk, v1_only=None)
@@ -211,18 +247,28 @@ def compare_apks(recipe: BuildRecipe, tmpdir: str, *, verbose: bool = False) \
 
 
 # FIXME
-def build(*recipes: str, verbose: bool = False) -> None:
+def build(*specs: str, verbose: bool = False) -> None:
     """Parse YAML & build apps."""
     outputs = []
-    for recipe_file in recipes:
-        appid = os.path.splitext(os.path.basename(recipe_file))[0]
+    for spec in specs:
         if verbose:
-            print(f"Building {recipe_file!r}...", file=sys.stderr)
-        recipe = parse_yaml(recipe_file)
-        build_recipe = recipe.versions[-1]  # FIXME
-        outputs.append(build_with_docker(appid, build_recipe, verbose=verbose))
+            print(f"Building {spec!r}...", file=sys.stderr)
+        appid, tag = spec.split(":", 1)
+        recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
+        for build_recipe in recipe.versions:
+            if build_recipe.tag == tag:
+                outputs.append(build_with_docker(appid, build_recipe, verbose=verbose))
+                break
     json.dump(outputs, sys.stdout, indent=2)
     print()
+
+
+def run_command(*args: str, verbose: bool = False) -> str:
+    """Run command and capture stdout + stderr."""
+    if verbose:
+        print(f"Running {' '.join(args)!r}...", file=sys.stderr)
+    return subprocess.run(args, check=True, stdout=subprocess.PIPE,
+                          stderr=subprocess.STDOUT).stdout.decode()
 
 
 # FIXME: retry
@@ -250,8 +296,8 @@ def sha256_file(filename: str) -> str:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="build apps from recipes")
     parser.add_argument("-v", "--verbose", action="store_true")
-    parser.add_argument("recipes", metavar="RECIPE", nargs="*", help="recipes to build")
+    parser.add_argument("specs", metavar="SPEC", nargs="*", help="appid:tag to build")
     args = parser.parse_args()
-    build(*args.recipes, verbose=args.verbose)
+    build(*args.specs, verbose=args.verbose)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
