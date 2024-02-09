@@ -108,9 +108,10 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
 
 
 # FIXME
-def build_with_docker(recipe: BuildRecipe, *, verbose: bool = False) -> Dict[Any, Any]:
+def build_with_docker(appid: str, recipe: BuildRecipe, *,
+                      verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with docker."""
-    result: Dict[str, Any] = dict(recipe=recipe.for_json(), error=None)
+    result: Dict[str, Any] = dict(appid=appid, recipe=recipe.for_json(), error=None)
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs = os.path.join(tmpdir, "outputs")
@@ -214,11 +215,12 @@ def build(*recipes: str, verbose: bool = False) -> None:
     """Parse YAML & build apps."""
     outputs = []
     for recipe_file in recipes:
+        appid = os.path.splitext(os.path.basename(recipe_file))[0]
         if verbose:
             print(f"Building {recipe_file!r}...", file=sys.stderr)
         recipe = parse_yaml(recipe_file)
         build_recipe = recipe.versions[-1]  # FIXME
-        outputs.append(build_with_docker(build_recipe, verbose=verbose))
+        outputs.append(build_with_docker(appid, build_recipe, verbose=verbose))
     json.dump(outputs, sys.stdout, indent=2)
     print()
 
