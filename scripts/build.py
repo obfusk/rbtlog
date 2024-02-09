@@ -232,6 +232,7 @@ def apk_version_info(apkfile: str) -> Tuple[int, str]:
     return vercode, vername
 
 
+# FIXME: diff on fail?
 def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
     """Download upstream APK and compare to built APK."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
