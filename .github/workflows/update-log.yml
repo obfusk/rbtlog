@@ -1,0 +1,45 @@
+name: update log
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '3 12 * * *'
+permissions:
+  actions: none
+  checks: none
+  contents: write
+  deployments: none
+  discussions: none
+  id-token: none
+  issues: none
+  packages: none
+  pages: none
+  pull-requests: write
+  repository-projects: none
+  security-events: none
+  statuses: none
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+        submodules: true
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements.txt
+        python3 -m pip install git+https://github.com/obfusk/apksigcopier.git@v1.1.1
+    - name: Update log
+      run: python3 scripts/update-log.py recipes/*.yml
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v6.0.0
+      with:
+        title: "Update log"
+        commit-message: "Update log"
+        branch-suffix: timestamp
