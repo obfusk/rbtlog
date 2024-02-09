@@ -18,4 +18,4 @@ rm /tmp/tools.zip
 export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/${PROVISIONING_CMDLINE_TOOLS_VERSION}/bin"
 ( yes || true ) | sdkmanager --sdk_root="${ANDROID_HOME}" --licenses
 
-git clone "${APP_REPOSITORY}" /build/repo
+git clone -b "${APP_TAG}" -- "${APP_REPOSITORY}" /build/repo
