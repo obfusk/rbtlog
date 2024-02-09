@@ -110,13 +110,14 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
 
 
 # FIXME
+# FIXME: stream build log to stderr
 # FIXME: log hashes of .sh & .py
 def build_with_docker(appid: str, recipe: BuildRecipe, *,
                       verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with docker."""
     result: Dict[str, Any] = dict(
         appid=appid, version_code=None, version_name=None,
-        recipe=recipe.for_json(), timestamp=int(time.time()),
+        tag=recipe.tag, recipe=recipe.for_json(), timestamp=int(time.time()),
         reproducible=None, error=None)
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -236,7 +237,7 @@ def apk_version_info(apkfile: str) -> Tuple[int, str]:
 def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
     """Download upstream APK and compare to built APK."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
-    unsigned_apk = os.path.join(tmpdir, "outputs/unsigned.apk")
+    unsigned_apk = os.path.join(tmpdir, "outputs", "unsigned.apk")
     output_apk = os.path.join(tmpdir, "copied.apk")
     signed_sha, unsigned_sha = sha256_file(signed_apk), sha256_file(unsigned_apk)
     try:
@@ -251,20 +252,27 @@ def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
 
 # FIXME
 # FIXME: error when tag not found
-def build(*specs: str, verbose: bool = False) -> None:
+def build(*specs: str, verbose: bool = False) -> int:
     """Parse YAML & build apps."""
+    errors = 0
     outputs = []
     for spec in specs:
         if verbose:
             print(f"Building {spec!r}...", file=sys.stderr)
         appid, tag = spec.split(":", 1)
         recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
+        found = False
         for build_recipe in recipe.versions:
             if build_recipe.tag == tag:
+                found = True
                 outputs.append(build_with_docker(appid, build_recipe, verbose=verbose))
                 break
+        if not found:
+            errors += 1
+            print(f"Error: tag not found: {tag!r}", file=sys.stderr)
     json.dump(outputs, sys.stdout, indent=2)
     print()
+    return errors
 
 
 def run_command(*args: str, verbose: bool = False) -> str:
@@ -302,6 +310,7 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("specs", metavar="SPEC", nargs="*", help="appid:tag to build")
     args = parser.parse_args()
-    build(*args.specs, verbose=args.verbose)
+    if build(*args.specs, verbose=args.verbose) != 0:
+        sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
