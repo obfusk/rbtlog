@@ -118,7 +118,11 @@ def build_with_docker(recipe: BuildRecipe, *, verbose: bool = False) -> Dict[Any
             prepare_tmpdir(recipe, outputs=outputs, scripts=scripts)
             pull_cmd = ("docker", "pull", "--", recipe.provisioning.image)
             run_cmd = docker_cmd(recipe, outputs=outputs, scripts=scripts)
+            if verbose:
+                print(f"Running {' '.join(pull_cmd)!r}...", file=sys.stderr)
             subprocess.run(pull_cmd, check=True, stdout=sys.stderr)
+            if verbose:
+                print(f"Running {' '.join(run_cmd)!r}...", file=sys.stderr)
             subprocess.run(run_cmd, check=True, stdout=sys.stderr)
             signed_sha, unsigned_sha, copied_sha, error = compare_apks(
                 recipe, tmpdir, verbose=verbose)
@@ -148,7 +152,7 @@ def prepare_tmpdir(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[
     shutil.copy("scripts/provision.sh", scripts)
     build_sh = os.path.join(scripts, "build.sh")
     with open(build_sh, "w", encoding="utf-8") as fh:
-        fh.write("#!/bin/bash\nset -euo pipefail\n")
+        fh.write("#!/bin/bash\nset -xeuo pipefail\n")
         fh.write('export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/'
                  '${PROVISIONING_CMDLINE_TOOLS_VERSION}/bin"\n')
         fh.write(recipe.build + "\n")
