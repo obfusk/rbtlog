@@ -17,18 +17,20 @@ FIXME
 
 ```bash
 $ scripts/build.py --help
-usage: build.py [-h] [-v] [SPEC ...]
+usage: build.py [-h] [-v] [--keep-apks DIR] {podman,docker} [SPEC ...]
 
 build apps from recipes
 
 positional arguments:
-  SPEC           appid:tag to build
+  {podman,docker}  backend
+  SPEC             appid:tag to build
 
 options:
-  -h, --help     show this help message and exit
+  -h, --help       show this help message and exit
   -v, --verbose
+  --keep-apks DIR  save APKs in DIR
 
-$ scripts/build.py -v me.hackerchick.catima:v2.27.0
+$ scripts/build.py -v docker me.hackerchick.catima:v2.27.0
 Building 'me.hackerchick.catima:v2.27.0'...
 Downloading 'https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk'...
 Running 'docker pull -- debian:bookworm-slim'...
@@ -64,18 +66,19 @@ FIXME
 
 ```bash
 $ scripts/update-log.py --help
-usage: update-log.py [-h] [-v] [RECIPE ...]
+usage: update-log.py [-h] [-v] {podman,docker} [RECIPE ...]
 
 update log
 
 positional arguments:
-  RECIPE         recipe
+  {podman,docker}  backend
+  RECIPE           recipe
 
 options:
-  -h, --help     show this help message and exit
+  -h, --help       show this help message and exit
   -v, --verbose
 
-$ scripts/update-log.py -v recipes/*.yml
+$ scripts/update-log.py -v docker recipes/*.yml
 Updating 'me.hackerchick.catima'...
 Nothing to build.
 Updating 'org.fossify.gallery'...
@@ -164,7 +167,8 @@ FIXME
 FIXME
 
 ```bash
-$ apt install docker.io python3-pip python3-requests python3-yaml
+$ apt install podman python3-pip    # can also use docker.io instead of podman
+$ pip install -r requirements.txt   # may need/want to use a venv
 $ pip install git+https://github.com/obfusk/apksigcopier.git@v1.1.1
 $ pip install git+https://github.com/obfusk/reproducible-apk-tools.git@binres-20240211
 ```

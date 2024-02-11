@@ -60,7 +60,7 @@ def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[A
 
 
 # FIXME
-def update_log(*recipes: str, verbose: bool = False) -> None:
+def update_log(backend: str, *recipes: str, verbose: bool = False) -> None:
     """Update log."""
     for recipe_file in recipes:
         appid = os.path.splitext(os.path.basename(recipe_file))[0]
@@ -81,17 +81,19 @@ def update_log(*recipes: str, verbose: bool = False) -> None:
         if verbose:
             print(f"Building {to_build!r}...", file=sys.stderr)
         verb = ("--verbose",) if verbose else ()
-        args = (EXE, os.path.join("scripts", "build.py"), *verb, "--", *to_build)
+        args = (EXE, os.path.join("scripts", "build.py"), *verb, "--", backend, *to_build)
         output = subprocess.run(args, check=True, stdout=subprocess.PIPE).stdout.decode()
         builds = json.loads(output)
         save_log(log_file, add_builds(load_log(log_file, appid), builds))
 
 
 if __name__ == "__main__":
+    backends = ("podman", "docker")
     parser = argparse.ArgumentParser(description="update log")
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("backend", choices=backends, help="backend")
     parser.add_argument("recipes", metavar="RECIPE", nargs="*", help="recipe")
     args = parser.parse_args()
-    update_log(*args.recipes, verbose=args.verbose)
+    update_log(args.backend, *args.recipes, verbose=args.verbose)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
