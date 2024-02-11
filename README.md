@@ -27,6 +27,35 @@ positional arguments:
 options:
   -h, --help     show this help message and exit
   -v, --verbose
+
+$ scripts/build.py -v me.hackerchick.catima:v2.27.0
+Building 'me.hackerchick.catima:v2.27.0'...
+Downloading 'https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk'...
+Running 'docker pull -- debian:bookworm-slim'...
+Running 'docker run --rm --volume [...]:/outputs --volume [...]:/scripts --env ANDROID_HOME=/opt/sdk [...] -- debian:bookworm-slim bash -c timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m /scripts/provision.sh && cd /build/repo && timeout 20m /scripts/build.sh'...
+--- BEGIN BUILD LOG ---
+[...]
+BUILD SUCCESSFUL in 3m 30s
+42 actionable tasks: 42 executed
++ mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+
+--- END BUILD LOG ---
+[
+  {
+    "appid": "me.hackerchick.catima",
+    "version_code": 132,
+    "version_name": "2.27.0",
+    "tag": "v2.27.0",
+    "recipe": { [...] },
+    "timestamp": 1707523651,
+    "reproducible": true,
+    "error": null,
+    "build_log": "[...]",
+    "upstream_signed_apk_sha256": "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd",
+    "built_unsigned_apk_sha256": "fd20af0e28807dd85f3ff910069a966f82302d543e93cd1de2da0ba68851c2ee",
+    "signature_copied_apk_sha256": "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd"
+  }
+]
 ```
 
 ### update-log.py
@@ -45,6 +74,40 @@ positional arguments:
 options:
   -h, --help     show this help message and exit
   -v, --verbose
+
+$ scripts/update-log.py -v recipes/*.yml
+Updating 'me.hackerchick.catima'...
+Nothing to build.
+Updating 'org.fossify.gallery'...
+Nothing to build.
+Updating 'org.fossify.messages'...
+Building ['org.fossify.messages:1.0.1']...
+Building 'org.fossify.messages:1.0.1'...
+Downloading 'https://github.com/FossifyOrg/Messages/releases/download/1.0.1/messages-2-foss-release.apk'...
+Running 'docker pull -- debian:bookworm-slim'...
+Running 'docker run [...]'...
+--- BEGIN BUILD LOG ---
+RUN COMMAND docker pull -- debian:bookworm-slim
+bookworm-slim: Pulling from library/debian
+c57ee5000d61: Pulling fs layer
+c57ee5000d61: Download complete
+c57ee5000d61: Pull complete
+Digest: sha256:7802002798b0e351323ed2357ae6dc5a8c4d0a05a57e7f4d8f97136151d3d603
+Status: Downloaded newer image for debian:bookworm-slim
+docker.io/library/debian:bookworm-slim
+RUN COMMAND docker run [...]
+[...]
++ apt-get install --no-install-recommends -y git wget unzip openjdk-17-jdk-headless
+[...]
++ git clone --recurse-submodules -b 1.0.1 -- https://github.com/FossifyOrg/Messages.git /build/repo
+[...]
++ ./gradlew assembleFossRelease
+[...]
+BUILD SUCCESSFUL in 4m 49s
+42 actionable tasks: 42 executed
++ mv app/build/outputs/apk/foss/release/messages-2-foss-release-unsigned.apk /outputs/unsigned.apk
+
+--- END BUILD LOG ---
 ```
 
 ### provision-root.sh & provision.sh
