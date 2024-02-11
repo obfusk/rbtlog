@@ -143,7 +143,7 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
                     result["build_log"] += f"RUN COMMAND {' '.join(cmd)}\n"
                     result["build_log"] += run_command(*cmd, verbose=verbose)
             except subprocess.CalledProcessError as e:
-                result["build_log"] += e.stdout
+                result["build_log"] += e.stdout.decode()
                 raise
             finally:
                 if verbose:
@@ -207,8 +207,8 @@ def docker_cmd(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str,
         "--volume", f"{scripts}:/scripts",
         *env, "--", recipe.provisioning.image, "bash", "-c",
         "timeout 10m /scripts/provision-root.sh && cd /build && "
-        "timeout 10m /scripts/provision.sh && cd /build/repo && "
-        "timeout 20m /scripts/build.sh"
+        "timeout 10m su build /scripts/provision.sh && cd /build/repo && "
+        "timeout 20m su build /scripts/build.sh"
     )
 
 

@@ -2,7 +2,7 @@
 set -xeuo pipefail
 
 apt-get update
-apt-get upgrade
+apt-get upgrade -y
 
 apt-get install --no-install-recommends -y git wget unzip "${PROVISIONING_JDK}"
 update-alternatives --auto java
