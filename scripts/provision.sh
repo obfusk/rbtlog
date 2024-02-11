@@ -1,12 +1,6 @@
 #!/bin/bash
 set -xeuo pipefail
 
-apt-get update
-apt-get upgrade
-
-apt-get install --no-install-recommends -y git wget unzip "${PROVISIONING_JDK}"
-update-alternatives --auto java
-
 mkdir -p "${ANDROID_HOME}"/cmdline-tools
 
 wget -q -O /tmp/tools.zip -- "${PROVISIONING_CMDLINE_TOOLS_URL}"

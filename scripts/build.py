@@ -3,7 +3,10 @@
 # SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Depends: apt install aapt apksigcopier docker.io python3-requests python3-yaml
+# Depends:
+# $ apt install docker.io python3-pip python3-requests python3-yaml
+# $ pip install git+https://github.com/obfusk/apksigcopier.git@v1.1.1
+# $ pip install git+https://github.com/obfusk/reproducible-apk-tools.git@binres-20240211
 
 import argparse
 import hashlib
@@ -17,11 +20,16 @@ import time
 import zipfile
 
 from dataclasses import dataclass
+from enum import Enum
 from typing import Any, Dict, Optional, Tuple
 
 import apksigcopier
 import requests
 import yaml
+
+import repro_apk.binres as binres
+
+BuildBackend = Enum("BuildBackend", ["DOCKER"])   # FIXME
 
 
 class Error(Exception):
@@ -110,28 +118,30 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
 
 
 # FIXME
-# FIXME: stream build log to stderr
-# FIXME: log hashes of .sh & .py
-def build_with_docker(appid: str, recipe: BuildRecipe, *,
-                      verbose: bool = False) -> Dict[Any, Any]:
-    """Build recipe with docker."""
+def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *,
+                       verbose: bool = False) -> Dict[Any, Any]:
+    """Build recipe with backend (e.g. docker)."""
     result: Dict[str, Any] = dict(
-        appid=appid, version_code=None, version_name=None,
-        tag=recipe.tag, recipe=recipe.for_json(), timestamp=int(time.time()),
-        reproducible=None, error=None)
+        appid=appid, version_code=None, version_name=None, tag=recipe.tag,
+        recipe=recipe.for_json(), timestamp=int(time.time()), reproducible=None,
+        error=None, build_log="", upstream_signed_apk_sha256=None,
+        built_unsigned_apk_sha256=None, signature_copied_apk_sha256=None)
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
-            outputs = os.path.join(tmpdir, "outputs")
-            scripts = os.path.join(tmpdir, "scripts")
-            prepare_tmpdir(recipe, outputs=outputs, scripts=scripts)
-            vercode, vername = download_apk(recipe, tmpdir, verbose=verbose)
-            result.update(version_code=vercode, version_name=vername)
-            pull_cmd = ("docker", "pull", "--", recipe.provisioning.image)
-            run_cmd = docker_cmd(recipe, outputs=outputs, scripts=scripts)
-            result["build_log"] = ""
+            outputs, scripts = prepare_tmpdir(recipe, tmpdir)
+            signed_sha, vercode, vername = download_apk(recipe, tmpdir, verbose=verbose)
+            result.update(version_code=vercode, version_name=vername,
+                          upstream_signed_apk_sha256=signed_sha)
+            if backend == BuildBackend.DOCKER:
+                pull_cmd = ("docker", "pull", "--", recipe.provisioning.image)
+                run_cmd = docker_cmd(recipe, outputs=outputs, scripts=scripts)
+                commands = [pull_cmd, run_cmd]
+            else:
+                raise NotImplementedError(f"Unknown backend: {backend}")
             try:
-                result["build_log"] += run_command(*pull_cmd, verbose=verbose)
-                result["build_log"] += run_command(*run_cmd, verbose=verbose)
+                for cmd in commands:
+                    result["build_log"] += f"RUN COMMAND {' '.join(cmd)}\n"
+                    result["build_log"] += run_command(*cmd, verbose=verbose)
             except subprocess.CalledProcessError as e:
                 result["build_log"] += e.stdout
                 raise
@@ -139,10 +149,9 @@ def build_with_docker(appid: str, recipe: BuildRecipe, *,
                 if verbose:
                     print(f"--- BEGIN BUILD LOG ---\n{result['build_log']}\n"
                           "--- END BUILD LOG ---", file=sys.stderr)
-            signed_sha, unsigned_sha, copied_sha, error = compare_apks(tmpdir)
+            unsigned_sha, copied_sha, error = compare_apks(tmpdir)
             result.update(
                 reproducible=signed_sha == copied_sha,  # FIXME
-                upstream_signed_apk_sha256=signed_sha,
                 built_unsigned_apk_sha256=unsigned_sha,
                 signature_copied_apk_sha256=copied_sha,
                 error=error,
@@ -161,12 +170,22 @@ def build_with_docker(appid: str, recipe: BuildRecipe, *,
     return dict(result, error=error)
 
 
-def prepare_tmpdir(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str, str]:
+def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
     """Prepare directories and scripts in tmpdir."""
+    outputs = os.path.join(tmpdir, "outputs")
+    scripts = os.path.join(tmpdir, "scripts")
+    provision_root_sh = os.path.join(scripts, "provision-root.sh")
+    provision_sh = os.path.join(scripts, "provision.sh")
+    build_sh = os.path.join(scripts, "build.sh")
+    os.chmod(tmpdir, 0o700)     # private
     os.mkdir(outputs)
     os.mkdir(scripts)
+    os.chmod(outputs, 0o777)    # allow writing from within container
+    os.chmod(scripts, 0o755)    # allow reading from within container
+    shutil.copy("scripts/provision-root.sh", scripts)
     shutil.copy("scripts/provision.sh", scripts)
-    build_sh = os.path.join(scripts, "build.sh")
+    os.chmod(provision_root_sh, 0o755)
+    os.chmod(provision_sh, 0o755)
     with open(build_sh, "w", encoding="utf-8") as fh:
         fh.write("#!/bin/bash\nset -xeuo pipefail\n")
         fh.write('export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/'
@@ -183,12 +202,13 @@ def docker_cmd(recipe: BuildRecipe, *, outputs: str, scripts: str) -> Tuple[str,
     for k, v in build_env(recipe).items():
         env.extend(["--env", f"{k}={v}"])
     return (
-        "docker", "run", "--rm", "--workdir", "/build",
+        "docker", "run", "--rm",
         "--volume", f"{outputs}:/outputs",
         "--volume", f"{scripts}:/scripts",
-        *env, "--", recipe.provisioning.image,
-        "bash", "-c", "timeout 10m /scripts/provision.sh && cd /build/repo "
-                      "&& timeout 20m /scripts/build.sh"
+        *env, "--", recipe.provisioning.image, "bash", "-c",
+        "timeout 10m /scripts/provision-root.sh && cd /build && "
+        "timeout 10m /scripts/provision.sh && cd /build/repo && "
+        "timeout 20m /scripts/build.sh"
     )
 
 
@@ -207,39 +227,27 @@ def build_env(recipe: BuildRecipe) -> Dict[str, str]:
 
 
 def download_apk(recipe: BuildRecipe, tmpdir: str, *,
-                 verbose: bool = False) -> Tuple[int, str]:
+                 verbose: bool = False) -> Tuple[str, int, str]:
     """Download APK and get versionCode and versionName."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     if verbose:
         print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
     download_file(recipe.apk_url, signed_apk)
-    return apk_version_info(signed_apk)
+    vercode, vername = apk_version_info(signed_apk)
+    return sha256_file(signed_apk), vercode, vername
 
 
-# FIXME: use repro-apk?
 def apk_version_info(apkfile: str) -> Tuple[int, str]:
     """Get APK versionCode and versionName."""
-    badging = subprocess.run(("aapt2", "dump", "badging", apkfile),
-                             check=True, capture_output=True).stdout.decode()
-    vercode = vername = None
-    for x in badging.split("\n", 1)[0].split(" ")[1:]:
-        k, v = x.split("=", 1)
-        if k == "versionCode":
-            vercode = int(v[1:-1])
-        elif k == "versionName":
-            vername = v[1:-1]
-    if vercode is None or vername is None:
-        raise Error("could not extract versionCode and versionName from aapt2 output")
-    return vercode, vername
+    return binres.quick_get_idver(apkfile)[1:]
 
 
 # FIXME: diff on fail?
-def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
+def compare_apks(tmpdir: str) -> Tuple[str, Optional[str], Optional[str]]:
     """Download upstream APK and compare to built APK."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     unsigned_apk = os.path.join(tmpdir, "outputs", "unsigned.apk")
     output_apk = os.path.join(tmpdir, "copied.apk")
-    signed_sha, unsigned_sha = sha256_file(signed_apk), sha256_file(unsigned_apk)
     try:
         apksigcopier.do_copy(signed_apk, unsigned_apk, output_apk, v1_only=None)
         copied_sha = sha256_file(output_apk)
@@ -247,13 +255,13 @@ def compare_apks(tmpdir: str) -> Tuple[str, str, Optional[str], Optional[str]]:
     except (apksigcopier.APKSigCopierError, zipfile.BadZipFile) as e:
         copied_sha = None
         error = f"signature copying failed: {e}"
-    return signed_sha, unsigned_sha, copied_sha, error
+    return sha256_file(unsigned_apk), copied_sha, error
 
 
 # FIXME
-# FIXME: error when tag not found
 def build(*specs: str, verbose: bool = False) -> int:
     """Parse YAML & build apps."""
+    backend = BuildBackend.DOCKER   # FIXME
     errors = 0
     outputs = []
     for spec in specs:
@@ -265,7 +273,7 @@ def build(*specs: str, verbose: bool = False) -> int:
         for build_recipe in recipe.versions:
             if build_recipe.tag == tag:
                 found = True
-                outputs.append(build_with_docker(appid, build_recipe, verbose=verbose))
+                outputs.append(build_with_backend(backend, appid, build_recipe, verbose=verbose))
                 break
         if not found:
             errors += 1
@@ -283,7 +291,7 @@ def run_command(*args: str, verbose: bool = False) -> str:
                           stderr=subprocess.STDOUT).stdout.decode()
 
 
-# FIXME: retry
+# FIXME: retry, configure timeout
 def download_file(url: str, output: str) -> str:
     """Download file."""
     with requests.get(url, stream=True, timeout=60) as response:
