@@ -32,11 +32,10 @@ jobs:
         python-version: '3.12'
     - name: Install dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install -y aapt
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
         python3 -m pip install git+https://github.com/obfusk/apksigcopier.git@v1.1.1
+        python3 -m pip install git+https://github.com/obfusk/reproducible-apk-tools.git@binres-20240211
     - name: Update log
       run: python3 scripts/update-log.py -v recipes/*.yml
     - name: Create pull request

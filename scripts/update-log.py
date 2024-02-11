@@ -29,7 +29,7 @@ def load_log(log_file: str, appid: str) -> Dict[Any, Any]:
         with open(log_file, encoding="utf-8") as fh:
             return json.load(fh)    # type: ignore[no-any-return]
     except FileNotFoundError:
-        return dict(appid=appid, tags={}, version_codes={})
+        return dict(appid=appid, tags={}, version_codes={}, sha256={})
 
 
 def save_log(log_file: str, data: Dict[Any, Any]) -> None:
@@ -44,11 +44,18 @@ def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[A
     """Add builds to log; modifies in-place!"""
     for build in builds:
         tag, version_code = build["tag"], build["version_code"]
+        sha256 = build["upstream_signed_apk_sha256"]
         log_data["tags"][tag] = [build]
-        if version_code not in log_data["version_codes"]:
-            log_data["version_codes"][version_code] = []
-        tags = log_data["version_codes"][version_code]
-        log_data["version_codes"][version_code] = sorted(set(tags) | set([tag]))
+        if version_code is not None:
+            if version_code not in log_data["version_codes"]:
+                log_data["version_codes"][version_code] = []
+            tags = log_data["version_codes"][version_code]
+            log_data["version_codes"][version_code] = sorted(set(tags) | set([tag]))
+        if sha256 is not None:
+            if sha256 not in log_data["sha256"]:
+                log_data["sha256"][sha256] = []
+            tags = log_data["sha256"][sha256]
+            log_data["sha256"][sha256] = sorted(set(tags) | set([tag]))
     return log_data
 
 
