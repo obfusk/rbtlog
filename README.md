@@ -15,6 +15,11 @@ FIXME
 
 FIXME
 
+For each specified `<appid>:<tag>`, reads `recipes/<appid>.yml` and builds the
+requested tag from its recipe (using the specified backend, e.g. podman or
+docker) and produces JSON output on stdout; with `--verbose` also produces
+status messages and a build log on stderr.
+
 ```bash
 $ scripts/build.py --help
 usage: build.py [-h] [-v] [--keep-apks DIR] {podman,docker} [SPEC ...]
@@ -30,11 +35,11 @@ options:
   -v, --verbose
   --keep-apks DIR  save APKs in DIR
 
-$ scripts/build.py -v docker me.hackerchick.catima:v2.27.0
+$ scripts/build.py -v podman me.hackerchick.catima:v2.27.0
 Building 'me.hackerchick.catima:v2.27.0'...
 Downloading 'https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk'...
-Running 'docker pull -- debian:bookworm-slim'...
-Running 'docker run --rm --volume [...]:/outputs --volume [...]:/scripts --env ANDROID_HOME=/opt/sdk [...] -- debian:bookworm-slim bash -c timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m /scripts/provision.sh && cd /build/repo && timeout 20m /scripts/build.sh'...
+Running 'podman pull -- debian:bookworm-slim'...
+Running 'podman run --rm --volume [...]:/outputs --volume [...]:/scripts --env ANDROID_HOME=/opt/sdk [...] -- debian:bookworm-slim bash -c timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh'...
 --- BEGIN BUILD LOG ---
 [...]
 BUILD SUCCESSFUL in 3m 30s
@@ -63,6 +68,10 @@ BUILD SUCCESSFUL in 3m 30s
 ### update-log.py
 
 FIXME
+
+For each specified `/path/to/<appid>.yml` (e.g. `recipes/*.yml`), makes a list
+of `<appid>:<tag>` pairs not already in `logs/<appid>.json`, runs `build.py` to
+build them, and adds the resulting output to `logs/<appid>.json`.
 
 ```bash
 $ scripts/update-log.py --help
@@ -111,6 +120,18 @@ BUILD SUCCESSFUL in 4m 49s
 + mv app/build/outputs/apk/foss/release/messages-2-foss-release-unsigned.apk /outputs/unsigned.apk
 
 --- END BUILD LOG ---
+```
+
+### update-recipes.py
+
+FIXME
+
+For each specified `/path/to/<appid>.yml` (e.g. `recipes/*.yml`), checks the
+relevant forge (e.g. GitHub) for the latest release tag (and APK URL) and adds a
+new entry in the recipe (unless that tag already has an entry).
+
+```bash
+FIXME
 ```
 
 ### provision-root.sh & provision.sh
