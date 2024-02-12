@@ -34,7 +34,7 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
-    - name: Update log
+    - name: Update recipes
       run: python3 scripts/update-recipes.py -v recipes/*.yml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
