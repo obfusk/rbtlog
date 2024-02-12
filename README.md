@@ -190,8 +190,6 @@ FIXME
 ```bash
 $ apt install podman python3-pip    # can also use docker.io instead of podman
 $ pip install -r requirements.txt   # may need/want to use a venv
-$ pip install git+https://github.com/obfusk/apksigcopier.git@v1.1.1
-$ pip install git+https://github.com/obfusk/reproducible-apk-tools.git@binres-20240211
 ```
 
 ### Docker security

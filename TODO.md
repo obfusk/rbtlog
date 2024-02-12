@@ -2,14 +2,15 @@
 
 - [x] use repro-apk instead of aapt
 - [x] podman support
+- [x] update-recipes .py + .yml
+- [x] switch to ruamel.yaml
 - [ ] more apps
-- [ ] update-recipes .py + .yml
 - [ ] finish README
 - [ ] github issues for all TODOs
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
-- [ ] switch to ruamel.yaml
+- [ ] provisioning: `{HOME,REPO}_DIR` and `packages: []`
 
 # Nice to have
 
@@ -23,6 +24,7 @@
 - [ ] building (random) batches (of older releases)
 - [ ] scan for blobs / proprietary deps (e.g. in gradle files)
 - [ ] security improvements
+- [ ] provisioning: non-debian images
 
 # Maybe
 

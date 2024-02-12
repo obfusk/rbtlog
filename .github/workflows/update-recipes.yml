@@ -1,8 +1,8 @@
-name: update log
+name: update recipes
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3 12 * * *'
+    - cron: '3 6 * * *'
 permissions:
   actions: none
   checks: none
@@ -35,10 +35,12 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
     - name: Update log
-      run: python3 scripts/update-log.py -v podman recipes/*.yml
+      run: python3 scripts/update-recipes.py -v recipes/*.yml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6.0.0
       with:
-        title: "Update log"
-        commit-message: "Update log"
+        title: "Update recipes"
+        commit-message: "Update recipes"
         branch-suffix: timestamp

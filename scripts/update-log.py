@@ -11,7 +11,7 @@ import sys
 
 from typing import Any, Dict, List
 
-import yaml
+from ruamel.yaml import YAML
 
 EXE = sys.executable or "python3"
 
@@ -19,7 +19,8 @@ EXE = sys.executable or "python3"
 def recipe_tags(recipe_file: str) -> List[str]:
     """Parse recipe YAML and get tags."""
     with open(recipe_file, encoding="utf-8") as fh:
-        data = yaml.safe_load(fh)
+        yaml = YAML(typ="safe")
+        data = yaml.load(fh)
         return [v["tag"] for v in data["versions"]]
 
 
