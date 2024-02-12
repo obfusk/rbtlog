@@ -68,8 +68,8 @@ def save_recipe(recipe_file: str, data: Dict[Any, Any]) -> None:
     """Save YAML recipe."""
     with open(recipe_file, "w", encoding="utf-8") as fh:
         yaml = YAML()
-        yaml.explicit_start = True  # type: ignore[assignment]
-        yaml.width = 4096           # type: ignore[assignment]
+        yaml.explicit_start = True  # type: ignore[assignment,unused-ignore]
+        yaml.width = 4096           # type: ignore[assignment,unused-ignore]
         yaml.indent(sequence=4, mapping=2, offset=2)
         yaml.dump(data, fh)
 

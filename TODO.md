@@ -25,6 +25,7 @@
 - [ ] scan for blobs / proprietary deps (e.g. in gradle files)
 - [ ] security improvements
 - [ ] provisioning: non-debian images
+- [ ] get rid of "type: ignore" if possible
 
 # Maybe
 
