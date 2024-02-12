@@ -19,10 +19,10 @@ from enum import Enum
 from typing import Any, Dict, Optional, Tuple
 
 import apksigcopier
-import requests
-import yaml
-
 import repro_apk.binres as binres
+import requests
+
+from ruamel.yaml import YAML
 
 BuildBackend = Enum("BuildBackend", ["PODMAN", "DOCKER"])   # FIXME
 
@@ -88,14 +88,15 @@ class AppRecipe:
 def parse_yaml(recipe_file: str) -> AppRecipe:
     """Parse recipe YAML."""
     with open(recipe_file, encoding="utf-8") as fh:
-        data = yaml.safe_load(fh)
+        yaml = YAML(typ="safe")
+        data = yaml.load(fh)
         versions = []
         for v in data["versions"]:
             versions.append(BuildRecipe(
                 repository=data["repository"],
                 tag=v["tag"],
                 apk_url=v["apk_url"].replace("$$TAG$$", v["tag"]),
-                build=v["build"],
+                build="".join(line + "\n" for line in v["build"]),
                 provisioning=Provisioning(
                     build_tools=v["provisioning"]["build_tools"],
                     cmdline_tools=Download(
