@@ -27,6 +27,7 @@
 - [ ] security improvements
 - [ ] provisioning: non-debian images
 - [ ] get rid of "type: ignore" if possible
+- [ ] automated check for latest cmdline-tools
 
 # Maybe
 
