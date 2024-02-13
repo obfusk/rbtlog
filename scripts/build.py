@@ -256,7 +256,7 @@ def compare_apks(tmpdir: str, *, appid: str, tag: str, signed_sha: str,
     output_apk = os.path.join(tmpdir, "outputs", "unsigned.apk")
     if not os.path.isfile(output_apk) or os.path.islink(output_apk):
         raise Error("unsigned output APK is not a regular file")
-    shutil.copyfile(output_apk, unsigned_apk)
+    shutil.copyfile(output_apk, unsigned_apk)   # copy w/o permission bits!
     unsigned_sha = sha256_file(unsigned_apk)
     if keep_apks:
         keep_apk(appid, tag, keep_apks, signed_apk, signed_sha, verbose=verbose)
