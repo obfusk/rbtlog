@@ -11,10 +11,10 @@
 `rbtlog` is a [Reproducible Builds](https://reproducible-builds.org/)
 transparency log for Android APKs.  Its `git` repository contains:
 
-- [Scripts](#scripts) forming a rebuilder framework
-- [Recipes](#recipes) to build various apps
-- [Rebuild Logs](#rebuild-logs) forming a transparency log of reproduction attempts
-- [GitHub Actions workflows](#github-actions-workflows) to automate everything
+- [Scripts](#scripts) forming a rebuilder framework.
+- [Recipes](#recipes) to build various apps.
+- [Rebuild Logs](#rebuild-logs) forming a transparency log of reproduction attempts.
+- [GitHub Actions workflows](#github-actions-workflows) to automate everything.
 
 ## Scripts
 
@@ -315,7 +315,7 @@ $ git clone https://github.com/obfusk/rbtlog.git
 ## Dependencies
 
 Python >= 3.8 + several libraries (`requests`, `ruamel.yaml`) + `apksigcopier` +
-`reproducible-apk-tools` + a backend like `podman` or `docker.
+`reproducible-apk-tools` + a backend like `podman` or `docker`.
 
 ### Debian/Ubuntu
 
