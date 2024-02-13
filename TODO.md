@@ -20,6 +20,7 @@
 # Nice to have
 
 - [ ] rebuild when failed before comparison
+- [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads
 - [ ] configure timeouts
 - [ ] configure paths
