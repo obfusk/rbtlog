@@ -5,13 +5,17 @@
 - [x] update-recipes .py + .yml
 - [x] switch to ruamel.yaml
 - [x] finish README
+- [ ] log & clone commit using ls-remote
+- [ ] error if appid doesn't match APK
+- [ ] split ABI support (w/ APK patterns)
+- [ ] index.json
 - [ ] more apps
-- [ ] github issues for all TODOs
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [ ] doc/unit/regression/etc. tests
+- [ ] github issues for all TODOs
 
 # Nice to have
 
@@ -28,13 +32,14 @@
 - [ ] provisioning: non-debian images
 - [ ] get rid of "type: ignore" if possible
 - [ ] automated check for latest cmdline-tools
+- [ ] ability to use SDK rebuilds
 
 # Maybe
 
 - [ ] diff on signature copying failure?
 - [ ] stream build log to stderr?
-- [ ] map tag to commit?
-- [ ] log commit?
+- [ ] map commit to tag(s)?
+- [ ] map tag to commit(s)?
 - [ ] log hashes of .sh & .py?
 - [ ] use apksigner instead of shasum equality?
 - [ ] sigsum?
