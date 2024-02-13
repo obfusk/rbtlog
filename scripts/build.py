@@ -125,7 +125,7 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs, scripts = prepare_tmpdir(recipe, tmpdir)
-            signed_sha, vercode, vername = download_apk(recipe, tmpdir, verbose=verbose)
+            signed_sha, vercode, vername = download_apk(recipe, appid, tmpdir, verbose=verbose)
             result.update(version_code=vercode, version_name=vername,
                           upstream_signed_apk_sha256=signed_sha)
             if backend in (BuildBackend.PODMAN, BuildBackend.DOCKER):
@@ -229,20 +229,22 @@ def build_env(recipe: BuildRecipe) -> Dict[str, str]:
         PROVISIONING_JDK=recipe.provisioning.jdk)
 
 
-def download_apk(recipe: BuildRecipe, tmpdir: str, *,
+def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,
                  verbose: bool = False) -> Tuple[str, int, str]:
     """Download APK and get versionCode and versionName."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     if verbose:
         print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
     download_file(recipe.apk_url, signed_apk)
-    vercode, vername = apk_version_info(signed_apk)
+    appid_from_apk, vercode, vername = apk_version_info(signed_apk)
+    if appid != appid_from_apk:
+        raise Error(f"APK appid mismatch: expected {appid}, got {appid_from_apk}")
     return sha256_file(signed_apk), vercode, vername
 
 
-def apk_version_info(apkfile: str) -> Tuple[int, str]:
-    """Get APK versionCode and versionName."""
-    return binres.quick_get_idver(apkfile)[1:]
+def apk_version_info(apkfile: str) -> Tuple[str, int, str]:
+    """Get APK appid, versionCode, versionName."""
+    return binres.quick_get_idver(apkfile)
 
 
 # FIXME: diff on fail?

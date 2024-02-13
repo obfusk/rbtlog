@@ -5,8 +5,8 @@
 - [x] update-recipes .py + .yml
 - [x] switch to ruamel.yaml
 - [x] finish README
+- [x] error if appid doesn't match APK
 - [ ] log & clone commit using ls-remote
-- [ ] error if appid doesn't match APK
 - [ ] split ABI support (w/ APK patterns)
 - [ ] index.json
 - [ ] JSON schema + validation for recipes
