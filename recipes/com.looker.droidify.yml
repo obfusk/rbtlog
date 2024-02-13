@@ -1,0 +1,20 @@
+---
+repository: https://github.com/Droid-ify/client.git
+versions:
+  - tag: v0.6.1
+    apk_url: https://github.com/Droid-ify/client/releases/download/$$TAG$$/app-release.apk
+    build:
+      - ./gradlew assembleRelease
+      - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+    provisioning:
+      build_tools:
+      cmdline_tools:
+        version: '12.0'
+        url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+        sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+      image: debian:bookworm-slim
+      jdk: openjdk-17-jdk-headless
+      ndk:
+      platform:
+      platform_tools:
+      tools:
