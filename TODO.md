@@ -9,16 +9,17 @@
 - [ ] error if appid doesn't match APK
 - [ ] split ABI support (w/ APK patterns)
 - [ ] index.json
-- [ ] more apps
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
+- [ ] more apps
+- [ ] github issues for all TODOs
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [ ] doc/unit/regression/etc. tests
-- [ ] github issues for all TODOs
 
 # Nice to have
 
+- [ ] update-recipes: support more forges (gitlab, codeberg)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads
