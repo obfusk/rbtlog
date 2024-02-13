@@ -16,6 +16,7 @@
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [ ] doc/unit/regression/etc. tests
+- [ ] make & use a proper release of repro-apk binres
 
 # Nice to have
 
