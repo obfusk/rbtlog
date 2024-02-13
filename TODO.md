@@ -4,8 +4,8 @@
 - [x] podman support
 - [x] update-recipes .py + .yml
 - [x] switch to ruamel.yaml
+- [x] finish README
 - [ ] more apps
-- [ ] finish README
 - [ ] github issues for all TODOs
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
