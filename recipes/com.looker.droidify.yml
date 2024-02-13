@@ -4,6 +4,7 @@ versions:
   - tag: v0.6.1
     apk_url: https://github.com/Droid-ify/client/releases/download/$$TAG$$/app-release.apk
     build:
+      - chmod +x gradlew
       - ./gradlew assembleRelease
       - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
     provisioning:
