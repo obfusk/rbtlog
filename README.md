@@ -11,10 +11,10 @@
 `rbtlog` is a [Reproducible Builds](https://reproducible-builds.org/)
 transparency log for Android APKs.  Its `git` repository contains:
 
-- [#scripts](Scripts) forming a rebuilder framework
-- [#recipes](Recipes) to build various apps
-- [#rebuild-logs](Rebuild Logs) forming a transparency log of reproduction attempts
-- [#github-actions-workflows](GitHub Actions workflows) to automate everything
+- [Scripts](#scripts) forming a rebuilder framework
+- [Recipes](#recipes) to build various apps
+- [Rebuild Logs](#rebuild-logs) forming a transparency log of reproduction attempts
+- [GitHub Actions workflows](#github-actions-workflows) to automate everything
 
 ## Scripts
 
