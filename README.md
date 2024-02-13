@@ -1,6 +1,9 @@
 <!-- SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net> -->
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 
+[![CI](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml)
+[![update log](https://github.com/obfusk/rbtlog/actions/workflows/update-log.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/update-log.yml)
+[![update recipes](https://github.com/obfusk/rbtlog/actions/workflows/update-recipes.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/update-recipes.yml)
 [![AGPLv3+](https://img.shields.io/badge/license-AGPLv3+-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
 # Reproducible Builds Transparency Log (rbtlog)
