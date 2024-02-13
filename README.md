@@ -8,20 +8,30 @@
 
 # Reproducible Builds Transparency Log (rbtlog)
 
-FIXME
+`rbtlog` is a [Reproducible Builds](https://reproducible-builds.org/)
+transparency log for Android APKs.  Its `git` repository contains:
+
+- [#scripts](Scripts) forming a rebuilder framework
+- [#recipes](Recipes) to build various apps
+- [#rebuild-logs](Rebuild Logs) forming a transparency log of reproduction attempts
+- [#github-actions-workflows](GitHub Actions workflows) to automate everything
 
 ## Scripts
 
-FIXME
+The scripts in `scripts/` provide the rebuilder component.
 
 ### build.py
 
-FIXME
+Builds unsigned APKs from apps' recipes and compares them to the signed APKs
+published by the upstream developer(s) using
+[`apksigcopier`](https://github.com/obfusk/apksigcopier).
 
 For each specified `<appid>:<tag>`, reads `recipes/<appid>.yml` and builds the
-requested tag from its recipe (using the specified backend, e.g. podman or
-docker) and produces JSON output on stdout; with `--verbose` also produces
+requested tag from its recipe (using the specified backend, e.g. `podman` or
+`docker`) and produces JSON output on stdout; with `--verbose` also produces
 status messages and a build log on stderr.
+
+<details>
 
 ```bash
 $ scripts/build.py --help
@@ -68,13 +78,18 @@ BUILD SUCCESSFUL in 3m 30s
 ]
 ```
 
+</details>
+
 ### update-log.py
 
-FIXME
+Updates the transparency log by rebuilding all tags for the specified apps'
+recipes that are not yet part of the log.
 
 For each specified `/path/to/<appid>.yml` (e.g. `recipes/*.yml`), makes a list
 of `<appid>:<tag>` pairs not already in `logs/<appid>.json`, runs `build.py` to
 build them, and adds the resulting output to `logs/<appid>.json`.
+
+<details>
 
 ```bash
 $ scripts/update-log.py --help
@@ -125,29 +140,59 @@ BUILD SUCCESSFUL in 4m 49s
 --- END BUILD LOG ---
 ```
 
+</details>
+
 ### update-recipes.py
 
-FIXME
+Updates the apps' recipes by checking upstreams' forges for new latest releases.
 
 For each specified `/path/to/<appid>.yml` (e.g. `recipes/*.yml`), checks the
 relevant forge (e.g. GitHub) for the latest release tag (and APK URL) and adds a
 new entry in the recipe (unless that tag already has an entry).
 
+<details>
+
 ```bash
-FIXME
+$ scripts/update-recipes.py --help
+usage: update-recipes.py [-h] [-v] [RECIPE ...]
+
+update recipes
+
+positional arguments:
+  RECIPE         recipe
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose
+
+$ scripts/update-recipes.py -v recipes/*.yml
+Updating 'me.hackerchick.catima'...
+Checking 'https://api.github.com/repos/CatimaLoyalty/Android/releases/latest'...
+Found tag 'v2.27.0' with APK URL 'https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk'.
+Updating 'org.fossify.gallery'...
+Checking 'https://api.github.com/repos/FossifyOrg/Gallery/releases/latest'...
+Found tag '1.1.1' with APK URL 'https://github.com/FossifyOrg/Gallery/releases/download/1.1.1/gallery-5-foss-release.apk'.
+Tag already present: '1.1.1'.
+Updating 'org.fossify.messages'...
+Checking 'https://api.github.com/repos/FossifyOrg/Messages/releases/latest'...
+Found tag '1.0.1' with APK URL 'https://github.com/FossifyOrg/Messages/releases/download/1.0.1/messages-2-foss-release.apk'.
+Tag already present: '1.0.1'.
 ```
+
+</details>
 
 ### provision-root.sh & provision.sh
 
-FIXME
+These scripts are used by `build.py` to provision the build environment (e.g. in
+a `podman` container): installing required packages and the Android SDK, cloning
+the app's repository, etc.
 
 ## Recipes
 
-FIXME
+The YAML recipes in `recipes/` provide the (re)build instructions for individual
+apps.  For example, the build recipe for Catima looks like this:
 
-### Catima
-
-FIXME
+<details>
 
 ```yaml
 ---
@@ -155,40 +200,124 @@ repository: https://github.com/CatimaLoyalty/Android.git
 versions:
   - tag: v2.27.0
     apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
-    build: |
-      ./gradlew assembleRelease
-      mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+    build:
+      - ./gradlew assembleRelease
+      - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
     provisioning:
-      build_tools: null
+      build_tools:
       cmdline_tools:
         version: '12.0'
         url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
         sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
       image: debian:bookworm-slim
       jdk: openjdk-17-jdk-headless
-      ndk: null
-      platform: null
-      platform_tools: null
-      tools: null
+      ndk:
+      platform:
+      platform_tools:
+      tools:
 ```
+
+</details>
+
+## Rebuild Logs
+
+The JSON rebuild logs in the `logs/` directory of this `git` repository form a
+transparency log of reproduction attempts.
+
+NB: this directory is only present on the (default) `log` branch, which is
+otherwise identical to the `master` branch.
+
+For example, the rebuild log for Catima looks like this:
+
+<details>
+
+```json
+{
+  "appid": "me.hackerchick.catima",
+  "tags": {
+    "v2.27.0": [
+      {
+        "appid": "me.hackerchick.catima",
+        "version_code": 132,
+        "version_name": "2.27.0",
+        "tag": "v2.27.0",
+        "recipe": {
+          "repository": "https://github.com/CatimaLoyalty/Android.git",
+          "tag": "v2.27.0",
+          "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk",
+          "build": "./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n",
+          "provisioning": {
+            "build_tools": null,
+            "cmdline_tools": {
+              "version": "12.0",
+              "url": "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip",
+              "sha256": "2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258"
+            },
+            "image": "debian:bookworm-slim",
+            "jdk": "openjdk-17-jdk-headless",
+            "ndk": null,
+            "platform": null,
+            "platform_tools": null,
+            "tools": null
+          }
+        },
+        "timestamp": 1707618660,
+        "reproducible": true,
+        "error": null,
+        "build_log": "[...]"
+        "upstream_signed_apk_sha256": "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd",
+        "built_unsigned_apk_sha256": "fd20af0e28807dd85f3ff910069a966f82302d543e93cd1de2da0ba68851c2ee",
+        "signature_copied_apk_sha256": "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd"
+      }
+    ]
+  },
+  "version_codes": {
+    "132": [
+      "v2.27.0"
+    ]
+  },
+  "sha256": {
+    "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
+      "v2.27.0"
+    ]
+  }
+}
+```
+
+</details>
 
 ## GitHub Actions workflows
 
-### ci
+### ci.yml
 
-FIXME
+CI for the rebuilder (code linting etc.).
 
-### update-log
+### update-log.yml
 
-FIXME
+Automatically runs `scripts/update-log.py -v podman recipes/*.yml` every day and
+creates a pull request with the changes.  The pull request is reviewed and
+signed before being merged into the `log` branch.
+
+### update-recipes.yml
+
+Automatically runs `scripts/update-recipes.py -v recipes/*.yml` every day and
+creates a pull request with the changes.  The pull request is reviewed and
+signed before being merged into the `master` and `log` branches.
 
 ## Installing
 
-FIXME
+Everything but the dependencies is contained in the `git` repository.
+
+```bash
+$ git clone https://github.com/obfusk/rbtlog.git
+```
 
 ## Dependencies
 
-FIXME
+Python >= 3.8 + several libraries (`requests`, `ruamel.yaml`) + `apksigcopier` +
+`reproducible-apk-tools` + a backend like `podman` or `docker.
+
+### Debian/Ubuntu
 
 ```bash
 $ apt install podman python3-pip    # can also use docker.io instead of podman
