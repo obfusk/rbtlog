@@ -84,7 +84,6 @@ class AppRecipe:
 
 
 # FIXME: schema + validation
-# FIXME: switch to ruamel.yaml
 def parse_yaml(recipe_file: str) -> AppRecipe:
     """Parse recipe YAML."""
     with open(recipe_file, encoding="utf-8") as fh:
