@@ -10,7 +10,8 @@
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
-- [ ] provisioning: `{HOME,REPO}_DIR` and `packages: []`
+- [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
+- [ ] doc/unit/regression/etc. tests
 
 # Nice to have
 
@@ -26,6 +27,7 @@
 - [ ] security improvements
 - [ ] provisioning: non-debian images
 - [ ] get rid of "type: ignore" if possible
+- [ ] automated check for latest cmdline-tools
 
 # Maybe
 
