@@ -36,6 +36,8 @@ jobs:
         python3 -m pip install -r requirements.txt
     - name: Update log
       run: python3 scripts/update-log.py -v podman recipes/*.yml
+    - name: Update index
+      run: python3 scripts/make-index.py -v logs/*.json > index.json
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6.0.0
       with:
