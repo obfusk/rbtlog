@@ -66,6 +66,7 @@ BUILD SUCCESSFUL in 3m 30s
     "version_code": 132,
     "version_name": "2.27.0",
     "tag": "v2.27.0",
+    "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
     "recipe": { [...] },
     "timestamp": 1707523651,
     "reproducible": true,
@@ -199,22 +200,24 @@ apps.  For example, the build recipe for Catima looks like this:
 repository: https://github.com/CatimaLoyalty/Android.git
 versions:
   - tag: v2.27.0
-    apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
-    build:
-      - ./gradlew assembleRelease
-      - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
-    provisioning:
-      build_tools:
-      cmdline_tools:
-        version: '12.0'
-        url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
-        sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
-      image: debian:bookworm-slim
-      jdk: openjdk-17-jdk-headless
-      ndk:
-      platform:
-      platform_tools:
-      tools:
+    apks:
+      - apk_pattern: app-release\.apk
+        apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
+        build:
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        provisioning:
+          build_tools:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
 ```
 
 </details>
@@ -241,9 +244,11 @@ For example, the rebuild log for Catima looks like this:
         "version_code": 132,
         "version_name": "2.27.0",
         "tag": "v2.27.0",
+        "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
         "recipe": {
           "repository": "https://github.com/CatimaLoyalty/Android.git",
           "tag": "v2.27.0",
+          "apk_pattern": "app-release\\.apk",
           "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk",
           "build": "./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n",
           "provisioning": {
