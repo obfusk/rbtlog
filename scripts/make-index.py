@@ -17,13 +17,14 @@ def load_log(log_file: str) -> Dict[Any, Any]:
         return json.load(fh)    # type: ignore[no-any-return]
 
 
+# FIXME: "last log" only?
 def make_index(*log_files: str, verbose: bool = False) -> None:
     """Make JSON index from JSON logs."""
     data: Dict[Any, Any] = {}
     for log_file in log_files:
         appid = os.path.splitext(os.path.basename(log_file))[0]
         if verbose:
-            print(f"Procesing {appid!r}...", file=sys.stderr)
+            print(f"Processing {appid!r}...", file=sys.stderr)
         for tag, logs in load_log(log_file)["tags"].items():
             for log in logs:
                 sha256 = log["upstream_signed_apk_sha256"]
