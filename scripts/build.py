@@ -66,14 +66,15 @@ class BuildRecipe:
     """Build recipe."""
     repository: str
     tag: str
+    apk_pattern: str
     apk_url: str
     build: str
     provisioning: Provisioning
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
-            repository=self.repository, tag=self.tag, apk_url=self.apk_url,
-            build=self.build, provisioning=self.provisioning.for_json())
+            repository=self.repository, tag=self.tag, apk_pattern=self.apk_pattern,
+            apk_url=self.apk_url, build=self.build, provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
@@ -92,33 +93,37 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data.repository
     'https://github.com/CatimaLoyalty/Android.git'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', provisioning=Provisioning(build_tools=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', provisioning=Provisioning(build_tools=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
         versions = []
-        for v in data["versions"]:
-            versions.append(BuildRecipe(
-                repository=data["repository"],
-                tag=v["tag"],
-                apk_url=v["apk_url"].replace("$$TAG$$", v["tag"]),
-                build="".join(line + "\n" for line in v["build"]),
-                provisioning=Provisioning(
-                    build_tools=v["provisioning"]["build_tools"],
-                    cmdline_tools=Download(
-                        version=v["provisioning"]["cmdline_tools"]["version"],
-                        url=v["provisioning"]["cmdline_tools"]["url"],
-                        sha256=v["provisioning"]["cmdline_tools"]["sha256"],
-                    ),
-                    image=v["provisioning"]["image"],
-                    jdk=v["provisioning"]["jdk"],
-                    ndk=v["provisioning"]["ndk"],
-                    platform=v["provisioning"]["platform"],
-                    platform_tools=v["provisioning"]["platform_tools"],
-                    tools=v["provisioning"]["tools"])
-            ))
+        for vsn in data["versions"]:
+            tag = vsn["tag"]
+            for apk in vsn["apks"]:
+                prov = apk["provisioning"]
+                versions.append(BuildRecipe(
+                    repository=data["repository"],
+                    tag=tag,
+                    apk_pattern=apk["apk_pattern"],
+                    apk_url=apk["apk_url"].replace("$$TAG$$", tag),
+                    build="".join(line + "\n" for line in apk["build"]),
+                    provisioning=Provisioning(
+                        build_tools=prov["build_tools"],
+                        cmdline_tools=Download(
+                            version=prov["cmdline_tools"]["version"],
+                            url=prov["cmdline_tools"]["url"],
+                            sha256=prov["cmdline_tools"]["sha256"],
+                        ),
+                        image=prov["image"],
+                        jdk=prov["jdk"],
+                        ndk=prov["ndk"],
+                        platform=prov["platform"],
+                        platform_tools=prov["platform_tools"],
+                        tools=prov["tools"])
+                ))
         return AppRecipe(repository=data["repository"], versions=tuple(versions))
 
 
@@ -310,14 +315,10 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
             print(f"Building {spec!r}...", file=sys.stderr)
         appid, tag = spec.split(":", 1)
         recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
-        build_recipe = None
-        for br in recipe.versions:
-            if br.tag == tag:
-                build_recipe = br
-                break
-        if build_recipe is not None:
-            outputs.append(build_with_backend(bb, appid, build_recipe,
-                                              keep_apks=keep_apks, verbose=verbose))
+        build_recipes = [br for br in recipe.versions if br.tag == tag]
+        if build_recipes:
+            for br in build_recipes:
+                outputs.append(build_with_backend(bb, appid, br, keep_apks=keep_apks, verbose=verbose))
         else:
             errors += 1
             print(f"Error: tag not found: {tag!r}", file=sys.stderr)

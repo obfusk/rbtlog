@@ -46,7 +46,9 @@ def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[A
     for build in builds:
         tag, version_code = build["tag"], build["version_code"]
         sha256 = build["upstream_signed_apk_sha256"]
-        log_data["tags"][tag] = [build]
+        if tag not in log_data["tags"]:
+            log_data["tags"][tag] = []
+        log_data["tags"][tag].append(build)
         if version_code is not None:
             if version_code not in log_data["version_codes"]:
                 log_data["version_codes"][version_code] = []

@@ -6,10 +6,11 @@
 import argparse
 import copy
 import os
+import re
 import sys
 import urllib.parse
 
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, List, Tuple
 
 import requests
 
@@ -24,25 +25,27 @@ class Error(Exception):
     """Base class for errors."""
 
 
-def latest_release(recipe: Dict[Any, Any], *, verbose: bool = False) -> Tuple[str, str]:
+def latest_release(repository: str, apk_patterns: List[str], *,
+                   verbose: bool = False) -> Tuple[str, Dict[str, str]]:
     """Get latest release tag & APK URL."""
-    if (repo := recipe["repository"]).endswith(".git"):
-        repo = repo[:-4]
-    url = urllib.parse.urlparse(repo)
-    apk_url = None
+    if repository.endswith(".git"):
+        repository = repository[:-4]
+    url = urllib.parse.urlparse(repository)
+    apk_urls = {}
     if url.hostname == "github.com":
         user, repo = url.path.strip("/").split("/")
         data = github_latest_release(user, repo, verbose=verbose)
         tag = data["tag_name"]
-        for asset in data["assets"]:
-            if asset["name"].endswith(".apk"):
-                apk_url = asset["browser_download_url"]
-                break
+        for apk_pattern in apk_patterns:
+            for asset in data["assets"]:
+                if re.fullmatch(apk_pattern, asset["name"]):
+                    apk_urls[apk_pattern] = asset["browser_download_url"]
+                    break
     else:
         raise NotImplementedError(f"Unsupported forge: {url.hostname}")
-    if apk_url is None:
-        raise Error("could not find APK asset")
-    return tag, apk_url
+    if not set(apk_urls) == set(apk_patterns):
+        raise Error("could not find all APK assets")
+    return tag, apk_urls
 
 
 # FIXME: retry, configure timeout
@@ -74,14 +77,16 @@ def save_recipe(recipe_file: str, data: Dict[Any, Any]) -> None:
         yaml.dump(data, fh)
 
 
-def append_latest_version(recipe: Dict[Any, Any], tag: str, apk_url: str) -> bool:
+def append_latest_version(recipe: Dict[Any, Any], tag: str, apk_urls: Dict[str, str]) -> bool:
     """Add new version to recipe; modifies in-place!"""
     if tag in [v["tag"] for v in recipe["versions"]]:
         return False
     latest_version = copy.deepcopy(recipe["versions"][-1])
     latest_version["tag"] = tag
-    if apk_url != latest_version["apk_url"].replace("$$TAG$$", tag):
-        latest_version["apk_url"] = apk_url
+    for apk in latest_version["apks"]:
+        apk_url = apk_urls[apk["apk_pattern"]]
+        if apk_url != apk["apk_url"].replace("$$TAG$$", tag):
+            apk["apk_url"] = apk_url
     recipe["versions"].append(latest_version)
     return True
 
@@ -95,10 +100,13 @@ def update_recipes(*recipes: str, verbose: bool = False) -> None:
         if verbose:
             print(f"Updating {appid!r}...", file=sys.stderr)
         recipe = load_recipe(recipe_file)
-        tag, apk_url = latest_release(recipe, verbose=verbose)
+        repository = recipe["repository"]
+        apk_patterns = [apk["apk_pattern"] for apk in recipe["versions"][-1]["apks"]]
+        tag, apk_urls = latest_release(repository, apk_patterns, verbose=verbose)
         if verbose:
-            print(f"Found tag {tag!r} with APK URL {apk_url!r}.", file=sys.stderr)
-        if append_latest_version(recipe, tag, apk_url):
+            for apk_url in apk_urls.values():
+                print(f"Found tag {tag!r} with APK URL {apk_url!r}.", file=sys.stderr)
+        if append_latest_version(recipe, tag, apk_urls):
             save_recipe(recipe_file, recipe)
         elif verbose:
             print(f"Tag already present: {tag!r}.", file=sys.stderr)
