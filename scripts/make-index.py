@@ -32,12 +32,10 @@ def make_index(*log_files: str, verbose: bool = False) -> None:
                 if sha256 not in data:
                     data[sha256] = []
                 recipe = log["recipe"]
-                entry = dict(repository=recipe["repository"])
+                entry = dict(repository=recipe["repository"], apk_url=recipe["apk_url"])
                 for k in ("appid", "version_code", "version_name", "tag",
                           "commit", "timestamp", "reproducible", "error"):
                     entry[k] = log[k]
-                entry["apk_pattern"] = recipe["apk_pattern"]
-                entry["apk_url"] = recipe["apk_url"]
                 data[sha256].append(entry)
     json.dump(data, sys.stdout, indent=2)
     print()
