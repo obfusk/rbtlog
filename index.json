@@ -1,0 +1,72 @@
+{
+  "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
+    {
+      "repository": "https://github.com/you-apps/TranslateYou.git",
+      "apk_url": "https://github.com/you-apps/TranslateYou/releases/download/v9.0/app-libre-release.apk",
+      "appid": "com.bnyro.translate",
+      "version_code": 40,
+      "version_name": "9.0",
+      "tag": "v9.0",
+      "commit": "3bbc2dbe09d8928529df00ebe9f46556aebc5146",
+      "timestamp": 1707876803,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
+    {
+      "repository": "https://github.com/Droid-ify/client.git",
+      "apk_url": "https://github.com/Droid-ify/client/releases/download/v0.6.1/app-release.apk",
+      "appid": "com.looker.droidify",
+      "version_code": 610,
+      "version_name": "0.6.1",
+      "tag": "v0.6.1",
+      "commit": "2d792c812438e2388b794de5804f20a0b88a6284",
+      "timestamp": 1707877080,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 132,
+      "version_name": "2.27.0",
+      "tag": "v2.27.0",
+      "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
+      "timestamp": 1707877480,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "537c2aa87ef4aa077e7c85dd5f675386cfc0e0c2b8b2df6e0e68c08dda670512": [
+    {
+      "repository": "https://github.com/FossifyOrg/Gallery.git",
+      "apk_url": "https://github.com/FossifyOrg/Gallery/releases/download/1.1.1/gallery-5-foss-release.apk",
+      "appid": "org.fossify.gallery",
+      "version_code": 5,
+      "version_name": "1.1.1",
+      "tag": "1.1.1",
+      "commit": "60f9f9292a16179ffc20679ad0c60c7325b511c0",
+      "timestamp": 1707877641,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "82c0f993ecf4a2ca7d3efd9ab0dabeb70351e9ada72fe3de4227d6e2c72ec753": [
+    {
+      "repository": "https://github.com/FossifyOrg/Messages.git",
+      "apk_url": "https://github.com/FossifyOrg/Messages/releases/download/1.0.1/messages-2-foss-release.apk",
+      "appid": "org.fossify.messages",
+      "version_code": 2,
+      "version_name": "1.0.1",
+      "tag": "1.0.1",
+      "commit": "38bc2ed8c1c1e002969b8cc344e0fd8a7d8e03dd",
+      "timestamp": 1707878123,
+      "reproducible": true,
+      "error": null
+    }
+  ]
+}
