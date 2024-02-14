@@ -17,7 +17,8 @@ lint: lint-recipes lint-scripts
 lint-recipes:
 	yamllint recipes/*.yml
 	set -e; for r in recipes/*.yml; do echo "$$r"; \
-	  yq < "$$r" | jsonschema -o pretty schemas/recipe.json; done
+	  $(PYTHON) scripts/yaml2json < "$$r" \
+	  | jsonschema -o pretty schemas/recipe.json; done
 
 lint-scripts:
 	shellcheck scripts/*.sh
