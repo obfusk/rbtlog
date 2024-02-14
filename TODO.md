@@ -9,7 +9,7 @@
 - [x] log & clone commit using ls-remote
 - [x] split ABI support (w/ APK patterns)
 - [x] index.json
-- [ ] JSON schema + validation for recipes
+- [x] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
 - [ ] more apps
 - [ ] github issues for all TODOs

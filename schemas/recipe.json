@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/obfusk/rbtlog/log/schemas/recipe.json",
+  "title": "rbtlog recipe",
+  "description": "rbtlog build recipe (recipes/<appid>.yml)",
+  "type": "object",
+  "properties": {
+    "repository": {
+      "description": "git repository URL",
+      "type": "string",
+      "pattern": "^https://.*\\.git$"
+    },
+    "versions": {
+      "description": "build recipes per tag and APK",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "description": "git tag",
+            "type": "string"
+          },
+          "apks": {
+            "description": "build recipes per APK",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "apk_pattern": {
+                  "description": "regex to match against the release assets APK file names",
+                  "type": "string"
+                },
+                "apk_url": {
+                  "description": "APK download URL",
+                  "type": "string",
+                  "pattern": "^https://.*\\.apk$"
+                },
+                "build": {
+                  "description": "build recipe (array of lines of a bash script)",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "provisioning": {
+                  "type": "object",
+                  "properties": {
+                    "build_tools": {
+                      "description": "optional Android SDK build-tools version (FIXME: unused)",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "cmdline_tools": {
+                      "description": "Android SDK cmdline-tools specification",
+                      "type": "object",
+                      "properties": {
+                        "version": {
+                          "description": "Android cmdline-tools version",
+                          "type": "string"
+                        },
+                        "url": {
+                          "description": "download URL",
+                          "type": "string",
+                          "pattern": "^https://.*$"
+                        },
+                        "sha256": {
+                          "description": "SHA-256 checksum (hex)",
+                          "type": "string",
+                          "pattern": "^[0-9a-f]{64}$"
+                        }
+                      },
+                      "required": [
+                        "version",
+                        "url",
+                        "sha256"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "image": {
+                      "description": "docker/podman image",
+                      "type": "string"
+                    },
+                    "jdk": {
+                      "description": "jdk package",
+                      "type": "string"
+                    },
+                    "ndk": {
+                      "description": "optional Android NDK version (FIXME: unused)",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "platform": {
+                      "description": "optional Android SDK platform version (FIXME: unused)",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "platform_tools": {
+                      "description": "optional Android SDK platform-tools version (FIXME: unused)",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "tools": {
+                      "description": "optional Android SDK tools version (FIXME: unused)",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "build_tools",
+                    "cmdline_tools",
+                    "image",
+                    "jdk",
+                    "ndk",
+                    "platform",
+                    "platform_tools",
+                    "tools"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "apk_pattern",
+                "apk_url",
+                "build",
+                "provisioning"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "tag",
+          "apks"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "repository",
+    "versions"
+  ],
+  "additionalProperties": false
+}
