@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import json
+import sys
+from ruamel.yaml import YAML
+json.dump(YAML(typ="safe").load(sys.stdin), sys.stdout, indent=2)
+print()
