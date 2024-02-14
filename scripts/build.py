@@ -85,7 +85,16 @@ class AppRecipe:
 
 # FIXME: schema + validation
 def parse_yaml(recipe_file: str) -> AppRecipe:
-    """Parse recipe YAML."""
+    r"""
+    Parse recipe YAML.
+
+    >>> data = parse_yaml("recipes/me.hackerchick.catima.yml")
+    >>> data.repository
+    'https://github.com/CatimaLoyalty/Android.git'
+    >>> data.versions[0]
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', provisioning=Provisioning(build_tools=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None))
+
+    """
     with open(recipe_file, encoding="utf-8") as fh:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
@@ -118,11 +127,12 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
                        keep_apks: Optional[str] = None, verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with backend (e.g. podman/docker)."""
     result: Dict[str, Any] = dict(
-        appid=appid, version_code=None, version_name=None, tag=recipe.tag,
+        appid=appid, version_code=None, version_name=None, tag=recipe.tag, commit=None,
         recipe=recipe.for_json(), timestamp=int(time.time()), reproducible=None,
         error=None, build_log="", upstream_signed_apk_sha256=None,
         built_unsigned_apk_sha256=None, signature_copied_apk_sha256=None)
     try:
+        commit = result["commit"] = tag_to_commit(recipe.repository, recipe.tag)
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs, scripts = prepare_tmpdir(recipe, tmpdir)
             signed_sha, vercode, vername = download_apk(recipe, appid, tmpdir, verbose=verbose)
@@ -130,7 +140,7 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
                           upstream_signed_apk_sha256=signed_sha)
             if backend in (BuildBackend.PODMAN, BuildBackend.DOCKER):
                 pull_cmd = (backend.name.lower(), "pull", "--", recipe.provisioning.image)
-                run_cmd = podman_docker_cmd(recipe, backend, outputs=outputs, scripts=scripts)
+                run_cmd = podman_docker_cmd(recipe, backend, commit, outputs=outputs, scripts=scripts)
                 commands = [pull_cmd, run_cmd]
             else:
                 raise NotImplementedError(f"Unknown backend: {backend}")
@@ -194,11 +204,11 @@ def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
 
 
 # FIXME: configure timeout
-def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, *,
+def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *,
                       outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create podman/docker run command line from recipe."""
     env = []
-    for k, v in build_env(recipe).items():
+    for k, v in build_env(recipe, commit).items():
         env.extend(["--env", f"{k}={v}"])
     cmd = [
         "timeout 10m /scripts/provision-root.sh",
@@ -216,12 +226,13 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, *,
 
 
 # FIXME: incomplete
-def build_env(recipe: BuildRecipe) -> Dict[str, str]:
+def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
     """Create build env from recipe."""
     return dict(
         ANDROID_HOME="/opt/sdk",
         APP_REPOSITORY=recipe.repository,
         APP_TAG=recipe.tag,
+        APP_COMMIT=commit,
         APP_APK_URL=recipe.apk_url,
         PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
         PROVISIONING_CMDLINE_TOOLS_URL=recipe.provisioning.cmdline_tools.url,
@@ -311,7 +322,20 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
 
 
 def run_command(*args: str, verbose: bool = False) -> str:
-    """Run command and capture stdout + stderr."""
+    r"""
+    Run command and capture stdout + stderr.
+
+    >>> run_command("echo", "OK")
+    'OK\n'
+    >>> run_command("bash", "-c", "echo OK >&2")
+    'OK\n'
+    >>> try:
+    ...     run_command("false")
+    ... except subprocess.CalledProcessError as e:
+    ...     print(e)
+    Command '('false',)' returned non-zero exit status 1.
+
+    """
     if verbose:
         print(f"Running {' '.join(args)!r}...", file=sys.stderr)
     return subprocess.run(args, check=True, stdout=subprocess.PIPE,
@@ -332,12 +356,32 @@ def download_file(url: str, output: str) -> str:
 
 
 def sha256_file(filename: str) -> str:
-    """Calculate SHA-256 checksum of file."""
+    r"""
+    Calculate SHA-256 checksum of file.
+
+    >>> sha256_file("/dev/null")
+    'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+
+    """
     with open(filename, "rb") as fh:
         sha = hashlib.sha256()
         while chunk := fh.read(4096):
             sha.update(chunk)
         return sha.hexdigest()
+
+
+def tag_to_commit(repository: str, tag: str) -> str:
+    r"""
+    Get commit hash for tag.
+
+    >>> tag_to_commit("https://github.com/CatimaLoyalty/Android.git", "v2.27.0")
+    '84c343e41f4a09ee3fe6ee0924a3446ae325c4b7'
+
+    """
+    output = run_command("git", "ls-remote", "--", repository, tag)
+    if not output:
+        raise Error(f"tag not found: {tag}")
+    return output.split()[0]
 
 
 if __name__ == "__main__":
