@@ -182,6 +182,75 @@ Tag already present: '1.0.1'.
 
 </details>
 
+### make-index.py
+
+Processes each specified `/path/to/<appid>.json` rebuild log file and produces a
+JSON index on stdout.  This index maps each upstream APK's SHA-256 checksum to a
+summary of its rebuild results.
+
+NB: work in progress; output format may change.
+
+NB: ideally there are only rebuild results for the tag corresponding to the
+version code/name of the APK, but this cannot be guaranteed as it may have been
+attached to another tag (by mistake).
+
+<details>
+
+```bash
+$ scripts/make-index.py --help
+usage: make-index.py [-h] [-v] [LOG ...]
+
+make index
+
+positional arguments:
+  LOG            log
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose
+
+$ scripts/make-index.py -v logs/*.json
+Processing 'com.bnyro.translate'...
+Processing 'com.looker.droidify'...
+Processing 'me.hackerchick.catima'...
+Processing 'org.fossify.gallery'...
+Processing 'org.fossify.messages'...
+{
+  "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
+    {
+      "repository": "https://github.com/you-apps/TranslateYou.git",
+      "apk_url": "https://github.com/you-apps/TranslateYou/releases/download/v9.0/app-libre-release.apk",
+      "appid": "com.bnyro.translate",
+      "version_code": 40,
+      "version_name": "9.0",
+      "tag": "v9.0",
+      "commit": "3bbc2dbe09d8928529df00ebe9f46556aebc5146",
+      "timestamp": 1707876803,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  [...]
+  "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 132,
+      "version_name": "2.27.0",
+      "tag": "v2.27.0",
+      "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
+      "timestamp": 1707877480,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  [...]
+}
+```
+
+</details>
+
 ### provision-root.sh & provision.sh
 
 These scripts are used by `build.py` to provision the build environment (e.g. in
@@ -227,8 +296,8 @@ versions:
 The JSON rebuild logs in the `logs/` directory of this `git` repository form a
 transparency log of reproduction attempts.
 
-NB: this directory is only present on the (default) `log` branch, which is
-otherwise identical to the `master` branch.
+NB: this directory and `index.json` are only present on the (default) `log`
+branch, which is otherwise identical to the `master` branch.
 
 For example, the rebuild log for Catima looks like this:
 

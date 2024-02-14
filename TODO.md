@@ -8,7 +8,7 @@
 - [x] error if appid doesn't match APK
 - [x] log & clone commit using ls-remote
 - [x] split ABI support (w/ APK patterns)
-- [ ] index.json
+- [x] index.json
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
 - [ ] more apps

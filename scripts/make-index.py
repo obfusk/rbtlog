@@ -18,6 +18,23 @@ def load_log(log_file: str) -> Dict[Any, Any]:
 
 
 # FIXME: "last log" only?
+def process_log(log_file: str, data: Dict[Any, Any]) -> None:
+    """Process JSON log file; modifies data in-place!"""
+    for tag, logs in load_log(log_file)["tags"].items():
+        for log in logs:
+            sha256 = log["upstream_signed_apk_sha256"]
+            if sha256 is None:
+                continue
+            if sha256 not in data:
+                data[sha256] = []
+            recipe = log["recipe"]
+            entry = dict(repository=recipe["repository"], apk_url=recipe["apk_url"])
+            for k in ("appid", "version_code", "version_name", "tag",
+                      "commit", "timestamp", "reproducible", "error"):
+                entry[k] = log[k]
+            data[sha256].append(entry)
+
+
 def make_index(*log_files: str, verbose: bool = False) -> None:
     """Make JSON index from JSON logs."""
     data: Dict[Any, Any] = {}
@@ -25,19 +42,7 @@ def make_index(*log_files: str, verbose: bool = False) -> None:
         appid = os.path.splitext(os.path.basename(log_file))[0]
         if verbose:
             print(f"Processing {appid!r}...", file=sys.stderr)
-        for tag, logs in load_log(log_file)["tags"].items():
-            for log in logs:
-                sha256 = log["upstream_signed_apk_sha256"]
-                if sha256 is None:
-                    continue
-                if sha256 not in data:
-                    data[sha256] = []
-                recipe = log["recipe"]
-                entry = dict(repository=recipe["repository"], apk_url=recipe["apk_url"])
-                for k in ("appid", "version_code", "version_name", "tag",
-                          "commit", "timestamp", "reproducible", "error"):
-                    entry[k] = log[k]
-                data[sha256].append(entry)
+        process_log(log_file, data)
     json.dump(data, sys.stdout, indent=2)
     print()
 
