@@ -20,6 +20,7 @@
 
 # Nice to have
 
+- [ ] update-recipes: handle errors (skip but warn)
 - [ ] update-recipes: support more forges (gitlab, codeberg)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
