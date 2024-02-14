@@ -207,15 +207,15 @@ def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
 def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *,
                       outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create podman/docker run command line from recipe."""
-    env = []
-    for k, v in build_env(recipe, commit).items():
+    env, benv = [], build_env(recipe, commit)
+    for k, v in benv.items():
         env.extend(["--env", f"{k}={v}"])
     cmd = [
         "timeout 10m /scripts/provision-root.sh",
-        "cd /build",
-        "timeout 10m su build /scripts/provision.sh",
-        "cd /build/repo",
-        "timeout 20m su build /scripts/build.sh",
+        f"cd {benv['BUILD_HOME_DIR']}",
+        f"timeout 10m su {benv['BUILD_USER']} /scripts/provision.sh",
+        f"cd {benv['BUILD_REPO_DIR']}",
+        f"timeout 20m su {benv['BUILD_USER']} /scripts/build.sh",
     ]
     return (
         backend.name.lower(), "run", "--rm",
@@ -228,16 +228,21 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
 # FIXME: incomplete
 def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
     """Create build env from recipe."""
+    extra_packages = ()                                         # FIXME
     return dict(
         ANDROID_HOME="/opt/sdk",
         APP_REPOSITORY=recipe.repository,
         APP_TAG=recipe.tag,
         APP_COMMIT=commit,
         APP_APK_URL=recipe.apk_url,
+        BUILD_USER="build",                                     # FIXME
+        BUILD_HOME_DIR="/build",                                # FIXME
+        BUILD_REPO_DIR="/build/repo",                           # FIXME
         PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
         PROVISIONING_CMDLINE_TOOLS_URL=recipe.provisioning.cmdline_tools.url,
         PROVISIONING_CMDLINE_TOOLS_SHA256=recipe.provisioning.cmdline_tools.sha256,
-        PROVISIONING_JDK=recipe.provisioning.jdk)
+        PROVISIONING_JDK=recipe.provisioning.jdk,
+        PROVISIONING_EXTRA_PACKAGES=",".join(extra_packages))
 
 
 def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,

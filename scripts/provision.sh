@@ -12,6 +12,6 @@ rm /tmp/tools.zip
 export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/${PROVISIONING_CMDLINE_TOOLS_VERSION}/bin"
 ( yes || true ) | sdkmanager --sdk_root="${ANDROID_HOME}" --licenses
 
-git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" /build/repo
-cd /build/repo
+git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
+cd "${BUILD_REPO_DIR}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
