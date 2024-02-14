@@ -5,20 +5,23 @@
 - [x] update-recipes .py + .yml
 - [x] switch to ruamel.yaml
 - [x] finish README
-- [ ] log & clone commit using ls-remote
-- [ ] error if appid doesn't match APK
-- [ ] split ABI support (w/ APK patterns)
+- [x] error if appid doesn't match APK
+- [x] log & clone commit using ls-remote
+- [x] split ABI support (w/ APK patterns)
 - [ ] index.json
-- [ ] more apps
 - [ ] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
+- [ ] more apps
+- [ ] github issues for all TODOs
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [ ] doc/unit/regression/etc. tests
-- [ ] github issues for all TODOs
+- [ ] make & use a proper release of repro-apk binres
 
 # Nice to have
 
+- [ ] update-recipes: handle errors (skip but warn)
+- [ ] update-recipes: support more forges (gitlab, codeberg)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads

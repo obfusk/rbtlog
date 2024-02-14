@@ -44,5 +44,5 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
         python3 -m pip install flake8 pylint mypy types-{requests,PyYAML}
-    - name: Lint
-      run: make lint
+    - name: Test
+      run: make test
