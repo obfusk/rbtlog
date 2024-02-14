@@ -2,7 +2,7 @@ name: update log
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3 12 * * *'
+    - cron: '3 6 * * *'
 permissions:
   actions: none
   checks: none
