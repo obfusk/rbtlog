@@ -10,10 +10,10 @@
 - [x] split ABI support (w/ APK patterns)
 - [x] index.json
 - [x] JSON schema + validation for recipes
-- [ ] JSON schema + validation for logs
+- [x] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
+- [x] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] update modes: releases, tags, ...
-- [ ] provisioning: `build_env()` and `provision.sh` are incomplete
-- [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
+- [ ] JSON schema + validation for logs
 - [ ] more apps
 - [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests

@@ -10,6 +10,11 @@
       "type": "string",
       "pattern": "^https://.*\\.git$"
     },
+    "updates": {
+      "description": "mode to check for upstream updates",
+      "type": "string",
+      "pattern": "^(releases|tags:.*|manual)$"
+    },
     "versions": {
       "description": "build recipes per tag and APK",
       "type": "array",
@@ -42,11 +47,34 @@
                     "type": "string"
                   }
                 },
+                "build_home_dir": {
+                  "description": "home directory for the build user",
+                  "type": "string"
+                },
+                "build_repo_dir": {
+                  "description": "directory the repo is cloned to and the build is run in",
+                  "type": "string"
+                },
+                "build_user": {
+                  "description": "build user name",
+                  "type": "string"
+                },
                 "provisioning": {
                   "type": "object",
                   "properties": {
+                    "android_home": {
+                      "description": "android SDK directory",
+                      "type": "string"
+                    },
                     "build_tools": {
-                      "description": "optional Android SDK build-tools version (FIXME: unused)",
+                      "description": "optional Android SDK build-tools version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "cmake": {
+                      "description": "optional Android SDK cmake version",
                       "type": [
                         "string",
                         "null"
@@ -78,6 +106,13 @@
                       ],
                       "additionalProperties": false
                     },
+                    "extra_packages": {
+                      "description": "extra packages to install",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
                     "image": {
                       "description": "docker/podman image",
                       "type": "string"
@@ -87,28 +122,28 @@
                       "type": "string"
                     },
                     "ndk": {
-                      "description": "optional Android NDK version (FIXME: unused)",
+                      "description": "optional Android NDK version",
                       "type": [
                         "string",
                         "null"
                       ]
                     },
                     "platform": {
-                      "description": "optional Android SDK platform version (FIXME: unused)",
+                      "description": "optional Android SDK version",
                       "type": [
                         "string",
                         "null"
                       ]
                     },
                     "platform_tools": {
-                      "description": "optional Android SDK platform-tools version (FIXME: unused)",
+                      "description": "optional Android SDK platform-tools version",
                       "type": [
                         "string",
                         "null"
                       ]
                     },
                     "tools": {
-                      "description": "optional Android SDK tools version (FIXME: unused)",
+                      "description": "optional Android SDK tools version",
                       "type": [
                         "string",
                         "null"
@@ -116,8 +151,11 @@
                     }
                   },
                   "required": [
+                    "android_home",
                     "build_tools",
+                    "cmake",
                     "cmdline_tools",
+                    "extra_packages",
                     "image",
                     "jdk",
                     "ndk",
@@ -132,6 +170,9 @@
                 "apk_pattern",
                 "apk_url",
                 "build",
+                "build_home_dir",
+                "build_repo_dir",
+                "build_user",
                 "provisioning"
               ],
               "additionalProperties": false
@@ -148,6 +189,7 @@
   },
   "required": [
     "repository",
+    "updates",
     "versions"
   ],
   "additionalProperties": false
