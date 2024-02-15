@@ -11,10 +11,11 @@
 - [x] index.json
 - [x] JSON schema + validation for recipes
 - [ ] JSON schema + validation for logs
-- [ ] more apps
-- [ ] github issues for all TODOs
+- [ ] update modes: releases, tags, ...
 - [ ] provisioning: `build_env()` and `provision.sh` are incomplete
 - [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
+- [ ] more apps
+- [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests
 - [ ] make & use a proper release of repro-apk binres
 
