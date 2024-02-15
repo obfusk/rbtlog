@@ -10,11 +10,12 @@
 - [x] split ABI support (w/ APK patterns)
 - [x] index.json
 - [x] JSON schema + validation for recipes
+- [x] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
+- [x] provisioning: `build_env()` and `provision.sh` are incomplete
+- [ ] update modes: releases, tags, ...
 - [ ] JSON schema + validation for logs
 - [ ] more apps
 - [ ] github issues for all TODOs
-- [ ] provisioning: `build_env()` and `provision.sh` are incomplete
-- [ ] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [ ] doc/unit/regression/etc. tests
 - [ ] make & use a proper release of repro-apk binres
 

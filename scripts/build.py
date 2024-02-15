@@ -45,8 +45,11 @@ class Download:
 @dataclass(frozen=True)
 class Provisioning:
     """Provisioning data."""
+    android_home: str
     build_tools: Optional[str]
+    cmake: Optional[str]
     cmdline_tools: Download
+    extra_packages: Tuple[str, ...]
     image: str
     jdk: str
     ndk: Optional[str]
@@ -56,7 +59,8 @@ class Provisioning:
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
-            build_tools=self.build_tools, cmdline_tools=self.cmdline_tools.for_json(),
+            android_home=self.android_home, build_tools=self.build_tools, cmake=self.cmake,
+            cmdline_tools=self.cmdline_tools.for_json(), extra_packages=self.extra_packages,
             image=self.image, jdk=self.jdk, ndk=self.ndk, platform=self.platform,
             platform_tools=self.platform_tools, tools=self.tools)
 
@@ -69,18 +73,24 @@ class BuildRecipe:
     apk_pattern: str
     apk_url: str
     build: str
+    build_home_dir: str
+    build_repo_dir: str
+    build_user: str
     provisioning: Provisioning
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
             repository=self.repository, tag=self.tag, apk_pattern=self.apk_pattern,
-            apk_url=self.apk_url, build=self.build, provisioning=self.provisioning.for_json())
+            apk_url=self.apk_url, build=self.build, build_home_dir=self.build_home_dir,
+            build_repo_dir=self.build_repo_dir, build_user=self.build_user,
+            provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
 class AppRecipe:
     """App recipe."""
     repository: str
+    updates: str
     versions: Tuple[BuildRecipe, ...]
 
 
@@ -92,8 +102,10 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data = parse_yaml("recipes/me.hackerchick.catima.yml")
     >>> data.repository
     'https://github.com/CatimaLoyalty/Android.git'
+    >>> data.updates
+    'releases'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', provisioning=Provisioning(build_tools=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
@@ -110,13 +122,19 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                     apk_pattern=apk["apk_pattern"],
                     apk_url=apk["apk_url"].replace("$$TAG$$", tag),
                     build="".join(line + "\n" for line in apk["build"]),
+                    build_home_dir=apk["build_home_dir"],
+                    build_repo_dir=apk["build_repo_dir"],
+                    build_user=apk["build_user"],
                     provisioning=Provisioning(
+                        android_home=prov["android_home"],
                         build_tools=prov["build_tools"],
+                        cmake=prov["cmake"],
                         cmdline_tools=Download(
                             version=prov["cmdline_tools"]["version"],
                             url=prov["cmdline_tools"]["url"],
                             sha256=prov["cmdline_tools"]["sha256"],
                         ),
+                        extra_packages=tuple(prov["extra_packages"]),
                         image=prov["image"],
                         jdk=prov["jdk"],
                         ndk=prov["ndk"],
@@ -124,7 +142,8 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                         platform_tools=prov["platform_tools"],
                         tools=prov["tools"])
                 ))
-        return AppRecipe(repository=data["repository"], versions=tuple(versions))
+        return AppRecipe(repository=data["repository"], updates=data["updates"],
+                         versions=tuple(versions))
 
 
 # FIXME
@@ -230,24 +249,27 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
         "bash", "-c", " && ".join(cmd))
 
 
-# FIXME: incomplete
 def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
     """Create build env from recipe."""
-    extra_packages = ()                                         # FIXME
     return dict(
-        ANDROID_HOME="/opt/sdk",
+        ANDROID_HOME=recipe.provisioning.android_home,
         APP_REPOSITORY=recipe.repository,
         APP_TAG=recipe.tag,
         APP_COMMIT=commit,
-        APP_APK_URL=recipe.apk_url,
-        BUILD_USER="build",                                     # FIXME
-        BUILD_HOME_DIR="/build",                                # FIXME
-        BUILD_REPO_DIR="/build/repo",                           # FIXME
+        BUILD_USER=recipe.build_user,
+        BUILD_HOME_DIR=recipe.build_home_dir,
+        BUILD_REPO_DIR=recipe.build_repo_dir,
+        PROVISIONING_BUILD_TOOLS=recipe.provisioning.build_tools or "",
+        PROVISIONING_CMAKE=recipe.provisioning.cmake or "",
         PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
         PROVISIONING_CMDLINE_TOOLS_URL=recipe.provisioning.cmdline_tools.url,
         PROVISIONING_CMDLINE_TOOLS_SHA256=recipe.provisioning.cmdline_tools.sha256,
+        PROVISIONING_EXTRA_PACKAGES=",".join(recipe.provisioning.extra_packages),
         PROVISIONING_JDK=recipe.provisioning.jdk,
-        PROVISIONING_EXTRA_PACKAGES=",".join(extra_packages))
+        PROVISIONING_NDK=recipe.provisioning.ndk or "",
+        PROVISIONING_PLATFORM=recipe.provisioning.platform or "",
+        PROVISIONING_PLATFORM_TOOLS=recipe.provisioning.platform_tools or "",
+        PROVISIONING_TOOLS=recipe.provisioning.tools or "")
 
 
 def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,
