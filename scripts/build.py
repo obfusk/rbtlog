@@ -416,12 +416,22 @@ def tag_to_commit(repository: str, tag: str) -> str:
 
     >>> tag_to_commit("https://github.com/CatimaLoyalty/Android.git", "v2.27.0")
     '84c343e41f4a09ee3fe6ee0924a3446ae325c4b7'
+    >>> tag_to_commit("https://github.com/threema-ch/threema-android.git", "5.2.3")
+    '14388d856b28bdbe1417d0f92fed09567263c36e'
 
     """
-    output = run_command("git", "ls-remote", "--", repository, tag)
-    if not output:
-        raise Error(f"tag not found: {tag}")
-    return output.split()[0]
+    output = run_command("git", "ls-remote", "--tags", "--", repository)
+    refs = {}
+    for line in output.splitlines():
+        commit, ref = line.split("\t", 1)
+        refs[ref] = commit
+    tag_ref = f"refs/tags/{tag}"
+    peeled_ref = tag_ref + "^{}"
+    if peeled_ref in refs:
+        return refs[peeled_ref]
+    if tag_ref in refs:
+        return refs[tag_ref]
+    raise Error(f"tag not found: {tag}")
 
 
 if __name__ == "__main__":
