@@ -1,4 +1,18 @@
 {
+  "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.2.3l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 936,
+      "version_name": "5.2.3l",
+      "tag": "5.2.3",
+      "commit": "14388d856b28bdbe1417d0f92fed09567263c36e",
+      "timestamp": 1708120383,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
     {
       "repository": "https://github.com/you-apps/TranslateYou.git",
@@ -65,6 +79,20 @@
       "tag": "1.0.1",
       "commit": "38bc2ed8c1c1e002969b8cc344e0fd8a7d8e03dd",
       "timestamp": 1708030820,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
+    {
+      "repository": "https://github.com/LucasGGamerM/moshidon.git",
+      "apk_url": "https://github.com/LucasGGamerM/moshidon/releases/download/2.1.4+fork.104.moshinda/moshidon-fdroidRelease.apk",
+      "appid": "org.joinmastodon.android.moshinda",
+      "version_code": 104,
+      "version_name": "2.1.4+fork.104.moshinda",
+      "tag": "2.1.4+fork.104.moshinda",
+      "commit": "85b135fa34c76d24ce4430e389be78fc4485346e",
+      "timestamp": 1708120799,
       "reproducible": true,
       "error": null
     }
