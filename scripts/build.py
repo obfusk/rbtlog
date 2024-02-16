@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -112,15 +113,17 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
         versions = []
+        tag_pattern = data["updates"][5:] if data["updates"].startswith("tags:") else None
         for vsn in data["versions"]:
             tag = vsn["tag"]
             for apk in vsn["apks"]:
+                apk_url = url_with_replacements(apk["apk_url"], tag, tag_pattern)
                 prov = apk["provisioning"]
                 versions.append(BuildRecipe(
                     repository=data["repository"],
                     tag=tag,
                     apk_pattern=apk["apk_pattern"],
-                    apk_url=apk["apk_url"].replace("$$TAG$$", tag),
+                    apk_url=apk_url,
                     build="".join(line + "\n" for line in apk["build"]),
                     build_home_dir=apk["build_home_dir"],
                     build_repo_dir=apk["build_repo_dir"],
@@ -144,6 +147,15 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                 ))
         return AppRecipe(repository=data["repository"], updates=data["updates"],
                          versions=tuple(versions))
+
+
+def url_with_replacements(apk_url: str, tag: str, tag_pattern: Optional[str]) -> str:
+    """URL with $$TAG$$ $$TAG:1$$ etc. replaced."""
+    url = apk_url.replace("$$TAG$$", tag)
+    if tag_pattern and (m := re.fullmatch(tag_pattern, tag)):
+        for i, group in enumerate(m.groups("")):
+            url = url.replace(f"$$TAG:{i + 1}$$", group)
+    return url
 
 
 # FIXME
@@ -404,12 +416,22 @@ def tag_to_commit(repository: str, tag: str) -> str:
 
     >>> tag_to_commit("https://github.com/CatimaLoyalty/Android.git", "v2.27.0")
     '84c343e41f4a09ee3fe6ee0924a3446ae325c4b7'
+    >>> tag_to_commit("https://github.com/threema-ch/threema-android.git", "5.2.3")
+    '14388d856b28bdbe1417d0f92fed09567263c36e'
 
     """
-    output = run_command("git", "ls-remote", "--", repository, tag)
-    if not output:
-        raise Error(f"tag not found: {tag}")
-    return output.split()[0]
+    output = run_command("git", "ls-remote", "--tags", "--", repository)
+    refs = {}
+    for line in output.splitlines():
+        commit, ref = line.split("\t", 1)
+        refs[ref] = commit
+    tag_ref = f"refs/tags/{tag}"
+    peeled_ref = tag_ref + "^{}"
+    if peeled_ref in refs:
+        return refs[peeled_ref]
+    if tag_ref in refs:
+        return refs[tag_ref]
+    raise Error(f"tag not found: {tag}")
 
 
 if __name__ == "__main__":
