@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/obfusk/rbtlog/log/schemas/log-index.json",
+  "title": "rbtlog index",
+  "description": "rbtlog JSON index (index.json)",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^[0-9a-f]{64}$"
+  },
+  "additionalProperties": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "description": "git repository URL",
+          "type": "string",
+          "pattern": "^https://.*\\.git$"
+        },
+        "apk_url": {
+          "description": "APK download URL",
+          "type": "string",
+          "pattern": "^https://.*\\.apk$"
+        },
+        "appid": {
+          "description": "APK appid",
+          "type": "string"
+        },
+        "version_code": {
+          "description": "APK version code",
+          "type": "integer"
+        },
+        "version_name": {
+          "description": "APK version name",
+          "type": "string"
+        },
+        "tag": {
+          "description": "git tag",
+          "type": "string"
+        },
+        "commit": {
+          "description": "hash of the commit the tag points to",
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "timestamp": {
+          "description": "build timestamp",
+          "type": "integer"
+        },
+        "reproducible": {
+          "description": "reproducibility test result",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "error": {
+          "description": "error message",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "repository",
+        "apk_url",
+        "appid",
+        "version_code",
+        "version_name",
+        "tag",
+        "commit",
+        "timestamp",
+        "reproducible",
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
