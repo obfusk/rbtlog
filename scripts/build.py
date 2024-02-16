@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -112,15 +113,17 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
         versions = []
+        tag_pattern = data["updates"][5:] if data["updates"].startswith("tags:") else None
         for vsn in data["versions"]:
             tag = vsn["tag"]
             for apk in vsn["apks"]:
+                apk_url = url_with_replacements(apk["apk_url"], tag, tag_pattern)
                 prov = apk["provisioning"]
                 versions.append(BuildRecipe(
                     repository=data["repository"],
                     tag=tag,
                     apk_pattern=apk["apk_pattern"],
-                    apk_url=apk["apk_url"].replace("$$TAG$$", tag),
+                    apk_url=apk_url,
                     build="".join(line + "\n" for line in apk["build"]),
                     build_home_dir=apk["build_home_dir"],
                     build_repo_dir=apk["build_repo_dir"],
@@ -144,6 +147,15 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                 ))
         return AppRecipe(repository=data["repository"], updates=data["updates"],
                          versions=tuple(versions))
+
+
+def url_with_replacements(apk_url: str, tag: str, tag_pattern: Optional[str]) -> str:
+    """URL with $$TAG$$ $$TAG:1$$ etc. replaced."""
+    url = apk_url.replace("$$TAG$$", tag)
+    if tag_pattern and (m := re.fullmatch(tag_pattern, tag)):
+        for i, group in enumerate(m.groups("")):
+            url = url.replace(f"$$TAG:{i + 1}$$", group)
+    return url
 
 
 # FIXME
