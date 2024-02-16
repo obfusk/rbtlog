@@ -27,6 +27,7 @@ lint-scripts:
 	mypy --strict --disallow-any-unimported scripts/*.py
 
 lint-logs:
+	jsonschema -o pretty -i index.json schemas/log-index.json
 	set -e; for l in logs/*.json; do echo "$$l"; \
 	  jsonschema -o pretty -i "$$l" schemas/log.json; done
 
