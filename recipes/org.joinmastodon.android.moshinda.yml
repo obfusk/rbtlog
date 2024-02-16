@@ -1,14 +1,16 @@
 ---
-repository: https://github.com/CatimaLoyalty/Android.git
+repository: https://github.com/LucasGGamerM/moshidon.git
 updates: releases
 versions:
-  - tag: v2.27.0
+  - tag: 2.1.4+fork.104.moshinda
     apks:
-      - apk_pattern: app-release\.apk
-        apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
+      - apk_pattern: moshidon-fdroidRelease\.apk
+        apk_url: https://github.com/LucasGGamerM/moshidon/releases/download/$$TAG$$/moshidon-fdroidRelease.apk
         build:
-          - ./gradlew assembleRelease
-          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+          - touch local.properties  # FIXME
+          - ./gradlew assembleFdroidRelease
+          - find -name '*.apk'  # FIXME
+          - mv app/build/outputs/apk/fdroidRelease/moshidon-fdroidRelease-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
