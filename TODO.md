@@ -13,7 +13,7 @@
 - [x] provisioning: `{HOME,REPO}_DIR`, `cmake`, `extra_packages: []`
 - [x] provisioning: `build_env()` and `provision.sh` are incomplete
 - [x] update modes: releases, tags, ...
-- [ ] JSON schema + validation for logs
+- [x] JSON schema + validation for logs
 - [ ] more apps
 - [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests

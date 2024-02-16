@@ -46,3 +46,6 @@ jobs:
         python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
     - name: Test
       run: make test
+    - name: Lint logs
+      run: make lint-logs
+      if: github.ref == 'refs/heads/log'
