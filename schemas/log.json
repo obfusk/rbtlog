@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/obfusk/rbtlog/log/schemas/log.json",
+  "title": "rbtlog app rebuild log",
+  "description": "rbtlog JSON app rebuild log (logs/*.json)",
+  "type": "object",
+  "properties": {
+    "appid": {
+      "description": "APK appid",
+      "type": "string"
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "appid": {
+              "description": "APK appid",
+              "type": "string"
+            },
+            "version_code": {
+              "description": "APK version code",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "version_name": {
+              "description": "APK version name",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tag": {
+              "description": "git tag",
+              "type": "string"
+            },
+            "commit": {
+              "description": "hash of the commit the tag points to",
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "recipe": {
+              "type": "object",
+              "properties": {
+                "repository": {
+                  "description": "git repository URL",
+                  "type": "string",
+                  "pattern": "^https://.*\\.git$"
+                },
+                "tag": {
+                  "description": "git tag",
+                  "type": "string"
+                },
+                "apk_pattern": {
+                  "description": "regex to match against the release assets APK file names",
+                  "type": "string"
+                },
+                "apk_url": {
+                  "description": "APK download URL",
+                  "type": "string",
+                  "pattern": "^https://.*\\.apk$"
+                },
+                "build": {
+                  "description": "build recipe (lines of a bash script)",
+                  "type": "string"
+                },
+                "build_home_dir": {
+                  "description": "home directory for the build user",
+                  "type": "string"
+                },
+                "build_repo_dir": {
+                  "description": "directory the repo is cloned to and the build is run in",
+                  "type": "string"
+                },
+                "build_user": {
+                  "description": "build user name",
+                  "type": "string"
+                },
+                "provisioning": {
+                  "type": "object",
+                  "properties": {
+                    "android_home": {
+                      "description": "android SDK directory",
+                      "type": "string"
+                    },
+                    "build_tools": {
+                      "description": "optional Android SDK build-tools version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "cmake": {
+                      "description": "optional Android SDK cmake version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "cmdline_tools": {
+                      "description": "Android SDK cmdline-tools specification",
+                      "type": "object",
+                      "properties": {
+                        "version": {
+                          "description": "Android cmdline-tools version",
+                          "type": "string"
+                        },
+                        "url": {
+                          "description": "download URL",
+                          "type": "string",
+                          "pattern": "^https://.*$"
+                        },
+                        "sha256": {
+                          "description": "SHA-256 checksum (hex)",
+                          "type": "string",
+                          "pattern": "^[0-9a-f]{64}$"
+                        }
+                      },
+                      "required": [
+                        "version",
+                        "url",
+                        "sha256"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "extra_packages": {
+                      "description": "extra packages to install",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "image": {
+                      "description": "docker/podman image",
+                      "type": "string"
+                    },
+                    "jdk": {
+                      "description": "jdk package",
+                      "type": "string"
+                    },
+                    "ndk": {
+                      "description": "optional Android NDK version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "platform": {
+                      "description": "optional Android SDK version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "platform_tools": {
+                      "description": "optional Android SDK platform-tools version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "tools": {
+                      "description": "optional Android SDK tools version",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "android_home",
+                    "build_tools",
+                    "cmake",
+                    "cmdline_tools",
+                    "extra_packages",
+                    "image",
+                    "jdk",
+                    "ndk",
+                    "platform",
+                    "platform_tools",
+                    "tools"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "repository",
+                "tag",
+                "apk_pattern",
+                "apk_url",
+                "build",
+                "build_home_dir",
+                "build_repo_dir",
+                "build_user",
+                "provisioning"
+              ],
+              "additionalProperties": false
+            },
+            "timestamp": {
+              "description": "build timestamp",
+              "type": "integer"
+            },
+            "reproducible": {
+              "description": "reproducibility test result",
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "error": {
+              "description": "error message",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "build_log": {
+              "description": "build log",
+              "type": "string"
+            },
+            "upstream_signed_apk_sha256": {
+              "description": "SHA-256 checksum (hex) of upsteam APK",
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "built_unsigned_apk_sha256": {
+              "description": "SHA-256 checksum (hex) of built unsigned APK",
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "signature_copied_apk_sha256": {
+              "description": "SHA-256 checksum (hex) of APK with signature copied",
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "appid",
+            "version_code",
+            "version_name",
+            "tag",
+            "commit",
+            "recipe",
+            "timestamp",
+            "reproducible",
+            "error",
+            "build_log",
+            "upstream_signed_apk_sha256",
+            "built_unsigned_apk_sha256",
+            "signature_copied_apk_sha256"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "version_codes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "sha256": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "appid",
+    "tags",
+    "version_codes",
+    "sha256"
+  ],
+  "additionalProperties": false
+}
