@@ -391,6 +391,11 @@ Automatically runs `scripts/update-recipes.py -v recipes/*.yml` every day and
 creates a pull request with the changes.  The pull request is reviewed and
 signed before being merged into the `master` and `log` branches.
 
+## JSON Schemas
+
+There are JSON Schemas to validate the YAML recipes, JSON logs, and `index.json`
+in `schemas/`.
+
 ## Installing
 
 Everything but the dependencies is contained in the `git` repository.
