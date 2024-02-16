@@ -1,4 +1,18 @@
 {
+  "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.2.3l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 936,
+      "version_name": "5.2.3l",
+      "tag": "5.2.3",
+      "commit": "14388d856b28bdbe1417d0f92fed09567263c36e",
+      "timestamp": 1708105338,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
     {
       "repository": "https://github.com/you-apps/TranslateYou.git",
