@@ -95,7 +95,6 @@ class AppRecipe:
     versions: Tuple[BuildRecipe, ...]
 
 
-# FIXME: schema + validation
 def parse_yaml(recipe_file: str) -> AppRecipe:
     r"""
     Parse recipe YAML.
