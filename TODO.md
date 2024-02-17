@@ -22,23 +22,28 @@
 
 # Nice to have
 
+- [x] configure paths
 - [ ] update-recipes: handle errors (skip but warn)
 - [ ] update-recipes: support more forges (gitlab, codeberg)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads
 - [ ] configure timeouts
-- [ ] configure paths
 - [ ] more build backends (libvirt, debvm)
 - [ ] more CI backends (gitlab, codeberg)
 - [ ] ansible playbook for e.g. VPS
 - [ ] building (random) batches (of older releases)
+- [ ] build queue
+- [ ] decentralised rebuilders: share recipes & sync workload
 - [ ] scan for blobs / proprietary deps (e.g. in gradle files)
 - [ ] security improvements
 - [ ] provisioning: non-debian images
 - [ ] get rid of "type: ignore" if possible
 - [ ] automated check for latest cmdline-tools
 - [ ] ability to use SDK rebuilds
+- [ ] run update-log on PRs (unless head matches create-pull-request/)
+- [ ] git verify-commit/tag if `keys/<appid>.asc`
+- [ ] security policy, CoC
 
 # Maybe
 
