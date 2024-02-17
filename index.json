@@ -153,6 +153,20 @@
       "error": null
     }
   ],
+  "8d4a522c3d232a5e0d71eabd928e2c0665b4f1dfd40de4a66f63424bc237f6dd": [
+    {
+      "repository": "https://github.com/FossifyOrg/Phone.git",
+      "apk_url": "https://github.com/FossifyOrg/Phone/releases/download/1.0.0/phone-1-foss-release.apk",
+      "appid": "org.fossify.phone",
+      "version_code": 1,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "28826651919880142f1dd5b8b1fdb4ea7ec3b45f",
+      "timestamp": 1708180673,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
