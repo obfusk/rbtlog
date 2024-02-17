@@ -41,6 +41,20 @@
       "error": null
     }
   ],
+  "f44ed1ed1951fc8cdefd9caf8f95bef3968e928582c5793db9c77790bdc5b41f": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.22/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 18,
+      "version_name": "0.6.22",
+      "tag": "v0.6.22",
+      "commit": "03337ce4ec6b9fc43992a827f9452ade8dd02b27",
+      "timestamp": 1708150115,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
     {
       "repository": "https://github.com/CatimaLoyalty/Android.git",
@@ -51,6 +65,48 @@
       "tag": "v2.27.0",
       "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
       "timestamp": 1708030207,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "54c4ea8595f269f7f9b07cb43fbd55123271fdf0f506371001dce235ef8c3e9e": [
+    {
+      "repository": "https://github.com/FossifyOrg/Calendar.git",
+      "apk_url": "https://github.com/FossifyOrg/Calendar/releases/download/1.0.2/calendar-3-foss-release.apk",
+      "appid": "org.fossify.calendar",
+      "version_code": 3,
+      "version_name": "1.0.2",
+      "tag": "1.0.2",
+      "commit": "830f96c1a293cf7226d39fdf963cabe1c1a913aa",
+      "timestamp": 1708150531,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "568ac7597064bdaec690571a2e5d263441f4cc495ca220a90015a9922a875e72": [
+    {
+      "repository": "https://github.com/FossifyOrg/Contacts.git",
+      "apk_url": "https://github.com/FossifyOrg/Contacts/releases/download/1.0.1/contacts-2-foss-release.apk",
+      "appid": "org.fossify.contacts",
+      "version_code": 2,
+      "version_name": "1.0.1",
+      "tag": "1.0.1",
+      "commit": "9a1bfb076e896de253fe962b4a55e5608ad85cbe",
+      "timestamp": 1708151010,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "4959e64475f9687ef022a2ea7a7235bb787be2f95ad25e07da3ba3eb14918d1b": [
+    {
+      "repository": "https://github.com/FossifyOrg/File-Manager.git",
+      "apk_url": "https://github.com/FossifyOrg/File-Manager/releases/download/1.0.0/file-manager-1-foss-release.apk",
+      "appid": "org.fossify.filemanager",
+      "version_code": 1,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "feef6998a0fc79aa859f54699d783df4f0a0c147",
+      "timestamp": 1708151274,
       "reproducible": true,
       "error": null
     }
@@ -80,6 +136,20 @@
       "commit": "38bc2ed8c1c1e002969b8cc344e0fd8a7d8e03dd",
       "timestamp": 1708030820,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "57b6aa6655d6b981cdf48075cbdbc4b7718bbf00244ea186171a17eb9d18836e": [
+    {
+      "repository": "https://github.com/FossifyOrg/Music-Player.git",
+      "apk_url": "https://github.com/FossifyOrg/Music-Player/releases/download/1.0.0/musicplayer-1-foss-release.apk",
+      "appid": "org.fossify.musicplayer",
+      "version_code": 1,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "fe002ed478cd6c3617257e5460102c2654d9a5e5",
+      "timestamp": 1708151706,
+      "reproducible": false,
       "error": null
     }
   ],
