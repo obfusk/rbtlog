@@ -1,5 +1,6 @@
 {
   "name": "obfusk's rbtlog",
   "description": "rbtlog (Reproducible Builds Transparency Log) rebuilder for Android APKs run by obfusk (Fay Stegerman)",
-  "link": "https://github.com/obfusk/rbtlog"
+  "link": "https://github.com/obfusk/rbtlog",
+  "key_id": "C8EA133B41208D0BBA887452743E6469A1E8FF4E"
 }
