@@ -303,8 +303,9 @@ versions:
 The JSON rebuild logs in the `logs/` directory of this `git` repository form a
 transparency log of reproduction attempts.
 
-NB: this directory and `index.json` are only present on the (default) `log`
-branch, which is otherwise identical to the `master` branch.
+NB: this directory, `index.json`, and `about.json` are only present on
+the (default) `log` branch, which is otherwise identical to the
+`master` branch.
 
 For example, the rebuild log for Catima looks like this:
 

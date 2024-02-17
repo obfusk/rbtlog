@@ -14,6 +14,7 @@
 - [x] provisioning: `build_env()` and `provision.sh` are incomplete
 - [x] update modes: releases, tags, ...
 - [x] JSON schema + validation for logs
+- [x] about.json (name, description, link)
 - [ ] more apps
 - [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests
