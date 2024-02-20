@@ -20,7 +20,21 @@ from ruamel.yaml import YAML
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or None
 
+CODEBERG_DOT_ORG = "codeberg.org"
+GITHUB_DOT_COM = "github.com"
+GITLAB_DOT_COM = "gitlab.com"
+
+# host, namespace, project
+GITEA_RELEASE = "https://{}/api/v1/repos/{}/{}/releases/latest"
+# namespace, project
 GITHUB_LATEST_RELEASE = "https://api.github.com/repos/{}/{}/releases/latest"
+# host, namespace, project
+GITLAB_LATEST_RELEASE = "https://{}/api/v4/projects/{}%2F{}/releases/permalink/latest"
+
+# host, namespace, project, upload
+GITLAB_UPLOAD = "https://{}/{}/{}/uploads/{}"
+# hash/filename
+GITLAB_UPLOAD_RX = re.compile(r"\(/uploads/([0-9a-f]{32}/[^/)]+)\)")
 
 
 class Error(Exception):
@@ -33,20 +47,75 @@ def latest_release(repository: str, apk_patterns: List[str], *,
     if repository.endswith(".git"):
         repository = repository[:-4]
     url = urllib.parse.urlparse(repository)
-    apk_urls = {}
-    if url.hostname == "github.com":
-        user, repo = url.path.strip("/").split("/")
-        data = github_latest_release(user, repo, verbose=verbose)
-        tag = data["tag_name"]
-        for apk_pattern in apk_patterns:
-            for asset in data["assets"]:
-                if re.fullmatch(apk_pattern, asset["name"]):
-                    apk_urls[apk_pattern] = asset["browser_download_url"]
-                    break
+    if url.hostname == CODEBERG_DOT_ORG:
+        tag, apk_urls = latest_release_gitea(url, apk_patterns, verbose=verbose)
+    elif url.hostname == GITHUB_DOT_COM:
+        tag, apk_urls = latest_release_github(url, apk_patterns, verbose=verbose)
+    elif url.hostname == GITLAB_DOT_COM:
+        tag, apk_urls = latest_release_gitlab(url, apk_patterns, verbose=verbose)
     else:
         raise NotImplementedError(f"Unsupported forge: {url.hostname}")
     if not set(apk_urls) == set(apk_patterns):
         raise Error("could not find all APK assets")
+    return tag, apk_urls
+
+
+# FIXME: self-hosted, gitea vs forgejo
+def latest_release_gitea(url: urllib.parse.ParseResult, apk_patterns: List[str], *,
+                         verbose: bool = False) -> Tuple[str, Dict[str, str]]:
+    """Get latest release tag & APK URLs from Gitea/Forgejo."""
+    namespace, project = url.path.strip("/").split("/")
+    assert url.hostname is not None
+    data = gitea_latest_release(url.hostname, namespace, project, verbose=verbose)
+    tag = data["tag_name"]
+    apk_urls = {}
+    for apk_pattern in apk_patterns:
+        for asset in data["assets"]:
+            if re.fullmatch(apk_pattern, asset["name"]):
+                apk_urls[apk_pattern] = asset["browser_download_url"]
+                break
+    return tag, apk_urls
+
+
+def latest_release_github(url: urllib.parse.ParseResult, apk_patterns: List[str], *,
+                          verbose: bool = False) -> Tuple[str, Dict[str, str]]:
+    """Get latest release tag & APK URLs from GitHub."""
+    namespace, project = url.path.strip("/").split("/")
+    data = github_latest_release(namespace, project, verbose=verbose)
+    tag = data["tag_name"]
+    apk_urls = {}
+    for apk_pattern in apk_patterns:
+        for asset in data["assets"]:
+            if re.fullmatch(apk_pattern, asset["name"]):
+                apk_urls[apk_pattern] = asset["browser_download_url"]
+                break
+    return tag, apk_urls
+
+
+# FIXME: self-hosted
+def latest_release_gitlab(url: urllib.parse.ParseResult, apk_patterns: List[str], *,
+                          verbose: bool = False) -> Tuple[str, Dict[str, str]]:
+    """Get latest release tag & APK URLs from GitLab."""
+    namespace, project = url.path.strip("/").split("/")
+    assert url.hostname is not None
+    data = gitlab_latest_release(url.hostname, namespace, project, verbose=verbose)
+    tag = data["tag_name"]
+    apk_urls = {}
+    for apk_pattern in apk_patterns:
+        for asset in data["assets"]["links"]:
+            if re.fullmatch(apk_pattern, asset["name"]):
+                apk_urls[apk_pattern] = asset["direct_asset_url"]
+                break
+            asset_url = urllib.parse.urlparse(asset["direct_asset_url"])
+            if re.fullmatch(apk_pattern, asset_url.path.rsplit("/", 1)[-1]):
+                apk_urls[apk_pattern] = asset["direct_asset_url"]
+                break
+        if apk_pattern in apk_urls:
+            continue
+        for upload in GITLAB_UPLOAD_RX.findall(data["description"]):
+            if re.fullmatch(apk_pattern, upload.rsplit("/", 1)[-1]):
+                apk_urls[apk_pattern] = GITLAB_UPLOAD.format(url.hostname, namespace, project, upload)
+                break
     return tag, apk_urls
 
 
@@ -66,14 +135,38 @@ def latest_tag(repository: str, tag_pattern: str, *, verbose: bool = False) -> s
     raise Error(f"could not find a tag matching pattern {tag_pattern}")
 
 
+# FIXME: retry, configure timeout, gitea vs forgejo
+def gitea_latest_release(host: str, namespace: str, project: str, *,
+                         verbose: bool = False) -> Dict[Any, Any]:
+    """Get latest release from Gitea/Forgejo API."""
+    url = GITEA_RELEASE.format(host, namespace, project)
+    if verbose:
+        print(f"Checking {url!r}...", file=sys.stderr)
+    with requests.get(url, timeout=60) as response:
+        response.raise_for_status()
+        return response.json()      # type: ignore[no-any-return]
+
+
 # FIXME: retry, configure timeout
-def github_latest_release(user: str, repo: str, *, verbose: bool = False) -> Dict[Any, Any]:
+def github_latest_release(namespace: str, project: str, *, verbose: bool = False) -> Dict[Any, Any]:
     """Get latest release from GitHub API."""
-    url = GITHUB_LATEST_RELEASE.format(user, repo)
+    url = GITHUB_LATEST_RELEASE.format(namespace, project)
     headers = dict(Authorization=f"token {GITHUB_TOKEN}") if GITHUB_TOKEN else {}
     if verbose:
         print(f"Checking {url!r}...", file=sys.stderr)
     with requests.get(url, headers=headers, timeout=60) as response:
+        response.raise_for_status()
+        return response.json()      # type: ignore[no-any-return]
+
+
+# FIXME: retry, configure timeout, token (!?)
+def gitlab_latest_release(host: str, namespace: str, project: str, *,
+                          verbose: bool = False) -> Dict[Any, Any]:
+    """Get latest release from GitLab API."""
+    url = GITLAB_LATEST_RELEASE.format(host, namespace, project)
+    if verbose:
+        print(f"Checking {url!r}...", file=sys.stderr)
+    with requests.get(url, timeout=60) as response:
         response.raise_for_status()
         return response.json()      # type: ignore[no-any-return]
 
