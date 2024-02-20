@@ -167,6 +167,20 @@
       "error": null
     }
   ],
+  "6af36d28dc1d1196f94fc0d0014468c65b564415ab69d6b6bd21c46f51130982": [
+    {
+      "repository": "https://github.com/FossifyOrg/Voice-Recorder.git",
+      "apk_url": "https://github.com/FossifyOrg/Voice-Recorder/releases/download/1.0.0/voicerecorder-1-foss-release.apk",
+      "appid": "org.fossify.voicerecorder",
+      "version_code": 1,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "ab41e541f0e8cb46e816e980a28c06b79bb54dd9",
+      "timestamp": 1708409322,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp235ytiah/outputs:/outputs', '--volume', '/tmp/tmp235ytiah/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/FossifyOrg/Voice-Recorder.git', '--env', 'APP_TAG=1.0.0', '--env', 'APP_COMMIT=ab41e541f0e8cb46e816e980a28c06b79bb54dd9', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
@@ -178,6 +192,20 @@
       "commit": "85b135fa34c76d24ce4430e389be78fc4485346e",
       "timestamp": 1708120799,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "e4990b0b717f6095c9ecf5ff939d5697436b833e8f8ebf3d4cfd8e79da5f08c0": [
+    {
+      "repository": "https://github.com/TeamNewPipe/NewPipe.git",
+      "apk_url": "https://github.com/TeamNewPipe/NewPipe/releases/download/v0.26.1/NewPipe_v0.26.1.apk",
+      "appid": "org.schabi.newpipe",
+      "version_code": 996,
+      "version_name": "0.26.1",
+      "tag": "v0.26.1",
+      "commit": "49429ff40a93662ccf719794fe9747a3c56bbd36",
+      "timestamp": 1708409412,
+      "reproducible": false,
       "error": null
     }
   ]
