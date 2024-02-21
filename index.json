@@ -41,6 +41,34 @@
       "error": null
     }
   ],
+  "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
+    {
+      "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
+      "apk_url": "https://gitlab.com/sunilpaulmathew/izzyondroid/uploads/f27ce65d893d97b49b8a0a599bbe743e/app-release.apk",
+      "appid": "in.sunilpaulmathew.izzyondroid",
+      "version_code": 11,
+      "version_name": "v0.11",
+      "tag": "v0.11",
+      "commit": "21e6d4fe10d378eb7d2eb771607b056ae0599ca3",
+      "timestamp": 1708495720,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "c96e41500f5105400896049ec51ba84dd4cad6ff91759900c64a935e6073bff9": [
+    {
+      "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
+      "apk_url": "https://gitlab.com/sunilpaulmathew/izzyondroid/uploads/61adb1ccef59d8b27b188f834a089d55/app-release.apk",
+      "appid": "in.sunilpaulmathew.izzyondroid",
+      "version_code": 12,
+      "version_name": "v0.12",
+      "tag": "v0.12",
+      "commit": "f0b5ebe6aa5b78a09d91821965f48b8aad655d11",
+      "timestamp": 1708495863,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmppdif6a9k/outputs:/outputs', '--volume', '/tmp/tmppdif6a9k/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://gitlab.com/sunilpaulmathew/izzyondroid.git', '--env', 'APP_TAG=v0.12', '--env', 'APP_COMMIT=f0b5ebe6aa5b78a09d91821965f48b8aad655d11', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "f44ed1ed1951fc8cdefd9caf8f95bef3968e928582c5793db9c77790bdc5b41f": [
     {
       "repository": "https://github.com/fast4x/RiMusic.git",
