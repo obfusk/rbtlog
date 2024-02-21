@@ -44,6 +44,7 @@
 - [ ] run update-log on PRs (unless head matches create-pull-request/)
 - [ ] git verify-commit/tag if `keys/<appid>.asc`
 - [ ] security policy, CoC
+- [ ] detect repo moves & log url history
 
 # Maybe
 
