@@ -7,4 +7,4 @@ idna==3.6
 requests==2.31.0
 ruamel.yaml==0.18.6
 ruamel.yaml.clib==0.2.8
-urllib3==2.2.0
+urllib3==2.2.1
