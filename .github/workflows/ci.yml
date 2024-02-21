@@ -20,32 +20,32 @@ jobs:
     strategy:
       matrix:
         python-version:
-        - '3.8'
-        - '3.9'
-        - '3.10'
-        - '3.11'
-        - '3.12'
-      # - '3.13.0-alpha - 3.13'
-        - pypy3.8
-        - pypy3.9
-        - pypy3.10
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
+        # - '3.13.0-alpha - 3.13'
+          - pypy3.8
+          - pypy3.9
+          - pypy3.10
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        persist-credentials: false
-        submodules: true
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt
-        python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
-    - name: Test
-      run: make test
-    - name: Lint logs
-      run: make lint-logs
-      if: github.ref == 'refs/heads/log'
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: true
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
+      - name: Test
+        run: make test
+      - name: Lint logs
+        run: make lint-logs
+        if: github.ref == 'refs/heads/log'
