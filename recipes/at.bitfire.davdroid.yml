@@ -1,0 +1,64 @@
+---
+repository: https://github.com/bitfireAT/davx5-ose.git
+updates: releases
+versions:
+  - tag: v4.3.12.1-ose
+    apks:
+      - apk_pattern: davx5-ose-([\d.]+)-ose-release.apk
+        apk_url: https://github.com/bitfireAT/davx5-ose/releases/download/v4.3.12.1-ose/davx5-ose-4.3.12.1-ose-release.apk
+        build:
+          - sed 's/configuration-cache=true/configuration-cache=false/' -i gradle.properties
+          - sed 's/System.currentTimeMillis()/1703516849127/' -i app/build.gradle
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - ./gradlew -PaboutLibraries.exportPath=src/main/res/raw/ app:exportLibraryDefinitions
+          - sed -r 's/"generated":"[^"]*"/"generated":"2023-12-25T15:07:27.83Z"/' -i app/src/main/res/raw/aboutlibraries.json
+          - ./gradlew assembleOseRelease
+          - mv app/build/outputs/apk/ose/release/davx5-ose-*-ose-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+  - tag: v4.3.13-ose
+    apks:
+      - apk_pattern: davx5-ose-([\d.]+)-ose-release.apk
+        apk_url: https://github.com/bitfireAT/davx5-ose/releases/download/v4.3.13-ose/davx5-ose-4.3.13-ose-release.apk
+        build:
+          - sed 's/configuration-cache=true/configuration-cache=false/' -i gradle.properties
+          - sed 's/System.currentTimeMillis()/1707682679609/' -i app/build.gradle
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - ./gradlew -PaboutLibraries.exportPath=src/main/res/raw/ app:exportLibraryDefinitions
+          - sed -r 's/"generated":"[^"]*"/"generated":"2024-02-11T20:17:58.392Z"/' -i app/src/main/res/raw/aboutlibraries.json
+          - ./gradlew assembleOseRelease
+          - mv app/build/outputs/apk/ose/release/davx5-ose-*-ose-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
