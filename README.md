@@ -16,6 +16,22 @@ transparency log for Android APKs.  Its `git` repository contains:
 - [Rebuild Logs](#rebuild-logs) forming a transparency log of reproduction attempts.
 - [GitHub Actions workflows](#github-actions-workflows) to automate everything.
 
+## Security
+
+The current build setup only supports building inside a container (using
+`podman` or `docker`), which does not provide the isolation of a full VM (though
+hopefully `libvirt`/`debvm` support will be added eventually).  There are some
+safeguards against trivial container breakouts, rootless `podman` is supported
+and recommended, and the build runs with as few privileges as possible inside
+the container, but there are no guarantees.  GitHub Actions uses ephemeral VMs,
+which does reduce the risk somewhat when using that to build.
+
+Commits should always be reviewed and signed using the key specified in
+`about.json` (which the build infrastructure should absolutely not have access
+to).  Anyone running their own rebuilder instance should evaluate the risks
+involved.  We do not recommend building untrusted apps without further
+safeguards.
+
 ## Scripts
 
 The scripts in `scripts/` provide the rebuilder component.
