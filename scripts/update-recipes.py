@@ -205,7 +205,7 @@ def append_latest_version(recipe: Dict[Any, Any], tag: str,
     return True
 
 
-def update_recipes(*recipes: str, verbose: bool = False) -> None:
+def update_recipes(*recipes: str, continue_on_errors: bool = False, verbose: bool = False) -> bool:
     """Update recipes."""
     if verbose and GITHUB_TOKEN:
         print("Using $GITHUB_TOKEN.", file=sys.stderr)
@@ -220,30 +220,38 @@ def update_recipes(*recipes: str, verbose: bool = False) -> None:
             print(f"Updates mode: {updates!r}.", file=sys.stderr)
         if updates == "manual":
             continue
-        if updates == "releases":
-            apk_patterns = [apk["apk_pattern"] for apk in recipe["versions"][-1]["apks"]]
-            tag, apk_urls = latest_release(repository, apk_patterns, verbose=verbose)
-            if verbose:
-                for apk_url in apk_urls.values():
-                    print(f"Found tag {tag!r} with APK URL {apk_url!r}.", file=sys.stderr)
-        elif updates.startswith("tags:"):
-            tag = latest_tag(repository, updates[5:], verbose=verbose)
-            apk_urls = None
-            if verbose:
-                print(f"Found tag {tag!r}.", file=sys.stderr)
-        else:
-            raise NotImplementedError(f"Unsupported updates mode: {updates}")
-        if append_latest_version(recipe, tag, apk_urls):
-            save_recipe(recipe_file, recipe)
-        elif verbose:
-            print(f"Tag already present: {tag!r}.", file=sys.stderr)
+        try:
+            if updates == "releases":
+                apk_patterns = [apk["apk_pattern"] for apk in recipe["versions"][-1]["apks"]]
+                tag, apk_urls = latest_release(repository, apk_patterns, verbose=verbose)
+                if verbose:
+                    for apk_url in apk_urls.values():
+                        print(f"Found tag {tag!r} with APK URL {apk_url!r}.", file=sys.stderr)
+            elif updates.startswith("tags:"):
+                tag = latest_tag(repository, updates[5:], verbose=verbose)
+                apk_urls = None
+                if verbose:
+                    print(f"Found tag {tag!r}.", file=sys.stderr)
+            else:
+                raise NotImplementedError(f"Unsupported updates mode: {updates}")
+            if append_latest_version(recipe, tag, apk_urls):
+                save_recipe(recipe_file, recipe)
+            elif verbose:
+                print(f"Tag already present: {tag!r}.", file=sys.stderr)
+        except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
+            print(f"Error: {e}", file=sys.stderr)
+            if not continue_on_errors:
+                return False
+    return True
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="update recipes")
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("--continue-on-errors", action="store_true", help="continue on errors")
     parser.add_argument("recipes", metavar="RECIPE", nargs="*", help="recipe")
     args = parser.parse_args()
-    update_recipes(*args.recipes, verbose=args.verbose)
+    if not update_recipes(*args.recipes, continue_on_errors=args.continue_on_errors, verbose=args.verbose):
+        sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :

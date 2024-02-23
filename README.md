@@ -171,16 +171,17 @@ new entry in the recipe (unless that tag already has an entry).
 
 ```bash
 $ scripts/update-recipes.py --help
-usage: update-recipes.py [-h] [-v] [RECIPE ...]
+usage: update-recipes.py [-h] [-v] [--continue-on-errors] [RECIPE ...]
 
 update recipes
 
 positional arguments:
-  RECIPE         recipe
+  RECIPE                recipe
 
 options:
-  -h, --help     show this help message and exit
+  -h, --help            show this help message and exit
   -v, --verbose
+  --continue-on-errors  continue on errors
 
 $ scripts/update-recipes.py -v recipes/*.yml
 Updating 'me.hackerchick.catima'...

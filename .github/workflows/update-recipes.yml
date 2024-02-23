@@ -35,7 +35,7 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
       - name: Update recipes
-        run: python3 scripts/update-recipes.py -v recipes/*.yml
+        run: python3 scripts/update-recipes.py -v --continue-on-errors recipes/*.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create pull request
