@@ -55,6 +55,20 @@
       "error": null
     }
   ],
+  "aa8512fc3e02f0585dc435628e3d5fdc7af306adae4130155c801fcba4f07639": [
+    {
+      "repository": "https://github.com/TeamAmaze/AmazeFileManager.git",
+      "apk_url": "https://github.com/TeamAmaze/AmazeFileManager/releases/download/v3.10/app-fdroid-release.apk",
+      "appid": "com.amaze.filemanager",
+      "version_code": 121,
+      "version_name": "3.10",
+      "tag": "v3.10",
+      "commit": "7136ff3e796507310e7173308e60dab566691da4",
+      "timestamp": 1708728728,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
     {
       "repository": "https://github.com/you-apps/TranslateYou.git",
@@ -291,6 +305,20 @@
       "timestamp": 1708409322,
       "reproducible": null,
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp235ytiah/outputs:/outputs', '--volume', '/tmp/tmp235ytiah/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/FossifyOrg/Voice-Recorder.git', '--env', 'APP_TAG=1.0.0', '--env', 'APP_COMMIT=ab41e541f0e8cb46e816e980a28c06b79bb54dd9', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
+  "ec29841d32238b451ae99bc68e48de3f80386f2c38edb3c22fabc0e90eadc215": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.0.8/floccus-build-v5.0.8.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5000008,
+      "version_name": "5.0.8",
+      "tag": "v5.0.8",
+      "commit": "39571374e6110409eb8778e5eda36360fc0736b0",
+      "timestamp": 1708729055,
+      "reproducible": true,
+      "error": null
     }
   ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
