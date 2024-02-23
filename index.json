@@ -181,6 +181,20 @@
       "error": null
     }
   ],
+  "1705338b64b1691847eda2d549c15e56af7ddca481528deb6acc270bef750d27": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.23/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 19,
+      "version_name": "0.6.23",
+      "tag": "v0.6.23",
+      "commit": "15add7422f299d9363b4d297d3c85d43a3b4a6b9",
+      "timestamp": 1708730210,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
     {
       "repository": "https://github.com/CatimaLoyalty/Android.git",
