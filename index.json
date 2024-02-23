@@ -111,6 +111,20 @@
       "error": null
     }
   ],
+  "4357021180c6b7b8e6d8c023edda414c6c4cdb8e30eedef89fe134194696377f": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2162/FairEmail-v1.2162a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2162,
+      "version_name": "1.2162",
+      "tag": "1.2162",
+      "commit": "774c4b67a5b9953e1c9d4686db2c0f1bd2924cb7",
+      "timestamp": 1708720280,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
