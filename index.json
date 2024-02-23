@@ -83,6 +83,34 @@
       "error": null
     }
   ],
+  "118ae83d5c5d63835b8c3188401aecda25584c159fa791aded54f2f0c3fa27dd": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Backup.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Backup/releases/download/8.3.6/Neo_Backup_836_release.apk",
+      "appid": "com.machiav3lli.backup",
+      "version_code": 8316,
+      "version_name": "8.3.6",
+      "tag": "8.3.6",
+      "commit": "6c5845cccea5343f29703336e839cd9f68bdcdcc",
+      "timestamp": 1708668533,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "3177e7a64564d7e19b01a0dfc8e60fe3b5ce347eb76b47b4227431d70c8702bb": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Store.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Store/releases/download/0.9.15/Neo-Store-release.apk",
+      "appid": "com.machiav3lli.fdroid",
+      "version_code": 927,
+      "version_name": "0.9.15",
+      "tag": "0.9.15",
+      "commit": "3fc4d031cf3bcb2ed7f0a386f12690ae6f00e091",
+      "timestamp": 1708668921,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
