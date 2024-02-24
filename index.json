@@ -139,6 +139,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "5dbbf8e63ad8f454026394cda7d66ea2360a085f728f68d8bc12c8cafe7d380d": [
+    {
+      "repository": "https://github.com/WrichikBasu/ShakeAlarmClock.git",
+      "apk_url": "https://github.com/WrichikBasu/ShakeAlarmClock/releases/download/v4.2.1/ShakeAlarmClock_v4.2.1.apk",
+      "appid": "in.basulabs.shakealarmclock",
+      "version_code": 36,
+      "version_name": "4.2.1",
+      "tag": "v4.2.1",
+      "commit": "43b451f27128dc7dda16f45e5385dac591e5b216",
+      "timestamp": 1708800601,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
