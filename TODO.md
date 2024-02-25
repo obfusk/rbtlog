@@ -17,50 +17,50 @@
 - [x] about.json (name, description, link)
 - [x] NB: container breakout (support libvirt?!)
 - [x] spdx++
-- [ ] more apps
-- [ ] github issues for all TODOs
-- [ ] doc/unit/regression/etc. tests
-- [ ] make & use a proper release of repro-apk binres
+- [x] github issues for all TODOs
+- [ ] more apps #35
+- [ ] doc/unit/regression/etc. tests #42
+- [ ] make & use a proper release of repro-apk binres #43
 
 # Nice to have
 
 - [x] configure paths
 - [x] update-recipes: support more forges (gitlab, codeberg)
 - [x] update-recipes: handle errors (skip but warn)
-- [ ] rebuild when failed before comparison
-- [ ] rebuild when upsteam APK or tag changes
-- [ ] retry downloads
-- [ ] configure timeouts
-- [ ] more build backends (libvirt, debvm)
-- [ ] more CI backends (gitlab, codeberg)
-- [ ] ansible playbook for e.g. VPS
-- [ ] building (random) batches (of older releases)
-- [ ] build queue
-- [ ] decentralised rebuilders: share recipes & sync workload
-- [ ] scan for blobs / proprietary deps (e.g. in gradle files)
-- [ ] security improvements
-- [ ] provisioning: non-debian images
-- [ ] get rid of "type: ignore" if possible
-- [ ] automated check for latest cmdline-tools
-- [ ] ability to use SDK rebuilds
-- [ ] run update-log on PRs (unless head matches create-pull-request/)
-- [ ] git verify-commit/tag if `keys/<appid>.asc`
-- [ ] security policy, CoC
-- [ ] detect repo moves & log url history
+- [ ] rebuild when failed before comparison #44
+- [ ] rebuild when upsteam APK or tag changes #45
+- [ ] retry downloads #46
+- [ ] configure timeouts #47
+- [ ] more build backends (libvirt, debvm) #48
+- [ ] more CI backends (gitlab, codeberg) #49
+- [ ] ansible playbook for e.g. VPS #50
+- [ ] building (random) batches (of older releases) #51
+- [ ] build queue #52
+- [ ] decentralised rebuilders: share recipes & sync workload #53
+- [ ] scan for blobs / proprietary deps (e.g. in gradle files) #54
+- [ ] security improvements #55
+- [ ] provisioning: non-debian images #56
+- [ ] get rid of "type: ignore" if possible #57
+- [ ] automated check for latest cmdline-tools #58
+- [ ] ability to use SDK rebuilds #59
+- [ ] run update-log on PRs (unless head matches create-pull-request/) #60
+- [ ] git verify-commit/tag if `keys/<appid>.asc` #61
+- [ ] security policy, CoC #62
+- [ ] detect repo moves & log url history #63
 
 # Maybe
 
-- [ ] rebuild when reproducibility is flaky?
-- [ ] diff on signature copying failure?
-- [ ] stream build log to stderr?
-- [ ] map commit to tag(s)?
-- [ ] map tag to commit(s)?
-- [ ] log hashes of .sh & .py?
-- [ ] use apksigner instead of shasum equality?
-- [ ] sigsum?
-- [ ] client support?
+- [ ] rebuild when reproducibility is flaky? #64
+- [ ] diff on signature copying failure? #65
+- [ ] stream build log to stderr? #66
+- [ ] map commit to tag(s)? #67
+- [ ] map tag to commit(s)? #68
+- [ ] log hashes of .sh & .py? #69
+- [ ] use apksigner instead of shasum equality? #70
+- [ ] sigsum? #71
+- [ ] client support? #72
 
-# CLI tool (rbtlog-check)
+# CLI tool (rbtlog-check) #73
 
 - [ ] matrix of repo x rebuilder
 - [ ] args: repo url/name, appid, code/tag, --json
@@ -69,7 +69,7 @@
 - [ ] support local log dir
 - [ ] colours, checkmark etc.
 
-# dashboard website
+# dashboard website #74
 
 - [ ] matrix of repo x rebuilder
 - [ ] static vs dynamic
