@@ -16,8 +16,8 @@
 - [x] JSON schema + validation for logs
 - [x] about.json (name, description, link)
 - [x] NB: container breakout (support libvirt?!)
+- [x] spdx++
 - [ ] more apps
-- [ ] spdx++
 - [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests
 - [ ] make & use a proper release of repro-apk binres
@@ -26,7 +26,7 @@
 
 - [x] configure paths
 - [x] update-recipes: support more forges (gitlab, codeberg)
-- [ ] update-recipes: handle errors (skip but warn)
+- [x] update-recipes: handle errors (skip but warn)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads

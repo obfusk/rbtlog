@@ -56,7 +56,7 @@ def latest_release(repository: str, apk_patterns: List[str], *,
     else:
         raise NotImplementedError(f"Unsupported forge: {url.hostname}")
     if not set(apk_urls) == set(apk_patterns):
-        raise Error("could not find all APK assets")
+        raise Error(f"could not find all APK assets for tag {tag!r}")
     return tag, apk_urls
 
 
@@ -239,7 +239,7 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, verbose: boo
             elif verbose:
                 print(f"Tag already present: {tag!r}.", file=sys.stderr)
         except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
-            print(f"Error: {e}", file=sys.stderr)
+            print(f"Error updating {appid!r}: {e}", file=sys.stderr)
             if not continue_on_errors:
                 return False
     return True

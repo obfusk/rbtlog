@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
 set -xeuo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
