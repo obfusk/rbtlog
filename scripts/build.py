@@ -354,7 +354,7 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
                 outputs.append(build_with_backend(bb, appid, br, keep_apks=keep_apks, verbose=verbose))
         else:
             errors += 1
-            print(f"Error: tag not found: {tag!r}", file=sys.stderr)
+            print(f"Error building {appid!r}: tag not found: {tag!r}", file=sys.stderr)
     json.dump(outputs, sys.stdout, indent=2)
     print()
     return errors
