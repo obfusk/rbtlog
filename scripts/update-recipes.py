@@ -56,7 +56,7 @@ def latest_release(repository: str, apk_patterns: List[str], *,
     else:
         raise NotImplementedError(f"Unsupported forge: {url.hostname}")
     if not set(apk_urls) == set(apk_patterns):
-        raise Error("could not find all APK assets")
+        raise Error(f"could not find all APK assets for tag {tag!r}")
     return tag, apk_urls
 
 
