@@ -26,7 +26,7 @@
 
 - [x] configure paths
 - [x] update-recipes: support more forges (gitlab, codeberg)
-- [ ] update-recipes: handle errors (skip but warn)
+- [x] update-recipes: handle errors (skip but warn)
 - [ ] rebuild when failed before comparison
 - [ ] rebuild when upsteam APK or tag changes
 - [ ] retry downloads
