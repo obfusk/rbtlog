@@ -16,8 +16,8 @@
 - [x] JSON schema + validation for logs
 - [x] about.json (name, description, link)
 - [x] NB: container breakout (support libvirt?!)
+- [x] spdx++
 - [ ] more apps
-- [ ] spdx++
 - [ ] github issues for all TODOs
 - [ ] doc/unit/regression/etc. tests
 - [ ] make & use a proper release of repro-apk binres
