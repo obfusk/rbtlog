@@ -1,5 +1,5 @@
-name: CI
-on: [push, pull_request, workflow_dispatch]
+name: build
+on: [push, workflow_dispatch]
 permissions:
   actions: none
   checks: none
@@ -16,36 +16,27 @@ permissions:
   statuses: none
 jobs:
   build:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        python-version:
-          - '3.8'
-          - '3.9'
-          - '3.10'
-          - '3.11'
-          - '3.12'
-        # - '3.13.0-alpha - 3.13'
-          - pypy3.8
-          - pypy3.9
-          - pypy3.10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
           submodules: true
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.12'
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
-          python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
-      - name: Test
-        run: make test
-      - name: Lint logs
-        run: make lint-logs
-        if: github.ref == 'refs/heads/log'
+      - name: Build w/ podman
+        run: |
+          python3 scripts/build.py -v podman me.hackerchick.catima:v2.27.0 | tee result.json
+          test "$( jq '.[].reproducible' < result.json )" = true
+      - name: Build w/ docker
+        run: |
+          python3 scripts/build.py -v docker me.hackerchick.catima:v2.27.0 | tee result.json
+          test "$( jq '.[].reproducible' < result.json )" = true
