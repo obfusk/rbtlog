@@ -255,7 +255,7 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
     return (
         backend.name.lower(), "run", "--rm",
         "--volume", f"{outputs}:/outputs",
-        "--volume", f"{scripts}:/scripts",
+        "--volume", f"{scripts}:/scripts:ro",
         *env, "--", recipe.provisioning.image,
         "bash", "-c", " && ".join(cmd))
 
