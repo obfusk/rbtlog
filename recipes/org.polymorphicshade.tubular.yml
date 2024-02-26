@@ -1,13 +1,15 @@
 ---
 repository: https://github.com/polymorphicshade/Tubular.git
 updates: releases
+notes:
+  - 'FIXME: removing values-iw symlink b/c upstream builds on windows'
 versions:
   - tag: v0.26.1_r2
     apks:
       - apk_pattern: tubular_v.*\.apk
         apk_url: https://github.com/polymorphicshade/Tubular/releases/download/$$TAG$$/tubular_$$TAG$$.apk
         build:
-          - rm app/src/main/res/values-iw   # FIXME
+          - rm app/src/main/res/values-iw
           - ./gradlew assembleRelease
           - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
           - git clone -b v0.2.3 https://github.com/obfusk/reproducible-apk-tools.git
