@@ -44,7 +44,7 @@ def save_log(log_file: str, data: Dict[Any, Any]) -> None:
 def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[Any, Any]:
     """Add builds to log; modifies in-place!"""
     for build in builds:
-        tag, version_code = build["tag"], build["version_code"]
+        tag, version_code = build["tag"], str(build["version_code"])
         sha256 = build["upstream_signed_apk_sha256"]
         if tag not in log_data["tags"]:
             log_data["tags"][tag] = []
