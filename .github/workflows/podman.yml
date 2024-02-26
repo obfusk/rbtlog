@@ -1,5 +1,11 @@
-name: build
-on: [push, workflow_dispatch]
+name: podman
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - scripts/build.py
 permissions:
   actions: none
   checks: none
@@ -16,7 +22,6 @@ permissions:
   statuses: none
 jobs:
   build:
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -35,8 +40,4 @@ jobs:
       - name: Build w/ podman
         run: |
           python3 scripts/build.py -v podman me.hackerchick.catima:v2.27.0 | tee result.json
-          test "$( jq '.[].reproducible' < result.json )" = true
-      - name: Build w/ docker
-        run: |
-          python3 scripts/build.py -v docker me.hackerchick.catima:v2.27.0 | tee result.json
           test "$( jq '.[].reproducible' < result.json )" = true

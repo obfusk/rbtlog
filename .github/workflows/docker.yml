@@ -1,0 +1,37 @@
+name: docker
+on: [workflow_dispatch]
+permissions:
+  actions: none
+  checks: none
+  contents: none
+  deployments: none
+  discussions: none
+  id-token: none
+  issues: none
+  packages: none
+  pages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: true
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+      - name: Build w/ docker
+        run: |
+          python3 scripts/build.py -v docker me.hackerchick.catima:v2.27.0 | tee result.json
+          test "$( jq '.[].reproducible' < result.json )" = true
