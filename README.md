@@ -2,7 +2,8 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 
 [![CI](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml)
-[![build](https://github.com/obfusk/rbtlog/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/obfusk/rbtlog/actions/workflows/build.yml)
+[![podman](https://github.com/obfusk/rbtlog/actions/workflows/podman.yml/badge.svg?branch=master)](https://github.com/obfusk/rbtlog/actions/workflows/podman.yml)
+[![docker](https://github.com/obfusk/rbtlog/actions/workflows/docker.yml/badge.svg?branch=master)](https://github.com/obfusk/rbtlog/actions/workflows/docker.yml)
 [![update log](https://github.com/obfusk/rbtlog/actions/workflows/update-log.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/update-log.yml)
 [![update recipes](https://github.com/obfusk/rbtlog/actions/workflows/update-recipes.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/update-recipes.yml)
 [![AGPLv3+](https://img.shields.io/badge/license-AGPLv3+-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
