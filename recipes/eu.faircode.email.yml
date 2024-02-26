@@ -1,7 +1,8 @@
 ---
-# NB: NonFreeComp
 repository: https://github.com/M66B/FairEmail.git
 updates: releases
+notes:
+  - 'NB: NonFreeComp'
 versions:
   - tag: '1.2162'
     apks:

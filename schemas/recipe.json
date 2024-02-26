@@ -15,6 +15,13 @@
       "type": "string",
       "pattern": "^(releases|tags:.*|manual)$"
     },
+    "notes": {
+      "description": "notes (not required)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "versions": {
       "description": "build recipes per tag and APK",
       "type": "array",
