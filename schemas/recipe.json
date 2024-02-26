@@ -155,6 +155,10 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "verify_gradle_wrapper": {
+                      "description": "whether to verify the gradle-wrapper.jar checksum",
+                      "type": "boolean"
                     }
                   },
                   "required": [
@@ -168,7 +172,8 @@
                     "ndk",
                     "platform",
                     "platform_tools",
-                    "tools"
+                    "tools",
+                    "verify_gradle_wrapper"
                   ],
                   "additionalProperties": false
                 }

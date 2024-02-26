@@ -36,3 +36,11 @@ fi
 git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
+
+if [ "${VERIFY_GRADLE_WRAPPER}" = yes ]; then
+  git clone https://github.com/obfusk/gradle-wrapper-verify /tmp/gradle-wrapper-verify
+  ( shopt -s globstar; /tmp/gradle-wrapper-verify/gradle-wrapper-verify ./**/gradle-wrapper.jar )
+fi
+
+# FIXME: do more than just list these
+find . -iname '*.jar' -o -iname '*.aar' | sort

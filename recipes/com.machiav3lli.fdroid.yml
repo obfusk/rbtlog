@@ -29,3 +29,4 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true

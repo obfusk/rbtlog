@@ -32,6 +32,7 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
   - tag: v0.6.23
     apks:
       - apk_pattern: app-release\.apk
@@ -62,3 +63,4 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true

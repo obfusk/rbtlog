@@ -32,6 +32,7 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
   - tag: v4.3.13-ose
     apks:
       - apk_pattern: davx5-ose-([\d.]+)-ose-release.apk
@@ -62,6 +63,7 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
   - tag: v4.3.13.1-ose
     apks:
       - apk_pattern: davx5-ose-([\d.]+)-ose-release.apk
@@ -92,3 +94,4 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true

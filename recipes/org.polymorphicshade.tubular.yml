@@ -34,6 +34,7 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
   - tag: v0.26.1_r3
     apks:
       - apk_pattern: tubular_v.*\.apk
@@ -64,3 +65,4 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
