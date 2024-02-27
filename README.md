@@ -112,7 +112,7 @@ build them, and adds the resulting output to `logs/<appid>.json`.
 
 ```bash
 $ scripts/update-log.py --help
-usage: update-log.py [-h] [-v] {podman,docker} [RECIPE ...]
+usage: update-log.py [-h] [-v] [--keep-apks DIR] {podman,docker} [RECIPE ...]
 
 update log
 
@@ -123,6 +123,7 @@ positional arguments:
 options:
   -h, --help       show this help message and exit
   -v, --verbose
+  --keep-apks DIR  save APKs in DIR
 
 $ scripts/update-log.py -v docker recipes/*.yml
 Updating 'me.hackerchick.catima'...
@@ -313,6 +314,7 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: true
 ```
 
 </details>
@@ -395,9 +397,9 @@ For example, the rebuild log for Catima looks like this:
 
 ## GitHub Actions workflows
 
-### ci.yml
+### ci.yml, podman.yml, docker.yml
 
-CI for the rebuilder (code linting etc.).
+CI for the rebuilder itself (code linting etc.).
 
 ### update-log.yml
 
