@@ -172,6 +172,10 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "verify_gradle_wrapper": {
+                      "description": "whether to verify the gradle-wrapper.jar checksum (not required, older logs don't have this)",
+                      "type": "boolean"
                     }
                   },
                   "required": [
