@@ -9,8 +9,8 @@ versions:
         build:
           - wget -q -O /tmp/nodejs-lts.zip -- https://nodejs.org/dist/v20.11.1/node-v20.11.1-linux-x64.tar.xz
           - sha256sum -c <<< 'd8dab549b09672b03356aa2257699f3de3b58c96e74eb26a8b495fbdc9cf6fbe  /tmp/nodejs-lts.zip'
-          - tar xf /tmp/nodejs-lts.zip -C "$HOME"
-          - export PATH="${PATH}:${HOME}/node-v20.11.1-linux-x64/bin"
+          - tar xf /tmp/nodejs-lts.zip -C /opt
+          - export PATH="${PATH}:/opt/node-v20.11.1-linux-x64/bin"
           - npm install
           - npx gulp
           - cp dist/icons/logo_64.png android/app/src/main/res/drawable/
