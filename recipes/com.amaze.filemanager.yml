@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/TeamAmaze/AmazeFileManager.git
 updates: releases
+notes:
+  - 'FIXME: unverified gradle-wrapper.jar'
 versions:
   - tag: v3.10
     apks:
@@ -28,3 +30,4 @@ versions:
           platform:
           platform_tools:
           tools:
+          verify_gradle_wrapper: false
