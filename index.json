@@ -125,6 +125,20 @@
       "error": null
     }
   ],
+  "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
+    {
+      "repository": "https://github.com/grote/Transportr.git",
+      "apk_url": "https://github.com/grote/Transportr/releases/download/2.2.1/app-release.apk",
+      "appid": "de.grobox.liberario",
+      "version_code": 125,
+      "version_name": "2.2.1",
+      "tag": "2.2.1",
+      "commit": "056c6b49eb9fc043141884d1e7726b46bd580002",
+      "timestamp": 1709004307,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "4357021180c6b7b8e6d8c023edda414c6c4cdb8e30eedef89fe134194696377f": [
     {
       "repository": "https://github.com/M66B/FairEmail.git",
