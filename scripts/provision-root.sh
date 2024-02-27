@@ -19,5 +19,5 @@ else
   adduser --disabled-password --comment '' "${BUILD_USER}" --home "${BUILD_HOME_DIR}"
 fi
 
-mkdir -p "${ANDROID_HOME}"
-chown "${BUILD_USER}:${BUILD_USER}" "${ANDROID_HOME}"
+mkdir -p /opt "${ANDROID_HOME}"
+chown "${BUILD_USER}:${BUILD_USER}" /opt "${ANDROID_HOME}"
