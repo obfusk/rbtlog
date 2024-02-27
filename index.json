@@ -125,6 +125,20 @@
       "error": null
     }
   ],
+  "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
+    {
+      "repository": "https://github.com/MRepoApp/MRepo.git",
+      "apk_url": "https://github.com/MRepoApp/MRepo/releases/download/v2.4.4/MRepo-2.4.4.bf97992-713-release.apk",
+      "appid": "com.sanmer.mrepo",
+      "version_code": 713,
+      "version_name": "2.4.4.bf97992",
+      "tag": "v2.4.4",
+      "commit": "bf97992cf79346d4ae83deee2eaef057f284e484",
+      "timestamp": 1709076299,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
