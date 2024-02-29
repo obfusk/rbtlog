@@ -35,6 +35,7 @@ fi
 
 git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
+git checkout refs/tags/"${APP_TAG}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
 
 if [ "${VERIFY_GRADLE_WRAPPER}" = yes ]; then
