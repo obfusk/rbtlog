@@ -83,6 +83,20 @@
       "error": null
     }
   ],
+  "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
+    {
+      "repository": "https://github.com/whitescent/Mastify.git",
+      "apk_url": "https://github.com/whitescent/Mastify/releases/download/1.4.0-alpha/app-release.apk",
+      "appid": "com.github.whitescent.mastify",
+      "version_code": 16,
+      "version_name": "1.4.0-alpha",
+      "tag": "1.4.0-alpha",
+      "commit": "5fbcd40de5d30446f45d9118c69e07181ee768d3",
+      "timestamp": 1709228842,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
     {
       "repository": "https://github.com/Droid-ify/client.git",
