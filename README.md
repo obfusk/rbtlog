@@ -423,7 +423,9 @@ in `schemas/`.
 Everything but the dependencies is contained in the `git` repository.
 
 ```bash
-$ git clone https://github.com/obfusk/rbtlog.git
+$ git clone https://github.com/obfusk/rbtlog.git    # main repository @ github.com
+$ git clone https://gitlab.com/obfusk/rbtlog.git    # mirror @ gitlab.com
+$ git clone https://codeberg.org/obfusk/rbtlog.git  # mirror @ codeberg.org
 ```
 
 ## Dependencies
