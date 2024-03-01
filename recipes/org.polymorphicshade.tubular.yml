@@ -2,6 +2,7 @@
 repository: https://github.com/polymorphicshade/Tubular.git
 updates: releases
 notes:
+  - 'NB: flaky'
   - 'FIXME: removing values-iw symlink b/c upstream builds on windows'
 versions:
   - tag: v0.26.1_r2

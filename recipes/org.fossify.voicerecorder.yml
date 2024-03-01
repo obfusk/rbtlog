@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/FossifyOrg/Voice-Recorder.git
 updates: releases
+notes:
+  - 'NB: tag mismatch on 1.0.0'
 versions:
   - tag: 1.0.0
     apks:

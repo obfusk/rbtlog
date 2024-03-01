@@ -1,6 +1,9 @@
 ---
 repository: https://github.com/NeoApplications/Neo-Store.git
 updates: releases
+notes:
+  - 'NB: not reproducible'
+  - 'FIXME: non-deterministic locales'
 versions:
   - tag: 0.9.15
     apks:

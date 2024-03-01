@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/Droid-ify/client.git
 updates: releases
+notes:
+  - 'FIXME: non-deterministic locales (fixed upstream)'
 versions:
   - tag: v0.6.1
     apks:

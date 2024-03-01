@@ -2,6 +2,8 @@
 repository: https://github.com/TeamAmaze/AmazeFileManager.git
 updates: releases
 notes:
+  - 'NB: not reproducible'
+  - 'FIXME: embedded build ID, LLD build path'
   - 'FIXME: unverified gradle-wrapper.jar'
 versions:
   - tag: v3.10

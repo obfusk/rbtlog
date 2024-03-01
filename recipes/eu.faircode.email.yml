@@ -3,6 +3,9 @@ repository: https://github.com/M66B/FairEmail.git
 updates: releases
 notes:
   - 'NB: NonFreeComp'
+  - 'NB: not reproducible'
+  - 'FIXME: embedded build ID'
+  - 'FIXME: JARs'
 versions:
   - tag: '1.2162'
     apks:

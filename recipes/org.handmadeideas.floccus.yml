@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/floccusaddon/floccus.git
 updates: releases
+notes:
+  - 'FIXME: copying missing icon'
 versions:
   - tag: v5.0.8
     apks:

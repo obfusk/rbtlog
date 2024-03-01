@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/threema-ch/threema-android.git
 updates: tags:([\d.]+)
+notes:
+  - 'FIXME: JARs & AARs'
 versions:
   - tag: 5.2.3
     apks:

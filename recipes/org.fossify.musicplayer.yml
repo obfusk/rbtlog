@@ -1,6 +1,9 @@
 ---
 repository: https://github.com/FossifyOrg/Music-Player.git
 updates: releases
+notes:
+  - 'NB: not reproducible'
+  - 'FIXME: pg-map-id differs'
 versions:
   - tag: 1.0.0
     apks:
