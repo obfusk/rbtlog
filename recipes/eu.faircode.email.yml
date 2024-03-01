@@ -4,7 +4,7 @@ updates: releases
 notes:
   - 'NB: NonFreeComp'
   - 'NB: not reproducible'
-  - 'FIXME: embedded build ID'
+  - 'FIXME: embedded build ID (use readelf --notes to extract from .so)'
   - 'FIXME: JARs'
 versions:
   - tag: '1.2162'
@@ -13,6 +13,11 @@ versions:
         apk_url: https://github.com/M66B/FairEmail/releases/download/1.2162/FairEmail-v1.2162a-github-release.apk
         build:
           - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(fairemail PRIVATE "LINKER:--build-id=0xc72e359a3ab7fbea4b6c83418c05047c3ae0e037")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x9f0e69532167041e3380d050a129656b65056795")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(fairemail PRIVATE "LINKER:--build-id=0xb7c8b1944d9a06956339273878be29ca14847ca1")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x08d8c751cd33b45876eccd2353fc6a926abbb04d")' >> app/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                             >> app/CMakeLists.txt
           - ./gradlew assembleGithubRelease
           - mv app/build/outputs/apk/github/release/FairEmail-*-github-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
