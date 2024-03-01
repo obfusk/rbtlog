@@ -277,6 +277,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmppdif6a9k/outputs:/outputs', '--volume', '/tmp/tmppdif6a9k/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://gitlab.com/sunilpaulmathew/izzyondroid.git', '--env', 'APP_TAG=v0.12', '--env', 'APP_COMMIT=f0b5ebe6aa5b78a09d91821965f48b8aad655d11', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "5a0d012d2e7e5973d8b1177f46b73ae084a43a076ab65703e1ec256f5ccc3056": [
+    {
+      "repository": "https://github.com/devhyper/open-video-editor.git",
+      "apk_url": "https://github.com/devhyper/open-video-editor/releases/download/v1.1/app-release.apk",
+      "appid": "io.github.devhyper.openvideoeditor",
+      "version_code": 4,
+      "version_name": "1.1",
+      "tag": "v1.1",
+      "commit": "cef214b13933774fd12821584b08aceeeb9a3db6",
+      "timestamp": 1709335325,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "f44ed1ed1951fc8cdefd9caf8f95bef3968e928582c5793db9c77790bdc5b41f": [
     {
       "repository": "https://github.com/fast4x/RiMusic.git",
