@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/NeoApplications/Neo-Backup.git
 updates: releases
+notes:
+  - 'NB: not reproducible'
 versions:
   - tag: 8.3.6
     apks:

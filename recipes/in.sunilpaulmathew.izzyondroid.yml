@@ -1,6 +1,8 @@
 ---
 repository: https://gitlab.com/sunilpaulmathew/izzyondroid.git
 updates: releases
+notes:
+  - 'NB: v0.12 fails to build'
 versions:
   - tag: v0.11
     apks:
