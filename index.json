@@ -209,6 +209,62 @@
       "error": null
     }
   ],
+  "56b13edd9e064c96ab6e1debe0b868a4137f3ce01dfc84d06cc0a4b9729726c2": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v2024.02/findroid-v2024.02-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v2024.02",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709345971,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "807c9951d274733a2afd3c64963346424f81be57bf95c641199534edf154b504": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v2024.02/findroid-v2024.02-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v2024.02",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709346525,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "a4535ef5a360db786eee1096cd568ceafef48b71ab19f478382fa5aabfd2e9be": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v2024.02/findroid-v2024.02-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v2024.02",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709347181,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "53ea86ea3a10c50dde8b2126ca356554cb5023c4f726d55e208d1da0cbf66805": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v2024.02/findroid-v2024.02-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v2024.02",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709347682,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "4357021180c6b7b8e6d8c023edda414c6c4cdb8e30eedef89fe134194696377f": [
     {
       "repository": "https://github.com/M66B/FairEmail.git",
