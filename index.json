@@ -209,6 +209,20 @@
       "error": null
     }
   ],
+  "7f3e5673eacc88888e0fdedd0a32cf07c145c5fb55d7753e427e6901ca295f5e": [
+    {
+      "repository": "https://github.com/sosauce/CuteCalc.git",
+      "apk_url": "https://github.com/sosauce/CuteCalc/releases/download/v2.6/CuteCalc_v2.6.apk",
+      "appid": "com.sosauce.cutecalc",
+      "version_code": 25,
+      "version_name": "2.6",
+      "tag": "v2.6",
+      "commit": "861694bae8c7f264ed37a0494151b4fbb922a281",
+      "timestamp": 1709418878,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
