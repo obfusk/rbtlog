@@ -307,6 +307,20 @@
       "error": null
     }
   ],
+  "b07abc7bf5af5731a5155b7cf9b9f3e65332ae50b8f7d48f7bb7233894a34040": [
+    {
+      "repository": "https://github.com/LibrePass/LibrePass-Android.git",
+      "apk_url": "https://github.com/LibrePass/LibrePass-Android/releases/download/v1.2.4/LibrePass-signed.apk",
+      "appid": "dev.medzik.librepass.android",
+      "version_code": 16,
+      "version_name": "1.2.4",
+      "tag": "v1.2.4",
+      "commit": "c97f301892a43bd2cabaf540276ba09cf0f8481e",
+      "timestamp": 1709420614,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "4357021180c6b7b8e6d8c023edda414c6c4cdb8e30eedef89fe134194696377f": [
     {
       "repository": "https://github.com/M66B/FairEmail.git",
