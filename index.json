@@ -83,6 +83,20 @@
       "error": null
     }
   ],
+  "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
+    {
+      "repository": "https://gitlab.com/axet/android-ping-utils.git",
+      "apk_url": "https://gitlab.com/axet/android-ping-utils/uploads/a7ace51ab66fcd31201d5be79c67517f/pingutils-0.1.3-release.apk",
+      "appid": "com.github.axet.pingutils",
+      "version_code": 28,
+      "version_name": "0.1.3",
+      "tag": "pingutils-0.1.3",
+      "commit": "89cc8204837122dfaf5129b788a353188c756e3e",
+      "timestamp": 1709406998,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
