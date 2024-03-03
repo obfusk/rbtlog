@@ -125,6 +125,20 @@
       "error": null
     }
   ],
+  "4fd1b59c16a9e00589e9cc2a8e6579e12832e2f165975216916de3e8c1c1c5b5": [
+    {
+      "repository": "https://github.com/whitescent/Mastify.git",
+      "apk_url": "https://github.com/whitescent/Mastify/releases/download/1.4.22-alpha/app-release.apk",
+      "appid": "com.github.whitescent.mastify",
+      "version_code": 18,
+      "version_name": "1.4.22-alpha",
+      "tag": "1.4.22-alpha",
+      "commit": "21351efd0d06fc06606404bb903c14d4bbb2ec0b",
+      "timestamp": 1709494448,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmph6g1iieb/outputs:/outputs', '--volume', '/tmp/tmph6g1iieb/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.22-alpha', '--env', 'APP_COMMIT=21351efd0d06fc06606404bb903c14d4bbb2ec0b', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
     {
       "repository": "https://github.com/Droid-ify/client.git",
