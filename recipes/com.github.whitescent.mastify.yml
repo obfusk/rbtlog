@@ -2,6 +2,7 @@
 repository: https://github.com/whitescent/Mastify.git
 updates: releases
 notes:
+  - 'NB: NonFreeComp'
   - 'NB: tag mismatch on 1.4.2-alpha'
 versions:
   - tag: 1.4.0-alpha
