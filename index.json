@@ -417,6 +417,20 @@
       "error": null
     }
   ],
+  "a0039fd12a59afa2c27d34e278412db5e35141ad9aac2786bcc2b2bc4d5ae2f6": [
+    {
+      "repository": "https://github.com/gdzx/audiosource.git",
+      "apk_url": "https://github.com/gdzx/audiosource/releases/download/v1.1/audiosource.apk",
+      "appid": "fr.dzx.audiosource",
+      "version_code": 3,
+      "version_name": "1.1",
+      "tag": "v1.1",
+      "commit": "0a0b7f57b780a1b427089017d2cb6ab426d14869",
+      "timestamp": 1709503167,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "5dbbf8e63ad8f454026394cda7d66ea2360a085f728f68d8bc12c8cafe7d380d": [
     {
       "repository": "https://github.com/WrichikBasu/ShakeAlarmClock.git",
