@@ -223,6 +223,20 @@
       "error": null
     }
   ],
+  "2beb149e70bd48e6b30350a15d1761f149d99e6a129a8ece49e213160536acd5": [
+    {
+      "repository": "https://github.com/sosauce/CuteCalc.git",
+      "apk_url": "https://github.com/sosauce/CuteCalc/releases/download/v2.7/CuteCalc_v2.7.apk",
+      "appid": "com.sosauce.cutecalc",
+      "version_code": 26,
+      "version_name": "2.7",
+      "tag": "v2.7",
+      "commit": "f00fe1c3481538787d2626f9bfe944f252d28d51",
+      "timestamp": 1709474557,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
