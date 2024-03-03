@@ -680,5 +680,19 @@
       "reproducible": false,
       "error": null
     }
+  ],
+  "c8b06ec74bb79ca6fd88264b304684bd2227f387c39514c1e18e01f1410a892e": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.0.9/flickboard-v0.0.9.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 12,
+      "version_name": "0.0.9",
+      "tag": "v0.0.9",
+      "commit": "2e7df1afc2286006bb0c9460d060ffa95190ee11",
+      "timestamp": 1709475942,
+      "reproducible": true,
+      "error": null
+    }
   ]
 }
