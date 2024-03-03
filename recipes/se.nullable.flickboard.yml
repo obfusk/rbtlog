@@ -1,8 +1,6 @@
 ---
 repository: https://github.com/nightkr/flickboard.git
 updates: releases
-notes:
-  - 'NB: not reproducible'
 versions:
   - tag: v0.0.7
     apks:
