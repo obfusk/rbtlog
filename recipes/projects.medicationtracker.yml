@@ -3,6 +3,7 @@ repository: https://github.com/AdamGuidarini/MediTrak.git
 updates: tags:v[\d.]+
 notes:
   - 'FIXME: embedded build ID (use readelf --notes to extract from .so)'
+  - 'FIXME: embedded commit hash mismatch for v0.11.5'
 versions:
   - tag: v0.11.4
     apks:
@@ -54,6 +55,7 @@ versions:
       - apk_pattern: meditrak\.apk
         apk_url: https://github.com/AdamGuidarini/MediTrak/releases/download/$$TAG$$/meditrak.apk
         build:
+          - git checkout 42cb8c6ffbbcb2fe84d277a6a3bd985b77ead3a4
           - wget -q -O /tmp/sqlite-amalgamation-3440200.zip -- https://www.sqlite.org/2023/sqlite-amalgamation-3440200.zip
           - sha256sum -c <<< '833be89b53b3be8b40a2e3d5fedb635080e3edb204957244f3d6987c2bb2345f  /tmp/sqlite-amalgamation-3440200.zip'
           - unzip -q -d /opt /tmp/sqlite-amalgamation-3440200.zip
