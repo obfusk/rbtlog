@@ -501,6 +501,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmppdif6a9k/outputs:/outputs', '--volume', '/tmp/tmppdif6a9k/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://gitlab.com/sunilpaulmathew/izzyondroid.git', '--env', 'APP_TAG=v0.12', '--env', 'APP_COMMIT=f0b5ebe6aa5b78a09d91821965f48b8aad655d11', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "833c39456e0f3ac45e8fb3b814ac4ef293efe9da19f34e5d33229c712bbec005": [
+    {
+      "repository": "https://github.com/sunilpaulmathew/Weather.git",
+      "apk_url": "https://github.com/sunilpaulmathew/Weather/releases/download/v0.5/app-release.apk",
+      "appid": "in.sunilpaulmathew.weatherwidget",
+      "version_code": 5,
+      "version_name": "v0.5",
+      "tag": "v0.5",
+      "commit": "fcfa72ae188bf49da86d1d232cea5ceba4ca47f4",
+      "timestamp": 1709588451,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5a0d012d2e7e5973d8b1177f46b73ae084a43a076ab65703e1ec256f5ccc3056": [
     {
       "repository": "https://github.com/devhyper/open-video-editor.git",
