@@ -753,6 +753,20 @@
       "error": null
     }
   ],
+  "cc1504b6bfa5e15799526e5e9dd2ee8be46c9e2c328feeebd12cebd91521f6ac": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.11.5/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 16,
+      "version_name": "0.11.5",
+      "tag": "v0.11.5",
+      "commit": "11ac147f9a6f967593fc9c1f7c609505aae8c4a4",
+      "timestamp": 1709567504,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "b9e14ce167f49dcd099ad7a6bea12846fe47ce01432a8e86c3682ab22429d3fc": [
     {
       "repository": "https://github.com/nightkr/flickboard.git",
