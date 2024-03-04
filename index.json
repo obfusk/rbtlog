@@ -557,6 +557,34 @@
       "error": null
     }
   ],
+  "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.6.5.1/osc-1.6.5.1.apk",
+      "appid": "kittoku.osc",
+      "version_code": 36,
+      "version_name": "1.6.5.1",
+      "tag": "v1.6.5.1",
+      "commit": "157c3474d2219ca20f80452de68867d35dcea38f",
+      "timestamp": 1709583624,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "7ac3d5ac49afc9bee73a0d347442b2167a26c5d40942ecae658738e94a368f02": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.7.0/osc-1.7.0.apk",
+      "appid": "kittoku.osc",
+      "version_code": 37,
+      "version_name": "1.7.0",
+      "tag": "v1.7.0",
+      "commit": "e064139d852d6cec0b37a3832d1f5fb4a41cb9a2",
+      "timestamp": 1709583790,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
     {
       "repository": "https://github.com/CatimaLoyalty/Android.git",
