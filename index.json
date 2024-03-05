@@ -111,6 +111,20 @@
       "error": null
     }
   ],
+  "572ad085bfc06cc9fd643d817b97f1f2b0e83b97709340a10e0ddc0498af44fc": [
+    {
+      "repository": "https://github.com/danilkinkin/buckwheat.git",
+      "apk_url": "https://github.com/danilkinkin/buckwheat/releases/download/4.5.5/buckwheat_v4.5.5.apk",
+      "appid": "com.danilkinkin.buckwheat",
+      "version_code": 27,
+      "version_name": "4.5.5",
+      "tag": "4.5.5",
+      "commit": "5a4240c432731c3faf09616c59f973b4ebd98ac0",
+      "timestamp": 1709667588,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
     {
       "repository": "https://gitlab.com/axet/android-ping-utils.git",
