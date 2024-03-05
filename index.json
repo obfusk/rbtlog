@@ -391,6 +391,20 @@
       "error": null
     }
   ],
+  "490477b98e7056faf614d6d4d9827a09e46b9323e2652db22df0b7c415b3c96a": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.7.0/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 141,
+      "version_name": "2.7.0",
+      "tag": "v2.7.0",
+      "commit": "5d36d7d46f639e7032778cf32f48704fb155e40c",
+      "timestamp": 1709679519,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "56b13edd9e064c96ab6e1debe0b868a4137f3ce01dfc84d06cc0a4b9729726c2": [
     {
       "repository": "https://github.com/jarnedemeulemeester/findroid.git",
@@ -492,6 +506,62 @@
       "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
       "timestamp": 1709599213,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "c9d89cbb242f2046b24405d160c26e346f016ce715a8df3d19a46787849e205c": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.1/findroid-v0.14.1-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 24,
+      "version_name": "0.14.1",
+      "tag": "v0.14.1",
+      "commit": "08827e008b5689b82945125e0592bc3c0ef2e37d",
+      "timestamp": 1709679782,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "71b290fa8e4913143df446238fe2b9d1c594041ff049826e625193d8ff33ee4a": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.1/findroid-v0.14.1-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 24,
+      "version_name": "0.14.1",
+      "tag": "v0.14.1",
+      "commit": "08827e008b5689b82945125e0592bc3c0ef2e37d",
+      "timestamp": 1709680245,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "ea6d2c4968f2a37c6f182b83eddff7f0a6cfa7d4f56c7af6cd29ed5e75b1afdc": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.1/findroid-v0.14.1-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 24,
+      "version_name": "0.14.1",
+      "tag": "v0.14.1",
+      "commit": "08827e008b5689b82945125e0592bc3c0ef2e37d",
+      "timestamp": 1709680720,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "0ddabce35fdc32462bf39723a900943f0cb60f86ea8476168f7d7bf5d4bc173d": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.1/findroid-v0.14.1-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 24,
+      "version_name": "0.14.1",
+      "tag": "v0.14.1",
+      "commit": "08827e008b5689b82945125e0592bc3c0ef2e37d",
+      "timestamp": 1709681170,
+      "reproducible": false,
       "error": null
     }
   ],
