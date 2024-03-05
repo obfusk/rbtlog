@@ -209,6 +209,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmph6g1iieb/outputs:/outputs', '--volume', '/tmp/tmph6g1iieb/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.22-alpha', '--env', 'APP_COMMIT=21351efd0d06fc06606404bb903c14d4bbb2ec0b', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "4bc837c710b30f45bbd0c02a425576dbd740d7802a7e4ae2b9d318cd57b337ba": [
+    {
+      "repository": "https://github.com/whitescent/Mastify.git",
+      "apk_url": "https://github.com/whitescent/Mastify/releases/download/1.4.23-alpha/app-release.apk",
+      "appid": "com.github.whitescent.mastify",
+      "version_code": 19,
+      "version_name": "1.4.23-alpha",
+      "tag": "1.4.23-alpha",
+      "commit": "cdd5b834552096e15f944d1144f61c38f1e87dc6",
+      "timestamp": 1709597736,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpd7363bs7/outputs:/outputs', '--volume', '/tmp/tmpd7363bs7/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.23-alpha', '--env', 'APP_COMMIT=cdd5b834552096e15f944d1144f61c38f1e87dc6', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
     {
       "repository": "https://github.com/Droid-ify/client.git",
@@ -361,6 +375,18 @@
       "timestamp": 1709345971,
       "reproducible": true,
       "error": null
+    },
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.0/findroid-v2024.02-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v0.14.0",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709597873,
+      "reproducible": true,
+      "error": null
     }
   ],
   "807c9951d274733a2afd3c64963346424f81be57bf95c641199534edf154b504": [
@@ -373,6 +399,18 @@
       "tag": "v2024.02",
       "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
       "timestamp": 1709346525,
+      "reproducible": true,
+      "error": null
+    },
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.0/findroid-v2024.02-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v0.14.0",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709598318,
       "reproducible": true,
       "error": null
     }
@@ -389,6 +427,18 @@
       "timestamp": 1709347181,
       "reproducible": true,
       "error": null
+    },
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.0/findroid-v2024.02-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v0.14.0",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709598772,
+      "reproducible": true,
+      "error": null
     }
   ],
   "53ea86ea3a10c50dde8b2126ca356554cb5023c4f726d55e208d1da0cbf66805": [
@@ -401,6 +451,18 @@
       "tag": "v2024.02",
       "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
       "timestamp": 1709347682,
+      "reproducible": true,
+      "error": null
+    },
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.0/findroid-v2024.02-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 23,
+      "version_name": "2024.02",
+      "tag": "v0.14.0",
+      "commit": "50eac4071f1343939f4deefc8e5f08dbf7cc7f22",
+      "timestamp": 1709599213,
       "reproducible": true,
       "error": null
     }
