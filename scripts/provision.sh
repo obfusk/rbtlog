@@ -33,13 +33,24 @@ if [ -n "${PROVISIONING_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "tools;${PROVISIONING_TOOLS}"
 fi
 
-git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
+for _ in {1..5}; do
+  git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}" \
+    && break
+  echo retrying...
+  sleep 1
+done
+
 cd "${BUILD_REPO_DIR}"
 git checkout refs/tags/"${APP_TAG}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
 
 if [ "${VERIFY_GRADLE_WRAPPER}" = yes ]; then
-  git clone https://github.com/obfusk/gradle-wrapper-verify /opt/gradle-wrapper-verify
+  for _ in {1..5}; do
+    git clone https://github.com/obfusk/gradle-wrapper-verify /opt/gradle-wrapper-verify \
+      && break
+    echo retrying...
+    sleep 1
+  done
   ( shopt -s globstar; /opt/gradle-wrapper-verify/gradle-wrapper-verify ./**/gradle-wrapper.jar )
 fi
 
