@@ -507,6 +507,20 @@
       "error": null
     }
   ],
+  "a09e1a7a2c9dadcce040fe60ced671597fbf9af3b439235e9b9eaeebde0bb55c": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2165/FairEmail-v1.2165a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2165,
+      "version_name": "1.2165",
+      "tag": "1.2165",
+      "commit": "4fffc0f65d1a403a0a1a73a7bae4ca924688ac0a",
+      "timestamp": 1709662103,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a0039fd12a59afa2c27d34e278412db5e35141ad9aac2786bcc2b2bc4d5ae2f6": [
     {
       "repository": "https://github.com/gdzx/audiosource.git",
