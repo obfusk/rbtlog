@@ -3,6 +3,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 set -xeuo pipefail
 
+retry() {
+  # Usage: retry TIMES COMMAND...
+  local i n="$1"
+  shift
+  for (( i = 1; i <= n; ++i )); do
+    if "$@"; then
+      break
+    elif [ "$i" -eq "$n" ]; then
+      return 1
+    else
+      echo retrying...
+      sleep 1
+    fi
+  done
+}
+
 mkdir -p "${ANDROID_HOME}"/cmdline-tools
 
 wget -q -O /tmp/tools.zip -- "${PROVISIONING_CMDLINE_TOOLS_URL}"
@@ -33,24 +49,13 @@ if [ -n "${PROVISIONING_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "tools;${PROVISIONING_TOOLS}"
 fi
 
-for _ in {1..5}; do
-  git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}" \
-    && break
-  echo retrying...
-  sleep 1
-done
-
+retry 5 git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
 git checkout refs/tags/"${APP_TAG}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
 
 if [ "${VERIFY_GRADLE_WRAPPER}" = yes ]; then
-  for _ in {1..5}; do
-    git clone https://github.com/obfusk/gradle-wrapper-verify /opt/gradle-wrapper-verify \
-      && break
-    echo retrying...
-    sleep 1
-  done
+  retry 5 git clone https://github.com/obfusk/gradle-wrapper-verify /opt/gradle-wrapper-verify
   ( shopt -s globstar; /opt/gradle-wrapper-verify/gradle-wrapper-verify ./**/gradle-wrapper.jar )
 fi
 
