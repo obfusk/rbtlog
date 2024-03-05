@@ -2,9 +2,8 @@
 repository: https://github.com/danilkinkin/buckwheat.git
 updates: releases
 notes:
-  - 'NB: not reproducible'
-  - 'FIXME: res/X9.ttf compresslevel=unknown'
   - 'FIXME: no gradle-wrapper.jar'
+  - 'FIXED: res/X9.ttf compresslevel=unknown (>= 4.5.5 is RB)'
 versions:
   - tag: 4.5.2
     apks:
