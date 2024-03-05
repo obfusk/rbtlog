@@ -9,14 +9,13 @@ retry() {
   shift
   for (( i = 1; i <= n; ++i )); do
     if "$@"; then
-      break
-    elif [ "$i" -eq "$n" ]; then
-      return 1
-    else
+      return 0
+    elif (( i < n )); then
       echo retrying...
       sleep 1
     fi
   done
+  return 1
 }
 
 mkdir -p "${ANDROID_HOME}"/cmdline-tools
