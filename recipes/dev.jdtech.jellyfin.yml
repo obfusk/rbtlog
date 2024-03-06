@@ -251,7 +251,8 @@ versions:
           - ./gradlew :app:phone:assembleLibreRelease
           - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-arm64-v8a-release-unsigned.apk
           - git clone -b binres-20240211 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
+          - sed -r 's/align = 4096/align = 16384/' -i reproducible-apk-tools/zipalign.py
+          - ANDROID_HOME= reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
@@ -280,7 +281,8 @@ versions:
           - ./gradlew :app:phone:assembleLibreRelease
           - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-armeabi-v7a-release-unsigned.apk
           - git clone -b binres-20240211 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
+          - sed -r 's/align = 4096/align = 16384/' -i reproducible-apk-tools/zipalign.py
+          - ANDROID_HOME= reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
@@ -309,7 +311,8 @@ versions:
           - ./gradlew :app:phone:assembleLibreRelease
           - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-x86-release-unsigned.apk
           - git clone -b binres-20240211 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
+          - sed -r 's/align = 4096/align = 16384/' -i reproducible-apk-tools/zipalign.py
+          - ANDROID_HOME= reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
@@ -338,7 +341,8 @@ versions:
           - ./gradlew :app:phone:assembleLibreRelease
           - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-x86_64-release-unsigned.apk
           - git clone -b binres-20240211 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
+          - sed -r 's/align = 4096/align = 16384/' -i reproducible-apk-tools/zipalign.py
+          - ANDROID_HOME= reproducible-apk-tools/inplace-fix.py --page-align fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-03-05T21:42:21.002Z"/' 'res/M7.json'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
