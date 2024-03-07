@@ -349,6 +349,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "6412dae4afb2321b621c46eceb6d70636db7d2f660620378244649bc6daffe31": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.1.0/GreenStash-v3.1.0.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 310,
+      "version_name": "3.1.0",
+      "tag": "v3.1.0",
+      "commit": "e27f851ed16796a64d782ee766e23123cbaf786b",
+      "timestamp": 1709832930,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
