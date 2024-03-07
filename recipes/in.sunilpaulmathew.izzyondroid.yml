@@ -1,8 +1,6 @@
 ---
 repository: https://gitlab.com/sunilpaulmathew/izzyondroid.git
 updates: releases
-notes:
-  - 'NB: v0.12 fails to build'
 versions:
   - tag: v0.11
     apks:
@@ -41,6 +39,7 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://gitlab.com/sunilpaulmathew/izzyondroid/uploads/61adb1ccef59d8b27b188f834a089d55/app-release.apk
         build:
+          - printf '\n%s\n%s\n' '-dontwarn javax.annotation.**' '-dontwarn org.conscrypt.**' >> app/proguard-rules.pro
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
