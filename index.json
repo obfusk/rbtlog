@@ -349,6 +349,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "b3a44e0bd73806cd44556bdde59293fc3c18f22ec1bb89fee46957919261f772": [
+    {
+      "repository": "https://github.com/sosauce/CuteCalc.git",
+      "apk_url": "https://github.com/sosauce/CuteCalc/releases/download/v2.7.1/CuteCalc_v2.7.1.apk",
+      "appid": "com.sosauce.cutecalc",
+      "version_code": 27,
+      "version_name": "2.7.1",
+      "tag": "v2.7.1",
+      "commit": "bb85e8b8bf7d32dba8c40744ff050489894143b0",
+      "timestamp": 1709863931,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "6412dae4afb2321b621c46eceb6d70636db7d2f660620378244649bc6daffe31": [
     {
       "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
