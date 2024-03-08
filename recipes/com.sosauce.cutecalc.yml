@@ -62,7 +62,10 @@ versions:
         apk_url: https://github.com/sosauce/CuteCalc/releases/download/$$TAG$$/CuteCalc_$$TAG$$.apk
         build:
           - ./gradlew assembleRelease
-          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - git clone -b binres-20240211 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --zipalign fix-files "$OUT" 'sed s/bb85e8b8bf7d32dba8c40744ff050489894143b0/f00fe1c3481538787d2626f9bfe944f252d28d51/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -74,7 +77,8 @@ versions:
             version: '12.0'
             url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
             sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
-          extra_packages: []
+          extra_packages:
+            - python3
           image: debian:bookworm-slim
           jdk: openjdk-17-jdk-headless
           ndk:
