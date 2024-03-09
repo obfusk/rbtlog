@@ -27,7 +27,7 @@ mv "${ANDROID_HOME}"/cmdline-tools/{cmdline-tools,"${PROVISIONING_CMDLINE_TOOLS_
 rm /tmp/tools.zip
 
 export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/${PROVISIONING_CMDLINE_TOOLS_VERSION}/bin"
-( yes || true ) | sdkmanager --sdk_root="${ANDROID_HOME}" --licenses
+( yes || true ) | sdkmanager --sdk_root="${ANDROID_HOME}" --licenses > /dev/null
 
 if [ -n "${PROVISIONING_BUILD_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "build-tools;${PROVISIONING_BUILD_TOOLS}"
