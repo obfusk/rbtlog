@@ -307,6 +307,20 @@
       "error": null
     }
   ],
+  "0316a0270fe876a85f6bdee393a2661dbfbfb9b400af87466c1c2d829809c9b5": [
+    {
+      "repository": "https://github.com/meenbeese/Chronos.git",
+      "apk_url": "https://github.com/meenbeese/Chronos/releases/download/v1.2.0/app-release.apk",
+      "appid": "com.meenbeese.chronos",
+      "version_code": 3,
+      "version_name": "1.2.0",
+      "tag": "v1.2.0",
+      "commit": "43d3acc21bed53114930ca3a2fca2faa1cffa77d",
+      "timestamp": 1710010565,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
     {
       "repository": "https://github.com/MRepoApp/MRepo.git",
@@ -853,6 +867,20 @@
       "timestamp": 1709583790,
       "reproducible": false,
       "error": null
+    }
+  ],
+  "3a4a54d56481f826aec3aefba290c5ec78e5739be1055f1bd298ed33b4c6df2e": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.7.1/osc-1.7.1.apk",
+      "appid": "kittoku.osc",
+      "version_code": 38,
+      "version_name": "1.7.1",
+      "tag": "v1.7.1",
+      "commit": "63c0ac38c6c42e1e2d688f829abcdb95d18fc053",
+      "timestamp": 1710010754,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
