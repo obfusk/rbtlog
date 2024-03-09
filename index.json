@@ -799,6 +799,20 @@
       "error": null
     }
   ],
+  "ccb050e65bd02b0cc3af5dfb8879f1ec2a9f9c54c370f6e92f26b3fb16ca5d5b": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.25/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 21,
+      "version_name": "0.6.25",
+      "tag": "v0.6.25",
+      "commit": "a629380716f3b7d73a5021bb7be9d720c83eed89",
+      "timestamp": 1709964535,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
     {
       "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
@@ -838,6 +852,20 @@
       "commit": "84c343e41f4a09ee3fe6ee0924a3446ae325c4b7",
       "timestamp": 1708030207,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "192ac25e6a55c4c2ad1ac96dcb7576a8c64864e065e5170aaa4aa4139a540bfe": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.28.0/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 133,
+      "version_name": "2.28.0",
+      "tag": "v2.28.0",
+      "commit": "03a5a382e9ebb74226f0cea387579fa544ac656b",
+      "timestamp": 1709964967,
+      "reproducible": false,
       "error": null
     }
   ],
