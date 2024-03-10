@@ -335,6 +335,20 @@
       "error": null
     }
   ],
+  "1af070b64ff571039c10e9a1c09de58c99aa9be4e1582fa02ed5a4ca385fa05c": [
+    {
+      "repository": "https://github.com/MRepoApp/MRepo.git",
+      "apk_url": "https://github.com/MRepoApp/MRepo/releases/download/v2.4.5/MRepo-2.4.5.d1a7189-731-release.apk",
+      "appid": "com.sanmer.mrepo",
+      "version_code": 731,
+      "version_name": "2.4.5.d1a7189",
+      "tag": "v2.4.5",
+      "commit": "d1a718905009798c6565524ce2b245e3238e9962",
+      "timestamp": 1710090759,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7f3e5673eacc88888e0fdedd0a32cf07c145c5fb55d7753e427e6901ca295f5e": [
     {
       "repository": "https://github.com/sosauce/CuteCalc.git",
@@ -963,6 +977,20 @@
       "tag": "1.1.1",
       "commit": "60f9f9292a16179ffc20679ad0c60c7325b511c0",
       "timestamp": 1708030366,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "7194cba60ee8b6ab83ed7d27dd7ba9bbdc77cc98afe7746e314027fba2a4c102": [
+    {
+      "repository": "https://github.com/FossifyOrg/Gallery.git",
+      "apk_url": "https://github.com/FossifyOrg/Gallery/releases/download/1.1.2/gallery-6-foss-release.apk",
+      "appid": "org.fossify.gallery",
+      "version_code": 6,
+      "version_name": "1.1.2",
+      "tag": "1.1.2",
+      "commit": "6fb3b12be806bc03464ce51ffd34163b594b2fe7",
+      "timestamp": 1710091100,
       "reproducible": true,
       "error": null
     }
