@@ -405,6 +405,20 @@
       "error": null
     }
   ],
+  "9cda56dbb7ab53cb3ccf36526f636f11aed221dff856de4e8859129a3f447723": [
+    {
+      "repository": "https://github.com/vishal2376/git-coach.git",
+      "apk_url": "https://github.com/vishal2376/git-coach/releases/download/v5.1/git-coach.v5.1.apk",
+      "appid": "com.vishal2376.gitcoach",
+      "version_code": 14,
+      "version_name": "5.1",
+      "tag": "v5.1",
+      "commit": "5fffdcbfb8613b843c99c81e1998c6cff77e31fa",
+      "timestamp": 1710107154,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
