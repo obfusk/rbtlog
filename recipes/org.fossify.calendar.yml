@@ -37,10 +37,7 @@ versions:
         build:
           - git checkout d7c25e566c907fb4a927b40c56856c24d4f4c848
           - ./gradlew assembleRelease
-          - OUT=app/build/outputs/apk/foss/release/calendar-*-foss-release-unsigned.apk
-          - git clone -b v0.2.4 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --zipalign fix-files $OUT 'sed s/de376b8bd846b0303f582d179750dc867bc89e9f/d7c25e566c907fb4a927b40c56856c24d4f4c848/' 'META-INF/version-control-info.textproto'
-          - mv $OUT /outputs/unsigned.apk
+          - mv app/build/outputs/apk/foss/release/calendar-*-foss-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -52,8 +49,7 @@ versions:
             version: '12.0'
             url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
             sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
-          extra_packages:
-            - python3
+          extra_packages: []
           image: debian:bookworm-slim
           jdk: openjdk-17-jdk-headless
           ndk:
