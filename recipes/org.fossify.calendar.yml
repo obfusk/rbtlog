@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/FossifyOrg/Calendar.git
 updates: releases
+notes:
+  - 'FIXME: embedded commit hash mismatch for 1.0.3'
 versions:
   - tag: 1.0.2
     apks:
@@ -33,6 +35,7 @@ versions:
       - apk_pattern: calendar-\d+-foss-release\.apk
         apk_url: https://github.com/FossifyOrg/Calendar/releases/download/1.0.3/calendar-4-foss-release.apk
         build:
+          - git checkout d7c25e566c907fb4a927b40c56856c24d4f4c848
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/foss/release/calendar-*-foss-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
