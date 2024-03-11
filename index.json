@@ -1009,6 +1009,20 @@
       "error": null
     }
   ],
+  "f78296b73d2e35a16a6c81bba63fc8bfa51a2fe4d3545eecfd3110c80d8dd637": [
+    {
+      "repository": "https://github.com/FossifyOrg/Calendar.git",
+      "apk_url": "https://github.com/FossifyOrg/Calendar/releases/download/1.0.3/calendar-4-foss-release.apk",
+      "appid": "org.fossify.calendar",
+      "version_code": 4,
+      "version_name": "1.0.3",
+      "tag": "1.0.3",
+      "commit": "de376b8bd846b0303f582d179750dc867bc89e9f",
+      "timestamp": 1710199096,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp6b_v8yqy/outputs:/outputs', '--volume', '/tmp/tmp6b_v8yqy/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/FossifyOrg/Calendar.git', '--env', 'APP_TAG=1.0.3', '--env', 'APP_COMMIT=de376b8bd846b0303f582d179750dc867bc89e9f', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "568ac7597064bdaec690571a2e5d263441f4cc495ca220a90015a9922a875e72": [
     {
       "repository": "https://github.com/FossifyOrg/Contacts.git",
