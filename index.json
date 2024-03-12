@@ -237,6 +237,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpd7363bs7/outputs:/outputs', '--volume', '/tmp/tmpd7363bs7/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.23-alpha', '--env', 'APP_COMMIT=cdd5b834552096e15f944d1144f61c38f1e87dc6', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "406a1212dd0ff181e3bdfcba5ba8866eec7ade3c1147ca87491a490cc6c6cf6f": [
+    {
+      "repository": "https://github.com/Ladsers/Passtable-Android.git",
+      "apk_url": "https://github.com/Ladsers/Passtable-Android/releases/download/24.3.0/Passtable-24.3.0.apk",
+      "appid": "com.ladsers.passtable.android",
+      "version_code": 8,
+      "version_name": "24.3.0",
+      "tag": "24.3.0",
+      "commit": "b04af57bcff45f8cb4b02f019ceb6ca6d315fed6",
+      "timestamp": 1710265799,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
     {
       "repository": "https://github.com/Droid-ify/client.git",
