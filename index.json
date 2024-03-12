@@ -1035,6 +1035,18 @@
       "timestamp": 1709964967,
       "reproducible": false,
       "error": null
+    },
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.28.0/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 133,
+      "version_name": "2.28.0",
+      "tag": "v2.28.0",
+      "commit": "03a5a382e9ebb74226f0cea387579fa544ac656b",
+      "timestamp": 1710279262,
+      "reproducible": true,
+      "error": null
     }
   ],
   "54c4ea8595f269f7f9b07cb43fbd55123271fdf0f506371001dce235ef8c3e9e": [
