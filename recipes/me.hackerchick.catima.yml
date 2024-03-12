@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/CatimaLoyalty/Android.git
 updates: releases
+notes:
+  - 'FIXME: embedded commit hash mismatch for v2.28.0'
 versions:
   - tag: v2.27.0
     apks:
@@ -33,6 +35,7 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
         build:
+          - git reset --soft 66a91db8f043cd52079bd6a5c6eca611a61b79e9
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
