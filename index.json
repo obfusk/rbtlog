@@ -871,6 +871,20 @@
       "error": null
     }
   ],
+  "39a63fa350c395e5ebb085b929a9cf7889d1830ee651664a011887712e0649ce": [
+    {
+      "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
+      "apk_url": "https://github.com/Semper-Viventem/MetaRadar/releases/download/v0.24.1-beta/app-github-release.apk",
+      "appid": "f.cking.software",
+      "version_code": 1708536351,
+      "version_name": "0.24.1-beta",
+      "tag": "v0.24.1-beta",
+      "commit": "f40a1bd5761394ec189012279151c06a8c84c2ca",
+      "timestamp": 1710459397,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a0039fd12a59afa2c27d34e278412db5e35141ad9aac2786bcc2b2bc4d5ae2f6": [
     {
       "repository": "https://github.com/gdzx/audiosource.git",
