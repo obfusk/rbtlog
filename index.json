@@ -705,6 +705,20 @@
       "error": null
     }
   ],
+  "923ce499530c136506bc434533c04efe2d633f1929381e5857c2546e6fcb2303": [
+    {
+      "repository": "https://github.com/florisboard/florisboard.git",
+      "apk_url": "https://github.com/florisboard/florisboard/releases/download/v0.4.0-beta01/florisboard-0.4.0-beta01.apk",
+      "appid": "dev.patrickgold.florisboard.beta",
+      "version_code": 93,
+      "version_name": "0.4.0-beta01",
+      "tag": "v0.4.0-beta01",
+      "commit": "b2a1e82963f0d199651a578715cac3482ead99ca",
+      "timestamp": 1710378121,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "b3e75c43a917a282811219218da2735121f1184d6b2dae3033e240de809f2ed9": [
     {
       "repository": "https://github.com/zacharee/MastodonRedirect.git",
