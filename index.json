@@ -1051,6 +1051,20 @@
       "error": null
     }
   ],
+  "e234bca45a75c4ac5ddb4c33a226be49a3d9a32d33f9e80328351d0021c70dcd": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.26/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 22,
+      "version_name": "0.6.26",
+      "tag": "v0.6.26",
+      "commit": "c35d69c398d9ceb71ed3f600857c6e88565f6bcb",
+      "timestamp": 1710529778,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
     {
       "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
