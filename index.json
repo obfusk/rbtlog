@@ -153,6 +153,20 @@
       "error": null
     }
   ],
+  "716f47bac1f7836a2b9203541ffb370c2a77927ff380530a5c59624aa1987622": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.14/PageKeeper.v1.14.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 17,
+      "version_name": "1.14",
+      "tag": "v1.14",
+      "commit": "b9ac85cd462696bc1e9764e8be6eb167bbd630b2",
+      "timestamp": 1710464877,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
     {
       "repository": "https://gitlab.com/axet/android-ping-utils.git",
