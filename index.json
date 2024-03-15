@@ -1065,6 +1065,20 @@
       "error": null
     }
   ],
+  "3e53e4fd635bcdf773f6744f82174d6bc4ae5ab7e6e2c058fe765ba5852d3b47": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.26.1/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 23,
+      "version_name": "0.6.26.1",
+      "tag": "v0.6.26.1",
+      "commit": "b04de77ff9e62ee2054489dc857ce1e19d325358",
+      "timestamp": 1710543814,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
     {
       "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
