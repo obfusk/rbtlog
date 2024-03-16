@@ -111,6 +111,20 @@
       "error": null
     }
   ],
+  "0d0cdea4ae04dd1df8d893f139cf01de903a74348468a0f5b59c7022643d4032": [
+    {
+      "repository": "https://github.com/CominAtYou/BatteryTile.git",
+      "apk_url": "https://github.com/CominAtYou/BatteryTile/releases/download/v1.6.0/batterytile-1.6.0.apk",
+      "appid": "com.cominatyou.batterytile",
+      "version_code": 11,
+      "version_name": "1.6.0",
+      "tag": "v1.6.0",
+      "commit": "78311b0ef332d55c02dbfc9ceb05228565611915",
+      "timestamp": 1710624139,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "b885cdb4ef8fd46b0acf7e86aa0b8c9973b61fcebc515765a0ac8d3d6ff10c43": [
     {
       "repository": "https://github.com/christianrowlands/android-network-survey.git",
