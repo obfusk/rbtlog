@@ -1079,6 +1079,20 @@
       "error": null
     }
   ],
+  "38dace7ac8d8bd5e4db476434554f3fa900ea796936095c1baf68343766d496d": [
+    {
+      "repository": "https://github.com/devhyper/open-video-editor.git",
+      "apk_url": "https://github.com/devhyper/open-video-editor/releases/download/v1.1.1/app-release.apk",
+      "appid": "io.github.devhyper.openvideoeditor",
+      "version_code": 5,
+      "version_name": "1.1.1",
+      "tag": "v1.1.1",
+      "commit": "5c1afbf5f0491274bf5e5d2faf2be347c8f5e6ed",
+      "timestamp": 1710710391,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "f44ed1ed1951fc8cdefd9caf8f95bef3968e928582c5793db9c77790bdc5b41f": [
     {
       "repository": "https://github.com/fast4x/RiMusic.git",
