@@ -42,7 +42,7 @@ versions:
           - ./gradlew assembleRelease
           - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
           - git clone -b v0.2.4 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --zipalign fix-newlines "$OUT" 'META-INF/services/*'
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-newlines "$OUT" 'META-INF/services/*'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
