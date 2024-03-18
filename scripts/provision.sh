@@ -48,10 +48,15 @@ if [ -n "${PROVISIONING_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "tools;${PROVISIONING_TOOLS}"
 fi
 
-retry 5 git clone --recurse-submodules -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
+retry 5 git clone -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
 git checkout refs/tags/"${APP_TAG}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
+
+if [ -e .gitmodules ]; then
+  sed -r 's!url = git@([a-z.]+):!url = https://\1/!' -i .gitmodules
+  retry 5 git submodule update --init --recursive
+fi
 
 if [ "${VERIFY_GRADLE_WRAPPER}" = yes ]; then
   retry 5 git clone https://github.com/obfusk/gradle-wrapper-verify /opt/gradle-wrapper-verify
