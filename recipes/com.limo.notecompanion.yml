@@ -1,0 +1,36 @@
+---
+repository: https://github.com/LimoDerEchte/NoteCompanion.git
+updates: releases
+notes:
+  - 'FIXME: no gradle-wrapper.jar (fixed on master)'
+versions:
+  - tag: v0.1.1-Alpha
+    apks:
+      - apk_pattern: NoteCompanion\.apk
+        apk_url: https://github.com/LimoDerEchte/NoteCompanion/releases/download/$$TAG$$/NoteCompanion.apk
+        build:
+          - wget -q -O /tmp/gradle-8.2-bin.zip -- https://services.gradle.org/distributions/gradle-8.2-bin.zip
+          - sha256sum -c <<< '38f66cd6eef217b4c35855bb11ea4e9fbc53594ccccb5fb82dfd317ef8c2c5a3  /tmp/gradle-8.2-bin.zip'
+          - unzip -q -d /opt /tmp/gradle-8.2-bin.zip
+          - export PATH="${PATH}:/opt/gradle-8.2/bin"
+          - gradle assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: false
