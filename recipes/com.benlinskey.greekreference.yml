@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/blinskey/greek-reference.git
 updates: releases
+notes:
+  - 'FIXME: JARs'
 versions:
   - tag: v1.12.2
     apks:
