@@ -377,6 +377,20 @@
       "error": null
     }
   ],
+  "11b3de0a98ee4a5b7897a54d6e468b52898ef7f391257e605263421c3758289d": [
+    {
+      "repository": "https://github.com/LimoDerEchte/NoteCompanion.git",
+      "apk_url": "https://github.com/LimoDerEchte/NoteCompanion/releases/download/v0.1.1-Alpha/NoteCompanion.apk",
+      "appid": "com.limo.notecompanion",
+      "version_code": 101,
+      "version_name": "0.1.1",
+      "tag": "v0.1.1-Alpha",
+      "commit": "b66bbf9b53ab13a59a086d8a3f4e787ac81a8245",
+      "timestamp": 1710721670,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "30dca3f548f40bdafe6221298654d6ca719fe212e63c22000b945b96a89b2839": [
     {
       "repository": "https://github.com/Droid-ify/client.git",
