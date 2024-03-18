@@ -111,6 +111,20 @@
       "error": null
     }
   ],
+  "5a3ddf7345b28b711d9458c0972e2d52ea0df20d57860d5e8170ff52f8011e76": [
+    {
+      "repository": "https://github.com/blinskey/greek-reference.git",
+      "apk_url": "https://github.com/blinskey/greek-reference/releases/download/v1.12.2/GreekReference-release-v1.12.2.apk",
+      "appid": "com.benlinskey.greekreference",
+      "version_code": 31,
+      "version_name": "1.12.2",
+      "tag": "v1.12.2",
+      "commit": "9e67882c14f3aedb0b9b33dfcb7351d303178550",
+      "timestamp": 1710723374,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "11d413edcbc200f1497f68613adb56fb7a8d748c180a215782e98bff263506e5": [
     {
       "repository": "https://github.com/you-apps/TranslateYou.git",
