@@ -3,6 +3,7 @@ repository: https://github.com/DP-Hridayan/aShellYou.git
 updates: releases
 notes:
   - 'NB: not reproducible'
+  - 'FIXME: resource file names and PNGs differ'
   - 'FIXME: tag mismatch (version code/name etc. updated after tagging)'
 versions:
   - tag: v3.5.1
