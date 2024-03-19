@@ -34,24 +34,13 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
-      - name: Update log (log branch)
-        run: python3 scripts/update-log.py -v podman recipes/*.yml
-        if: github.ref == 'refs/heads/log'
-      - name: Update log (other branches, keep apks)
+      - name: Update log (keep apks)
         run: |
           mkdir apks
           python3 scripts/update-log.py --keep apks -v podman recipes/*.yml
-        if: github.ref != 'refs/heads/log'
       - name: Update index
         run: python3 scripts/make-index.py -v logs/*.json > index.json
-      - name: Create pull request (log branch)
-        uses: peter-evans/create-pull-request@v6.0.2
-        with:
-          title: "Update log"
-          commit-message: "Update log"
-          branch-suffix: timestamp
-        if: github.ref == 'refs/heads/log'
-      - name: Upload artefacts (other branches)
+      - name: Upload artefacts
         uses: actions/upload-artifact@v4
         with:
           name: apks
@@ -59,4 +48,10 @@ jobs:
             index.json
             logs/
             apks/
-        if: github.ref != 'refs/heads/log'
+      - name: Create pull request (log branch)
+        uses: peter-evans/create-pull-request@v6.0.2
+        with:
+          title: "Update log"
+          commit-message: "Update log"
+          branch-suffix: timestamp
+        if: github.ref == 'refs/heads/log'
