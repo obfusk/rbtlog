@@ -1179,6 +1179,20 @@
       "error": null
     }
   ],
+  "1f63326c59bd76060e2ad1840c1a13cc24c6556c14307098c6da28631124b954": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v3.6.0/aShell.You.v3.6.0.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 30,
+      "version_name": "v3.6.0",
+      "tag": "v3.6.0",
+      "commit": "72101c96628a2c4c814482fe9c49cd8dd32cf5a6",
+      "timestamp": 1710862514,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
