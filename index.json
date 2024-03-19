@@ -1095,6 +1095,20 @@
       "error": null
     }
   ],
+  "5b994d1f6520224f6a02df698f1edf1f258da971da895df0f7b7eac6e6c5c02a": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v3.5.1/aShell.You.v3.5.1.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 29,
+      "version_name": "v3.5.1",
+      "tag": "v3.5.1",
+      "commit": "17cdd4ac4e0e5bc6f19c83d5d191abbd12a3f926",
+      "timestamp": 1710808365,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
