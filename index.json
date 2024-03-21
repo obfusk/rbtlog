@@ -13,6 +13,20 @@
       "error": null
     }
   ],
+  "8f2990b06f29931248eea54565b91b6986bddfc14ebc7d9c0e41fdca10768495": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.2.7/Podcini_release_free_4.2.7.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020110,
+      "version_name": "4.2.7",
+      "tag": "4.2.7",
+      "commit": "d5b5734712d962dc9f881875deeda9e2e42fe43b",
+      "timestamp": 1710987046,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -2136,6 +2150,20 @@
       "commit": "2e7df1afc2286006bb0c9460d060ffa95190ee11",
       "timestamp": 1709475942,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "13d1d2f886621350310626be5e88abac5c7fbdab5a10df7d047f9da60cf8cc97": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.0.10/flickboard-v0.0.10.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 13,
+      "version_name": "0.0.10",
+      "tag": "v0.0.10",
+      "commit": "f58c24221b61fd5de3913c25461b9d7695636aac",
+      "timestamp": 1710989292,
+      "reproducible": false,
       "error": null
     }
   ],
