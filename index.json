@@ -293,6 +293,20 @@
       "error": null
     }
   ],
+  "0e648d52e578d84082bd2e857a26655ac843184015637a270d9a2170f701ea4b": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.16/PageKeeper.v1.16.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 19,
+      "version_name": "1.16",
+      "tag": "v1.16",
+      "commit": "016cd492aa6d0bc31955a5c2ba9b51bdf297a31a",
+      "timestamp": 1711039054,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
