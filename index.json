@@ -209,6 +209,20 @@
       "error": null
     }
   ],
+  "23b3c2fc503d9f2c652007c9aac67d39412d95ed5cba3b21ac7e9f42dacc3e65": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.22.2/networksurvey-1.22.2-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 62,
+      "version_name": "1.22.2-cdr",
+      "tag": "v1.22.2",
+      "commit": "d1346eac9316217c4fe44ad7af9c4d25ba6b2fd0",
+      "timestamp": 1710982152,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -289,6 +303,20 @@
       "tag": "v1.2.2",
       "commit": "43719af52d91f0e48ccdaa5a9a6554e924137649",
       "timestamp": 1710699287,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "90346ba2f2822657f0f3646efb737c5bff1d927547b0471b491ca70e0610fc3f": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.3.0/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 20,
+      "version_name": "1.3.0",
+      "tag": "v1.3.0",
+      "commit": "2fc016712a22c28e597bbbc49df2f20372dc998c",
+      "timestamp": 1710982393,
       "reproducible": true,
       "error": null
     }
@@ -1801,6 +1829,20 @@
       "tag": "1.0.0",
       "commit": "28826651919880142f1dd5b8b1fdb4ea7ec3b45f",
       "timestamp": 1708180673,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "056f82a1bc02e2b41d526e69747128a5f4b2bfe19a3d86c8a09e8c5422508317": [
+    {
+      "repository": "https://github.com/FossifyOrg/Phone.git",
+      "apk_url": "https://github.com/FossifyOrg/Phone/releases/download/1.1.1/phone-3-foss-release.apk",
+      "appid": "org.fossify.phone",
+      "version_code": 3,
+      "version_name": "1.1.1",
+      "tag": "1.1.1",
+      "commit": "7b1d458fb92ec64111cc768ab7c3babadfaa44d9",
+      "timestamp": 1710982548,
       "reproducible": true,
       "error": null
     }
