@@ -13,6 +13,20 @@
       "error": null
     }
   ],
+  "8f2990b06f29931248eea54565b91b6986bddfc14ebc7d9c0e41fdca10768495": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.2.7/Podcini_release_free_4.2.7.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020110,
+      "version_name": "4.2.7",
+      "tag": "4.2.7",
+      "commit": "d5b5734712d962dc9f881875deeda9e2e42fe43b",
+      "timestamp": 1710987046,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -444,6 +458,76 @@
       "commit": "e4501b14cd654907fb82f7cd2d00744bac871f8e",
       "timestamp": 1710812223,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "b8470a12ee3ef35236073d43536d3d9067074b495df43ef3767276999f20f0ca": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.1/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 49,
+      "version_name": "0.22.1",
+      "tag": "v0.22.1",
+      "commit": "e46f4ec5bd216c3df8d5ae3ee05c47ba8516eec0",
+      "timestamp": 1710987420,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "78ec72d56167033ba087b9f07eaa5f13398c094d36661b039de7730f7d616818": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.1/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 49,
+      "version_name": "0.22.1",
+      "tag": "v0.22.1",
+      "commit": "e46f4ec5bd216c3df8d5ae3ee05c47ba8516eec0",
+      "timestamp": 1710987821,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "4847435819206353f00f9154b44dc7adac765564d34c47f847be9af70d6a6a77": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.1/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 49,
+      "version_name": "0.22.1",
+      "tag": "v0.22.1",
+      "commit": "e46f4ec5bd216c3df8d5ae3ee05c47ba8516eec0",
+      "timestamp": 1710988196,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "f5d9b173e6ad10a3decd66f26cfe0a469fd6a83ce72d2df2ac805993a248430f": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.1/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 49,
+      "version_name": "0.22.1",
+      "tag": "v0.22.1",
+      "commit": "e46f4ec5bd216c3df8d5ae3ee05c47ba8516eec0",
+      "timestamp": 1710988536,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "513c4384fbb533b2a3dc7a29688dc45a574bed133db9ebab225640674c8dddd6": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.1/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 49,
+      "version_name": "0.22.1",
+      "tag": "v0.22.1",
+      "commit": "e46f4ec5bd216c3df8d5ae3ee05c47ba8516eec0",
+      "timestamp": 1710988912,
+      "reproducible": false,
       "error": null
     }
   ],
@@ -2136,6 +2220,20 @@
       "commit": "2e7df1afc2286006bb0c9460d060ffa95190ee11",
       "timestamp": 1709475942,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "13d1d2f886621350310626be5e88abac5c7fbdab5a10df7d047f9da60cf8cc97": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.0.10/flickboard-v0.0.10.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 13,
+      "version_name": "0.0.10",
+      "tag": "v0.0.10",
+      "commit": "f58c24221b61fd5de3913c25461b9d7695636aac",
+      "timestamp": 1710989292,
+      "reproducible": false,
       "error": null
     }
   ],
