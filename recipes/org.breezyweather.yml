@@ -2,7 +2,6 @@
 repository: https://github.com/breezy-weather/breezy-weather.git
 updates: releases
 notes:
-  - 'FIXME: timestamps'
   - 'FIXME: local.properties'
 versions:
   - tag: v5.1.3-beta
