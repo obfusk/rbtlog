@@ -41,6 +41,20 @@
       "error": null
     }
   ],
+  "f1c7ae580300f1c584c0a46e9f334a4bc1ec785bbead868721d762f0ae2ce256": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.3.1/Podcini_release_free_4.3.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020112,
+      "version_name": "4.3.1",
+      "tag": "4.3.1",
+      "commit": "0ee4c7a2767b6a3fcf6fe88458afe2ccf0c67680",
+      "timestamp": 1711136996,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -625,6 +639,20 @@
       "tag": "v5.3.2",
       "commit": "cbb62fefdfd2ce5b8aab3dce0920521f9aeb8412",
       "timestamp": 1710629083,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "eb17c86a8afd5c313de8e647e7c5552e6a6530e05f35b184489c1bea91f14cc4": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v5.4.0/NeverTooManyBooks-5.4.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 75,
+      "version_name": "5.4.0",
+      "tag": "v5.4.0",
+      "commit": "6dee999f3c7a4f9e77a3bc8863c0a5b0e80572f2",
+      "timestamp": 1711137326,
       "reproducible": true,
       "error": null
     }
@@ -1511,6 +1539,20 @@
       "timestamp": 1710543814,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "4be84360e3d04b2e5116c57635cb9476af979a269c47d2cc6d0125f5f4511dbe": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.27/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 24,
+      "version_name": "0.6.27",
+      "tag": "v0.6.27",
+      "commit": "14a59e6215d190980f42da17c7277211718a7aea",
+      "timestamp": 1711137562,
+      "reproducible": true,
+      "error": null
     }
   ],
   "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
