@@ -55,6 +55,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "ae25f8dfd3312b10415d3a26e4dacf4705d0bfee7b9f97acedd5068b7919ac6c": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.3.2/Podcini_release_free_4.3.2.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020113,
+      "version_name": "4.3.2",
+      "tag": "4.3.2",
+      "commit": "64e3e64d2106a6112798a3666948b6262c01b1a8",
+      "timestamp": 1711232864,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -923,6 +937,20 @@
       "error": null
     }
   ],
+  "5bfefbeb8be6781eca82d52e163b66d429c244f835c923bc91b63cf0cea55b18": [
+    {
+      "repository": "https://github.com/vishal2376/snaptick.git",
+      "apk_url": "https://github.com/vishal2376/snaptick/releases/download/v2.1/snaptick.v2.1.apk",
+      "appid": "com.vishal2376.snaptick",
+      "version_code": 7,
+      "version_name": "2.1",
+      "tag": "v2.1",
+      "commit": "f6761ee0038dc2bcf6846c6b2c7712a3be6fe924",
+      "timestamp": 1711233186,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
@@ -1415,6 +1443,20 @@
       "timestamp": 1710862514,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "9eb47bb8e2b2a267e9f30635ad0dd0fd1be8e52c976188f4b45e0311570e434b": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v3.7.0/aShell.You.v3.7.0.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 31,
+      "version_name": "v3.7.0",
+      "tag": "v3.7.0",
+      "commit": "bb4d87d5f00f9b0826c2ea7dc6022b8457263299",
+      "timestamp": 1711233461,
+      "reproducible": false,
+      "error": null
     }
   ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
