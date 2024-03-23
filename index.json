@@ -391,6 +391,20 @@
       "error": null
     }
   ],
+  "35fd7f2fdae6daba7b055c4ff1cdad1481bfd078b24de21fb37dfb9031b720be": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.4.0/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 21,
+      "version_name": "1.4.0",
+      "tag": "v1.4.0",
+      "commit": "7d781d2d6e39d1503efb2cd0ed9c108651416b19",
+      "timestamp": 1711230776,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
     {
       "repository": "https://gitlab.com/axet/android-ping-utils.git",
@@ -1301,6 +1315,20 @@
       "tag": "1.2169",
       "commit": "a3dca55bbdb861a40b32d41d0d9a471dcf6af5bb",
       "timestamp": 1710602477,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "b09e4315d53288cbee3f31685c83eb388e6a503107ad9ba6afa3e7bb8e97d1b2": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2170/FairEmail-v1.2170a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2170,
+      "version_name": "1.2170",
+      "tag": "1.2170",
+      "commit": "b385a52cbfa784cf36207ab24bf998ef8f3226ca",
+      "timestamp": 1711230924,
       "reproducible": true,
       "error": null
     }
