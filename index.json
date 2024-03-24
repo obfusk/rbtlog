@@ -419,6 +419,20 @@
       "error": null
     }
   ],
+  "5648017ed1292f6a23371567f265eb71fc7c314da1af7304f76113faf497644a": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.4.2/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 23,
+      "version_name": "1.4.2",
+      "tag": "v1.4.2",
+      "commit": "98ccdec03832f0de713c2fe9098b213be40c2bc2",
+      "timestamp": 1711294782,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
     {
       "repository": "https://gitlab.com/axet/android-ping-utils.git",
