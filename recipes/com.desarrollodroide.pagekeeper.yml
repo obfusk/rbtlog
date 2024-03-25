@@ -1,8 +1,6 @@
 ---
 repository: https://github.com/DesarrolloAntonio/Shiori-Android-Client.git
 updates: releases
-notes:
-  - 'FIXME: .profm'
 versions:
   - tag: v1.14
     apks:
@@ -117,17 +115,8 @@ versions:
       - apk_pattern: PageKeeper.*\.apk
         apk_url: https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/$$TAG$$/PageKeeper.$$TAG$$.apk
         build:
-          - PROFM_FILE=presentation/build/intermediates/binary_art_profile_metadata/release/baseline.profm
-          - PROFM_SHA1=48626948c4294b5fd903d333f76e7b8837778ff6
           - sed -r '/release \{/,/}/ { /signingConfig/d }' -i presentation/build.gradle.kts
-          - for _ in {1..60}; do
           - ./gradlew assembleRelease
-          - if [ "$( sha1sum "$PROFM_FILE" | cut -d' ' -f1 )" = "$PROFM_SHA1" ]; then
-          - break
-          - else
-          - rm "$PROFM_FILE"
-          - fi
-          - done
           - mv presentation/build/outputs/apk/release/PageKeeper*.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
