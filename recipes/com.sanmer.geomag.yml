@@ -1,0 +1,64 @@
+---
+repository: https://github.com/SanmerApps/Geomag.git
+updates: releases
+versions:
+  - tag: v0.5.10
+    apks:
+      - apk_pattern: Geomag-.*-arm64-v8a-release\.apk
+        apk_url: https://github.com/SanmerApps/Geomag/releases/download/v0.5.10/Geomag-0.5.10.9e44aea-346-arm64-v8a-release.apk
+        build:
+          - sed -r '/signingConfig =/d' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - find -name '*.apk'  # FIXME
+          - mv app/build/outputs/apk/release/Geomag-*-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - cargo
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: Geomag-.*-x86_64-release\.apk
+        apk_url: https://github.com/SanmerApps/Geomag/releases/download/v0.5.10/Geomag-0.5.10.9e44aea-346-x86_64-release.apk
+        build:
+          - exit 1  # FIXME
+          - sed -r '/signingConfig =/d' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/Geomag-*-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - cargo
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
