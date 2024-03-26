@@ -965,6 +965,20 @@
       "error": null
     }
   ],
+  "2ff2da6905ac4dd77501bbc86f3d0226d8b4b05b7c607772e55e1026911c948f": [
+    {
+      "repository": "https://github.com/SlaVcE14/JsonList.git",
+      "apk_url": "https://github.com/SlaVcE14/JsonList/releases/download/v1.4/JsonList_1.4.apk",
+      "appid": "com.sjapps.jsonlist",
+      "version_code": 10,
+      "version_name": "1.4",
+      "tag": "v1.4",
+      "commit": "7f9666ed4db1b6f719669145fc7d0011600f3800",
+      "timestamp": 1711495431,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "7f3e5673eacc88888e0fdedd0a32cf07c145c5fb55d7753e427e6901ca295f5e": [
     {
       "repository": "https://github.com/sosauce/CuteCalc.git",
