@@ -97,6 +97,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "844c660c1cbb02de304fa31fdaaaf5bbe3d5909f9a31ec243f8d19e84bdc999a": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.4.0/Podcini_release_free_4.4.0.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020116,
+      "version_name": "4.4.0",
+      "tag": "4.4.0",
+      "commit": "c3f70fd1d4e973e02d0b8fc73620190f63bfa661",
+      "timestamp": 1711466160,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -429,6 +443,20 @@
       "tag": "v1.17.2",
       "commit": "4b42c4417361937b9e11d5de95cd21ec75961e90",
       "timestamp": 1711399165,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "b5f413b8d0e2e011b10a52ba0ec53ada125cc05e8ba01316f247f269d1c43a76": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.17.3/PageKeeper.v1.17.3.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 23,
+      "version_name": "1.17.3",
+      "tag": "v1.17.3",
+      "commit": "688cfdd30d11daca75ad9931897c8065d43be1a3",
+      "timestamp": 1711466492,
       "reproducible": true,
       "error": null
     }
