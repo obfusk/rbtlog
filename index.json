@@ -2419,6 +2419,20 @@
       "error": null
     }
   ],
+  "710867b107470fefd009c043e2c8bee721cb038d2dcfc9e5d8d33e878cbbe038": [
+    {
+      "repository": "https://github.com/scheibler/WalkersGuide-Android.git",
+      "apk_url": "https://github.com/scheibler/WalkersGuide-Android/releases/download/v3.0.0/WalkersGuide-3.0.0-release.apk",
+      "appid": "org.walkersguide.android",
+      "version_code": 33,
+      "version_name": "3.0.0",
+      "tag": "v3.0.0",
+      "commit": "ec2751f1e09073341fbab2d3debb7ba13f90b2ed",
+      "timestamp": 1711479233,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "ccf24702fbae85aa75c8a4aa72e79c78353cbe511d25f5d7104bbfa707b9d839": [
     {
       "repository": "https://github.com/AdamGuidarini/MediTrak.git",
