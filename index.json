@@ -111,6 +111,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "09351e72dd8afd147bd5c0906c66a7ec7942b63d6aa81a6c101eac7f665857e3": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.4.1/Podcini_release_free_4.4.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020117,
+      "version_name": "4.4.1",
+      "tag": "4.4.1",
+      "commit": "e08d508c413acc37c2dc618243b10619eafbefeb",
+      "timestamp": 1711570932,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -825,6 +839,20 @@
       "error": null
     }
   ],
+  "9c34f6b05896e0064f5c9751fd14e6f82489256b31d5f4addeb1f6f31e001a89": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/dessalines/jerboa/releases/download/0.0.64/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 64,
+      "version_name": "0.0.64",
+      "tag": "0.0.64",
+      "commit": "b790ecd51cb322ac808657324cb4b37eda732a44",
+      "timestamp": 1711571284,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "406a1212dd0ff181e3bdfcba5ba8866eec7ade3c1147ca87491a490cc6c6cf6f": [
     {
       "repository": "https://github.com/Ladsers/Passtable-Android.git",
@@ -864,6 +892,20 @@
       "commit": "2d792c812438e2388b794de5804f20a0b88a6284",
       "timestamp": 1708029828,
       "reproducible": false,
+      "error": null
+    }
+  ],
+  "9134613b1d6aab3675aaf7624760d2c287124dab430f803662e567871edbd8e3": [
+    {
+      "repository": "https://github.com/Droid-ify/client.git",
+      "apk_url": "https://github.com/Droid-ify/client/releases/download/v0.6.2/app-release.apk",
+      "appid": "com.looker.droidify",
+      "version_code": 620,
+      "version_name": "0.6.2",
+      "tag": "v0.6.2",
+      "commit": "2036789ce2b9c54737cde2c186028d000a5d02aa",
+      "timestamp": 1711571729,
+      "reproducible": true,
       "error": null
     }
   ],
@@ -1597,6 +1639,20 @@
       "timestamp": 1711233461,
       "reproducible": false,
       "error": null
+    }
+  ],
+  "ffda56644d7cbe10d1e22dbb97fa1ae427ca78a2025ec4daf884a16965891c52": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v3.8.0/aShell.You.v3.8.0.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 32,
+      "version_name": "v3.8.0",
+      "tag": "v3.8.0",
+      "commit": "bb2395afa630f6de26e0b8d75aeb44e40fa9a24f",
+      "timestamp": 1711572178,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
