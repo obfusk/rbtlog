@@ -1779,6 +1779,20 @@
       "error": null
     }
   ],
+  "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
+    {
+      "repository": "https://github.com/JunioJsv/minimum.git",
+      "apk_url": "https://github.com/JunioJsv/minimum/releases/download/v1.6.0/juniojsv.minimum-v1.6.0-release.apk",
+      "appid": "juniojsv.minimum",
+      "version_code": 141,
+      "version_name": "1.6.0",
+      "tag": "v1.6.0",
+      "commit": "bb870fa02dfc49a14bb812c3b183c7646bad457c",
+      "timestamp": 1711502032,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ed25b33fe8969fac91d0e64aeb44b0ede748af6d24af6df5e11dac1730d86c58": [
     {
       "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
