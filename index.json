@@ -2641,6 +2641,20 @@
       "error": null
     }
   ],
+  "b00e21c9826cbe401582a169d2f6b31f383a05a0a7e315e26a03b9a249e1e5b2": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.0.11/flickboard-v0.0.11.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 14,
+      "version_name": "0.0.11",
+      "tag": "v0.0.11",
+      "commit": "54a4581a9d220c660565cca077e00e51361f0f1f",
+      "timestamp": 1711581377,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "0e0af9b6ba942963f1aa6e827bbf069b62daed6d359ee46cb3aea2dfe8d11fcc": [
     {
       "repository": "https://codeberg.org/oparaskos/android-pdf2images.git",
