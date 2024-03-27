@@ -209,6 +209,8 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
         error = f"command or file not found: {e}"
     except requests.RequestException as e:
         error = f"http error: {e}"
+    except binres.Error as e:
+        error = f"axml error: {e}"
     except Error as e:
         error = str(e)
     if verbose:
