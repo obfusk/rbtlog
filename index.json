@@ -741,6 +741,76 @@
       "error": null
     }
   ],
+  "1cc7a9f58a356b117295c89002ba26edbd2c27c85d380b98528c2feaeae45a10": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.2/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 50,
+      "version_name": "0.22.2",
+      "tag": "v0.22.2",
+      "commit": "93ebfaf9e60fb5e3ddc150a68c34e68b93225d06",
+      "timestamp": 1711659596,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "060b74810c96cdd1ae17d99eeafeb5d8bdc4f8bdab6a8defbd313d67fbf13a15": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.2/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 50,
+      "version_name": "0.22.2",
+      "tag": "v0.22.2",
+      "commit": "93ebfaf9e60fb5e3ddc150a68c34e68b93225d06",
+      "timestamp": 1711659911,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "9a6afe7007ae02f7b2fdec7ecd717cb940a1949d327eef9510973935c306adf0": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.2/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 50,
+      "version_name": "0.22.2",
+      "tag": "v0.22.2",
+      "commit": "93ebfaf9e60fb5e3ddc150a68c34e68b93225d06",
+      "timestamp": 1711660238,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "62483a79602ade7c4df0751bec2bc71a13e2c6fe5d6cec0ed771b2d701707ade": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.2/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 50,
+      "version_name": "0.22.2",
+      "tag": "v0.22.2",
+      "commit": "93ebfaf9e60fb5e3ddc150a68c34e68b93225d06",
+      "timestamp": 1711660555,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "46bc251ed387ec892099a4dea309979973616467d0f54b79616f32a2493f59ef": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.22.2/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 50,
+      "version_name": "0.22.2",
+      "tag": "v0.22.2",
+      "commit": "93ebfaf9e60fb5e3ddc150a68c34e68b93225d06",
+      "timestamp": 1711660885,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
@@ -1185,6 +1255,20 @@
       "tag": "v2.7.0",
       "commit": "5d36d7d46f639e7032778cf32f48704fb155e40c",
       "timestamp": 1709679519,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "60d768b318bc9c3be1d96ff73d5854ff85b5cc541b972b92b45a47149a045a70": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.7.1/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 142,
+      "version_name": "2.7.1",
+      "tag": "v2.7.1",
+      "commit": "43d4156a102fd5328b9914fe5e3939e6913bc259",
+      "timestamp": 1711661204,
       "reproducible": true,
       "error": null
     }
