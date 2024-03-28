@@ -125,6 +125,20 @@
       "error": null
     }
   ],
+  "e7fc92ad8f7535d6b4837889fb692a20bcf06ec9f6360cac6e238fb0ee66f835": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.4.2/Podcini_release_free_4.4.2.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020118,
+      "version_name": "4.4.2",
+      "tag": "4.4.2",
+      "commit": "d442601ba8a4544b74de2a43b7c30e6c6e18edb8",
+      "timestamp": 1711665879,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
