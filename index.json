@@ -1007,6 +1007,20 @@
       "error": null
     }
   ],
+  "27618df3ab4ea4a68c8fdf40139e95eb0008ac045194e20abc8c2f96dbb4df59": [
+    {
+      "repository": "https://github.com/martinmimigames/little-file-explorer.git",
+      "apk_url": "https://github.com/martinmimigames/little-file-explorer/releases/download/v4.15/little.file.explorer.4.15.apk",
+      "appid": "com.martinmimigames.simplefileexplorer",
+      "version_code": 17,
+      "version_name": "4.15",
+      "tag": "v4.15",
+      "commit": "314152758290faf9d08b7ca30c4da984dfa5a752",
+      "timestamp": 1711661849,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e530c4e85e630b8a36ee2fce5c3bb1477aea8882460df15494ef67fbaa198edd": [
     {
       "repository": "https://github.com/meenbeese/Chronos.git",
