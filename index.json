@@ -1655,6 +1655,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "e015b15fdef59e26783db873c31beea22af2616dfc19341d66ef4e0d536ce66b": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v3.8.1/aShell.You.v3.8.1.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 33,
+      "version_name": "v3.8.1",
+      "tag": "v3.8.1",
+      "commit": "9b871e1725989483e91b9d66ac01239d7035f850",
+      "timestamp": 1711640724,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
