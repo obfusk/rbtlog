@@ -139,6 +139,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "f7a41b7b29b498ffda5bed3dab50e9953388a4a176f5f7fc0349ff30a656df7c": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.4.3/Podcini_release_free_4.4.3.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020119,
+      "version_name": "4.4.3",
+      "tag": "4.4.3",
+      "commit": "24e7e671da7204a906c5e97eb43f1bd4bfe42a32",
+      "timestamp": 1711722911,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
