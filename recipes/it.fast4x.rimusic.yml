@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/fast4x/RiMusic.git
 updates: releases
+notes:
+  - 'FIXME: embedded commit hash mismatch for v0.6.32'
 versions:
   - tag: v0.6.22
     apks:
@@ -224,6 +226,7 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/fast4x/RiMusic/releases/download/$$TAG$$/app-release.apk
         build:
+          - git reset --soft 1917c95f8ed04a4903ab32d3c2a1121a1f1db379
           - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle.kts
           - ./gradlew assembleRelease
           - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
