@@ -1905,6 +1905,20 @@
       "error": null
     }
   ],
+  "b1f8c4ada581dd6e62f2aa557e4525017d85b3243644610f57825d5298f7a97d": [
+    {
+      "repository": "https://github.com/devhyper/open-video-editor.git",
+      "apk_url": "https://github.com/devhyper/open-video-editor/releases/download/v1.1.2/app-release.apk",
+      "appid": "io.github.devhyper.openvideoeditor",
+      "version_code": 6,
+      "version_name": "1.1.2",
+      "tag": "v1.1.2",
+      "commit": "ece0f0de4e5cec4c5ca5103160ccf0726270a0b6",
+      "timestamp": 1714337132,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "f44ed1ed1951fc8cdefd9caf8f95bef3968e928582c5793db9c77790bdc5b41f": [
     {
       "repository": "https://github.com/fast4x/RiMusic.git",
