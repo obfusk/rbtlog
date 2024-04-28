@@ -2545,6 +2545,20 @@
       "error": null
     }
   ],
+  "df9853ea001db764e1cdfb24a8c83bc4cd7d78bfecefea276f38abb6fb423fe8": [
+    {
+      "repository": "https://github.com/FossifyOrg/Notes.git",
+      "apk_url": "https://github.com/FossifyOrg/Notes/releases/download/1.0.0/notes-2-foss-release.apk",
+      "appid": "org.fossify.notes",
+      "version_code": 2,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "0fab987d51c47ffe2d30b377431cd03a6cde3783",
+      "timestamp": 1714332681,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "8d4a522c3d232a5e0d71eabd928e2c0665b4f1dfd40de4a66f63424bc237f6dd": [
     {
       "repository": "https://github.com/FossifyOrg/Phone.git",
