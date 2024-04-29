@@ -1147,6 +1147,20 @@
       "error": null
     }
   ],
+  "de7f189d544818c8a4be55d480eeeb0c677184f27387a3a0e3d47f3835ee0fe8": [
+    {
+      "repository": "https://github.com/meenbeese/Chronos.git",
+      "apk_url": "https://github.com/meenbeese/Chronos/releases/download/v1.5.0/app-release.apk",
+      "appid": "com.meenbeese.chronos",
+      "version_code": 6,
+      "version_name": "1.5.0",
+      "tag": "v1.5.0",
+      "commit": "9618a75b2cd8478e22af4e8fa18786300836a345",
+      "timestamp": 1714411320,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp56dzkuuu/outputs:/outputs', '--volume', '/tmp/tmp56dzkuuu/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/meenbeese/Chronos.git', '--env', 'APP_TAG=v1.5.0', '--env', 'APP_COMMIT=9618a75b2cd8478e22af4e8fa18786300836a345', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 127."
+    }
+  ],
   "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
     {
       "repository": "https://github.com/MRepoApp/MRepo.git",
