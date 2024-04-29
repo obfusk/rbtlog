@@ -1147,6 +1147,20 @@
       "error": null
     }
   ],
+  "de7f189d544818c8a4be55d480eeeb0c677184f27387a3a0e3d47f3835ee0fe8": [
+    {
+      "repository": "https://github.com/meenbeese/Chronos.git",
+      "apk_url": "https://github.com/meenbeese/Chronos/releases/download/v1.5.0/app-release.apk",
+      "appid": "com.meenbeese.chronos",
+      "version_code": 6,
+      "version_name": "1.5.0",
+      "tag": "v1.5.0",
+      "commit": "9618a75b2cd8478e22af4e8fa18786300836a345",
+      "timestamp": 1714411838,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
     {
       "repository": "https://github.com/MRepoApp/MRepo.git",
