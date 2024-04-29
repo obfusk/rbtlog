@@ -168,6 +168,7 @@ versions:
           - sed 's/configuration-cache=true/configuration-cache=false/' -i gradle.properties
           - sed 's/System.currentTimeMillis()/1713356161446/' -i app/build.gradle.kts
           - sed -r '/signingConfig =/d' -i app/build.gradle.kts
+          - printf '\n%s\n' 'aboutLibraries { registerAndroidTasks = false }' >> app/build.gradle.kts
           - ./gradlew -PaboutLibraries.exportPath=src/main/res/raw/ app:exportLibraryDefinitions
           - sed -r 's/"generated":"[^"]*"/"generated":"2024-04-17T12:16:17.201Z"/' -i app/src/main/res/raw/aboutlibraries.json
           - ./gradlew assembleOseRelease
