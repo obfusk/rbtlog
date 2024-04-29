@@ -112,7 +112,10 @@ versions:
         apk_url: https://github.com/meenbeese/Chronos/releases/download/$$TAG$$/app-release.apk
         build:
           - ./gradlew assembleRelease
-          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-newlines "$OUT" 'META-INF/services/*'
+          - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
