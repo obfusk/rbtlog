@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/karasevm/PrivateDNSAndroid.git
 updates: releases
+notes:
+  - 'FIXME: embedded commit hash mismatch for v1.2'
 versions:
   - tag: v1.1
     apks:
@@ -34,6 +36,7 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/karasevm/PrivateDNSAndroid/releases/download/$$TAG$$/app-release.apk
         build:
+          - git reset --soft afa23981886e2f61086bd905ad014d57e1d6dfcf
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
