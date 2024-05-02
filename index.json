@@ -433,6 +433,20 @@
       "error": null
     }
   ],
+  "4ff4f7a8c2dbffeff195167eb5d0cb03e594bed4c5f9654cbbcb3000abbff907": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.23/networksurvey-1.23-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 66,
+      "version_name": "1.23-cdr",
+      "tag": "v1.23",
+      "commit": "ec989598dc8c8b0ba65fbc37ce68083fafc73f8a",
+      "timestamp": 1714689167,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -627,6 +641,20 @@
       "timestamp": 1711664611,
       "reproducible": true,
       "error": null
+    }
+  ],
+  "e729cd2654887c3d139cb7278caf6d3b0671624d7f8ca5ce10fb9cbc1ce3567c": [
+    {
+      "repository": "https://github.com/6eero/NewPass.git",
+      "apk_url": "https://github.com/6eero/NewPass/releases/download/v1.1.8/NewPass-v1.1.8.apk",
+      "appid": "com.gero.newpass",
+      "version_code": 10,
+      "version_name": "1.1.8",
+      "tag": "v1.1.8",
+      "commit": "aa13c68b4ade3713544034ba186da07ac017a1aa",
+      "timestamp": 1714689426,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpcta5ddgn/outputs:/outputs', '--volume', '/tmp/tmpcta5ddgn/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/6eero/NewPass.git', '--env', 'APP_TAG=v1.1.8', '--env', 'APP_COMMIT=aa13c68b4ade3713544034ba186da07ac017a1aa', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 127."
     }
   ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
@@ -2990,6 +3018,20 @@
       "commit": "22a79e15273395c5113deb6255c127e5d47d6cbd",
       "timestamp": 1710015761,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "65c551832557d86092766f75e0aac9cdfabb608a51c87d404df626247af65491": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.0.12/floccus-build-v5.0.12.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5000012,
+      "version_name": "5.0.12",
+      "tag": "v5.0.12",
+      "commit": "c8cf5917b6beb966071e4bf747807503e3411ff1",
+      "timestamp": 1714689460,
+      "reproducible": false,
       "error": null
     }
   ],
