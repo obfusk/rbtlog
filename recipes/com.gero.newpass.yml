@@ -38,7 +38,7 @@ versions:
       - apk_pattern: NewPass-.*\.apk
         apk_url: https://github.com/6eero/NewPass/releases/download/$$TAG$$/NewPass-$$TAG$$.apk
         build:
-          - get reset --soft e1f207ca1d0e506bc693cee6a4ca67cc80149b85
+          - git reset --soft e1f207ca1d0e506bc693cee6a4ca67cc80149b85
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
