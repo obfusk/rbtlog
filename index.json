@@ -293,6 +293,20 @@
       "error": null
     }
   ],
+  "af3188d9cdd1a1a6d0f7a6db33643b329ee3fa7bfb1b7b162c8062f00b3f273e": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.3l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 955,
+      "version_name": "5.3l",
+      "tag": "5.3",
+      "commit": "66da899e563aae43c5a749ec6c4b4ff582fb2ce1",
+      "timestamp": 1714685199,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "aa8512fc3e02f0585dc435628e3d5fdc7af306adae4130155c801fcba4f07639": [
     {
       "repository": "https://github.com/TeamAmaze/AmazeFileManager.git",
@@ -1325,6 +1339,20 @@
       "tag": "v3.4.0",
       "commit": "8d57c932fd59c1199b914b78dd93d8f56b2f7678",
       "timestamp": 1714437825,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "e3100561eb1627e8bf390f6cf4bec99559dbb1353ebca2dd3ea8fca2ba1f7399": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.5.0/GreenStash-v3.5.0.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 350,
+      "version_name": "3.5.0",
+      "tag": "v3.5.0",
+      "commit": "fa819c978d4c55af34f57594c7af9e2ee532525c",
+      "timestamp": 1714685734,
       "reproducible": true,
       "error": null
     }
@@ -3115,6 +3143,20 @@
       "tag": "v1.1",
       "commit": "2ab8354116cf42369bb122b5778c09b31e44b036",
       "timestamp": 1710529298,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "481a2282c19b87b4dbc852b65da4f2ca8d5b31203056505e513f8ff9766de95a": [
+    {
+      "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
+      "apk_url": "https://github.com/karasevm/PrivateDNSAndroid/releases/download/v1.2/app-release.apk",
+      "appid": "ru.karasevm.privatednstoggle",
+      "version_code": 9,
+      "version_name": "1.2",
+      "tag": "v1.2",
+      "commit": "f6ddc85b43b54b6eba3a3f3ea01f964b0f45ce20",
+      "timestamp": 1714686186,
       "reproducible": true,
       "error": null
     }
