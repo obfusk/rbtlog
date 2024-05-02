@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/floccusaddon/floccus.git
 updates: releases
+notes:
+  - 'FIXME: NO_SUPPORTED_VCS_FOUND for v5.0.12'
 versions:
   - tag: v5.0.8
     apks:
@@ -113,6 +115,7 @@ versions:
       - apk_pattern: floccus-build-.*\.apk
         apk_url: https://github.com/floccusaddon/floccus/releases/download/$$TAG$$/floccus-build-$$TAG$$.apk
         build:
+          - rm -fr .git/
           - wget -q -O /tmp/nodejs-lts.zip -- https://nodejs.org/dist/v20.12.2/node-v20.12.2-linux-x64.tar.xz
           - sha256sum -c <<< '595272130310cbe12301430756f23d153f7ab95d00174c02adc11a2e3703d183  /tmp/nodejs-lts.zip'
           - tar xf /tmp/nodejs-lts.zip -C /opt
