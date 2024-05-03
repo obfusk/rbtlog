@@ -4,6 +4,7 @@ updates: tags:v([\d.]+-(alpha|beta)\d+)
 notes:
   - 'NB: not reproducible (big DEX diff)'
   - 'NB: cmake needs python3'
+  - 'FIXME: requires rust toolchain to build'
   - 'FIXME: aboutlibraries timestamp, embedded build ID, commit hash mismatch'
 versions:
   - tag: v0.4.0-beta01

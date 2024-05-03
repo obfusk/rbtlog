@@ -61,6 +61,7 @@ versions:
       - apk_pattern: snaptick.*\.apk
         apk_url: https://github.com/vishal2376/snaptick/releases/download/$$TAG$$/snaptick.$$TAG$$.apk
         build:
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle.kts
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
