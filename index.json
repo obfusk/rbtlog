@@ -923,6 +923,76 @@
       "error": null
     }
   ],
+  "a837701911a4e737c4eb602012e60540ced5e95eaeb5a453519920d7ca170813": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.0/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 51,
+      "version_name": "0.23.0",
+      "tag": "v0.23.0",
+      "commit": "3b85a302adaddc9502f900296c9fd542904788e7",
+      "timestamp": 1714716524,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "d8c60d0d0066576d3f08150b4921e3769eae0b9d0b72574f38faa7a68158a16c": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.0/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 51,
+      "version_name": "0.23.0",
+      "tag": "v0.23.0",
+      "commit": "3b85a302adaddc9502f900296c9fd542904788e7",
+      "timestamp": 1714716867,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "a7e123ce9268eaac3de132effb2ddafd723293f8b1e80b490a7173e0e7f29378": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.0/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 51,
+      "version_name": "0.23.0",
+      "tag": "v0.23.0",
+      "commit": "3b85a302adaddc9502f900296c9fd542904788e7",
+      "timestamp": 1714717212,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "e5ee7d10d2fff2ce4369b5e4c5254a322bc8f7b9c80fe9471393caef798ea6bd": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.0/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 51,
+      "version_name": "0.23.0",
+      "tag": "v0.23.0",
+      "commit": "3b85a302adaddc9502f900296c9fd542904788e7",
+      "timestamp": 1714717531,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "87395d7e8f35cca33087bd6cb3974d5eb2eb389de188eec5dc7bb4033e074655": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.0/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 51,
+      "version_name": "0.23.0",
+      "tag": "v0.23.0",
+      "commit": "3b85a302adaddc9502f900296c9fd542904788e7",
+      "timestamp": 1714717873,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
@@ -1003,6 +1073,20 @@
       "tag": "v5.4.0",
       "commit": "6dee999f3c7a4f9e77a3bc8863c0a5b0e80572f2",
       "timestamp": 1711137326,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "4e5d5765b69f7bec5d92c4d7c9d36e146a789be1e978ed44edb9a87f847198cb": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v5.6.0/NeverTooManyBooks-5.6.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 80,
+      "version_name": "5.6.0",
+      "tag": "v5.6.0",
+      "commit": "87d642860102f7d9d4f57e200df7b0a5968bbc6b",
+      "timestamp": 1714718190,
       "reproducible": true,
       "error": null
     }
@@ -1343,6 +1427,20 @@
       "error": null
     }
   ],
+  "1a41f2659072b030ecd1467c6a23a043a8b932cf5f7d45d7cffe2626bf924962": [
+    {
+      "repository": "https://github.com/sosauce/CuteCalc.git",
+      "apk_url": "https://github.com/sosauce/CuteCalc/releases/download/v2.7.2/CuteCalc_v2.7.2.apk",
+      "appid": "com.sosauce.cutecalc",
+      "version_code": 28,
+      "version_name": "2.7.2",
+      "tag": "v2.7.2",
+      "commit": "ff884561b1e2d664416c5aa7350d4c3b61cbae47",
+      "timestamp": 1714718438,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "6412dae4afb2321b621c46eceb6d70636db7d2f660620378244649bc6daffe31": [
     {
       "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
@@ -1667,6 +1765,62 @@
       "tag": "v0.14.1",
       "commit": "08827e008b5689b82945125e0592bc3c0ef2e37d",
       "timestamp": 1709690488,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "1d627fd6a0e4d64ee481214afabb985fbb5a5ea13e28b96b46e90c3cd4283a18": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.2/findroid-v0.14.2-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 25,
+      "version_name": "0.14.2",
+      "tag": "v0.14.2",
+      "commit": "346fd73556e0575a5b71915f8294c591064cd1f3",
+      "timestamp": 1714718646,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "da793c0f4f9b2c14cf4517ec569ed48870a01adcbbf3ee5ce622b4a80bb5c9c4": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.2/findroid-v0.14.2-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 25,
+      "version_name": "0.14.2",
+      "tag": "v0.14.2",
+      "commit": "346fd73556e0575a5b71915f8294c591064cd1f3",
+      "timestamp": 1714719102,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ad7fd99e12bf06d9e1b9481bd532438a3cfe0bea0f18ab8db368b1077f6f7cf1": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.2/findroid-v0.14.2-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 25,
+      "version_name": "0.14.2",
+      "tag": "v0.14.2",
+      "commit": "346fd73556e0575a5b71915f8294c591064cd1f3",
+      "timestamp": 1714719644,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f4b952d63551bf99fc6903ae332f4b464561cf162051408c24ff0cbfe1cf46d8": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.14.2/findroid-v0.14.2-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 25,
+      "version_name": "0.14.2",
+      "tag": "v0.14.2",
+      "commit": "346fd73556e0575a5b71915f8294c591064cd1f3",
+      "timestamp": 1714720119,
       "reproducible": true,
       "error": null
     }
@@ -3186,6 +3340,20 @@
       "commit": "5380b017bd6569a56f5589d5f859c44dabb576a6",
       "timestamp": 1710638539,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "c1ef4da626032325e6e544166cf8bc54f096934b9f88a69c7ac0aa3e61a7dace": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.3.3/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 23,
+      "version_name": "1.3.3",
+      "tag": "1.3.3",
+      "commit": "b407213e34487524424a769aed5f43b05d679c64",
+      "timestamp": 1714720598,
+      "reproducible": false,
       "error": null
     }
   ],
