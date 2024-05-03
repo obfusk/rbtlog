@@ -153,6 +153,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "ce6b860c663593354d81d71ccd1df3ea82eb548fb78d64aa0b66e45f1d7631e2": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.9.6/Podcini_release_free_4.9.6.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020137,
+      "version_name": "4.9.6",
+      "tag": "4.9.6",
+      "commit": "e9011429c6e5da31fbfffe511de58622911cae6f",
+      "timestamp": 1714753913,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -545,6 +559,20 @@
       "error": null
     }
   ],
+  "7a695c6d38837a3dffd86d6695f1840adfe5e63adf7d59c190a98c2dc21c4025": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.30/Shiori.v1.30.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 38,
+      "version_name": "1.30",
+      "tag": "v1.30",
+      "commit": "94ad5b4ef6d8eef34f7104bfb6275bac698a4545",
+      "timestamp": 1714754278,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
@@ -629,6 +657,20 @@
       "error": null
     }
   ],
+  "6150a8c4243c5a3ac802b98832bbfc2166366eebe529870c2960ba8ab4ea0baa": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.0/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 39,
+      "version_name": "1.8.0",
+      "tag": "v1.8.0",
+      "commit": "007aeb16b48f196c3034a03e28b4f2d42f546e01",
+      "timestamp": 1714754626,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "03c8222f96648e1079fa9f49c72e5cadcab882467297ffddd07caafd4f1c0b89": [
     {
       "repository": "https://github.com/6eero/NewPass.git",
@@ -709,6 +751,48 @@
       "tag": "1.8.0",
       "commit": "97db8e7a0d428739526a5e1c7aac969660a26bf5",
       "timestamp": 1709489985,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "d8ccf6bc9eacca7dafd0393932e4bf6df7d2aa8722533f47e6333a6c8aac24d0": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.9.0/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 89,
+      "version_name": "1.9.0",
+      "tag": "1.9.0",
+      "commit": "cf7fe6571d7046a031455b6a6b41aca827b049f1",
+      "timestamp": 1714754842,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "1933b9ecef3e7c4b392e26414005feba0a102ac32b025299a49d3eb830eb7aa2": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.9.0/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 89,
+      "version_name": "1.9.0",
+      "tag": "1.9.0",
+      "commit": "cf7fe6571d7046a031455b6a6b41aca827b049f1",
+      "timestamp": 1714755575,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "b0514cae32b88824a79564625f8dcc0cf12793d5b7dbabcbc681c96304146ce6": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.9.0/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 89,
+      "version_name": "1.9.0",
+      "tag": "1.9.0",
+      "commit": "cf7fe6571d7046a031455b6a6b41aca827b049f1",
+      "timestamp": 1714756283,
       "reproducible": false,
       "error": null
     }
@@ -1049,6 +1133,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpd7363bs7/outputs:/outputs', '--volume', '/tmp/tmpd7363bs7/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.23-alpha', '--env', 'APP_COMMIT=cdd5b834552096e15f944d1144f61c38f1e87dc6', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "15637b7d62ff0c841aa0e9153a6f79810f4dc588e622da62f80abe3d0423d9b5": [
+    {
+      "repository": "https://github.com/whitescent/Mastify.git",
+      "apk_url": "https://github.com/whitescent/Mastify/releases/download/1.4.24-alpha/app-release.apk",
+      "appid": "com.github.whitescent.mastify",
+      "version_code": 20,
+      "version_name": "1.4.24-alpha",
+      "tag": "1.4.24-alpha",
+      "commit": "5f7c43bf171299a62ebfc6ab4779c899833ca311",
+      "timestamp": 1714756956,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmppmm8umlm/outputs:/outputs', '--volume', '/tmp/tmppmm8umlm/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/whitescent/Mastify.git', '--env', 'APP_TAG=1.4.24-alpha', '--env', 'APP_COMMIT=5f7c43bf171299a62ebfc6ab4779c899833ca311', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "6967336fff98af5a57017f836cb6fe6e1ff98107e871086a35602ca0e432f0e3": [
     {
       "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
@@ -1117,6 +1215,20 @@
       "timestamp": 1711571284,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "650ebe33c93ee0b66c863de8cf68fbb4f327139dbd55f5c38ff6130f737c9366": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.66/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 66,
+      "version_name": "0.0.66",
+      "tag": "0.0.66",
+      "commit": "a088d848c5b72d29f346cc6967b0ff7f381361bf",
+      "timestamp": 1714757056,
+      "reproducible": true,
+      "error": null
     }
   ],
   "406a1212dd0ff181e3bdfcba5ba8866eec7ade3c1147ca87491a490cc6c6cf6f": [
@@ -1867,6 +1979,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "28fd78753030aee8a6923f3cd6ba8f14197f2e5650e4cc9f4768c7c6d3a1941d": [
+    {
+      "repository": "https://github.com/florisboard/florisboard.git",
+      "apk_url": "https://github.com/florisboard/florisboard/releases/download/v0.4.0-beta02/florisboard-0.4.0-beta02.apk",
+      "appid": "dev.patrickgold.florisboard.beta",
+      "version_code": 94,
+      "version_name": "0.4.0-beta02",
+      "tag": "v0.4.0-beta02",
+      "commit": "cf7f6f5fe2594738a05482de2435aa3ca869a23b",
+      "timestamp": 1714757764,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpyurtfm2_/outputs:/outputs', '--volume', '/tmp/tmpyurtfm2_/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/florisboard/florisboard.git', '--env', 'APP_TAG=v0.4.0-beta02', '--env', 'APP_COMMIT=cf7f6f5fe2594738a05482de2435aa3ca869a23b', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "b3e75c43a917a282811219218da2735121f1184d6b2dae3033e240de809f2ed9": [
     {
       "repository": "https://github.com/zacharee/MastodonRedirect.git",
@@ -2241,6 +2367,20 @@
       "timestamp": 1711640724,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "9b5e75b17c821064abd98f1c7fc4d06e6d6dcd9b6751e15e572795d6d70eb6dc": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v4.0.2/aShell.You.v4.0.2.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 39,
+      "version_name": "v4.0.2",
+      "tag": "v4.0.2",
+      "commit": "692805316fb140ddfa7d00ac61b0d1eec07da1c9",
+      "timestamp": 1714757914,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpscyinn_5/outputs:/outputs', '--volume', '/tmp/tmpscyinn_5/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/DP-Hridayan/aShellYou.git', '--env', 'APP_TAG=v4.0.2', '--env', 'APP_COMMIT=692805316fb140ddfa7d00ac61b0d1eec07da1c9', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
