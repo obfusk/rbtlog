@@ -176,6 +176,10 @@
                     "verify_gradle_wrapper": {
                       "description": "whether to verify the gradle-wrapper.jar checksum (not required, older logs don't have this)",
                       "type": "boolean"
+                    },
+                    "windows_like": {
+                      "description": "whether to disable symlinks for git (not required, default: false, older logs don't have this)",
+                      "type": "boolean"
                     }
                   },
                   "required": [

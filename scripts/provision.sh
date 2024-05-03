@@ -48,7 +48,13 @@ if [ -n "${PROVISIONING_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "tools;${PROVISIONING_TOOLS}"
 fi
 
-retry 5 git clone -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
+if [ "${WINDOWS_LIKE}" = yes ]; then
+  clone_opts=( -c core.symlinks=false )
+else
+  clone_opts=()
+fi
+
+retry 5 git clone "${clone_opts[@]}" -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
 git checkout refs/tags/"${APP_TAG}"
 test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
