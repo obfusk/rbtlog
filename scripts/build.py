@@ -58,6 +58,7 @@ class Provisioning:
     platform_tools: Optional[str]
     tools: Optional[str]
     verify_gradle_wrapper: bool
+    windows_like: bool
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
@@ -65,7 +66,7 @@ class Provisioning:
             cmdline_tools=self.cmdline_tools.for_json(), extra_packages=self.extra_packages,
             image=self.image, jdk=self.jdk, ndk=self.ndk, platform=self.platform,
             platform_tools=self.platform_tools, tools=self.tools,
-            verify_gradle_wrapper=self.verify_gradle_wrapper)
+            verify_gradle_wrapper=self.verify_gradle_wrapper, windows_like=self.windows_like)
 
 
 @dataclass(frozen=True)
@@ -107,7 +108,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data.updates
     'releases'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True, windows_like=False))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
@@ -145,7 +146,8 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                         platform=prov["platform"],
                         platform_tools=prov["platform_tools"],
                         tools=prov["tools"],
-                        verify_gradle_wrapper=prov["verify_gradle_wrapper"])
+                        verify_gradle_wrapper=prov["verify_gradle_wrapper"],
+                        windows_like=prov.get("windows_like", False))
                 ))
         return AppRecipe(repository=data["repository"], updates=data["updates"],
                          versions=tuple(versions))
@@ -268,6 +270,7 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
 def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
     """Create build env from recipe."""
     verify_gradle_wrapper = "yes" if recipe.provisioning.verify_gradle_wrapper else "no"
+    windows_like = "yes" if recipe.provisioning.windows_like else "no"
     return dict(
         ANDROID_HOME=recipe.provisioning.android_home,
         APP_REPOSITORY=recipe.repository,
@@ -287,7 +290,8 @@ def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
         PROVISIONING_PLATFORM=recipe.provisioning.platform or "",
         PROVISIONING_PLATFORM_TOOLS=recipe.provisioning.platform_tools or "",
         PROVISIONING_TOOLS=recipe.provisioning.tools or "",
-        VERIFY_GRADLE_WRAPPER=verify_gradle_wrapper)
+        VERIFY_GRADLE_WRAPPER=verify_gradle_wrapper,
+        WINDOWS_LIKE=windows_like)
 
 
 def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,
