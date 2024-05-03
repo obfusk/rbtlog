@@ -2,6 +2,8 @@
 repository: https://github.com/pewaru-333/HomeMedkit-App.git
 updates: releases
 notes:
+  - 'NB: not reproducible'
+  - 'FIXME: compose-destinations UUID'
   - 'FIXME: embedded commit hash mismatch for 1.2.1, 1.3.3'
 versions:
   - tag: 1.2.1
