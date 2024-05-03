@@ -371,10 +371,10 @@ versions:
         build:
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ }' -i app/phone/build.gradle.kts
           - ./gradlew :app:phone:assembleLibreRelease
-          - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-arm64-v8a-release-unsigned.apk
+          - OUT=app/phone/build/outputs/apk/libre/release/findroid-*-libre-arm64-v8a.apk
           - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
-          - mv "$OUT" /outputs/unsigned.apk
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files $OUT 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
+          - mv $OUT /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -400,10 +400,10 @@ versions:
         build:
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ }' -i app/phone/build.gradle.kts
           - ./gradlew :app:phone:assembleLibreRelease
-          - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-armeabi-v7a-release-unsigned.apk
+          - OUT=app/phone/build/outputs/apk/libre/release/findroid-*-libre-armeabi-v7a.apk
           - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
-          - mv "$OUT" /outputs/unsigned.apk
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files $OUT 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
+          - mv $OUT /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -429,10 +429,10 @@ versions:
         build:
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ }' -i app/phone/build.gradle.kts
           - ./gradlew :app:phone:assembleLibreRelease
-          - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-x86-release-unsigned.apk
+          - OUT=app/phone/build/outputs/apk/libre/release/findroid-*-libre-x86.apk
           - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
-          - mv "$OUT" /outputs/unsigned.apk
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files $OUT 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
+          - mv $OUT /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -458,10 +458,10 @@ versions:
         build:
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ }' -i app/phone/build.gradle.kts
           - ./gradlew :app:phone:assembleLibreRelease
-          - OUT=app/phone/build/outputs/apk/libre/release/phone-libre-x86_64-release-unsigned.apk
+          - OUT=app/phone/build/outputs/apk/libre/release/findroid-*-libre-x86_64.apk
           - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files "$OUT" 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
-          - mv "$OUT" /outputs/unsigned.apk
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-files $OUT 'sed -r s/"generated":"[^"]*"/"generated":"2024-04-14T20:33:01.409Z"/' 'res/M7.json'
+          - mv $OUT /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
