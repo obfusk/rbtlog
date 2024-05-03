@@ -433,6 +433,20 @@
       "error": null
     }
   ],
+  "4ff4f7a8c2dbffeff195167eb5d0cb03e594bed4c5f9654cbbcb3000abbff907": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.23/networksurvey-1.23-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 66,
+      "version_name": "1.23-cdr",
+      "tag": "v1.23",
+      "commit": "ec989598dc8c8b0ba65fbc37ce68083fafc73f8a",
+      "timestamp": 1714694403,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -625,6 +639,20 @@
       "tag": "v1.1.2",
       "commit": "1c4239c8e90504c14ab4a72d42ecb94695ef011e",
       "timestamp": 1711664611,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "e729cd2654887c3d139cb7278caf6d3b0671624d7f8ca5ce10fb9cbc1ce3567c": [
+    {
+      "repository": "https://github.com/6eero/NewPass.git",
+      "apk_url": "https://github.com/6eero/NewPass/releases/download/v1.1.8/NewPass-v1.1.8.apk",
+      "appid": "com.gero.newpass",
+      "version_code": 10,
+      "version_name": "1.1.8",
+      "tag": "v1.1.8",
+      "commit": "aa13c68b4ade3713544034ba186da07ac017a1aa",
+      "timestamp": 1714694648,
       "reproducible": true,
       "error": null
     }
@@ -2989,6 +3017,20 @@
       "tag": "v5.0.11",
       "commit": "22a79e15273395c5113deb6255c127e5d47d6cbd",
       "timestamp": 1710015761,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "65c551832557d86092766f75e0aac9cdfabb608a51c87d404df626247af65491": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.0.12/floccus-build-v5.0.12.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5000012,
+      "version_name": "5.0.12",
+      "tag": "v5.0.12",
+      "commit": "c8cf5917b6beb966071e4bf747807503e3411ff1",
+      "timestamp": 1714694784,
       "reproducible": true,
       "error": null
     }
