@@ -1637,6 +1637,20 @@
       "error": null
     }
   ],
+  "2a24a97e97d2da60b6f6e485da34e8150e38706b0750842ec579a6f455647695": [
+    {
+      "repository": "https://github.com/vishal2376/snaptick.git",
+      "apk_url": "https://github.com/vishal2376/snaptick/releases/download/v3.0/snaptick.v3.0.apk",
+      "appid": "com.vishal2376.snaptick",
+      "version_code": 8,
+      "version_name": "3.0",
+      "tag": "v3.0",
+      "commit": "9f52c401880623b0d793c5e4eb0878b54e2c7002",
+      "timestamp": 1714762119,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "43d0b4208a3e5ce25dcf6700c28159f397596c98b6ad34bf11dc7b9952061b79": [
     {
       "repository": "https://codeberg.org/toz/MediLog.git",
