@@ -699,6 +699,20 @@
       "error": null
     }
   ],
+  "c5db596335fc5b992da42d1b50d3ed3d9ca59dfc8ac54ed7b201c7e4ad834442": [
+    {
+      "repository": "https://github.com/6eero/NewPass.git",
+      "apk_url": "https://github.com/6eero/NewPass/releases/download/v1.1.9/NewPass-v1.1.9.apk",
+      "appid": "com.gero.newpass",
+      "version_code": 11,
+      "version_name": "1.1.9",
+      "tag": "v1.1.9",
+      "commit": "bab69cb4d0eb6de3b45020ec8702fb50be6428f6",
+      "timestamp": 1714840395,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "7a1196657cadb20028833d1b8f4064ffb84e4b22b0ae69d580fef5fd16b6695a": [
     {
       "repository": "https://gitlab.com/axet/android-ping-utils.git",
