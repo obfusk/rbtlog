@@ -3385,6 +3385,20 @@
       "error": null
     }
   ],
+  "530b6e57a9ad781a9c5323392e9ad12496c8af5eee6949f4233431397105add6": [
+    {
+      "repository": "https://github.com/Netdex/android-usb-script.git",
+      "apk_url": "https://github.com/Netdex/android-usb-script/releases/download/1.2.1/android-usb-script_1.2.1.apk",
+      "appid": "org.netdex.androidusbscript",
+      "version_code": 121,
+      "version_name": "1.2.1",
+      "tag": "1.2.1",
+      "commit": "9ea34abd267c8dc4fc0f50e3fedbbbd9d4c34dde",
+      "timestamp": 1714790185,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "32123628537dff1d8667de8ce90415afe4730b6e2da1e7a11a56a186d6ba9ee5": [
     {
       "repository": "https://github.com/polymorphicshade/Tubular.git",
