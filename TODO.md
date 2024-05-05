@@ -21,6 +21,7 @@
 - [ ] more apps #35
 - [ ] doc/unit/regression/etc. tests #42
 - [ ] make & use a proper release of repro-apk binres #43
+- [ ] `CONTRIBUTING.md`
 
 # Nice to have
 
