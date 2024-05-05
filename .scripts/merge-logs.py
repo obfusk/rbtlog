@@ -29,10 +29,25 @@ def save_log(log_file: str, data: Dict[Any, Any]) -> None:
 def merge_logs(log_file: str, second_log_file: str, tag: str) -> None:
     """Merge logs."""
     appid = os.path.splitext(os.path.basename(log_file))[0]
-    log = load_log(log_file, appid)
-    second_log = load_log(second_log_file, appid)
-    log["tags"][tag] += second_log["tags"][tag]
-    save_log(log_file, log)
+    log_data = load_log(log_file, appid)
+    second_log_data = load_log(second_log_file, appid)
+    for build in second_log_data["tags"][tag]:
+        version_code = str(build["version_code"])
+        sha256 = build["upstream_signed_apk_sha256"]
+        if tag not in log_data["tags"]:
+            log_data["tags"][tag] = []
+        log_data["tags"][tag].append(build)
+        if version_code is not None:
+            if version_code not in log_data["version_codes"]:
+                log_data["version_codes"][version_code] = []
+            tags = log_data["version_codes"][version_code]
+            log_data["version_codes"][version_code] = sorted(set(tags) | set([tag]))
+        if sha256 is not None:
+            if sha256 not in log_data["sha256"]:
+                log_data["sha256"][sha256] = []
+            tags = log_data["sha256"][sha256]
+            log_data["sha256"][sha256] = sorted(set(tags) | set([tag]))
+    save_log(log_file, log_data)
 
 
 if __name__ == "__main__":
