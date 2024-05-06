@@ -181,6 +181,20 @@
       "error": null
     }
   ],
+  "c823fa96f58fdfe3f3e81a1bf0fb845c1f90c0dd6cd6fbafb1bce432480bec80": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/4.10.1/Podcini_release_free_4.10.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020139,
+      "version_name": "4.10.1",
+      "tag": "4.10.1",
+      "commit": "eeea4bfd178f0f163ae99051dc324988edf63480",
+      "timestamp": 1715010574,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -2391,6 +2405,20 @@
       "tag": "v0.25.2-beta",
       "commit": "231ebdbaf47ff373a2135ef4395a95c355e5fede",
       "timestamp": 1714439025,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "b02296dd7bb626f5ba46cf30d59a41ed452a0e573be3e8837d05b09e8f9beee4": [
+    {
+      "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
+      "apk_url": "https://github.com/Semper-Viventem/MetaRadar/releases/download/v0.25.3-beta/app-github-release.apk",
+      "appid": "f.cking.software",
+      "version_code": 1708536355,
+      "version_name": "0.25.3-beta",
+      "tag": "v0.25.3-beta",
+      "commit": "9bbbae31584559cf35d41374567c09550be40883",
+      "timestamp": 1715010895,
       "reproducible": true,
       "error": null
     }
