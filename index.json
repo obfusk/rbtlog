@@ -1229,6 +1229,76 @@
       "error": null
     }
   ],
+  "5ec6682c679d9e2a58060d8f910386c55429eb3f44e4c5ba429fd42f70d7840b": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.1/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 52,
+      "version_name": "0.23.1",
+      "tag": "v0.23.1",
+      "commit": "76ce5c3eff12d8ffb8690d1a136af81038f03844",
+      "timestamp": 1715193987,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "87ac17da9631dc021890f178833e94e1b679df3be354904354708f579ac4a36f": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.1/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 52,
+      "version_name": "0.23.1",
+      "tag": "v0.23.1",
+      "commit": "76ce5c3eff12d8ffb8690d1a136af81038f03844",
+      "timestamp": 1715194302,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "32251e2f539c4aed7b6bb911db853571d79d0367e3f695eca01c5d349c1536ff": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.1/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 52,
+      "version_name": "0.23.1",
+      "tag": "v0.23.1",
+      "commit": "76ce5c3eff12d8ffb8690d1a136af81038f03844",
+      "timestamp": 1715194627,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "041cfe6d4802f31bd06780766dafba6d1ec3fb3087daf7465b3b37600d6e37a8": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.1/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 52,
+      "version_name": "0.23.1",
+      "tag": "v0.23.1",
+      "commit": "76ce5c3eff12d8ffb8690d1a136af81038f03844",
+      "timestamp": 1715194945,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "4e98fdf1a1797d75db7881562d97ec4480f6b4636fecf119e1dc88b37ecba574": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.23.1/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 52,
+      "version_name": "0.23.1",
+      "tag": "v0.23.1",
+      "commit": "76ce5c3eff12d8ffb8690d1a136af81038f03844",
+      "timestamp": 1715195262,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
@@ -2423,6 +2493,20 @@
       "error": null
     }
   ],
+  "c2187a029769c48957bfe1fa18efd6d1f1b5d2307762aa34f97f286718ea9976": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2179/FairEmail-v1.2179a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2179,
+      "version_name": "1.2179",
+      "tag": "1.2179",
+      "commit": "dfc871007fef6aa64639fa3163b80abec99112fa",
+      "timestamp": 1715195577,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -3561,6 +3645,20 @@
       "tag": "1.1.1",
       "commit": "7b1d458fb92ec64111cc768ab7c3babadfaa44d9",
       "timestamp": 1710982548,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "76bd2675848c78b54c341c68f68d9818281a4970deb738671dafda88eb163e17": [
+    {
+      "repository": "https://github.com/FossifyOrg/Phone.git",
+      "apk_url": "https://github.com/FossifyOrg/Phone/releases/download/1.2.0/phone-4-foss-release.apk",
+      "appid": "org.fossify.phone",
+      "version_code": 4,
+      "version_name": "1.2.0",
+      "tag": "1.2.0",
+      "commit": "67bd401e4c844dc6c33161a75c8dc6d0d80e7e7c",
+      "timestamp": 1715196031,
       "reproducible": true,
       "error": null
     }
