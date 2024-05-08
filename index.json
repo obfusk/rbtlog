@@ -349,6 +349,20 @@
       "error": null
     }
   ],
+  "b740569d3bf25f0ea0696428e69294cb3e6a179000463a5e0c93151386fbdb11": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.3.1l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 956,
+      "version_name": "5.3.1l",
+      "tag": "5.3.1",
+      "commit": "86c038c63fcb107835dbf876a15340f43600bd94",
+      "timestamp": 1715148519,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "aa8512fc3e02f0585dc435628e3d5fdc7af306adae4130155c801fcba4f07639": [
     {
       "repository": "https://github.com/TeamAmaze/AmazeFileManager.git",
@@ -889,6 +903,48 @@
       "tag": "1.9.0",
       "commit": "cf7fe6571d7046a031455b6a6b41aca827b049f1",
       "timestamp": 1714756283,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "cdefa7b50aaeb69179ce5a3f15e01bf39f71b4326446e2b282c6b1075e076705": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.0/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 96,
+      "version_name": "1.10.0",
+      "tag": "1.10.0",
+      "commit": "685599807e552d536543d6627c3876a2640cc221",
+      "timestamp": 1715149004,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "7f18080531234c4422f8529d19e8e92280b81040b6ae8249245acedf23d23f34": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.0/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 96,
+      "version_name": "1.10.0",
+      "tag": "1.10.0",
+      "commit": "685599807e552d536543d6627c3876a2640cc221",
+      "timestamp": 1715149677,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "dbc9b8378d9f68ac533302303b5fee75e8e63c96939e124071d804a9fd871920": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.0/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 96,
+      "version_name": "1.10.0",
+      "tag": "1.10.0",
+      "commit": "685599807e552d536543d6627c3876a2640cc221",
+      "timestamp": 1715150371,
       "reproducible": false,
       "error": null
     }
