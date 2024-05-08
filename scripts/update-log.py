@@ -44,16 +44,17 @@ def save_log(log_file: str, data: Dict[Any, Any]) -> None:
 def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[Any, Any]:
     """Add builds to log; modifies in-place!"""
     for build in builds:
-        tag, version_code = build["tag"], str(build["version_code"])
+        tag, version_code = build["tag"], build["version_code"]
         sha256 = build["upstream_signed_apk_sha256"]
         if tag not in log_data["tags"]:
             log_data["tags"][tag] = []
         log_data["tags"][tag].append(build)
         if version_code is not None:
-            if version_code not in log_data["version_codes"]:
-                log_data["version_codes"][version_code] = []
-            tags = log_data["version_codes"][version_code]
-            log_data["version_codes"][version_code] = sorted(set(tags) | set([tag]))
+            vc = str(version_code)
+            if vc not in log_data["version_codes"]:
+                log_data["version_codes"][vc] = []
+            tags = log_data["version_codes"][vc]
+            log_data["version_codes"][vc] = sorted(set(tags) | set([tag]))
         if sha256 is not None:
             if sha256 not in log_data["sha256"]:
                 log_data["sha256"][sha256] = []
