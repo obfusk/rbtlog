@@ -362,7 +362,12 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
         build_recipes = [br for br in recipe.versions if br.tag == tag]
         if build_recipes:
             for br in build_recipes:
-                outputs.append(build_with_backend(bb, appid, br, keep_apks=keep_apks, verbose=verbose))
+                out = build_with_backend(bb, appid, br, keep_apks=keep_apks, verbose=verbose)
+                outputs.append(out)
+                if not out["upstream_signed_apk_sha256"]:
+                    errors += 1
+                    if not verbose:     # already printed otherwise
+                        print(f"Error building {spec!r}: {out['error']}", file=sys.stderr)
         else:
             errors += 1
             print(f"Error building {appid!r}: tag not found: {tag!r}", file=sys.stderr)
