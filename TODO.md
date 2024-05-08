@@ -28,9 +28,9 @@
 - [x] configure paths
 - [x] update-recipes: support more forges (gitlab, codeberg)
 - [x] update-recipes: handle errors (skip but warn)
+- [x] retry downloads #46
 - [ ] rebuild when failed before comparison #44
 - [ ] rebuild when upsteam APK or tag changes #45
-- [ ] retry downloads #46
 - [ ] configure timeouts #47
 - [ ] more build backends (libvirt, debvm) #48
 - [ ] more CI backends (gitlab, codeberg) #49

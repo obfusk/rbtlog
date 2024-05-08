@@ -294,13 +294,14 @@ def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
         WINDOWS_LIKE=windows_like)
 
 
+# FIXME: configure retries
 def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,
                  verbose: bool = False) -> Tuple[str, int, str]:
     """Download APK and get versionCode and versionName."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     if verbose:
         print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
-    download_file(recipe.apk_url, signed_apk)
+    download_file_with_retries(recipe.apk_url, signed_apk, retries=5, verbose=verbose)
     appid_from_apk, vercode, vername = apk_version_info(signed_apk)
     if appid != appid_from_apk:
         raise Error(f"APK appid mismatch: expected {appid}, got {appid_from_apk}")
@@ -397,7 +398,7 @@ def run_command(*args: str, verbose: bool = False) -> str:
                           stderr=subprocess.STDOUT).stdout.decode()
 
 
-# FIXME: retry, configure timeout
+# FIXME: configure timeout
 def download_file(url: str, output: str) -> str:
     """Download file."""
     with requests.get(url, stream=True, timeout=60) as response:
@@ -408,6 +409,22 @@ def download_file(url: str, output: str) -> str:
                 fh.write(chunk)
                 sha.update(chunk)
             return sha.hexdigest()
+
+
+def download_file_with_retries(url: str, output: str, *, retries: int = 5,
+                               verbose: bool = False) -> str:
+    """Download file w/ retries."""
+    error: Exception = Error("No retries")
+    for i in range(retries):
+        if i:
+            if verbose:
+                print("Retrying...")
+            time.sleep(1)
+        try:
+            return download_file(url, output)
+        except requests.RequestException as e:
+            error = e
+    raise error
 
 
 def sha256_file(filename: str) -> str:
