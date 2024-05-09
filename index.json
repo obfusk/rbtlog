@@ -1411,6 +1411,20 @@
       "error": null
     }
   ],
+  "abd16df248d6c4f352718c443c2bbf99f70edb4b26dfd8e78ac01e6e3305fd30": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.0.0/NeverTooManyBooks-6.0.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 81,
+      "version_name": "6.0.0",
+      "tag": "v6.0.0",
+      "commit": "39ebdc2b867c76b456c2c9d2ab1d791e905d8f37",
+      "timestamp": 1715280191,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
