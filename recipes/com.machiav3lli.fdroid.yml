@@ -4,6 +4,7 @@ updates: releases
 notes:
   - 'NB: not reproducible'
   - 'FIXME: non-deterministic locales'
+  - 'FIXME: embedded commit hash mismatch for 1.0.1'
 versions:
   - tag: 0.9.15
     apks:
@@ -65,6 +66,7 @@ versions:
       - apk_pattern: Neo.*Store.*release.*\.apk
         apk_url: https://github.com/NeoApplications/Neo-Store/releases/download/1.0.1/Neo_Store_101_release.apk
         build:
+          - git reset --soft b8367fa8ea81a5c56cec46c7ec5c1883a5e13037
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - mv build/outputs/apk/release/*-release-unsigned.apk /outputs/unsigned.apk
