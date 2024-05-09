@@ -2,8 +2,6 @@
 repository: https://github.com/NeoApplications/Neo-Store.git
 updates: releases
 notes:
-  - 'NB: not reproducible'
-  - 'FIXME: non-deterministic locales'
   - 'FIXME: embedded commit hash mismatch for 1.0.1'
   - 'FIXME: META-INF/**.version excludes mismatch for 1.0.1'
 versions:
