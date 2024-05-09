@@ -1719,6 +1719,20 @@
       "error": null
     }
   ],
+  "6db32873a7ae5f4fc46a08daee781e4c6974cf22e7a6f1b769339d951711f5fc": [
+    {
+      "repository": "https://github.com/MRepoApp/MRepo.git",
+      "apk_url": "https://github.com/MRepoApp/MRepo/releases/download/v2.4.8/MRepo-2.4.8.39b3caf-794-release.apk",
+      "appid": "com.sanmer.mrepo",
+      "version_code": 794,
+      "version_name": "2.4.8.39b3caf",
+      "tag": "v2.4.8",
+      "commit": "39b3cafcfd8a85f83de3c146da696b1788c5e53e",
+      "timestamp": 1715275291,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2ff2da6905ac4dd77501bbc86f3d0226d8b4b05b7c607772e55e1026911c948f": [
     {
       "repository": "https://github.com/SlaVcE14/JsonList.git",
