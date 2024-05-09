@@ -1,8 +1,6 @@
 ---
 repository: https://github.com/TeamNewPipe/NewPipe.git
 updates: releases
-notes:
-  - 'NB: not reproducible'
 versions:
   - tag: v0.26.1
     apks:
