@@ -2,6 +2,7 @@
 repository: https://github.com/tfonteyn/NeverTooManyBooks.git
 updates: releases
 notes:
+  - 'FIXME: .prof differs for v6.0.0'
   - 'FIXME: timestamps'
   - 'FIXME: embedded commit hash mismatch for v5.6.0'
 versions:
