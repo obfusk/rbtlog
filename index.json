@@ -949,6 +949,48 @@
       "error": null
     }
   ],
+  "d452d737e061e31cba2615254d08006f7359f35e2425f9fda4acfd83c9fff0d3": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.1/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 97,
+      "version_name": "1.10.1",
+      "tag": "1.10.1",
+      "commit": "9363f52eca8f605e95f264319c9be673969cc353",
+      "timestamp": 1715381101,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "61e52a917746176ac0c3b0db51a2504ea540d478b279ab0d64afd570cf8305b0": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.1/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 97,
+      "version_name": "1.10.1",
+      "tag": "1.10.1",
+      "commit": "9363f52eca8f605e95f264319c9be673969cc353",
+      "timestamp": 1715381752,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "5d936eedfd4d88d126daf294c2d5cacf4a6aa6a557714dbedd466e06ef93cbc4": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.1/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 97,
+      "version_name": "1.10.1",
+      "tag": "1.10.1",
+      "commit": "9363f52eca8f605e95f264319c9be673969cc353",
+      "timestamp": 1715382405,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "1b8d652411cdceccfef2d2ca9aa2f9fb8810d8ab747dfb36f27233c4601deea1": [
     {
       "repository": "https://github.com/libre-tube/LibreTube.git",
@@ -2967,6 +3009,20 @@
       "error": null
     }
   ],
+  "74524630ff225fddad3aefd798e9a6bcb5d9a2b507b41f996de43a31eb20197d": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.34/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 32,
+      "version_name": "0.6.34",
+      "tag": "v0.6.34",
+      "commit": "f050cd264238d040803f177f83a1f3fad025ccd6",
+      "timestamp": 1715383055,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -3800,6 +3856,20 @@
       "commit": "f28369e04cb2f467becfa431dc6bb77a4405bd35",
       "timestamp": 1714926240,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "06ca567ee481d9eb099e13e4530507c7099f4d7bb385ce42b71a97c61702dc4e": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.1.1/floccus-build-v5.1.1.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5001001,
+      "version_name": "5.1.1",
+      "tag": "v5.1.1",
+      "commit": "aa970d0d21d5d54bdd6ce8261c37a86ec01c6386",
+      "timestamp": 1715383556,
+      "reproducible": false,
       "error": null
     }
   ],
