@@ -195,6 +195,20 @@
       "error": null
     }
   ],
+  "eae613258ac47d55014e451ddc2dcdbd89df08a03417e03ef2dd985010c5ec14": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.0.1/Podcini_release_free_5.0.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020141,
+      "version_name": "5.0.1",
+      "tag": "5.0.1",
+      "commit": "e056a250cf0a3226f0e72ec7ed1c463daaaf01c8",
+      "timestamp": 1715559717,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -741,6 +755,20 @@
       "error": null
     }
   ],
+  "c71980b23bff522b592a66ff1a21e37c4fe19dc6bb69ee2ff90343c1d2beaf6c": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.2/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 46,
+      "version_name": "1.8.2",
+      "tag": "v1.8.2",
+      "commit": "d2a4a0b57ae42d6b30e787ba1e55bd57f9bbf4f8",
+      "timestamp": 1715560050,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "03c8222f96648e1079fa9f49c72e5cadcab882467297ffddd07caafd4f1c0b89": [
     {
       "repository": "https://github.com/6eero/NewPass.git",
@@ -805,6 +833,20 @@
       "tag": "v1.1.9",
       "commit": "bab69cb4d0eb6de3b45020ec8702fb50be6428f6",
       "timestamp": 1714924260,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "cdc0dc7037bba04c8019d7504671b3c29e05050ae951706467d5dea4275b13b8": [
+    {
+      "repository": "https://github.com/6eero/NewPass.git",
+      "apk_url": "https://github.com/6eero/NewPass/releases/download/v1.1.10/NewPass-v1.1.10.apk",
+      "appid": "com.gero.newpass",
+      "version_code": 12,
+      "version_name": "1.1.10",
+      "tag": "v1.1.10",
+      "commit": "8ed6017e1ef92de0145dc22a5132e415f9273270",
+      "timestamp": 1715560255,
       "reproducible": true,
       "error": null
     }
@@ -987,6 +1029,48 @@
       "tag": "1.10.1",
       "commit": "9363f52eca8f605e95f264319c9be673969cc353",
       "timestamp": 1715382405,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "54ecbd11a787ba9b233ca34d70f32c5aa0ff85b8ce2f20b94028bb9af26244ce": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.2/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 99,
+      "version_name": "1.10.2",
+      "tag": "1.10.2",
+      "commit": "96a1316b64fd4ba7a6c0f7b113ca9d3b5f4b6854",
+      "timestamp": 1715560397,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "8cec493ddbe1b990bd4abaa134b1c7842fb1a43ece9d9cd4643c07f0e53fdb71": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.2/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 99,
+      "version_name": "1.10.2",
+      "tag": "1.10.2",
+      "commit": "96a1316b64fd4ba7a6c0f7b113ca9d3b5f4b6854",
+      "timestamp": 1715561138,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "30c805538f6f2369b079b8538027bb4703ebb1035c311286c42fa7ef9b10d9a8": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.10.2/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 99,
+      "version_name": "1.10.2",
+      "tag": "1.10.2",
+      "commit": "96a1316b64fd4ba7a6c0f7b113ca9d3b5f4b6854",
+      "timestamp": 1715561919,
       "reproducible": false,
       "error": null
     }
