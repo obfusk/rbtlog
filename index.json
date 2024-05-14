@@ -209,6 +209,20 @@
       "error": null
     }
   ],
+  "31cc56ec809f68abee3312a0c70cd22a1a561c84096ed930f32448c82c61c2c2": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.1.0/Podcini_release_free_5.1.0.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020142,
+      "version_name": "5.1.0",
+      "tag": "5.1.0",
+      "commit": "42fd2689060a5b00ef579ff6bfbabf1a2915163d",
+      "timestamp": 1715707042,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -3969,6 +3983,20 @@
       "timestamp": 1715385631,
       "reproducible": true,
       "error": null
+    }
+  ],
+  "390257319e0e4d3318ae0b426cbf99f0e08d96942340cd454ecfacd83ab8e03f": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.1.2/floccus-build-v5.1.2.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5001002,
+      "version_name": "5.1.2",
+      "tag": "v5.1.2",
+      "commit": "4f6121522b2c1fc7015386093a68ab4de8f75b47",
+      "timestamp": 1715707378,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
