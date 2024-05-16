@@ -174,3 +174,31 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v1.24
+    apks:
+      - apk_pattern: networksurvey-.*-cdr-release\.apk
+        apk_url: https://github.com/christianrowlands/android-network-survey/releases/download/v1.24/networksurvey-1.24-cdr-release.apk
+        build:
+          - git checkout 4e9d374b300709b8af107a382ad9878f88df13a0
+          - base64 -d > networksurvey/google-services.json <<< eyJwcm9qZWN0X2luZm8iOnsicHJvamVjdF9udW1iZXIiOiIyNjE5NDU1NTMwMzAiLCJwcm9qZWN0X2lkIjoiYW5kcm9pZC1uZXR3b3JrLXN1cnZleSIsInN0b3JhZ2VfYnVja2V0IjoiYW5kcm9pZC1uZXR3b3JrLXN1cnZleS5hcHBzcG90LmNvbSIsImZpcmViYXNlX3VybCI6Imh0dHBzOi8vYW5kcm9pZC1uZXR3b3JrLXN1cnZleS5maXJlYmFzZWlvLmNvbSJ9LCJjbGllbnQiOlt7ImNsaWVudF9pbmZvIjp7Im1vYmlsZXNka19hcHBfaWQiOiIxOjI2MTk0NTU1MzAzMDphbmRyb2lkOjdiMjJkN2MxNDkzZDFhNTk1NTIxMDciLCJhbmRyb2lkX2NsaWVudF9pbmZvIjp7InBhY2thZ2VfbmFtZSI6ImNvbS5jcmF4aW9tLm5ldHdvcmtzdXJ2ZXkifX0sIm9hdXRoX2NsaWVudCI6W3siY2xpZW50X2lkIjoiMjYxOTQ1NTUzMDMwLXRydjI5YnBwaWJhbTc5b2tvYzBzaThmNGtnNXZjY2JpLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiY2xpZW50X3R5cGUiOjN9XSwiYXBpX2tleSI6W3siY3VycmVudF9rZXkiOiJBSXphU3lDY3ZYclAzV1duQzBrTFNUQ1pqblJCVkh3Mm93aXBwMnMifV0sInNlcnZpY2VzIjp7ImFwcGludml0ZV9zZXJ2aWNlIjp7Im90aGVyX3BsYXRmb3JtX29hdXRoX2NsaWVudCI6W3siY2xpZW50X2lkIjoiMjYxOTQ1NTUzMDMwLXRydjI5YnBwaWJhbTc5b2tvYzBzaThmNGtnNXZjY2JpLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiY2xpZW50X3R5cGUiOjN9XX19fV0sImNvbmZpZ3VyYXRpb25fdmVyc2lvbiI6IjEifQo=
+          - ./gradlew assembleCdrRelease
+          - mv networksurvey/build/outputs/apk/cdr/release/networksurvey-*-cdr-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
