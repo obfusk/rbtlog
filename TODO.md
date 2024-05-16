@@ -18,9 +18,9 @@
 - [x] NB: container breakout (support libvirt?!)
 - [x] spdx++
 - [x] github issues for all TODOs
+- [x] make & use a proper release of repro-apk binres #43
 - [ ] more apps #35
 - [ ] doc/unit/regression/etc. tests #42
-- [ ] make & use a proper release of repro-apk binres #43
 - [ ] `CONTRIBUTING.md`
 
 # Nice to have
