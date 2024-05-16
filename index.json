@@ -223,6 +223,20 @@
       "error": null
     }
   ],
+  "2963bc18d4b1cb3006907a223c8d8730c53f52e8cba8377cb91bc3aea519756c": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.2.1/Podcini_release_free_5.2.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020144,
+      "version_name": "5.2.1",
+      "tag": "5.2.1",
+      "commit": "ef5fe709bad7b330f3d2cf58c479fbe326ab6752",
+      "timestamp": 1715887005,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -531,6 +545,20 @@
       "error": null
     }
   ],
+  "d2fb49e610a51aa36628cb4b814751705cf971360e6d7b04e2c085342bf56300": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.24/networksurvey-1.24-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 67,
+      "version_name": "1.24-cdr",
+      "tag": "v1.24",
+      "commit": "d581a33db298102ddf676756ad6842c904a9a151",
+      "timestamp": 1715887359,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -639,6 +667,20 @@
       "tag": "v1.30",
       "commit": "94ad5b4ef6d8eef34f7104bfb6275bac698a4545",
       "timestamp": 1714754278,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "6820128a310300cca0f2ea31d99b72f9a5f8f754699656e8aeaa79e7ff347b42": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.31/Shiori.v1.31.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 39,
+      "version_name": "1.31",
+      "tag": "v1.31",
+      "commit": "dfc7fb6c95a86c9513b22c759a73f7fe07400b20",
+      "timestamp": 1715887692,
       "reproducible": true,
       "error": null
     }
@@ -2717,6 +2759,20 @@
       "error": null
     }
   ],
+  "f6a878ed74a863aa25289736b262c35c3e348db98e612269d691cead19016af1": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2182/FairEmail-v1.2182a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2182,
+      "version_name": "1.2182",
+      "tag": "1.2182",
+      "commit": "7bdac5b902e439fb4bf8def5ae67243be8856329",
+      "timestamp": 1715888041,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4330,6 +4386,20 @@
       "commit": "8f26f43cdd6dc598a1afa506035a9624626dd081",
       "timestamp": 1714439417,
       "reproducible": false,
+      "error": null
+    }
+  ],
+  "80861d48b87ee361f19ef5950491336f9df4eea21f0b398a58ae11b23c9564de": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.3/flickboard-v0.1.3.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 20,
+      "version_name": "0.1.3",
+      "tag": "v0.1.3",
+      "commit": "dfaa8ee0904426b171ae44b10106b0f7ce5cc42e",
+      "timestamp": 1715888633,
+      "reproducible": true,
       "error": null
     }
   ],
