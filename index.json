@@ -237,6 +237,20 @@
       "error": null
     }
   ],
+  "fa420c4ff04f6ac231f4c9a322af2705b2abbabb6471ab020a76ebbed87699e3": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.3.0/Podcini_release_free_5.3.0.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020145,
+      "version_name": "5.3.0",
+      "tag": "5.3.0",
+      "commit": "c49af77af879c522ad65a4f52b0dc714a7c6519e",
+      "timestamp": 1715985548,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -3187,6 +3201,20 @@
       "tag": "v0.6.34",
       "commit": "f050cd264238d040803f177f83a1f3fad025ccd6",
       "timestamp": 1715383055,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f1cba06eb035bb6e8ff3ee8ba5bb166faa3ac409dadd021a2f1004a606651ee2": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.35/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 33,
+      "version_name": "0.6.35",
+      "tag": "v0.6.35",
+      "commit": "840b71797218b20aab00e4fdfd8d967993022ef9",
+      "timestamp": 1715985875,
       "reproducible": true,
       "error": null
     }
