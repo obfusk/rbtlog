@@ -251,6 +251,20 @@
       "error": null
     }
   ],
+  "88c2adaaa308db9b96330a899ebb05870d1c2ba5347ee3b190263041a714247c": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.3.1/Podcini_release_free_5.3.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020146,
+      "version_name": "5.3.1",
+      "tag": "5.3.1",
+      "commit": "ae376422a4de3ee686df829f05b26d47693107b8",
+      "timestamp": 1716138974,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -835,6 +849,20 @@
       "tag": "v1.8.2",
       "commit": "d2a4a0b57ae42d6b30e787ba1e55bd57f9bbf4f8",
       "timestamp": 1715560050,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "d038b5431691f290c84311eadf0899d00bc49045c8e71fb2a190282ad9bd56c7": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.3/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 47,
+      "version_name": "1.8.3",
+      "tag": "v1.8.3",
+      "commit": "09f24c2a138d8ba4fc97f5ba1676456f8f014c5b",
+      "timestamp": 1716139311,
       "reproducible": true,
       "error": null
     }
@@ -1799,6 +1827,20 @@
       "tag": "1.0.1",
       "commit": "588548a6edf5e69fa44f19ec458d2e7d1cbd63ea",
       "timestamp": 1715268253,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "4b919efd7d09b8cec70e1d8ca885e790044404596bcddf608936672fede31c3c": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Store.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Store/releases/download/1.0.2/Neo_Store_102_release.apk",
+      "appid": "com.machiav3lli.fdroid",
+      "version_code": 1014,
+      "version_name": "1.0.2",
+      "tag": "1.0.2",
+      "commit": "abae89112dab359632b9dd89be27a4f36788731b",
+      "timestamp": 1716139486,
       "reproducible": true,
       "error": null
     }
