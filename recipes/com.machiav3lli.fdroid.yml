@@ -2,7 +2,7 @@
 repository: https://github.com/NeoApplications/Neo-Store.git
 updates: releases
 notes:
-  - 'FIXME: embedded commit hash mismatch for 1.0.1'
+  - 'FIXME: commit (hash) mismatch for 1.0.1, 1.0.2'
   - 'FIXME: META-INF/**.version excludes mismatch for 1.0.1'
 versions:
   - tag: 0.9.15
@@ -67,6 +67,34 @@ versions:
         build:
           - git reset --soft b8367fa8ea81a5c56cec46c7ec5c1883a5e13037
           - sed -r '/META-INF.*version/d' -i build.gradle.kts
+          - chmod +x gradlew
+          - ./gradlew assembleRelease
+          - mv build/outputs/apk/release/*-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: 1.0.2
+    apks:
+      - apk_pattern: Neo.*Store.*release.*\.apk
+        apk_url: https://github.com/NeoApplications/Neo-Store/releases/download/1.0.2/Neo_Store_102_release.apk
+        build:
+          - git reset --soft 61538e52f849683fdfee2370da695e1d1a7a7005
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - mv build/outputs/apk/release/*-release-unsigned.apk /outputs/unsigned.apk
