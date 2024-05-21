@@ -265,6 +265,20 @@
       "error": null
     }
   ],
+  "ac814d57e0aef84d12940ea7be0ea5c79883defe48d590219cd98d1055287374": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.4.0/Podcini_release_free_5.4.0.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020147,
+      "version_name": "5.4.0",
+      "tag": "5.4.0",
+      "commit": "36e1823d58c819e24e51fa72aac3839542e7a868",
+      "timestamp": 1716312753,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -713,6 +727,20 @@
       "error": null
     }
   ],
+  "3e12fc4ea302a7df86f04e7d86fde64cd86fe7a90855fdfeec83f0e666ae3bbd": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.31.01/Shiori.v1.31.01.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 40,
+      "version_name": "1.31.01",
+      "tag": "v1.31.01",
+      "commit": "c98f5f71a1103f2cd21bc5717507641b21bc212d",
+      "timestamp": 1716313047,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
@@ -863,6 +891,20 @@
       "tag": "v1.8.3",
       "commit": "09f24c2a138d8ba4fc97f5ba1676456f8f014c5b",
       "timestamp": 1716139311,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ffe2ab40ac738b8bf8d684b203352fae8537c61d10356a2171a64f450cfe3bf1": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.4/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 48,
+      "version_name": "1.8.4",
+      "tag": "v1.8.4",
+      "commit": "c7c3ed5611bc425ba469af4c5e0df9f00c9af23a",
+      "timestamp": 1716313339,
       "reproducible": true,
       "error": null
     }
@@ -2829,6 +2871,20 @@
       "error": null
     }
   ],
+  "c72112d13a4fd251c571daaf62b690aab22b10cce0bf8795052f6a9ca8f4fb8f": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2183/FairEmail-v1.2183a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2183,
+      "version_name": "1.2183",
+      "tag": "1.2183",
+      "commit": "ece91c252e5abe7aa7049ba20f3ae2011bbf1462",
+      "timestamp": 1716313527,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4163,6 +4219,20 @@
       "tag": "v5.1.3",
       "commit": "f3302c6c86d09acbf582a263525f2f2e4e9ee444",
       "timestamp": 1716141231,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "36d0b0179ec233bb041f69c64275502ca978e53a57737b36f8886a58ae51849d": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.1.4/floccus-build-v5.1.4.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5001004,
+      "version_name": "5.1.4",
+      "tag": "v5.1.4",
+      "commit": "441560f5ff404ec20b36cd899309d41ad2dd2268",
+      "timestamp": 1716314010,
       "reproducible": true,
       "error": null
     }
