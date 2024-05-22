@@ -2321,6 +2321,20 @@
       "error": null
     }
   ],
+  "f4adb34d1e7cc71063200d7ad76e318d5cef1e82e9c4152f464299a814bba0be": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.7.5/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 147,
+      "version_name": "2.7.5",
+      "tag": "v2.7.5",
+      "commit": "28e32eaa71da0f4c66088c6495645aa1e0f34abb",
+      "timestamp": 1716418611,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "56b13edd9e064c96ab6e1debe0b868a4137f3ce01dfc84d06cc0a4b9729726c2": [
     {
       "repository": "https://github.com/jarnedemeulemeester/findroid.git",
@@ -2881,6 +2895,20 @@
       "tag": "1.2183",
       "commit": "ece91c252e5abe7aa7049ba20f3ae2011bbf1462",
       "timestamp": 1716313527,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "992ba7749a10b9d3ae487411e66718a72e2715128f93ce0ff4073ff6ed9d0678": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2185/FairEmail-v1.2185a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2185,
+      "version_name": "1.2185",
+      "tag": "1.2185",
+      "commit": "9fd71ef2d8dee5a22be52b3e6453e1e90163954a",
+      "timestamp": 1716418865,
       "reproducible": true,
       "error": null
     }
