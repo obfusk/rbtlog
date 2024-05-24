@@ -2041,6 +2041,20 @@
       "error": null
     }
   ],
+  "362c4ba79fdee7ca3b4c6e36d5f109e22b83697ff8165a447564057942e848fd": [
+    {
+      "repository": "https://github.com/MRepoApp/MRepo.git",
+      "apk_url": "https://github.com/MRepoApp/MRepo/releases/download/v2.4.10/MRepo-2.4.10.6780259-830-release.apk",
+      "appid": "com.sanmer.mrepo",
+      "version_code": 830,
+      "version_name": "2.4.10.6780259",
+      "tag": "v2.4.10",
+      "commit": "6780259e017f4765a2d0cd5fa2ad0c8b69025ba5",
+      "timestamp": 1716575912,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2ff2da6905ac4dd77501bbc86f3d0226d8b4b05b7c607772e55e1026911c948f": [
     {
       "repository": "https://github.com/SlaVcE14/JsonList.git",
@@ -2927,6 +2941,20 @@
       "error": null
     }
   ],
+  "0dd5f1c43a4ec2d70bfbf8e4c72100c0115878832736cd68cd3d1569bf19e7a3": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2186/FairEmail-v1.2186a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2186,
+      "version_name": "1.2186",
+      "tag": "1.2186",
+      "commit": "ae8c64cf3d08fed47f622b55e40456eefe7dbcd9",
+      "timestamp": 1716576252,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -3355,6 +3383,20 @@
       "tag": "v0.6.35",
       "commit": "840b71797218b20aab00e4fdfd8d967993022ef9",
       "timestamp": 1715985875,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "1e4b8f8bf06ebca4618c1e8c7f3387c3eb16df5961a124b075ed6e81ac51be27": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.36/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 34,
+      "version_name": "0.6.36",
+      "tag": "v0.6.36",
+      "commit": "5b15c902287b56b1118891d23f881ed98de9fcf3",
+      "timestamp": 1716576850,
       "reproducible": true,
       "error": null
     }
@@ -4499,6 +4541,20 @@
       "tag": "1.3.5",
       "commit": "24176de722790485a2d444bd2a60bf29c01ff651",
       "timestamp": 1715272744,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "325faf58b3a72652c90f5f2957910c124c50297a829ba588d1e1b793ca4b7576": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.3.6/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 26,
+      "version_name": "1.3.6",
+      "tag": "1.3.6",
+      "commit": "54c6d28be7c86bc06405ddaa8b4c153033e81c32",
+      "timestamp": 1716577394,
       "reproducible": false,
       "error": null
     }
