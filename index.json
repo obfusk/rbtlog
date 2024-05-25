@@ -279,6 +279,20 @@
       "error": null
     }
   ],
+  "d89526244034ebbc398119a82691401aebdf24fe94b9df0be786b7dedb791d5c": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.4.1/Podcini_release_free_5.4.1.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020148,
+      "version_name": "5.4.1",
+      "tag": "5.4.1",
+      "commit": "797e9b64ab77c7ca9c3a11de57c98b97fc9ccb75",
+      "timestamp": 1716657927,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -2195,6 +2209,20 @@
       "error": null
     }
   ],
+  "d657c0cfe13651fcd87389af40efb2d07dfb8238c2be8a3fec5a0724e8981fa1": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.7.0/GreenStash-v3.7.0.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 370,
+      "version_name": "3.7.0",
+      "tag": "v3.7.0",
+      "commit": "d48f3de9c33feaee01c5f479750f74d8c2d6ba68",
+      "timestamp": 1716658227,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "9cda56dbb7ab53cb3ccf36526f636f11aed221dff856de4e8859129a3f447723": [
     {
       "repository": "https://github.com/vishal2376/git-coach.git",
@@ -3401,6 +3429,20 @@
       "error": null
     }
   ],
+  "1995ac7fbd222fdfb75e1f3957439ffd22f0d51efc2c2e7f8440f92581fd95e3": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.36.1/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 35,
+      "version_name": "0.6.36.1",
+      "tag": "v0.6.36.1",
+      "commit": "6e4ed980e1e82203aa42da50de561cb36f2cbdf6",
+      "timestamp": 1716658543,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -4555,6 +4597,20 @@
       "tag": "1.3.6",
       "commit": "54c6d28be7c86bc06405ddaa8b4c153033e81c32",
       "timestamp": 1716577394,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "e1b05b16821ba37a711be9daeaaa6b7122fdf78c46c348cbcaf6cf5a01603eaa": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.3.7/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 27,
+      "version_name": "1.3.7",
+      "tag": "1.3.7",
+      "commit": "3bb59f262db07b2340ef160cb78f6483b0386af4",
+      "timestamp": 1716659080,
       "reproducible": false,
       "error": null
     }
