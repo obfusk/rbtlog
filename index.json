@@ -923,6 +923,20 @@
       "error": null
     }
   ],
+  "139d2d9b45747f4ffa6eaacca07a19ac2f63a3c326237fc89d203201a63c0a5d": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.5/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 50,
+      "version_name": "1.8.5",
+      "tag": "v1.8.5",
+      "commit": "89f1159eda3f9a691d3bcdf6845fb39b15c83fee",
+      "timestamp": 1716832665,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "03c8222f96648e1079fa9f49c72e5cadcab882467297ffddd07caafd4f1c0b89": [
     {
       "repository": "https://github.com/6eero/NewPass.git",
@@ -2993,6 +3007,20 @@
       "tag": "1.2187",
       "commit": "e2ce855648f85294645e02be4f80e4c8381c8cee",
       "timestamp": 1716738926,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "13c0dff6f11dc44047a262fbdf7007c614305e1d4c5a6013b906dcf927141fd6": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2188/FairEmail-v1.2188a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2188,
+      "version_name": "1.2188",
+      "tag": "1.2188",
+      "commit": "cd7fc915eaa920e28e43d47e54f272afbe3b2b76",
+      "timestamp": 1716832844,
       "reproducible": true,
       "error": null
     }
