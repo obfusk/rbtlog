@@ -3025,6 +3025,20 @@
       "error": null
     }
   ],
+  "8b06047456ee9b5941176cd01ab9910d3bb06f3aae17ce7eca1ce8e1eac60d23": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2190/FairEmail-v1.2190a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2190,
+      "version_name": "1.2190",
+      "tag": "1.2190",
+      "commit": "b65d6c8bdaefd0f6123a957210f91b4d5230adae",
+      "timestamp": 1716930382,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4401,6 +4415,20 @@
       "tag": "v5.1.4",
       "commit": "441560f5ff404ec20b36cd899309d41ad2dd2268",
       "timestamp": 1716314010,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "115e066d1f41df0f2e1f40a64ffbf775afadfb1ee9db8541ec2b4a20572f5f10": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.1.7/floccus-build-v5.1.7.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5001007,
+      "version_name": "5.1.7",
+      "tag": "v5.1.7",
+      "commit": "9d92846c1f10727175b2e290b3c797320eba3a24",
+      "timestamp": 1716930968,
       "reproducible": true,
       "error": null
     }
