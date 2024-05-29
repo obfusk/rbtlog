@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/meenbeese/Chronos.git
 updates: releases
+notes:
+  - 'FIXME: .prof differs for v1.6.0'
 versions:
   - tag: v1.0.0
     apks:
