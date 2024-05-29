@@ -405,6 +405,20 @@
       "error": null
     }
   ],
+  "61e6ea53bd2eb6d35e1e81c5006a8bd9449c6b22fd54fc0a74dbc22217df8561": [
+    {
+      "repository": "https://github.com/bitfireAT/davx5-ose.git",
+      "apk_url": "https://github.com/bitfireAT/davx5-ose/releases/download/v4.4-ose/davx5-ose-4.4-ose-release.apk",
+      "appid": "at.bitfire.davdroid",
+      "version_code": 404000004,
+      "version_name": "4.4-ose",
+      "tag": "v4.4-ose",
+      "commit": "1856a5d7cee7db31a5444dde9bb5c64e8954c2e4",
+      "timestamp": 1717017666,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
     {
       "repository": "https://github.com/threema-ch/threema-android.git",
@@ -755,6 +769,20 @@
       "error": null
     }
   ],
+  "ffb7dce196b7452ce0b8c6adb7a0a7957e2f5ac6e7b74c68203c8e9d4574c0f5": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.32/Shiori.v1.32.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 41,
+      "version_name": "1.32",
+      "tag": "v1.32",
+      "commit": "e2309af37b6c0a8036868afb1df0d45f5c080558",
+      "timestamp": 1717018053,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
@@ -933,6 +961,20 @@
       "tag": "v1.8.5",
       "commit": "89f1159eda3f9a691d3bcdf6845fb39b15c83fee",
       "timestamp": 1716832665,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "21cbfa99d66bbac2cd172e98835490b54a658b5068566508048894177a9672f9": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.7/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 52,
+      "version_name": "1.8.7",
+      "tag": "v1.8.7",
+      "commit": "ba6a3ceebba0e04e73db680bbad07a62d5b24a4f",
+      "timestamp": 1717018348,
       "reproducible": true,
       "error": null
     }
@@ -3053,6 +3095,20 @@
       "error": null
     }
   ],
+  "8e43cf5a5cd8a850e9016788cd2663086e12bda088fb54e051aa0ad15d13f51d": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2191/FairEmail-v1.2191a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2191,
+      "version_name": "1.2191",
+      "tag": "1.2191",
+      "commit": "f014ea679949d1d1e9b277355769365c5987db32",
+      "timestamp": 1717018508,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4625,6 +4681,20 @@
       "tag": "v0.11.6",
       "commit": "8762550f34179f8146c6e895f63824142a1debd3",
       "timestamp": 1716858099,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "2eff749609721065b6e3daf45a7d1c8b7048ad9612b7a6009f3978410e812722": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.11.7/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 18,
+      "version_name": "0.11.7",
+      "tag": "v0.11.7",
+      "commit": "d0266a9272f6f228a8f82604f8c1c591f6d602c3",
+      "timestamp": 1717018980,
       "reproducible": true,
       "error": null
     }
