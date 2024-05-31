@@ -419,6 +419,20 @@
       "error": null
     }
   ],
+  "081196541af19b151243443b3845fc5ba6417c45bd01743dd10c8a7c0f9c10dc": [
+    {
+      "repository": "https://github.com/bitfireAT/davx5-ose.git",
+      "apk_url": "https://github.com/bitfireAT/davx5-ose/releases/download/v4.4.0.1-ose/davx5-ose-4.4.0.1-ose-release.apk",
+      "appid": "at.bitfire.davdroid",
+      "version_code": 404000100,
+      "version_name": "4.4.0.1-ose",
+      "tag": "v4.4.0.1-ose",
+      "commit": "9b5d5c982bb8c6f23db97b5a671dad1c5196dbd6",
+      "timestamp": 1717178684,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
     {
       "repository": "https://github.com/threema-ch/threema-android.git",
@@ -3583,6 +3597,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "b1aa858a3ef6af968e0809b5716ce6c09d4e61dd01641d4eca0deee671e09930": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.37/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 36,
+      "version_name": "0.6.37",
+      "tag": "v0.6.37",
+      "commit": "00147116bdf6d0bbe7d855dd903576c692a0a616",
+      "timestamp": 1717179085,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -4793,6 +4821,20 @@
       "tag": "1.3.7",
       "commit": "3bb59f262db07b2340ef160cb78f6483b0386af4",
       "timestamp": 1716659080,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "e1db6a4f80f7129482525a8e9f0a6b0bccaf91c48b49093e8f9bfc6963d1b25a": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.3.8/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 28,
+      "version_name": "1.3.8",
+      "tag": "1.3.8",
+      "commit": "e05f963c1c77391453f8c298fc54d81236031662",
+      "timestamp": 1717179627,
       "reproducible": false,
       "error": null
     }
