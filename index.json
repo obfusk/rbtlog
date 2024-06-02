@@ -4811,6 +4811,20 @@
       "error": null
     }
   ],
+  "4d54a4da8cb7a83bbebae4e4eda49bbcacf799565d6213ad903cad77f686e8c2": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.0/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 19,
+      "version_name": "0.12.0",
+      "tag": "v0.12.0",
+      "commit": "d0266a9272f6f228a8f82604f8c1c591f6d602c3",
+      "timestamp": 1717296994,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "6cd2cde8c4f1cc11d997e817c834f331af5029de41e975be4b60faf1cec317de": [
     {
       "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
