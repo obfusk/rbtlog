@@ -124,7 +124,7 @@ def latest_tag(repository: str, tag_pattern: str, *, verbose: bool = False) -> s
     with tempfile.TemporaryDirectory() as tmpdir:
         repo_dir = os.path.join(tmpdir, "repo")
         clone_cmd = ("git", "clone", "--", repository, repo_dir)
-        tags_cmd = ("git", "tag", "--sort=-creatordate")
+        tags_cmd = ("git", "tag", "--sort=-version:refname", "--sort=-creatordate")
         if verbose:
             print(f"Cloning {repository!r}...", file=sys.stderr)
         subprocess.run(clone_cmd, check=True)
