@@ -4169,6 +4169,76 @@
       "error": null
     }
   ],
+  "db6ac454f9d39d357786554bb0b4c6a8b71faabcddefe9036bf573b51c297bc2": [
+    {
+      "repository": "https://github.com/breezy-weather/breezy-weather.git",
+      "apk_url": "https://github.com/breezy-weather/breezy-weather/releases/download/v5.2.4/breezy-weather-arm64-v8a-v5.2.4_standard.apk",
+      "appid": "org.breezyweather",
+      "version_code": 50204,
+      "version_name": "5.2.4",
+      "tag": "v5.2.4",
+      "commit": "ba8ac9219a7991b75b1e9fee12c8a2cbd10e3140",
+      "timestamp": 1717292845,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "92a76d3002373c28418731c6ee7fe7f78086bee3d5789a5266432f065c289531": [
+    {
+      "repository": "https://github.com/breezy-weather/breezy-weather.git",
+      "apk_url": "https://github.com/breezy-weather/breezy-weather/releases/download/v5.2.4/breezy-weather-armeabi-v7a-v5.2.4_standard.apk",
+      "appid": "org.breezyweather",
+      "version_code": 50204,
+      "version_name": "5.2.4",
+      "tag": "v5.2.4",
+      "commit": "ba8ac9219a7991b75b1e9fee12c8a2cbd10e3140",
+      "timestamp": 1717293411,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "6aea96830eaa9b7b9ea8311bc38d193640b629da334e3d88c2144eab855e8071": [
+    {
+      "repository": "https://github.com/breezy-weather/breezy-weather.git",
+      "apk_url": "https://github.com/breezy-weather/breezy-weather/releases/download/v5.2.4/breezy-weather-v5.2.4_standard.apk",
+      "appid": "org.breezyweather",
+      "version_code": 50204,
+      "version_name": "5.2.4",
+      "tag": "v5.2.4",
+      "commit": "ba8ac9219a7991b75b1e9fee12c8a2cbd10e3140",
+      "timestamp": 1717293921,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "1c0855a204371f2defcd20fc0e14ff39b9cb316daa2eb3d68e0eef15aa9bc48d": [
+    {
+      "repository": "https://github.com/breezy-weather/breezy-weather.git",
+      "apk_url": "https://github.com/breezy-weather/breezy-weather/releases/download/v5.2.4/breezy-weather-x86-v5.2.4_standard.apk",
+      "appid": "org.breezyweather",
+      "version_code": 50204,
+      "version_name": "5.2.4",
+      "tag": "v5.2.4",
+      "commit": "ba8ac9219a7991b75b1e9fee12c8a2cbd10e3140",
+      "timestamp": 1717294445,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "bfdd33f311143e0992daf77a6c874b7890a32006ad06f986e5f4794480fa5933": [
+    {
+      "repository": "https://github.com/breezy-weather/breezy-weather.git",
+      "apk_url": "https://github.com/breezy-weather/breezy-weather/releases/download/v5.2.4/breezy-weather-x86_64-v5.2.4_standard.apk",
+      "appid": "org.breezyweather",
+      "version_code": 50204,
+      "version_name": "5.2.4",
+      "tag": "v5.2.4",
+      "commit": "ba8ac9219a7991b75b1e9fee12c8a2cbd10e3140",
+      "timestamp": 1717294971,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "54c4ea8595f269f7f9b07cb43fbd55123271fdf0f506371001dce235ef8c3e9e": [
     {
       "repository": "https://github.com/FossifyOrg/Calendar.git",
