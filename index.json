@@ -293,6 +293,20 @@
       "error": null
     }
   ],
+  "d2078a31095bb6c9da366c2fa9e0341d26d2d55e56d664c2f2411c8147b20754": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.4.2/Podcini_release_free_5.4.2.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020149,
+      "version_name": "5.4.2",
+      "tag": "5.4.2",
+      "commit": "dc144a5b4a7df617af95e5e5ad5a9ff9eb40acd2",
+      "timestamp": 1717438315,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -3147,6 +3161,20 @@
       "tag": "1.2193",
       "commit": "9f9718e2c88d56db2d8446f5f217f4fbcb49bf79",
       "timestamp": 1717094022,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ecf66e4317ccec83abc5334aacebd9b2e538cfc6d4bc8cae495a044be4c4cded": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2194/FairEmail-v1.2194a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2194,
+      "version_name": "1.2194",
+      "tag": "1.2194",
+      "commit": "67eddd38c421f5a2cdfc3e4c1eee2130ef5f133a",
+      "timestamp": 1717438649,
       "reproducible": true,
       "error": null
     }
