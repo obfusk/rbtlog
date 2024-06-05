@@ -1327,6 +1327,48 @@
       "error": null
     }
   ],
+  "39b6a1f44183567dbfafead8075aca930731fcb8b847c1758a7f036dd02e7bba": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.0/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 103,
+      "version_name": "1.11.0",
+      "tag": "1.11.0",
+      "commit": "9838c8f2001a9daed0e13293849e3e834feed6f6",
+      "timestamp": 1717549348,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "9f2c22d9723c98859ef9d069fa3adedb9f2d571795b21250e837b4f20043921a": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.0/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 103,
+      "version_name": "1.11.0",
+      "tag": "1.11.0",
+      "commit": "9838c8f2001a9daed0e13293849e3e834feed6f6",
+      "timestamp": 1717550041,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "0232be8cb93e3349f33479d77990402196976bc5e478250951f1ef324d4111e6": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.0/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 103,
+      "version_name": "1.11.0",
+      "tag": "1.11.0",
+      "commit": "9838c8f2001a9daed0e13293849e3e834feed6f6",
+      "timestamp": 1717550716,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "1b8d652411cdceccfef2d2ca9aa2f9fb8810d8ab747dfb36f27233c4601deea1": [
     {
       "repository": "https://github.com/libre-tube/LibreTube.git",
@@ -3179,6 +3221,20 @@
       "error": null
     }
   ],
+  "6a1436f56929723760f3b551d37adc1ca5b1a8d0b60a3d0226fa2e78efc1b1a6": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2196/FairEmail-v1.2196a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2196,
+      "version_name": "1.2196",
+      "tag": "1.2196",
+      "commit": "d0e5b069d53547a9d0cc8155bf8489f58b350176",
+      "timestamp": 1717551420,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4864,6 +4920,20 @@
       "commit": "d0266a9272f6f228a8f82604f8c1c591f6d602c3",
       "timestamp": 1717308540,
       "reproducible": false,
+      "error": null
+    }
+  ],
+  "b2fe8a7883b1b1e7c2b6d8ae1f4735f1fef1bcf68d17921746a0e42e64df30c1": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.1/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 20,
+      "version_name": "0.12.1",
+      "tag": "v0.12.1",
+      "commit": "c85986c0576adf975a6f3a3760bf93b1154ab23e",
+      "timestamp": 1717551904,
+      "reproducible": true,
       "error": null
     }
   ],
