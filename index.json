@@ -811,6 +811,20 @@
       "error": null
     }
   ],
+  "46819dcdfd3044f46a92fbdea2985122339a2c910878c43e718c24a39b3bebfb": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.33/Shiori.v1.33.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 42,
+      "version_name": "1.33",
+      "tag": "v1.33",
+      "commit": "717397ca7cae9ce5f01961eb8350363cd19a3a71",
+      "timestamp": 1717718655,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
@@ -1367,6 +1381,48 @@
       "timestamp": 1717550716,
       "reproducible": false,
       "error": null
+    }
+  ],
+  "8c0f7b5b55b7d4b89eb8c1f96c08fc0fe2478becf4f2fa1ed0354af68fd0a90f": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.1/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 104,
+      "version_name": "1.11.1",
+      "tag": "1.11.1",
+      "commit": "fd13d1c7b86fc9990eb6c6ad41cd511454b1844a",
+      "timestamp": 1717718988,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "650105c2aab83dc571cbe9fb8e2de7803979c07295c2334b6ab5f31911808653": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.1/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 104,
+      "version_name": "1.11.1",
+      "tag": "1.11.1",
+      "commit": "fd13d1c7b86fc9990eb6c6ad41cd511454b1844a",
+      "timestamp": 1717719638,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "54c709dc59aca1ae1c4236a78d367af6db36dc909f44bc4f2a641b854f092d00": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.1/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 104,
+      "version_name": "1.11.1",
+      "tag": "1.11.1",
+      "commit": "fd13d1c7b86fc9990eb6c6ad41cd511454b1844a",
+      "timestamp": 1717720283,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
   "1b8d652411cdceccfef2d2ca9aa2f9fb8810d8ab747dfb36f27233c4601deea1": [
@@ -3235,6 +3291,20 @@
       "error": null
     }
   ],
+  "87e69030af1513152b2480860d5384348bb41de5f7285e5a98e04e5325b26112": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2198/FairEmail-v1.2198a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2198,
+      "version_name": "1.2198",
+      "tag": "1.2198",
+      "commit": "081d1b97b97417ba44cccb1c4690aba46e6649e4",
+      "timestamp": 1717720947,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4933,6 +5003,20 @@
       "tag": "v0.12.1",
       "commit": "c85986c0576adf975a6f3a3760bf93b1154ab23e",
       "timestamp": 1717551904,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "64fa526850b56564d68c0a8b3179a019b9f89d3963f27a2628ee08d941bb903e": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.3/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 22,
+      "version_name": "0.12.3",
+      "tag": "v0.12.3",
+      "commit": "d8c2e1d8de275345a5109db2df0c1fc1bf243124",
+      "timestamp": 1717721450,
       "reproducible": true,
       "error": null
     }
