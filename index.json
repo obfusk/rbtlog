@@ -1943,6 +1943,20 @@
       "error": null
     }
   ],
+  "d381e83a7ded0924984e16a9d78ce4d530b39b805c71e1ccfefee365cc000962": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.67/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 67,
+      "version_name": "0.0.67",
+      "tag": "0.0.67",
+      "commit": "8727c28df510b7291085bec30cd0d7d3f786be43",
+      "timestamp": 1717881318,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "406a1212dd0ff181e3bdfcba5ba8866eec7ade3c1147ca87491a490cc6c6cf6f": [
     {
       "repository": "https://github.com/Ladsers/Passtable-Android.git",
@@ -3775,6 +3789,20 @@
       "tag": "v0.6.37",
       "commit": "00147116bdf6d0bbe7d855dd903576c692a0a616",
       "timestamp": 1717179085,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "5dfef9f1756b4505a386539e21715abfcf04cbbd1478f090f80fcf8c951b39df": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.38/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 37,
+      "version_name": "0.6.38",
+      "tag": "v0.6.38",
+      "commit": "e2020757ef0abb2a6b3a9cd2f529f2f9dabb24a2",
+      "timestamp": 1717881721,
       "reproducible": true,
       "error": null
     }
