@@ -139,3 +139,36 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v6.1.0
+    apks:
+      - apk_pattern: NeverTooManyBooks-.*\.apk
+        apk_url: https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.1.0/NeverTooManyBooks-6.1.0.apk
+        build:
+          - sed -r '/signingConfigs.release|props.*sign/d' -i app/build.gradle
+          - sed -r '/buildConfigField.*TIMESTAMP/,+2 { /LocalDateTime|DateTimeFormatter/d ; s/("TIMESTAMP",)$/\1 "\\"2024-06-12T11:01:34.9687416\\"")/ }' -i app/build.gradle
+          - chmod +x gradlew
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/NeverTooManyBooks-*-release.apk
+          - git clone -b v0.2.7 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --page-size 16 fix-newlines $OUT 'META-INF/services/*'
+          - mv $OUT /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
