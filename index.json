@@ -1915,6 +1915,20 @@
       "error": null
     }
   ],
+  "c8a76157bcb21a2dee446faadb2681995ebbddde0aa58855a50c0e9285347446": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.1.0/NeverTooManyBooks-6.1.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 83,
+      "version_name": "6.1.0",
+      "tag": "v6.1.0",
+      "commit": "f584633b5e3cb7acf952669fe927771ab16ce885",
+      "timestamp": 1718228586,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
@@ -3385,6 +3399,20 @@
       "tag": "1.2199",
       "commit": "cacf550dc48e3844e291e64608cd11333f49b202",
       "timestamp": 1718062913,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "c1606f37338ba4833b8a76d4459d9b6c5e9e74415afe812353336c0e5fb208d7": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2200/FairEmail-v1.2200a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2200,
+      "version_name": "1.2200",
+      "tag": "1.2200",
+      "commit": "9ae8e8892fd616bb4358c4269f2a70a88bbcc8d5",
+      "timestamp": 1718228812,
       "reproducible": true,
       "error": null
     }
@@ -4881,6 +4909,20 @@
       "error": null
     }
   ],
+  "1ce567fb988798b1b6adab0daa098580bb378975dacd6298cea39e0161f1d2ed": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.2.0/floccus-build-v5.2.0.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5002000,
+      "version_name": "5.2.0",
+      "tag": "v5.2.0",
+      "commit": "f3ca2b5634ea16d5090e317154da69555f6a84f8",
+      "timestamp": 1718229296,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
@@ -5115,6 +5157,20 @@
       "tag": "v0.12.3",
       "commit": "d8c2e1d8de275345a5109db2df0c1fc1bf243124",
       "timestamp": 1717721450,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "15a5246fac63a355d29c374fe1989dd3febceb618173c2984e73f9ff8bafd1fa": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.4/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 23,
+      "version_name": "0.12.4",
+      "tag": "v0.12.4",
+      "commit": "eb1d458f2f38cf321995a4f26e9980b354a4cb45",
+      "timestamp": 1718229566,
       "reproducible": true,
       "error": null
     }
