@@ -544,3 +544,80 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: 1.11.2
+    apks:
+      - apk_pattern: RaccoonForLemmy-arm64-v8a-release\.apk
+        apk_url: https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/$$TAG$$/RaccoonForLemmy-arm64-v8a-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i androidApp/build.gradle.kts
+          - java -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew -classpath "$PWD/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain assembleRelease
+          - mv androidApp/build/outputs/apk/release/RaccoonForLemmy-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: RaccoonForLemmy-universal-release\.apk
+        apk_url: https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/$$TAG$$/RaccoonForLemmy-universal-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { /include/d }' -i androidApp/build.gradle.kts
+          - java -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew -classpath "$PWD/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain assembleRelease
+          - mv androidApp/build/outputs/apk/release/RaccoonForLemmy-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: RaccoonForLemmy-x86_64-release\.apk
+        apk_url: https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/$$TAG$$/RaccoonForLemmy-x86_64-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i androidApp/build.gradle.kts
+          - java -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew -classpath "$PWD/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain assembleRelease
+          - mv androidApp/build/outputs/apk/release/RaccoonForLemmy-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
