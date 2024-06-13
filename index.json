@@ -1453,6 +1453,48 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "20fac40ee135d0bbe6a192ab6e430e967cb6dae7994c83199ffca8ecd96d4e85": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.2/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 106,
+      "version_name": "1.11.2",
+      "tag": "1.11.2",
+      "commit": "930b235a522be3e978338322cffe20438dc7dd23",
+      "timestamp": 1718311980,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "ee62c0a7d5fb84039863fd0e7258f3c9d36791274a9b92090c8a54a13260f0a1": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.2/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 106,
+      "version_name": "1.11.2",
+      "tag": "1.11.2",
+      "commit": "930b235a522be3e978338322cffe20438dc7dd23",
+      "timestamp": 1718312636,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "b16516fff5734fcb621663aae58bee554a2c715978a26d049a4000b7cac96d87": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.11.2/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 106,
+      "version_name": "1.11.2",
+      "tag": "1.11.2",
+      "commit": "930b235a522be3e978338322cffe20438dc7dd23",
+      "timestamp": 1718313293,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "1b8d652411cdceccfef2d2ca9aa2f9fb8810d8ab747dfb36f27233c4601deea1": [
     {
       "repository": "https://github.com/libre-tube/LibreTube.git",
@@ -1996,6 +2038,20 @@
       "commit": "8727c28df510b7291085bec30cd0d7d3f786be43",
       "timestamp": 1717881318,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "21ccb067facde2d0068ac70332a93da51e3d580573a81608efd2c7f1bf7ebc8b": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.68/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 68,
+      "version_name": "0.0.68",
+      "tag": "0.0.68",
+      "commit": "8232eb6fc6c12d36549ff066c57a4d454f69d075",
+      "timestamp": 1718313956,
+      "reproducible": false,
       "error": null
     }
   ],
@@ -3427,6 +3483,20 @@
       "tag": "1.2200",
       "commit": "9ae8e8892fd616bb4358c4269f2a70a88bbcc8d5",
       "timestamp": 1718228812,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "a753c6e532b23935bffcc2aa6db327141b36d4b389530db40eee2d3bfb7dbc55": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2202/FairEmail-v1.2202a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2202,
+      "version_name": "1.2202",
+      "tag": "1.2202",
+      "commit": "a556e8a30a0714e8bd4e8ecf59584255278c0182",
+      "timestamp": 1718314373,
       "reproducible": true,
       "error": null
     }
@@ -5421,6 +5491,20 @@
       "tag": "v0.1.3",
       "commit": "dfaa8ee0904426b171ae44b10106b0f7ce5cc42e",
       "timestamp": 1715888633,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "4ff3a43f7d2142d55af4075b0a165b05e284ef81d6f551c8ddf5ce1ee8cb41fe": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.4/flickboard-v0.1.4.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 21,
+      "version_name": "0.1.4",
+      "tag": "v0.1.4",
+      "commit": "0fafa8413d052f26182b7831474dfa6eebdaa13c",
+      "timestamp": 1718315024,
       "reproducible": true,
       "error": null
     }
