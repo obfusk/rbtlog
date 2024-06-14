@@ -573,6 +573,20 @@
       "error": null
     }
   ],
+  "f8f012d6ee8e5053f3e7707297aba5a6e0fdd360ec4905a56548d6a8ee0f8f93": [
+    {
+      "repository": "https://github.com/CominAtYou/BatteryTile.git",
+      "apk_url": "https://github.com/CominAtYou/BatteryTile/releases/download/v1.7.0/batterytile-1.7.0.apk",
+      "appid": "com.cominatyou.batterytile",
+      "version_code": 12,
+      "version_name": "1.7.0",
+      "tag": "v1.7.0",
+      "commit": "2f1266544cbcb13a5364620a450686f489b3c914",
+      "timestamp": 1718384066,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "b885cdb4ef8fd46b0acf7e86aa0b8c9973b61fcebc515765a0ac8d3d6ff10c43": [
     {
       "repository": "https://github.com/christianrowlands/android-network-survey.git",
@@ -849,6 +863,20 @@
       "tag": "v1.33",
       "commit": "717397ca7cae9ce5f01961eb8350363cd19a3a71",
       "timestamp": 1717718655,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "8123675d1b4eea41ab0e892887b4e90826c3f997382fab74db0ffcec76ec625f": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.33.01/Shiori.v1.33.01.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 43,
+      "version_name": "1.33.01",
+      "tag": "v1.33.01",
+      "commit": "711626e3f3313314181d98a8077aeb7d7b329fe9",
+      "timestamp": 1718384195,
       "reproducible": true,
       "error": null
     }
@@ -2065,6 +2093,20 @@
       "tag": "0.0.68",
       "commit": "8232eb6fc6c12d36549ff066c57a4d454f69d075",
       "timestamp": 1718313956,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "cc7ef7deb47be084dbdebf429b75ea45cad8eabc4d90c48bf2040f34ab657867": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.69/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 69,
+      "version_name": "0.0.69",
+      "tag": "0.0.69",
+      "commit": "f3bacd8e2a9037c2b30d869413686894ea429961",
+      "timestamp": 1718384484,
       "reproducible": false,
       "error": null
     }
@@ -3511,6 +3553,20 @@
       "tag": "1.2202",
       "commit": "a556e8a30a0714e8bd4e8ecf59584255278c0182",
       "timestamp": 1718314373,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f9f3c32b0f06a489b8c034414c547056af4f3188592151985910a51f07c94d09": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2204/FairEmail-v1.2204a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2204,
+      "version_name": "1.2204",
+      "tag": "1.2204",
+      "commit": "acb6792daffbacfc57a16940e00493380b4618a6",
+      "timestamp": 1718384856,
       "reproducible": true,
       "error": null
     }
@@ -5273,6 +5329,20 @@
       "error": null
     }
   ],
+  "d79a4a212da301fb18fe8ed6d3b18dfe2dc5fc173f003822fde445a345778ce8": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.6/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 25,
+      "version_name": "0.12.6",
+      "tag": "v0.12.6",
+      "commit": "16b88bf1c7a517cba726aed9285f4fcad64d2016",
+      "timestamp": 1718385324,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "6cd2cde8c4f1cc11d997e817c834f331af5029de41e975be4b60faf1cec317de": [
     {
       "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
@@ -5409,6 +5479,20 @@
       "tag": "v1.2",
       "commit": "f6ddc85b43b54b6eba3a3f3ea01f964b0f45ce20",
       "timestamp": 1714686186,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "3b7a1129587741dec27a2dfe9247c9d026dee2d7eb232e4d4f2ea1a75eee09d9": [
+    {
+      "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
+      "apk_url": "https://github.com/karasevm/PrivateDNSAndroid/releases/download/v1.3/app-release.apk",
+      "appid": "ru.karasevm.privatednstoggle",
+      "version_code": 10,
+      "version_name": "1.3",
+      "tag": "v1.3",
+      "commit": "347781b61e5806b63d88aa64d8295a05ab5b55d2",
+      "timestamp": 1718385491,
       "reproducible": true,
       "error": null
     }
