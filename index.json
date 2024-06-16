@@ -2041,6 +2041,20 @@
       "error": null
     }
   ],
+  "fd9ac99c47a5b9ffe61632c1f3d8f2e33a22a902028a8e82adf6c0dc0b51fbad": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.1.1/NeverTooManyBooks-6.1.1.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 84,
+      "version_name": "6.1.1",
+      "tag": "v6.1.1",
+      "commit": "d302755c946602733663bc08d7c8a9a4d762592b",
+      "timestamp": 1718580102,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
@@ -5119,6 +5133,20 @@
       "error": null
     }
   ],
+  "4ec912c5da82faf4494775104cef8ca30bf1975369c9bbdef4ca81c578c52621": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.2.2/floccus-build-v5.2.2.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5002002,
+      "version_name": "5.2.2",
+      "tag": "v5.2.2",
+      "commit": "5ce41ceaa65f74f5574f8bb9733509b95b6686a0",
+      "timestamp": 1718580331,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
@@ -5660,6 +5688,20 @@
       "commit": "0fafa8413d052f26182b7831474dfa6eebdaa13c",
       "timestamp": 1718315024,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "e3aebf7e33bb6f727a2c4cdf876db2b950f46ad43e88f651b55d7809d91aaf13": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.5/flickboard-v0.1.5.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 22,
+      "version_name": "0.1.5",
+      "tag": "v0.1.5",
+      "commit": "a2dadd6f6918ed1d248821f294103f4299caa296",
+      "timestamp": 1718580545,
+      "reproducible": false,
       "error": null
     }
   ],
