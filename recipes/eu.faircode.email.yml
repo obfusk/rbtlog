@@ -5,6 +5,7 @@ notes:
   - 'NB: NonFreeComp'
   - 'FIXME: embedded build ID (use readelf --notes to extract from .so)'
   - 'FIXME: JARs'
+  - 'FIXME: tag/commit mismatch for 1.2206'
 versions:
   - tag: '1.2162'
     apks:
@@ -875,6 +876,39 @@ versions:
       - apk_pattern: FairEmail-.*-github-release\.apk
         apk_url: https://github.com/M66B/FairEmail/releases/download/1.2205/FairEmail-v1.2205a-github-release.apk
         build:
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(fairemail PRIVATE "LINKER:--build-id=0xe3cb119d0dd0c23ff49b338b69c1462faf754611")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x21ac613625b533a4a269da32ca01b6f198b99210")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(fairemail PRIVATE "LINKER:--build-id=0xb00e56df9c2a3d98addfb07c417cc4761d0309bf")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x732c15d2623e44efd656112faf7d63b926126dde")' >> app/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                             >> app/CMakeLists.txt
+          - ./gradlew assembleGithubRelease
+          - mv app/build/outputs/apk/github/release/FairEmail-*-github-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: '1.2206'
+    apks:
+      - apk_pattern: FairEmail-.*-github-release\.apk
+        apk_url: https://github.com/M66B/FairEmail/releases/download/1.2206/FairEmail-v1.2206a-github-release.apk
+        build:
+          - git checkout 704ab9e4225e42b650f1f3cb9df1010548c6bcbd
           - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
           - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(fairemail PRIVATE "LINKER:--build-id=0xe3cb119d0dd0c23ff49b338b69c1462faf754611")' >> app/CMakeLists.txt
           - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x21ac613625b533a4a269da32ca01b6f198b99210")' >> app/CMakeLists.txt
