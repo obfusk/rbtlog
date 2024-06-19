@@ -335,6 +335,20 @@
       "error": null
     }
   ],
+  "8b68f7d26bc3bf8130d691de67c06fce75e047d29b1da2f81c16d3438bc5e91e": [
+    {
+      "repository": "https://github.com/XilinJia/Podcini.git",
+      "apk_url": "https://github.com/XilinJia/Podcini/releases/download/5.5.2/Podcini_release_free_5.5.2.apk",
+      "appid": "ac.mdiq.podcini",
+      "version_code": 3020152,
+      "version_name": "5.5.2",
+      "tag": "5.5.2",
+      "commit": "bd60e72da078fb0a627e2caafd10366f02cd0dbf",
+      "timestamp": 1718814398,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "365256b43957b9fc15b32157bc4d09e7fa5ac72cffc8adc40540093ade65d6c2": [
     {
       "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
@@ -2097,6 +2111,20 @@
       "error": null
     }
   ],
+  "a640f10417eeeeafb9fc834659d3c3565b717c96df72cd93c9aabe00aa0181b7": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.1.3/NeverTooManyBooks-6.1.3.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 86,
+      "version_name": "6.1.3",
+      "tag": "v6.1.3",
+      "commit": "387a0bbf59f7018c4383e7b63bba6e01ab813095",
+      "timestamp": 1718814695,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
@@ -2835,6 +2863,20 @@
       "tag": "v2.7.5",
       "commit": "28e32eaa71da0f4c66088c6495645aa1e0f34abb",
       "timestamp": 1716418611,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "8116218cb3a575f5bf9c3654bf0e004c62c698d6b2f05a85bb7c8002aeeabf9c": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.8.0/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 148,
+      "version_name": "2.8.0",
+      "tag": "v2.8.0",
+      "commit": "693cce2e13081f10a2e8495a0417a154a68b292b",
+      "timestamp": 1718814920,
       "reproducible": true,
       "error": null
     }
