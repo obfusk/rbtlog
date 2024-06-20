@@ -44,6 +44,9 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
           python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
+      - name: Checkout test recipes
+        run: get checkout master -- recipes/me.hackerchick.catima.yml
+        if: github.ref == 'refs/heads/code'
       - name: Test
         run: make test
       - name: Lint logs
