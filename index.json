@@ -2699,6 +2699,20 @@
       "error": null
     }
   ],
+  "d3a5641659e69a2424da99e7c35d284d5a02b51d878a160115a76687f91b9343": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.8.0/GreenStash-v3.8.0.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 380,
+      "version_name": "3.8.0",
+      "tag": "v3.8.0",
+      "commit": "59a3e41af249feb6baede37d2270b9a4e02f2a4a",
+      "timestamp": 1718987800,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "9cda56dbb7ab53cb3ccf36526f636f11aed221dff856de4e8859129a3f447723": [
     {
       "repository": "https://github.com/vishal2376/git-coach.git",
@@ -2891,6 +2905,20 @@
       "tag": "v2.8.1",
       "commit": "23f2fc10c9d4fd893cef657c916d8259cbe39e8a",
       "timestamp": 1718900025,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "7eed6d900fdfa71e538b88609ac1343eae5f68099bbadd28cb10bd8b32aabb36": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.8.2/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 150,
+      "version_name": "2.8.2",
+      "tag": "v2.8.2",
+      "commit": "7fa5a69d9cc81fc0eda22b2b72ed00fe69561ec3",
+      "timestamp": 1718988154,
       "reproducible": true,
       "error": null
     }
@@ -5301,6 +5329,20 @@
       "error": null
     }
   ],
+  "40f29c128af1a381272fff6537167e1b562bd2976c1bd7782e8cad73a31f6000": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.2.3/floccus-build-v5.2.3.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5002003,
+      "version_name": "5.2.3",
+      "tag": "v5.2.3",
+      "commit": "15ec4cff1244986797fd3ebc758c707aef1f99bc",
+      "timestamp": 1718988449,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
@@ -5731,6 +5773,20 @@
       "tag": "v1.3",
       "commit": "347781b61e5806b63d88aa64d8295a05ab5b55d2",
       "timestamp": 1718385491,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "89a67029193059a2550fafb6f9fb8b7df0320a494014e8324ead9f82a0c3c066": [
+    {
+      "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
+      "apk_url": "https://github.com/karasevm/PrivateDNSAndroid/releases/download/v1.4/app-release.apk",
+      "appid": "ru.karasevm.privatednstoggle",
+      "version_code": 11,
+      "version_name": "1.4",
+      "tag": "v1.4",
+      "commit": "391842244cd31dad17e0974a46d1831b5c479ff7",
+      "timestamp": 1718988690,
       "reproducible": true,
       "error": null
     }
