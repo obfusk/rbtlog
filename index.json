@@ -4283,6 +4283,20 @@
       "error": null
     }
   ],
+  "36121887b91facbd20dd72db04dd4f1bfb219f7b4dad5d666db0609a85444ca1": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.40/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 39,
+      "version_name": "0.6.40",
+      "tag": "v0.6.40",
+      "commit": "196de60080f958c43148e9415bbef4ad715e38f3",
+      "timestamp": 1719002424,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
