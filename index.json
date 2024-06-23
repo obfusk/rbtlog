@@ -755,6 +755,20 @@
       "error": null
     }
   ],
+  "5ffb39bd82975a984b93d6c1e1e1e357d15659d3d9ce1476d86284d13b7022af": [
+    {
+      "repository": "https://github.com/danilkinkin/buckwheat.git",
+      "apk_url": "https://github.com/danilkinkin/buckwheat/releases/download/4.7.0/buckwheat_v4.7.0.apk",
+      "appid": "com.danilkinkin.buckwheat",
+      "version_code": 28,
+      "version_name": "4.7.0",
+      "tag": "4.7.0",
+      "commit": "0b69ea84c9638c50d4060819268eb3111774fb8e",
+      "timestamp": 1719105563,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "716f47bac1f7836a2b9203541ffb370c2a77927ff380530a5c59624aa1987622": [
     {
       "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
