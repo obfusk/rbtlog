@@ -545,6 +545,20 @@
       "error": null
     }
   ],
+  "d72a0384c4953bf3d7680c4ad15331dffca537cb37eb53a93f981f4d53584e99": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.3.2l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 959,
+      "version_name": "5.3.2l",
+      "tag": "5.3.2",
+      "commit": "6c11d963a932092a52e40f65e725f635b41a0017",
+      "timestamp": 1719264213,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "aa8512fc3e02f0585dc435628e3d5fdc7af306adae4130155c801fcba4f07639": [
     {
       "repository": "https://github.com/TeamAmaze/AmazeFileManager.git",
@@ -3879,6 +3893,20 @@
       "error": null
     }
   ],
+  "3a52e08c6ad318a2ef6f1d71f752ea76fae571a1a7a7d5f30d52a7bce71a6ae4": [
+    {
+      "repository": "https://github.com/Helium314/HeliBoard.git",
+      "apk_url": "https://github.com/Helium314/HeliBoard/releases/download/v2.0/HeliBoard_2.0-release.apk",
+      "appid": "helium314.keyboard",
+      "version_code": 2003,
+      "version_name": "2.0",
+      "tag": "v2.0",
+      "commit": "e707ade006bf7c86b1cedcb31e54e32447faf3d0",
+      "timestamp": 1719264709,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5dbbf8e63ad8f454026394cda7d66ea2360a085f728f68d8bc12c8cafe7d380d": [
     {
       "repository": "https://github.com/WrichikBasu/ShakeAlarmClock.git",
@@ -4321,6 +4349,20 @@
       "tag": "v0.6.40",
       "commit": "196de60080f958c43148e9415bbef4ad715e38f3",
       "timestamp": 1719002424,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "778f27e8ff4ba8cccc3d33b6eea360446628313d2264064ffbf1b9f10b49cece": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.40.1/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 40,
+      "version_name": "0.6.40.1",
+      "tag": "v0.6.40.1",
+      "commit": "7a2f4c2cabde69cf3670583ce7af4519853e6e3e",
+      "timestamp": 1719265102,
       "reproducible": true,
       "error": null
     }
