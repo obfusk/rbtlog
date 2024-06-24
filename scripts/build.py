@@ -342,7 +342,7 @@ def compare_apks(tmpdir: str, *, appid: str, tag: str, signed_sha: str,
 def keep_apk(appid: str, tag: str, output_dir: str, apkfile: str, sha256: str, *,
              verbose: bool = False) -> None:
     """Copy APK."""
-    target = f"{sha256}-{appid}-{tag}-{os.path.basename(apkfile)}"
+    target = f"{sha256}-{appid}-{tag.replace('/', '_')}-{os.path.basename(apkfile)}"
     if verbose:
         print(f"Keeping {target!r}...", file=sys.stderr)
     shutil.copyfile(apkfile, os.path.join(output_dir, target))
