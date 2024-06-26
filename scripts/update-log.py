@@ -21,7 +21,7 @@ def recipe_tags(recipe_file: str) -> List[str]:
     with open(recipe_file, encoding="utf-8") as fh:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
-        return [v["tag"] for v in data["versions"]]
+        return [v["tag"] for v in data["versions"]]     # FIXME pylint: disable=W0101
 
 
 def load_log(log_file: str, appid: str) -> Dict[Any, Any]:
