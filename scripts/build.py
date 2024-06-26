@@ -114,7 +114,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     with open(recipe_file, encoding="utf-8") as fh:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
-        versions = []
+        versions = []   # FIXME pylint: disable=W0101
         tag_pattern = data["updates"][5:] if data["updates"].startswith("tags:") else None
         for vsn in data["versions"]:
             tag = vsn["tag"]
