@@ -236,6 +236,7 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, verbose: boo
                 raise NotImplementedError(f"Unsupported updates mode: {updates}")
             if append_latest_version(recipe, tag, apk_urls):
                 save_recipe(recipe_file, recipe)
+                print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
             elif verbose:
                 print(f"Tag already present: {tag!r}.", file=sys.stderr)
         except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
