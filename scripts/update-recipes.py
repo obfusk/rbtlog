@@ -220,6 +220,8 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, verbose: boo
             print(f"Updates mode: {updates!r}.", file=sys.stderr)
         if updates == "manual":
             continue
+        if checkonly := updates.startswith("checkonly:"):
+            updates = updates.replace("checkonly:", "", 1)
         try:
             if updates == "releases":
                 apk_patterns = [apk["apk_pattern"] for apk in recipe["versions"][-1]["apks"]]
@@ -228,15 +230,19 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, verbose: boo
                     for apk_url in apk_urls.values():
                         print(f"Found tag {tag!r} with APK URL {apk_url!r}.", file=sys.stderr)
             elif updates.startswith("tags:"):
-                tag = latest_tag(repository, updates[5:], verbose=verbose)
+                tag_pattern = updates.replace("tags:", "", 1)
+                tag = latest_tag(repository, tag_pattern, verbose=verbose)
                 apk_urls = None
                 if verbose:
                     print(f"Found tag {tag!r}.", file=sys.stderr)
             else:
                 raise NotImplementedError(f"Unsupported updates mode: {updates}")
             if append_latest_version(recipe, tag, apk_urls):
-                save_recipe(recipe_file, recipe)
-                print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
+                if checkonly:
+                    print(f"Update available for {appid!r}: {tag!r}.", file=sys.stderr)
+                else:
+                    save_recipe(recipe_file, recipe)
+                    print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
             elif verbose:
                 print(f"Tag already present: {tag!r}.", file=sys.stderr)
         except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
