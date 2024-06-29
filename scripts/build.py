@@ -198,8 +198,11 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
             unsigned_sha, copied_sha, error = compare_apks(
                 tmpdir, appid=appid, tag=recipe.tag, signed_sha=signed_sha,
                 keep_apks=keep_apks, verbose=verbose)
+            reproducible = signed_sha == copied_sha
+            if verbose:
+                print(f"Reproducible: {reproducible}", file=sys.stderr)
             result.update(
-                reproducible=signed_sha == copied_sha,  # FIXME
+                reproducible=reproducible,      # FIXME
                 built_unsigned_apk_sha256=unsigned_sha,
                 signature_copied_apk_sha256=copied_sha,
                 error=error,
