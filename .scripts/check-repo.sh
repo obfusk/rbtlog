@@ -9,3 +9,5 @@ test 0 = "$( git diff code master | grep '^---' | grep -cvF /dev/null )"
 test 0 = "$( git diff code master | grep '^+++' | grep -cv '/recipes/.*\.yml$' )"
 test 0 = "$( git diff master log | grep '^---' | grep -cvF /dev/null )"
 test 0 = "$( git diff master log | grep '^+++' | grep -cv '\.json$' )"
+
+echo OK
