@@ -755,6 +755,20 @@
       "error": null
     }
   ],
+  "0475c121937e86122b365112e055edd5b105b095bf6fa48c1478791a56306aba": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.26/networksurvey-1.26-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 76,
+      "version_name": "1.26-cdr",
+      "tag": "v1.26",
+      "commit": "eec8aa56a6be72d88bd5564157d3129d35614ae3",
+      "timestamp": 1719690215,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -2965,6 +2979,20 @@
       "error": null
     }
   ],
+  "66a77aa42d9bd2e58662d3f213a464f4bafe25788586f999c10d7ed2e55d00b2": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.9.0/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 151,
+      "version_name": "2.9.0",
+      "tag": "v2.9.0",
+      "commit": "f05cf5fdce934c509382a5046b2982509dca5ed7",
+      "timestamp": 1719690536,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "56b13edd9e064c96ab6e1debe0b868a4137f3ce01dfc84d06cc0a4b9729726c2": [
     {
       "repository": "https://github.com/jarnedemeulemeester/findroid.git",
@@ -4377,6 +4405,20 @@
       "tag": "v0.6.40.1",
       "commit": "7a2f4c2cabde69cf3670583ce7af4519853e6e3e",
       "timestamp": 1719265102,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "560209e28c52543efb41e8cf5bf6e717f91d133626b4ffc50819445a5d910ce2": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.41/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 41,
+      "version_name": "0.6.41",
+      "tag": "v0.6.41",
+      "commit": "1cd6b4b0261f47202230cc1934425282cb37b82a",
+      "timestamp": 1719690991,
       "reproducible": true,
       "error": null
     }
@@ -5885,6 +5927,20 @@
       "tag": "v1.4",
       "commit": "391842244cd31dad17e0974a46d1831b5c479ff7",
       "timestamp": 1718988690,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "b8c25e70f775e2628681328df58e7e1c82fb1475e62cf9ebf1633f05ec844acf": [
+    {
+      "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
+      "apk_url": "https://github.com/karasevm/PrivateDNSAndroid/releases/download/v1.6/app-release.apk",
+      "appid": "ru.karasevm.privatednstoggle",
+      "version_code": 12,
+      "version_name": "1.6",
+      "tag": "v1.6",
+      "commit": "5c38ec2db8ea5c2ca0ec9a8f7382d925f71630fc",
+      "timestamp": 1719694302,
       "reproducible": true,
       "error": null
     }
