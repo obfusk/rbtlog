@@ -981,7 +981,7 @@ versions:
       - apk_pattern: breezy-weather-arm64-v8a-(v[\d.]+)(-beta)?[_-]standard.apk
         apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-arm64-v8a-$$TAG$$_standard.apk
         build:
-          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5nZW9uYW1lcy5rZXk9YnJlZXp5d2VhdGhlcgpicmVlenkubWYuand0S2V5PQpicmVlenkubWYua2V5PV9fV2o3ZFZTVGpWOVlHdTFndXZlTHlEcTBnN1M3VGZUamFIQlRQVHBPMGtqOF9fCmJyZWV6eS5vcGVud2VhdGhlci5rZXk9ZDljOTEwM2E3NGE0MzhlYWMwOTUyYTM0ZDFiNTgwZTYK
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
           - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
           - ./gradlew assembleBasicRelease
@@ -1008,7 +1008,7 @@ versions:
       - apk_pattern: breezy-weather-armeabi-v7a-(v[\d.]+)(-beta)?[_-]standard.apk
         apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-armeabi-v7a-$$TAG$$_standard.apk
         build:
-          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5nZW9uYW1lcy5rZXk9YnJlZXp5d2VhdGhlcgpicmVlenkubWYuand0S2V5PQpicmVlenkubWYua2V5PV9fV2o3ZFZTVGpWOVlHdTFndXZlTHlEcTBnN1M3VGZUamFIQlRQVHBPMGtqOF9fCmJyZWV6eS5vcGVud2VhdGhlci5rZXk9ZDljOTEwM2E3NGE0MzhlYWMwOTUyYTM0ZDFiNTgwZTYK
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
           - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
           - ./gradlew assembleBasicRelease
@@ -1035,7 +1035,7 @@ versions:
       - apk_pattern: breezy-weather-(v[\d.]+)(-beta)?[_-]standard.apk
         apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-$$TAG$$_standard.apk
         build:
-          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5nZW9uYW1lcy5rZXk9YnJlZXp5d2VhdGhlcgpicmVlenkubWYuand0S2V5PQpicmVlenkubWYua2V5PV9fV2o3ZFZTVGpWOVlHdTFndXZlTHlEcTBnN1M3VGZUamFIQlRQVHBPMGtqOF9fCmJyZWV6eS5vcGVud2VhdGhlci5rZXk9ZDljOTEwM2E3NGE0MzhlYWMwOTUyYTM0ZDFiNTgwZTYK
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
           - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
           - ./gradlew assembleBasicRelease
           - mv app/build/outputs/apk/basic/release/app-basic-release-unsigned.apk /outputs/unsigned.apk
@@ -1061,7 +1061,7 @@ versions:
       - apk_pattern: breezy-weather-x86-(v[\d.]+)(-beta)?[_-]standard.apk
         apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-x86-$$TAG$$_standard.apk
         build:
-          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5nZW9uYW1lcy5rZXk9YnJlZXp5d2VhdGhlcgpicmVlenkubWYuand0S2V5PQpicmVlenkubWYua2V5PV9fV2o3ZFZTVGpWOVlHdTFndXZlTHlEcTBnN1M3VGZUamFIQlRQVHBPMGtqOF9fCmJyZWV6eS5vcGVud2VhdGhlci5rZXk9ZDljOTEwM2E3NGE0MzhlYWMwOTUyYTM0ZDFiNTgwZTYK
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
           - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
           - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
           - ./gradlew assembleBasicRelease
