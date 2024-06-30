@@ -3949,6 +3949,20 @@
       "error": null
     }
   ],
+  "dbc5ef3645fcaa5024227a9f0c0af0a344465928e9b427263ce3be8424e07a04": [
+    {
+      "repository": "https://github.com/Helium314/HeliBoard.git",
+      "apk_url": "https://github.com/Helium314/HeliBoard/releases/download/v2.1/HeliBoard_2.1-release.apk",
+      "appid": "helium314.keyboard",
+      "version_code": 2100,
+      "version_name": "2.1",
+      "tag": "v2.1",
+      "commit": "b26ac87ece4bed197d0ddcc2eaacd70ce269d53c",
+      "timestamp": 1719760548,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5dbbf8e63ad8f454026394cda7d66ea2360a085f728f68d8bc12c8cafe7d380d": [
     {
       "repository": "https://github.com/WrichikBasu/ShakeAlarmClock.git",
