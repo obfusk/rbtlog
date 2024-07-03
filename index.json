@@ -6141,6 +6141,20 @@
       "error": null
     }
   ],
+  "f8a1978e6a5b1d6948c7d634f6bdb0dc12af408b03fb5028e0f44a7005ac3d08": [
+    {
+      "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
+      "apk_url": "https://github.com/karasevm/PrivateDNSAndroid/releases/download/v1.7/app-release.apk",
+      "appid": "ru.karasevm.privatednstoggle",
+      "version_code": 13,
+      "version_name": "1.7",
+      "tag": "v1.7",
+      "commit": "213d3e4dee0cd82179e88d62b16e044210ec945d",
+      "timestamp": 1720031146,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "b9e14ce167f49dcd099ad7a6bea12846fe47ce01432a8e86c3682ab22429d3fc": [
     {
       "repository": "https://github.com/nightkr/flickboard.git",
