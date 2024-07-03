@@ -629,6 +629,20 @@
       "error": null
     }
   ],
+  "a008b12be29b6ca83cd33d7ee973f7eab81d60420c57ffbcffa2a51b06fa45ca": [
+    {
+      "repository": "https://github.com/you-apps/TranslateYou.git",
+      "apk_url": "https://github.com/you-apps/TranslateYou/releases/download/v10.0/app-release.apk",
+      "appid": "com.bnyro.translate",
+      "version_code": 41,
+      "version_name": "10.0",
+      "tag": "v10.0",
+      "commit": "18d7ea3017be7f8fd1f25f9ceb378fe4af10a786",
+      "timestamp": 1720017541,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "0d0cdea4ae04dd1df8d893f139cf01de903a74348468a0f5b59c7022643d4032": [
     {
       "repository": "https://github.com/CominAtYou/BatteryTile.git",
@@ -3889,6 +3903,20 @@
       "tag": "1.2208",
       "commit": "a8136e01ff2face5087274c2752a8977edd02bdd",
       "timestamp": 1719083516,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "edb11710635ec72d0abcd2da37bad72a1a409fedc42cff3a21d5189e8d368f1d": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2209/FairEmail-v1.2209a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2209,
+      "version_name": "1.2209",
+      "tag": "1.2209",
+      "commit": "bd2b19fd6f07aa3ff823d7a8ac1e688c84b20199",
+      "timestamp": 1720017861,
       "reproducible": true,
       "error": null
     }
