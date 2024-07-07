@@ -2615,6 +2615,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "573357c5b783304d94265e00d8ff2b21910e6cfe4e97ecd3ace3749ad3349cf8": [
+    {
+      "repository": "https://github.com/meenbeese/Chronos.git",
+      "apk_url": "https://github.com/meenbeese/Chronos/releases/download/v1.7.0/app-release.apk",
+      "appid": "com.meenbeese.chronos",
+      "version_code": 8,
+      "version_name": "1.7.0",
+      "tag": "v1.7.0",
+      "commit": "9485ed2f8c7b63589dc775bbdb565f46deec8c6b",
+      "timestamp": 1720387860,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
     {
       "repository": "https://github.com/MRepoApp/MRepo.git",
