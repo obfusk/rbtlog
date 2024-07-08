@@ -4,6 +4,7 @@ updates: releases
 notes:
   - 'NB: not reproducible'
   - 'FIXME: broken gradlew'
+  - 'FIXME: embedded version code/name mismatch for 1.12.0'
 versions:
   - tag: 1.8.0
     apks:
