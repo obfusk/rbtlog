@@ -1733,6 +1733,48 @@
       "error": null
     }
   ],
+  "85e59cb377660b06b2e971766a5efd145f0525cc7b60aa901b335d304cdb3c65": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.12.0/RaccoonForLemmy-arm64-v8a-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 114,
+      "version_name": "1.12.0",
+      "tag": "1.12.0",
+      "commit": "07dc0fa4dc5dcc843f3d5d58ffc9dfa2ae48217f",
+      "timestamp": 1720477099,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "a0cbb28e97d877fa27a5c609e038d66f9a789724f4747144fbfa85050bff5d7c": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.12.0/RaccoonForLemmy-universal-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 114,
+      "version_name": "1.12.0",
+      "tag": "1.12.0",
+      "commit": "07dc0fa4dc5dcc843f3d5d58ffc9dfa2ae48217f",
+      "timestamp": 1720477828,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "46421f9450f1c6b625ac6f9db0bb8c4a4dcd6b1d1675e11806eac87dad3d705b": [
+    {
+      "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
+      "apk_url": "https://github.com/diegoberaldin/RaccoonForLemmy/releases/download/1.12.0/RaccoonForLemmy-x86_64-release.apk",
+      "appid": "com.github.diegoberaldin.raccoonforlemmy.android",
+      "version_code": 114,
+      "version_name": "1.12.0",
+      "tag": "1.12.0",
+      "commit": "07dc0fa4dc5dcc843f3d5d58ffc9dfa2ae48217f",
+      "timestamp": 1720478584,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "1b8d652411cdceccfef2d2ca9aa2f9fb8810d8ab747dfb36f27233c4601deea1": [
     {
       "repository": "https://github.com/libre-tube/LibreTube.git",
@@ -3143,6 +3185,20 @@
       "tag": "v2.10.1",
       "commit": "bdc15bc75f7e41f0d3f49a8b85563be5fe70f21c",
       "timestamp": 1720283028,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "dd2833a1a02d890ef266ad96a3e33da85ef16e18350879cd4709ef9caa244fa8": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.10.2/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 154,
+      "version_name": "2.10.2",
+      "tag": "v2.10.2",
+      "commit": "2c9e778ed7ebd40fcb4078ceaad3812a5eb9e00a",
+      "timestamp": 1720479274,
       "reproducible": true,
       "error": null
     }
@@ -5913,6 +5969,20 @@
       "tag": "v3.0.0",
       "commit": "ec2751f1e09073341fbab2d3debb7ba13f90b2ed",
       "timestamp": 1711479233,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "0889f5009ca2b582f748e0be783142c6eb5c4dc35919c36179382713973cb090": [
+    {
+      "repository": "https://github.com/scheibler/WalkersGuide-Android.git",
+      "apk_url": "https://github.com/scheibler/WalkersGuide-Android/releases/download/v3.1.0/WalkersGuide-3.1.0-release.apk",
+      "appid": "org.walkersguide.android",
+      "version_code": 36,
+      "version_name": "3.1.0",
+      "tag": "v3.1.0",
+      "commit": "4087cfcb26e482d1ad603e94a679c169da05d887",
+      "timestamp": 1720479561,
       "reproducible": false,
       "error": null
     }
