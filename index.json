@@ -2559,6 +2559,20 @@
       "error": null
     }
   ],
+  "281a82cf58e619559816f34dc2820792ad57eb25930d77d94baeb10362970237": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Store.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Store/releases/download/1.0.4/Neo_Store_104_release.apk",
+      "appid": "com.machiav3lli.fdroid",
+      "version_code": 1016,
+      "version_name": "1.0.4",
+      "tag": "1.0.4",
+      "commit": "cc3d09b2eac2ed96f6cb0981a669e4ce8827a32a",
+      "timestamp": 1720538097,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "27618df3ab4ea4a68c8fdf40139e95eb0008ac045194e20abc8c2f96dbb4df59": [
     {
       "repository": "https://github.com/martinmimigames/little-file-explorer.git",
@@ -4071,6 +4085,20 @@
       "tag": "1.2209",
       "commit": "bd2b19fd6f07aa3ff823d7a8ac1e688c84b20199",
       "timestamp": 1720017861,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "d4cf3dba6b3f009e13d42e6aae632ff3e02be7740b25c54038b49c377919cdad": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2210/FairEmail-v1.2210a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2210,
+      "version_name": "1.2210",
+      "tag": "1.2210",
+      "commit": "08fe928212cd360549e152b8f5ad021f88b4f22b",
+      "timestamp": 1720538493,
       "reproducible": true,
       "error": null
     }
