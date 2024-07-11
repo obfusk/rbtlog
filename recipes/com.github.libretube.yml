@@ -2,7 +2,7 @@
 repository: https://github.com/libre-tube/LibreTube.git
 updates: releases
 notes:
-  - 'FIXME: flaky DEX (after AGP update to 8.4.0)'
+  - 'FIXME: flaky DEX (after AGP update to 8.4.0); seems OK in v0.24.0'
   - 'FIXME: embedded commit hash mismatch for >= v0.22.1'
 versions:
   - tag: v0.22.0
