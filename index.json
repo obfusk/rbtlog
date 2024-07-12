@@ -545,6 +545,20 @@
       "error": null
     }
   ],
+  "90827bbc3e219732ec76aa1083bf97f4194c2f639f123e5e9c6f1634811554dd": [
+    {
+      "repository": "https://github.com/bitfireAT/davx5-ose.git",
+      "apk_url": "https://github.com/bitfireAT/davx5-ose/releases/download/v4.4.1.1-ose/davx5-ose-4.4.1.1-ose-release.apk",
+      "appid": "at.bitfire.davdroid",
+      "version_code": 404010101,
+      "version_name": "4.4.1.1-ose",
+      "tag": "v4.4.1.1-ose",
+      "commit": "60219aafc778c6bd370739bb66110f11866bd25b",
+      "timestamp": 1720748020,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
     {
       "repository": "https://github.com/threema-ch/threema-android.git",
