@@ -4521,6 +4521,20 @@
       "error": null
     }
   ],
+  "394695d6394bab5d1a8738b5c2246360f2ea1541afd1580ffc95a9955e7c34aa": [
+    {
+      "repository": "https://github.com/MarmadileManteater/FreeTubeAndroid.git",
+      "apk_url": "https://github.com/MarmadileManteater/FreeTubeAndroid/releases/download/0.21.1.119/freetube-0.21.1.119-Android.apk",
+      "appid": "io.freetubeapp.freetube",
+      "version_code": 210001119,
+      "version_name": "0.21.1.119",
+      "tag": "0.21.1.119",
+      "commit": "8b48c1e3191c2dfe14ca261ddc1e0f884c1e7c00",
+      "timestamp": 1720747379,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5a0d012d2e7e5973d8b1177f46b73ae084a43a076ab65703e1ec256f5ccc3056": [
     {
       "repository": "https://github.com/devhyper/open-video-editor.git",
