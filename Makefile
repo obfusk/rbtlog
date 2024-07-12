@@ -16,10 +16,7 @@ doctest:
 lint: lint-recipes lint-scripts
 
 lint-recipes:
-	yamllint recipes/*.yml
-	set -e; for r in recipes/*.yml; do echo "$$r"; \
-	  $(PYTHON) scripts/yaml2json < "$$r" \
-	  | jsonschema -o pretty schemas/recipe.json; done
+	PYTHON=$(PYTHON) scripts/lint-recipes recipes/*.yml
 
 lint-scripts:
 	shellcheck scripts/*.sh
@@ -28,9 +25,7 @@ lint-scripts:
 	mypy --strict --disallow-any-unimported scripts/*.py
 
 lint-logs:
-	jsonschema -o pretty -i index.json schemas/log-index.json
-	set -e; for l in logs/*.json; do echo "$$l"; \
-	  jsonschema -o pretty -i "$$l" schemas/log.json; done
+	scripts/lint-logs index.json logs/*.json
 
 check-commandlinetools:
 	diff -Naur \
