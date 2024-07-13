@@ -1,7 +1,8 @@
 ---
 repository: https://github.com/XilinJia/Podcini.git
-updates: releases
+updates: manual
 notes:
+  - '6.x changed the appid to ac.mdiq.podcini.R'
   - 'NB: not reproducible'
   - 'FIXME: embedded commit hash / tag mismatch'
   - 'FIXME: eventbus non-determinism'
