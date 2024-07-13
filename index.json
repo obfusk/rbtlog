@@ -6211,6 +6211,20 @@
       "error": null
     }
   ],
+  "3d46820ccfb072cd10071abafb0162fc9b446b922f8538eb8fc2a8d289a60b57": [
+    {
+      "repository": "https://github.com/polymorphicshade/Tubular.git",
+      "apk_url": "https://github.com/polymorphicshade/Tubular/releases/download/v0.27.1/tubular_v0.27.1.apk",
+      "appid": "org.polymorphicshade.tubular",
+      "version_code": 998,
+      "version_name": "0.27.1",
+      "tag": "v0.27.1",
+      "commit": "f6bce9dd30c6da1b5ba371087baaff2031cc1124",
+      "timestamp": 1720905630,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e4990b0b717f6095c9ecf5ff939d5697436b833e8f8ebf3d4cfd8e79da5f08c0": [
     {
       "repository": "https://github.com/TeamNewPipe/NewPipe.git",
