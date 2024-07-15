@@ -477,7 +477,10 @@ if __name__ == "__main__":
     parser.add_argument("backend", choices=backends, help="backend")
     parser.add_argument("specs", metavar="SPEC", nargs="*", help="appid:tag to build")
     args = parser.parse_args()
-    if build(args.backend, *args.specs, keep_apks=args.keep_apks, verbose=args.verbose) != 0:
+    if args.keep_apks and not os.path.isdir(args.keep_apks):
+        print(f"Error: {args.keep_apks!r} is not an existing directory", file=sys.stderr)
+        sys.exit(1)
+    elif build(args.backend, *args.specs, keep_apks=args.keep_apks, verbose=args.verbose) != 0:
         sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
