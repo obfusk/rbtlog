@@ -36,7 +36,7 @@ versions:
         apk_url: https://github.com/NeoApplications/Neo-Backup/releases/download/8.3.7/Neo_Backup_837_release.apk
         build:
           - ./gradlew assembleRelease
-          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+          - mv build/outputs/apk/release/*-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
