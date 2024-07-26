@@ -171,7 +171,9 @@ versions:
         build:
           - chmod +x gradlew
           - ./gradlew assembleRelease
-          - mv app/build/outputs/apk/release/GreenStash-v*.apk /outputs/unsigned.apk
+          - OUT=app/build/outputs/apk/release/GreenStash-v*.apk
+          - git clone -b v0.2.8 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/zipalign.py --page-size 16 --pad-like-apksigner --replace $OUT /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
