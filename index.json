@@ -3259,6 +3259,20 @@
       "error": null
     }
   ],
+  "c02719f19c56396782dbd37f508ce046a2a154bc484f98ee2ac482dd8946def7": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.8.1/GreenStash-v3.8.1.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 381,
+      "version_name": "3.8.1",
+      "tag": "v3.8.1",
+      "commit": "8b47cc6c7b4ba6afe59f8e4082dc26f66eea5bae",
+      "timestamp": 1722037768,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e52f94d148aa490d184295ddedd150db5f8f48cb5bf0496f44f22ff95ef3e611": [
     {
       "repository": "https://github.com/Pool-Of-Tears/Myne.git",
@@ -6543,6 +6557,20 @@
       "tag": "1.2.1",
       "commit": "9ea34abd267c8dc4fc0f50e3fedbbbd9d4c34dde",
       "timestamp": 1714790185,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "08e81d668ddfa4e890dcf6b4c10399ce6fbb740fa56723bebb9e63ab0c8326f8": [
+    {
+      "repository": "https://github.com/Netdex/android-usb-script.git",
+      "apk_url": "https://github.com/Netdex/android-usb-script/releases/download/1.2.2/android-usb-script_1.2.2.apk",
+      "appid": "org.netdex.androidusbscript",
+      "version_code": 122,
+      "version_name": "1.2.2",
+      "tag": "1.2.2",
+      "commit": "68a2503dfd9fb79b4aa96dcf0a64ab65c0085ebc",
+      "timestamp": 1722038148,
       "reproducible": true,
       "error": null
     }
