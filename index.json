@@ -419,6 +419,20 @@
       "error": null
     }
   ],
+  "d20f147302c83677b87c4e92d5ac43fd4444041e9b54ce7a62ef26e22969b23a": [
+    {
+      "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
+      "apk_url": "https://github.com/hashemi-hossein/memory-guardian/releases/download/v1.4.1/MemoryGuardian_1.4.1-signed.apk",
+      "appid": "ara.memoryguardian",
+      "version_code": 12,
+      "version_name": "1.4.1",
+      "tag": "v1.4.1",
+      "commit": "e19816375ed777b2ff0a9af5fbf7849330704091",
+      "timestamp": 1722015101,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fe9fea50099cf0f828c2900f57225572b7eeffca2fd3ec441493fcafeb245325": [
     {
       "repository": "https://github.com/bitfireAT/davx5-ose.git",
@@ -625,6 +639,20 @@
       "tag": "5.3.2",
       "commit": "6c11d963a932092a52e40f65e725f635b41a0017",
       "timestamp": 1719264213,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ebdbc3647ff901f7ecafe5601bdabf28f95b4d97068fe77e92758393ac48eec5": [
+    {
+      "repository": "https://github.com/threema-ch/threema-android.git",
+      "apk_url": "https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-5.4.1l.apk",
+      "appid": "ch.threema.app.libre",
+      "version_code": 974,
+      "version_name": "5.4.1l",
+      "tag": "5.4.1",
+      "commit": "456dcd6ead8ce9217970ec1f7a4fb3c315fd713d",
+      "timestamp": 1722015331,
       "reproducible": true,
       "error": null
     }
@@ -849,6 +877,20 @@
       "tag": "v1.26",
       "commit": "eec8aa56a6be72d88bd5564157d3129d35614ae3",
       "timestamp": 1719690215,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "8f8150fd490dba416c0557b3408cfc8380726c5499d25c8420ad7454b175e7ba": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.27/networksurvey-1.27-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 77,
+      "version_name": "1.27-cdr",
+      "tag": "v1.27",
+      "commit": "57e0af8738a8bbf4559c4915cb0c853999bbdd58",
+      "timestamp": 1722015833,
       "reproducible": true,
       "error": null
     }
@@ -1339,6 +1381,20 @@
       "tag": "v1.8.13",
       "commit": "d66ace5943b6ae01939f8c7d87a95644fed10348",
       "timestamp": 1720966359,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "c90bb5d8fe69ff0e0f2731fde6350abd289b31caec1fecaa2722030b6480b1c5": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.15/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 63,
+      "version_name": "1.8.15",
+      "tag": "v1.8.15",
+      "commit": "854e7d69176581fcf08b1752590c45498088e257",
+      "timestamp": 1722016108,
       "reproducible": true,
       "error": null
     }
@@ -2489,6 +2545,20 @@
       "error": null
     }
   ],
+  "1762b103d27b4faabed665847a59b474629ba9b0b3e4f11ed978c7141ea20919": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.2.0/NeverTooManyBooks-6.2.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 87,
+      "version_name": "6.2.0",
+      "tag": "v6.2.0",
+      "commit": "6c31e357fcd8874fad48bdb9d3c2b5748f1f9e2e",
+      "timestamp": 1722016300,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
@@ -2783,6 +2853,20 @@
       "error": null
     }
   ],
+  "6fd8b68fe4ba5b6fb45821199d3d31bcb37de31182a0b5aff0eb1de9da915d55": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Store.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Store/releases/download/1.0.5/Neo_Store_105_release.apk",
+      "appid": "com.machiav3lli.fdroid",
+      "version_code": 1017,
+      "version_name": "1.0.5",
+      "tag": "1.0.5",
+      "commit": "4f30e6b9d7d42fb6a16d547260ca49377541f967",
+      "timestamp": 1722016866,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "27618df3ab4ea4a68c8fdf40139e95eb0008ac045194e20abc8c2f96dbb4df59": [
     {
       "repository": "https://github.com/martinmimigames/little-file-explorer.git",
@@ -2893,6 +2977,20 @@
       "timestamp": 1720387860,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "78d74c6cd218ca3770481235ab29766ed6bb06d636e8d9680ad4d0ccf740dbfa": [
+    {
+      "repository": "https://github.com/meenbeese/Chronos.git",
+      "apk_url": "https://github.com/meenbeese/Chronos/releases/download/v1.7.1/app-release.apk",
+      "appid": "com.meenbeese.chronos",
+      "version_code": 9,
+      "version_name": "1.7.1",
+      "tag": "v1.7.1",
+      "commit": "92f5216a8e363be17d68e27b9f4b86c6e44e6d1b",
+      "timestamp": 1722017233,
+      "reproducible": true,
+      "error": null
     }
   ],
   "d8485240cc794b0f79d3923ea7ee67280ea839bd499da8edd9a09771eec86ee1": [
@@ -3437,6 +3535,20 @@
       "tag": "v2.10.3",
       "commit": "d9e6e397ad819a3344148e3826f77b9dea14d9f8",
       "timestamp": 1720794718,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "31eeb24b2dc630eff376a7e61b15d44641232d91b61624270d672e7bfa47abe5": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.11.0/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 157,
+      "version_name": "2.11.0",
+      "tag": "v2.11.0",
+      "commit": "574b5848cdccc79cf3d09b3ff78b182e5de99e73",
+      "timestamp": 1722017804,
       "reproducible": true,
       "error": null
     }
@@ -4369,6 +4481,20 @@
       "error": null
     }
   ],
+  "a7e9e3950f7125f72aa2df5d46cbed64af0b3fc9c7cc420703d654ca1627a50e": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2215/FairEmail-v1.2215a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2215,
+      "version_name": "1.2215",
+      "tag": "1.2215",
+      "commit": "36995f3d9cddd9ee6caad979cb56103f0fcbb7e0",
+      "timestamp": 1722018106,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
@@ -4477,6 +4603,20 @@
       "tag": "v2.1",
       "commit": "b26ac87ece4bed197d0ddcc2eaacd70ce269d53c",
       "timestamp": 1719760548,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "1881e3b389cbdfadce30de060263a7dfcad11d3d0d43a44b6f8d7de7641e3d80": [
+    {
+      "repository": "https://github.com/Helium314/HeliBoard.git",
+      "apk_url": "https://github.com/Helium314/HeliBoard/releases/download/v2.2/HeliBoard_2.2-release.apk",
+      "appid": "helium314.keyboard",
+      "version_code": 2201,
+      "version_name": "2.2",
+      "tag": "v2.2",
+      "commit": "2b135481bedd00b8249d8978b75ba2c1872026d9",
+      "timestamp": 1722018573,
       "reproducible": true,
       "error": null
     }
@@ -4621,6 +4761,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp3wrjk8o4/outputs:/outputs', '--volume', '/tmp/tmp3wrjk8o4/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/DP-Hridayan/aShellYou.git', '--env', 'APP_TAG=v4.2.0', '--env', 'APP_COMMIT=1145514ce926761be409b5badd63a687e1bbd535', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "e97d2a9818a8a3253b684c46e4a3093c8644da1fed90df8abbc56d39bc9d795b": [
+    {
+      "repository": "https://github.com/DP-Hridayan/aShellYou.git",
+      "apk_url": "https://github.com/DP-Hridayan/aShellYou/releases/download/v4.3.1/aShell.You.v4.3.1.apk",
+      "appid": "in.hridayan.ashell",
+      "version_code": 45,
+      "version_name": "v4.3.1",
+      "tag": "v4.3.1",
+      "commit": "4118f741a86551939932f08397790510e12d3c30",
+      "timestamp": 1722018956,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp85_7tu4v/outputs:/outputs', '--volume', '/tmp/tmp85_7tu4v/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/DP-Hridayan/aShellYou.git', '--env', 'APP_TAG=v4.3.1', '--env', 'APP_COMMIT=4118f741a86551939932f08397790510e12d3c30', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "a031d477536fac9a7f41cce3e7d496beae4274b7be5687221a142088e5051fd6": [
     {
       "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
@@ -4685,6 +4839,20 @@
       "tag": "0.21.1.119",
       "commit": "8b48c1e3191c2dfe14ca261ddc1e0f884c1e7c00",
       "timestamp": 1720747379,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "2af5f76d621ead99e9f493c12bec0e951dce8d948a549757b75171356b67ed4e": [
+    {
+      "repository": "https://github.com/MarmadileManteater/FreeTubeAndroid.git",
+      "apk_url": "https://github.com/MarmadileManteater/FreeTubeAndroid/releases/download/0.21.2.120/freetube-0.21.2.120-Android.apk",
+      "appid": "io.freetubeapp.freetube",
+      "version_code": 210002120,
+      "version_name": "0.21.2.120",
+      "tag": "0.21.2.120",
+      "commit": "8ac44bb21c08976d462fcf423f2e5ff0abe385c7",
+      "timestamp": 1722019078,
       "reproducible": true,
       "error": null
     }
@@ -5025,6 +5193,20 @@
       "error": null
     }
   ],
+  "f7a3c68df9b71b321385406fa074e783be30ab0fd70d39925aebbdaabc4b59b8": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.44/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 44,
+      "version_name": "0.6.44",
+      "tag": "v0.6.44",
+      "commit": "104ce5a403fae93391ab27f626ce1f3eb3103d88",
+      "timestamp": 1722019316,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -5077,6 +5259,20 @@
       "tag": "v1.7.1",
       "commit": "63c0ac38c6c42e1e2d688f829abcdb95d18fc053",
       "timestamp": 1710010754,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "1c8f211c1cb01cb59619d4071fcc8171e2404be1014340eeb96212cdcfa4afd0": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.8.0/osc-1.8.0.apk",
+      "appid": "kittoku.osc",
+      "version_code": 39,
+      "version_name": "1.8.0",
+      "tag": "v1.8.0",
+      "commit": "7cb6debf75fc3f148f93bb25c3feced16985e445",
+      "timestamp": 1722019846,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
@@ -5931,6 +6127,20 @@
       "error": null
     }
   ],
+  "5bda57d71873c71342a3a27fba2ece296c7ebc864654112ee182444a2194aab9": [
+    {
+      "repository": "https://github.com/FossifyOrg/Notes.git",
+      "apk_url": "https://github.com/FossifyOrg/Notes/releases/download/1.1.0/notes-3-foss-release.apk",
+      "appid": "org.fossify.notes",
+      "version_code": 3,
+      "version_name": "1.1.0",
+      "tag": "1.1.0",
+      "commit": "f78f86ee7393007de437d7ca688bc6a77ebbc50c",
+      "timestamp": 1722022152,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "8d4a522c3d232a5e0d71eabd928e2c0665b4f1dfd40de4a66f63424bc237f6dd": [
     {
       "repository": "https://github.com/FossifyOrg/Phone.git",
@@ -6183,6 +6393,20 @@
       "error": null
     }
   ],
+  "3f49cab1dd2afad380724bb956edc6f387edcc572ee1defa26eb3021f7cbaedb": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.2.5/floccus-build-v5.2.5.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5002005,
+      "version_name": "5.2.5",
+      "tag": "v5.2.5",
+      "commit": "3fc1d1b5723624fb28a3334fb384e617a915484c",
+      "timestamp": 1722022411,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
@@ -6333,6 +6557,20 @@
       "tag": "v0.27.1",
       "commit": "0f64158469d42a37df5c8ef200f7963cafabe361",
       "timestamp": 1720735352,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "6eca47f1713000790d4bf4eeb3d7565abb78a091fedda2c78061203e660a4041": [
+    {
+      "repository": "https://github.com/TeamNewPipe/NewPipe.git",
+      "apk_url": "https://github.com/TeamNewPipe/NewPipe/releases/download/v0.27.2/NewPipe_v0.27.2.apk",
+      "appid": "org.schabi.newpipe",
+      "version_code": 999,
+      "version_name": "0.27.2",
+      "tag": "v0.27.2",
+      "commit": "d442b458361b002ab90d9608db223203601ee2cc",
+      "timestamp": 1722022778,
       "reproducible": true,
       "error": null
     }
@@ -6631,6 +6869,20 @@
       "error": null
     }
   ],
+  "eca540e8a843c9b4e8f2e6e82a0441a06ccaf8f68d03b4e809b7785357f529f7": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.3.11/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 31,
+      "version_name": "1.3.11",
+      "tag": "1.3.11",
+      "commit": "f4120a26061eb9cfa615cd35c31daacc4cec14df",
+      "timestamp": 1722023033,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "38681f3e16a18ec5e6bdef31d8ffea6674af0c24cf8a739f73ef9cac0c99db04": [
     {
       "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
@@ -6835,6 +7087,20 @@
       "tag": "v0.1.5",
       "commit": "a2dadd6f6918ed1d248821f294103f4299caa296",
       "timestamp": 1718580545,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "105004e286b6c2913f142378334b264cf394733830064980026efb2666b58ed7": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.6/flickboard-v0.1.6.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 30,
+      "version_name": "0.1.6",
+      "tag": "v0.1.6",
+      "commit": "44711de238a5f4b391a70d04769a22f216898a74",
+      "timestamp": 1722023244,
       "reproducible": false,
       "error": null
     }
