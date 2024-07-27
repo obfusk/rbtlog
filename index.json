@@ -5249,6 +5249,20 @@
       "error": null
     }
   ],
+  "d493ee64fad779530c4dfdbdf444688f93b7a52532ecc3cb5a261e07819781af": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.45/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 45,
+      "version_name": "0.6.45",
+      "tag": "v0.6.45",
+      "commit": "b71ca11efd8ead0e41d23ac67f0c4717ba7f9d6d",
+      "timestamp": 1722119294,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -6641,6 +6655,20 @@
       "tag": "v0.27.1",
       "commit": "f6bce9dd30c6da1b5ba371087baaff2031cc1124",
       "timestamp": 1720905630,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ac98212690cbfa3a2455204330482869cb7c0064c4ddbefea671cb40864f900f": [
+    {
+      "repository": "https://github.com/polymorphicshade/Tubular.git",
+      "apk_url": "https://github.com/polymorphicshade/Tubular/releases/download/v0.27.2/tubular_v0.27.2.apk",
+      "appid": "org.polymorphicshade.tubular",
+      "version_code": 999,
+      "version_name": "0.27.2",
+      "tag": "v0.27.2",
+      "commit": "c2765316542743c2a4fc02d75ccf44bc22f53878",
+      "timestamp": 1722119848,
       "reproducible": true,
       "error": null
     }
