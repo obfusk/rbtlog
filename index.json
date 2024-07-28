@@ -433,6 +433,20 @@
       "error": null
     }
   ],
+  "b9ba60893e0a4b2c21b1af1105f3766095a4d7ccb291e8a943b0906751892f23": [
+    {
+      "repository": "https://github.com/hashemi-hossein/memory-guardian.git",
+      "apk_url": "https://github.com/hashemi-hossein/memory-guardian/releases/download/v1.4.2/MemoryGuardian_1.4.2-signed.apk",
+      "appid": "ara.memoryguardian",
+      "version_code": 13,
+      "version_name": "1.4.2",
+      "tag": "v1.4.2",
+      "commit": "b200d927c764b4f5a7e7476d38f1869a8feaf199",
+      "timestamp": 1722190795,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fe9fea50099cf0f828c2900f57225572b7eeffca2fd3ec441493fcafeb245325": [
     {
       "repository": "https://github.com/bitfireAT/davx5-ose.git",
