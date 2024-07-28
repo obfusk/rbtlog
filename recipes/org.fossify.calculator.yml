@@ -1,13 +1,22 @@
 ---
 repository: https://github.com/FossifyOrg/Calculator.git
 updates: releases
+notes:
+  - 'FIXME: flaky DEX'
 versions:
   - tag: 1.0.1
     apks:
       - apk_pattern: calculator-\d+-foss-release\.apk
         apk_url: https://github.com/FossifyOrg/Calculator/releases/download/1.0.1/calculator-2-foss-release.apk
         build:
-          - ./gradlew assembleFossRelease
+          - DEX_FILE=app/build/intermediates/dex/fossRelease/minifyFossReleaseWithR8/classes.dex
+          - DEX_SHA1=5e26a6cf4b5f0f0fb139333b7d34b0a10a939331
+          - for _ in {1..10}; do
+          - ./gradlew clean assembleFossRelease --no-build-cache --no-configuration-cache --no-daemon
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - fi
+          - done
           - mv app/build/outputs/apk/foss/release/calculator-*-foss-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
