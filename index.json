@@ -1399,6 +1399,20 @@
       "error": null
     }
   ],
+  "608ae27b6320c4ac0387008b27185e85915fa6d743057b90648f93fb5eb6109f": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.8.16/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 65,
+      "version_name": "1.8.16",
+      "tag": "v1.8.16",
+      "commit": "662e46496562e8f1048fe356e17d41fd20fc319e",
+      "timestamp": 1722177700,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "03c8222f96648e1079fa9f49c72e5cadcab882467297ffddd07caafd4f1c0b89": [
     {
       "repository": "https://github.com/6eero/NewPass.git",
@@ -5261,6 +5275,20 @@
       "timestamp": 1722119294,
       "reproducible": true,
       "error": null
+    }
+  ],
+  "4ffa3ebb7bf3bf76be547d59cd77d0d01e17b2a87791c9593ce53532d369f2b9": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.45.1/app-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 46,
+      "version_name": "0.6.45.1",
+      "tag": "v0.6.45.1",
+      "commit": "f55affa8ac651175a1f426be2ab58861219e2658",
+      "timestamp": 1722177900,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
