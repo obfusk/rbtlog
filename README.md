@@ -18,6 +18,42 @@ transparency log for Android APKs.  Its `git` repository contains:
 - [Rebuild Logs](#rebuild-logs) forming a transparency log of reproduction attempts.
 - [GitHub Actions workflows](#github-actions-workflows) to automate everything.
 
+## Announcing Android Reproducible Builds at IzzyOnDroid with rbtlog
+
+<details>
+
+[IzzyOnDroid](https://apt.izzysoft.de/fdroid/) is the largest 3rd-party
+F-Droid-compatible repository of open source Android apps (almost 1200
+currently), publishing a collection of official binaries (APKs) built by the
+original application developers and provided via repositories on GitHub, GitLab,
+Codeberg, etc.  It provides a convenient way to install and update apps, as well
+as additional security and transparency via multiple [custom scans and
+checks](https://android.izzysoft.de/articles/named/iod-scan-apkchecks).
+
+[rbtlog](https://github.com/obfusk/rbtlog) is a Reproducible Builds transparency
+log for Android APKs.  Its git repository contains scripts forming a rebuilder
+framework, recipes to build various apps, rebuild logs forming a transparency
+log of reproduction attempts, and CI workflows to automate everything.  It
+allows anyone to easily run a rebuilder for any apps available from a git
+repository with release tags plus accompanying APKs built and signed by the
+developer.
+
+The rbtlog I run currently provides rebuild logs for dozens of apps available
+via IzzyOnDroid as well as e.g. NewPipe and Threema.  Izzy himself runs another
+[rbtlog instance](https://codeberg.org/IzzyOnDroid/rbtlog) providing coverage of
+even more IzzyOnDroid apps.  And there are more to come!
+
+</details>
+
+We are pleased to announce ["Reproducible Builds, special client support and more
+in our repo"](https://android.izzysoft.de/articles/named/iod-rbs-mirrors-clients):
+a collaboration between various independent interoperable projects: the
+IzzyOnDroid team, 3rd-party clients Droid-ify & Neo Store, and rbtlog (part of my
+collection of tools for Android Reproducible Builds) to bring Reproducible Builds
+to IzzyOnDroid and the wider Android ecosystem.
+
+\- Fay
+
 ## Security
 
 The current build setup only supports building inside a container (using
