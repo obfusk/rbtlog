@@ -116,3 +116,31 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: 1.13.4
+    apks:
+      - apk_pattern: MastodonRedirect_.*-release-signed\.apk
+        apk_url: https://github.com/zacharee/MastodonRedirect/releases/download/$$TAG$$/MastodonRedirect_$$TAG$$-release-signed.apk
+        build:
+          - sed '1i import com.bugsnag.android.gradle.BugsnagManifestUuidTask' -i mastodonredirect/build.gradle.kts
+          - printf '\n%s\n' 'project.afterEvaluate { tasks.withType<BugsnagManifestUuidTask>().configureEach { buildUuid.set("de038099-1f5a-4f29-88c9-3ce3804e7b41") } }' >> mastodonredirect/build.gradle.kts
+          - ./gradlew :mastodonredirect:assembleRelease
+          - mv mastodonredirect/build/outputs/apk/release/MastodonRedirect_*-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
