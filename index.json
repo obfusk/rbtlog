@@ -1119,6 +1119,20 @@
       "error": null
     }
   ],
+  "3da96d0230b8aac4659eb7bfefc997376f360b967d303c0c961cb89c9b4a2866": [
+    {
+      "repository": "https://github.com/DesarrolloAntonio/Shiori-Android-Client.git",
+      "apk_url": "https://github.com/DesarrolloAntonio/Shiori-Android-Client/releases/download/v1.35/Shiori.v1.35.apk",
+      "appid": "com.desarrollodroide.pagekeeper",
+      "version_code": 45,
+      "version_name": "1.35",
+      "tag": "v1.35",
+      "commit": "41e5f97705a8a9ccd25e577973e3ddf3956019a9",
+      "timestamp": 1722528110,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "2a708bf63718ddf0e101601bcb833f0b33055ed45cd552a3e67d7ced37ac11e8": [
     {
       "repository": "https://github.com/thomasthaddeus/QRCodeGenius.git",
