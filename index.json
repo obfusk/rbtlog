@@ -5459,6 +5459,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "da81ff043bd506dc7c2307b2137ff94475e0824e4bb74659559d73c7ddb9ad4c": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.46/app-foss-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 47,
+      "version_name": "0.6.46",
+      "tag": "v0.6.46",
+      "commit": "a68b94aa6aebaf279daa02b2d634f7b3b70bf006",
+      "timestamp": 1722621559,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
