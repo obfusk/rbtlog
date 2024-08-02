@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/Semper-Viventem/MetaRadar.git
 updates: releases
+notes:
+  - 'FIXME: v0.26.1-beta requires openjdk-22 (only available in trixie)'
 versions:
   - tag: v0.24.0-beta
     apks:
