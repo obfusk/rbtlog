@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/nightkr/flickboard.git
 updates: releases
+notes:
+  - 'FIXME: flaky DEX'
 versions:
   - tag: v0.0.7
     apks:
@@ -267,7 +269,14 @@ versions:
       - apk_pattern: flickboard-.*\.apk
         apk_url: https://github.com/nightkr/flickboard/releases/download/$$TAG$$/flickboard-$$TAG$$.apk
         build:
-          - ./gradlew assemblePlainRelease
+          - DEX_FILE=app/build/intermediates/dex/plainRelease/minifyPlainReleaseWithR8/classes.dex
+          - DEX_SHA1=5d5a9eaa5b490a67f85225ae86fa78e42cd7c346
+          - for _ in {1..10}; do
+          - ./gradlew clean assemblePlainRelease --no-build-cache --no-configuration-cache --no-daemon
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - fi
+          - done
           - mv app/build/outputs/apk/plain/release/app-plain-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
