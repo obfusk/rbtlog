@@ -7511,6 +7511,20 @@
       "error": null
     }
   ],
+  "c6d2b7dffce0704168a644748f9cbe9f9866b0147e6aaac765647e2076307b58": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.7/flickboard-v0.1.7.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 33,
+      "version_name": "0.1.7",
+      "tag": "v0.1.7",
+      "commit": "c639b15393ef51afe3206f8d8d6bad2495e4c6b3",
+      "timestamp": 1722647976,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "0e0af9b6ba942963f1aa6e827bbf069b62daed6d359ee46cb3aea2dfe8d11fcc": [
     {
       "repository": "https://codeberg.org/oparaskos/android-pdf2images.git",
