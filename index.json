@@ -6813,6 +6813,20 @@
       "error": null
     }
   ],
+  "f6a3a2ee367a386eb71fedb553c7c2750fc99d11c3e2a350065532abfc942cef": [
+    {
+      "repository": "https://github.com/LucasGGamerM/moshidon.git",
+      "apk_url": "https://github.com/LucasGGamerM/moshidon/releases/download/2.3.0%2Bfork.107.moshinda/moshidon-fdroidRelease.apk",
+      "appid": "org.joinmastodon.android.moshinda",
+      "version_code": 107,
+      "version_name": "2.3.0+fork.107.moshinda",
+      "tag": "2.3.0+fork.107.moshinda",
+      "commit": "bed201a2f791bc3c7099e89d7d815807dec921fa",
+      "timestamp": 1722694440,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fb4517b96591cc0826f6da23e91f585e4a546097144b845f55a38e3226cb2b99": [
     {
       "repository": "https://github.com/Netdex/android-usb-script.git",
