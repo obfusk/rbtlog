@@ -1293,3 +1293,35 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: '1.2219'
+    apks:
+      - apk_pattern: FairEmail-.*-github-release\.apk
+        apk_url: https://github.com/M66B/FairEmail/releases/download/1.2219/FairEmail-v1.2219a-github-release.apk
+        build:
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x978bfee7e99463561459d3ada885fb5796641b6a")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x1311ddcea5bb82664bd1a0723c78962a96d7aa78")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x6578c807f39559cc094ddc4e4382b4c13a0ab71a")' >> app/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(fairemail PRIVATE "LINKER:--build-id=0x602d8f666def24fc3fe4edcd66482f9223337ca2")' >> app/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                             >> app/CMakeLists.txt
+          - ./gradlew assembleGithubRelease
+          - mv app/build/outputs/apk/github/release/FairEmail-*-github-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
