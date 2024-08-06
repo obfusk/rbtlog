@@ -1469,6 +1469,20 @@
       "error": null
     }
   ],
+  "a847bb6c72b8358cfc5d0d84b516efd0912a3f907e49b1e06e673687531f1d16": [
+    {
+      "repository": "https://github.com/Futsch1/medTimer.git",
+      "apk_url": "https://github.com/Futsch1/medTimer/releases/download/v1.9.1/MedTimer-release-signed.apk",
+      "appid": "com.futsch1.medtimer",
+      "version_code": 67,
+      "version_name": "1.9.1",
+      "tag": "v1.9.1",
+      "commit": "808ce6595000aee7c837fca7b40c560161b03022",
+      "timestamp": 1722975921,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "03c8222f96648e1079fa9f49c72e5cadcab882467297ffddd07caafd4f1c0b89": [
     {
       "repository": "https://github.com/6eero/NewPass.git",
