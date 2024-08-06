@@ -587,6 +587,20 @@
       "error": null
     }
   ],
+  "9477e9877dc5d5a303a58ca38521c57052fedca88f870d1e59e7cf7e9b309d7c": [
+    {
+      "repository": "https://github.com/bitfireAT/davx5-ose.git",
+      "apk_url": "https://github.com/bitfireAT/davx5-ose/releases/download/v4.4.2-ose/davx5-ose-4.4.2-ose-release.apk",
+      "appid": "at.bitfire.davdroid",
+      "version_code": 404020004,
+      "version_name": "4.4.2-ose",
+      "tag": "v4.4.2-ose",
+      "commit": "6df0925e5053fb195700f6b76aa4109db612305d",
+      "timestamp": 1722951047,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "fc827c1696ca2c720c0920290409374806927e7d5bf860e0738010cd3450734a": [
     {
       "repository": "https://github.com/threema-ch/threema-android.git",
@@ -3675,6 +3689,20 @@
       "tag": "v2.11.2",
       "commit": "fa850b77201d706c5682a544857e9f08fb083f65",
       "timestamp": 1722478352,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "829e941cdfbcd9fd5a2063e316fb81ac787992b6c76f75d4cebc7cc6e854c925": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.12.0/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 160,
+      "version_name": "2.12.0",
+      "tag": "v2.12.0",
+      "commit": "bdd5894de3b59ba2ffc99dfb767509d6dece8d73",
+      "timestamp": 1722951519,
       "reproducible": true,
       "error": null
     }
