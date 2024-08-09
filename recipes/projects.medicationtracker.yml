@@ -497,3 +497,53 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v0.12.8
+    apks:
+      - apk_pattern: meditrak\.apk
+        apk_url: https://github.com/AdamGuidarini/MediTrak/releases/download/$$TAG$$/meditrak.apk
+        build:
+          - wget -q -O /tmp/sqlite-amalgamation-3440200.zip -- https://www.sqlite.org/2023/sqlite-amalgamation-3440200.zip
+          - sha256sum -c <<< '833be89b53b3be8b40a2e3d5fedb635080e3edb204957244f3d6987c2bb2345f  /tmp/sqlite-amalgamation-3440200.zip'
+          - unzip -q -d /opt /tmp/sqlite-amalgamation-3440200.zip
+          - chmod +x gradlew
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(DbManager PRIVATE "LINKER:--hash-style=gnu,--build-id=0x8fcb5948b397125c56dc9931907d31a92fc3d3a5")'          >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(DbManager PRIVATE "LINKER:--hash-style=gnu,--build-id=0x3a6464a2707c993f42f154bddf0b7433d6155dc6")'          >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(DbManager PRIVATE "LINKER:--hash-style=gnu,--build-id=0x48320e54834f903f747d93dcea6950f9bec28959")'          >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(DbManager PRIVATE "LINKER:--hash-style=gnu,--build-id=0xd2f03a3fe8c777c2ee28b0976e7aeb212017db55")'          >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                                                       >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(Table PRIVATE "LINKER:--hash-style=gnu,--build-id=0xe72b764e3c38f8925e50be74d91293620041aeb3")'              >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(Table PRIVATE "LINKER:--hash-style=gnu,--build-id=0x1230d971433be0697ecf543e43e9a17a516b2f24")'              >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(Table PRIVATE "LINKER:--hash-style=gnu,--build-id=0xf12f7e5abb22062cfc51b6bba37947d62cc6d637")'              >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(Table PRIVATE "LINKER:--hash-style=gnu,--build-id=0x1ab553ef40a1b036a18a29a4816a23a84058f997")'              >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                                                       >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(medicationtracker PRIVATE "LINKER:--hash-style=gnu,--build-id=0x56800d597c9bc8ddb326cdb636717e82f43540f7")'  >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(medicationtracker PRIVATE "LINKER:--hash-style=gnu,--build-id=0xe8ae35eedb184a249ff460fe2e6013f2f46234c5")'  >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(medicationtracker PRIVATE "LINKER:--hash-style=gnu,--build-id=0xc439656d7ab377e360561e826ef2b4e651538f0e")'  >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(medicationtracker PRIVATE "LINKER:--hash-style=gnu,--build-id=0x88b3ae3d2a9dee7c5495e970322242f15574c464")'  >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                                                       >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'if(ANDROID_ABI STREQUAL "arm64-v8a")'        'target_link_options(sqlite3 PRIVATE "LINKER:--hash-style=gnu,--build-id=0x8873f1f8d304137a34d3e63e8a5c6d7dd7f63cb1")'            >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "armeabi-v7a")'  'target_link_options(sqlite3 PRIVATE "LINKER:--hash-style=gnu,--build-id=0x3c21405ac1bbaf2f958ae0c27a9eac704507e5ec")'            >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'elseif(ANDROID_ABI STREQUAL "x86")'          'target_link_options(sqlite3 PRIVATE "LINKER:--hash-style=gnu,--build-id=0x1e125900f79071fc2259af8287f23b32e11f493f")'            >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n  %s' 'else()'                                      'target_link_options(sqlite3 PRIVATE "LINKER:--hash-style=gnu,--build-id=0x031561b668a6e6196054fa6de70cb8d2075aaad4")'            >> app/src/main/cpp/CMakeLists.txt
+          - printf '\n%s\n'     'endif()'                                                                                                                                                                       >> app/src/main/cpp/CMakeLists.txt
+          - SQLITE3_LIB_PATH=/opt/sqlite-amalgamation-3440200 ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
