@@ -502,6 +502,7 @@ versions:
       - apk_pattern: meditrak\.apk
         apk_url: https://github.com/AdamGuidarini/MediTrak/releases/download/$$TAG$$/meditrak.apk
         build:
+          - git checkout cfabb45d536c6f47e13a11229bfc3a40e83cb726
           - wget -q -O /tmp/sqlite-amalgamation-3440200.zip -- https://www.sqlite.org/2023/sqlite-amalgamation-3440200.zip
           - sha256sum -c <<< '833be89b53b3be8b40a2e3d5fedb635080e3edb204957244f3d6987c2bb2345f  /tmp/sqlite-amalgamation-3440200.zip'
           - unzip -q -d /opt /tmp/sqlite-amalgamation-3440200.zip
