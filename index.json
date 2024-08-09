@@ -5669,6 +5669,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "4c3801d980064e8ad9d3d17dd7d351417448b1911d5738e5eb7b2617785d7e21": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.47/app-foss-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 48,
+      "version_name": "0.6.47",
+      "tag": "v0.6.47",
+      "commit": "0de5ee44a24ccef3678397d9fff1f928b863ff10",
+      "timestamp": 1723241074,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
@@ -7439,6 +7453,20 @@
       "tag": "v0.12.7",
       "commit": "1fa817d94caaac6081dda5724dcbeb8c499d917d",
       "timestamp": 1718409997,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "29bc1227de2f1b1fdfccd8140e24476c9940cfe01d0cb1a575535ca4ff3767ac": [
+    {
+      "repository": "https://github.com/AdamGuidarini/MediTrak.git",
+      "apk_url": "https://github.com/AdamGuidarini/MediTrak/releases/download/v0.12.8/meditrak.apk",
+      "appid": "projects.medicationtracker",
+      "version_code": 27,
+      "version_name": "0.12.8",
+      "tag": "v0.12.8",
+      "commit": "b2cd14a5da950c69755e2fa912b875eecc7df12f",
+      "timestamp": 1723241639,
       "reproducible": true,
       "error": null
     }
