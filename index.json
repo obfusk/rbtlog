@@ -5739,6 +5739,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "b8b1a9a2771be01c64c98f3842e7cd33d7e1ebd3f136c141feba08608e492f8d": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.8.0.1/osc-1.8.0.1.apk",
+      "appid": "kittoku.osc",
+      "version_code": 40,
+      "version_name": "1.8.0.1",
+      "tag": "v1.8.0.1",
+      "commit": "bdada4641915062ee0e9350524f9a66f5257326a",
+      "timestamp": 1723236626,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
     {
       "repository": "https://github.com/CatimaLoyalty/Android.git",
