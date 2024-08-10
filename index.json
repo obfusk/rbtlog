@@ -5697,6 +5697,20 @@
       "error": null
     }
   ],
+  "b1584f28c5c9c9240013b355804a01b1cd36b1c8956705390ce05e462ac5b515": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.47.1/app-foss-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 49,
+      "version_name": "0.6.47.1",
+      "tag": "v0.6.47.1",
+      "commit": "baf44a3379911f00d7d8358f870c48f8936721b4",
+      "timestamp": 1723315531,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
