@@ -4049,6 +4049,62 @@
       "error": null
     }
   ],
+  "68820fdb2d7a41ffdd43f2b6a3b6956a34e81391f9da4ca84cc99f48c30d45eb": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.1/findroid-v0.15.1-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 27,
+      "version_name": "0.15.1",
+      "tag": "v0.15.1",
+      "commit": "482cfffd3abb33183533075c1aaf0bbb0f8ed748",
+      "timestamp": 1723491431,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "c573cb56e907c7ce08438e35c00e59c98e5a28a04b0dfc09530f211dd8701638": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.1/findroid-v0.15.1-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 27,
+      "version_name": "0.15.1",
+      "tag": "v0.15.1",
+      "commit": "482cfffd3abb33183533075c1aaf0bbb0f8ed748",
+      "timestamp": 1723491928,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "02532450627bab64fe3af7efb5968fca8493d26fd6db6bab4c8cd9a25e6d0c32": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.1/findroid-v0.15.1-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 27,
+      "version_name": "0.15.1",
+      "tag": "v0.15.1",
+      "commit": "482cfffd3abb33183533075c1aaf0bbb0f8ed748",
+      "timestamp": 1723492420,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "85bc05db5ec42c3fcbd613925ffecc650364a4f17521d7236285854392a34697": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.1/findroid-v0.15.1-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 27,
+      "version_name": "0.15.1",
+      "tag": "v0.15.1",
+      "commit": "482cfffd3abb33183533075c1aaf0bbb0f8ed748",
+      "timestamp": 1723492915,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "b07abc7bf5af5731a5155b7cf9b9f3e65332ae50b8f7d48f7bb7233894a34040": [
     {
       "repository": "https://github.com/LibrePass/LibrePass-Android.git",
