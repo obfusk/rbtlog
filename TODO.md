@@ -19,6 +19,7 @@
 - [x] spdx++
 - [x] github issues for all TODOs
 - [x] make & use a proper release of repro-apk binres #43
+- [ ] build.py: specify commit & (no) APK for easy building/testing #471
 - [ ] more apps #35
 - [ ] doc/unit/regression/etc. tests #42
 - [ ] `CONTRIBUTING.md`
