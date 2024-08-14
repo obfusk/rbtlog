@@ -3329,6 +3329,20 @@
       "error": null
     }
   ],
+  "7f78e552ff3cde35a41633a50ee9b71131e955b33fc132042372912afc573b16": [
+    {
+      "repository": "https://github.com/sosauce/CuteCalc.git",
+      "apk_url": "https://github.com/sosauce/CuteCalc/releases/download/v3.0.0/CuteCalc_v3.0.0.apk",
+      "appid": "com.sosauce.cutecalc",
+      "version_code": 30,
+      "version_name": "3.0.0",
+      "tag": "v3.0.0",
+      "commit": "49685267dac1ae84b1a749ad4f3c0830f9272ccf",
+      "timestamp": 1723671330,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "6412dae4afb2321b621c46eceb6d70636db7d2f660620378244649bc6daffe31": [
     {
       "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
