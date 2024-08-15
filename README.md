@@ -89,18 +89,20 @@ status messages and a build log on stderr.
 
 ```bash
 $ scripts/build.py --help
-usage: build.py [-h] [-v] [--keep-apks DIR] {podman,docker} [SPEC ...]
+usage: build.py [-h] [-v] [--keep-apks DIR] [--local]
+                {podman,docker} [SPEC ...]
 
 build apps from recipes
 
 positional arguments:
   {podman,docker}  backend
-  SPEC             appid:tag to build
+  SPEC             APPID:TAG to build
 
 options:
   -h, --help       show this help message and exit
   -v, --verbose
   --keep-apks DIR  save APKs in DIR
+  --local          allow APPID:TAG:[COMMIT]:[APK|none] build SPECs
 
 $ scripts/build.py -v podman me.hackerchick.catima:v2.27.0
 Building 'me.hackerchick.catima:v2.27.0'...
