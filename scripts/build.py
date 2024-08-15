@@ -32,6 +32,10 @@ BuildBackend = Enum("BuildBackend", ["PODMAN", "DOCKER"])   # FIXME
 NOAPK = "none"
 NOTAG = ":commit:"
 
+PROVISION_ROOT_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_ROOT_TIMEOUT") or 10)
+PROVISION_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_TIMEOUT") or 10)
+BUILD_TIMEOUT = int(os.environ.get("RBTLOG_BUILD_TIMEOUT") or 20)
+
 
 class Error(Exception):
     """Base class for errors."""
@@ -84,6 +88,7 @@ class BuildRecipe:
     build: str
     build_home_dir: str
     build_repo_dir: str
+    build_timeout: Optional[int]
     build_user: str
     provisioning: Provisioning
 
@@ -91,8 +96,8 @@ class BuildRecipe:
         return dict(
             repository=self.repository, tag=self.tag, apk_pattern=self.apk_pattern,
             apk_url=self.apk_url, build=self.build, build_home_dir=self.build_home_dir,
-            build_repo_dir=self.build_repo_dir, build_user=self.build_user,
-            provisioning=self.provisioning.for_json())
+            build_repo_dir=self.build_repo_dir, build_timeout=self.build_timeout,
+            build_user=self.build_user, provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
@@ -121,7 +126,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data.updates
     'releases'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True, windows_like=False))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_timeout=None, build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True, windows_like=False))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
@@ -142,6 +147,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                     build="".join(line + "\n" for line in apk["build"]),
                     build_home_dir=apk["build_home_dir"],
                     build_repo_dir=apk["build_repo_dir"],
+                    build_timeout=apk.get("build_timeout"),
                     build_user=apk["build_user"],
                     provisioning=Provisioning(
                         android_home=prov["android_home"],
@@ -160,7 +166,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                         platform_tools=prov["platform_tools"],
                         tools=prov["tools"],
                         verify_gradle_wrapper=prov["verify_gradle_wrapper"],
-                        windows_like=prov.get("windows_like", False))
+                        windows_like=prov.get("windows_like", False)),
                 ))
         return AppRecipe(repository=data["repository"], updates=data["updates"],
                          versions=tuple(versions))
@@ -275,19 +281,20 @@ def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
     return outputs, scripts
 
 
-# FIXME: configure timeout
+# FIXME: configure provisioning timeout in recipe?
 def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *,
                       outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create podman/docker run command line from recipe."""
+    timeout = int(recipe.build_timeout or BUILD_TIMEOUT)
     env, benv = [], build_env(recipe, commit)
     for k, v in benv.items():
         env.extend(["--env", f"{k}={v}"])
     cmd = [
-        "timeout 10m /scripts/provision-root.sh",
+        f"timeout {PROVISION_ROOT_TIMEOUT}m /scripts/provision-root.sh",
         f"cd {benv['BUILD_HOME_DIR']}",
-        f"timeout 10m su {benv['BUILD_USER']} /scripts/provision.sh",
+        f"timeout {PROVISION_TIMEOUT}m su {benv['BUILD_USER']} /scripts/provision.sh",
         f"cd {benv['BUILD_REPO_DIR']}",
-        f"timeout 20m su {benv['BUILD_USER']} /scripts/build.sh",
+        f"timeout {timeout}m su {benv['BUILD_USER']} /scripts/build.sh",
     ]
     return (
         backend.name.lower(), "run", "--rm",
