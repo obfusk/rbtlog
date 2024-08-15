@@ -137,6 +137,35 @@ BUILD SUCCESSFUL in 3m 30s
 
 </details>
 
+#### Local Builds
+
+With `--local`, the specification can be `APPID:TAG:[COMMIT]:[APK|none]`
+(instead of just `APPID:TAG`) to build a specific commit instead of a tag (but
+still using the recipe from the specified tag) and/or compare to a local APK.
+Or to just build an APK from a specific commit without any Reproducible Builds
+comparison.
+
+The APK is either `none` (no comparison), empty (use APK from recipe), an
+http(s) URL, or a local file path.
+
+<details>
+
+```bash
+# compare to local APK
+$ scripts/build.py --keep-apks apks --local -v podman me.hackerchick.catima:v2.31.0::/path/to/catima-v2.31.0.apk
+
+# build specific commit (using recipe from tag), compare to local APK
+$ scripts/build.py --keep-apks apks --local -v podman me.hackerchick.catima:v2.31.0:80e4701d:/path/to/local-build.apk
+
+# build specific commit (using recipe from tag), don't compare APK
+$ scripts/build.py --keep-apks apks --local -v podman me.hackerchick.catima:v2.31.0:80e4701d:none
+
+# build specific commit (using recipe and upstream APK from tag)
+$ scripts/build.py --keep-apks apks --local -v podman me.hackerchick.catima:v2.31.0:80e4701d:
+```
+
+</details>
+
 ### update-log.py
 
 Updates the transparency log by rebuilding all tags for the specified apps'
@@ -226,6 +255,9 @@ options:
   -q, --quiet
   -v, --verbose
   --continue-on-errors  continue on errors
+
+$ ./scripts/update-recipes.py -q --continue-on-errors recipes/*.yml
+Updated 'me.hackerchick.catima' to 'v2.31.0'.
 
 $ scripts/update-recipes.py -v recipes/*.yml
 Updating 'me.hackerchick.catima'...
@@ -321,7 +353,8 @@ the app's repository, etc.
 ## Recipes
 
 The YAML recipes in `recipes/` provide the (re)build instructions for individual
-apps.  For example, the build recipe for Catima looks like this:
+apps.  For example, the build recipe for Catima looks like this (with all but
+the last version elided):
 
 <details>
 
@@ -329,8 +362,10 @@ apps.  For example, the build recipe for Catima looks like this:
 ---
 repository: https://github.com/CatimaLoyalty/Android.git
 updates: releases
+notes:
+  - 'FIXME: embedded commit hash mismatch for v2.28.0'
 versions:
-  - tag: v2.27.0
+  - tag: v2.31.0
     apks:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-release.apk
@@ -359,6 +394,15 @@ versions:
 ```
 
 </details>
+
+The `updates:` specification can be `checkonly` (check but do not update),
+`manual`, `releases`, or `tags:` followed by a regex (e.g. `tags:([\d.]+)`).
+
+For `tags:` You can use not only the full matched tag (`$$TAG$$`) but also any
+capturing group (`$$TAG:1$$` for the first group) as a placeholder in `apk_url`.
+
+For releases with multiple per-ABI APKs, use multiple build recipes under
+`apks:`.
 
 ## Rebuild Logs
 
