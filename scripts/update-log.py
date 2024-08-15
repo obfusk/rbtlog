@@ -64,10 +64,13 @@ def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[A
 
 
 # FIXME
-def update_log(backend: str, *recipes: str, keep_apks: Optional[str] = None,
-               verbose: bool = False) -> None:
+def update_log(backend: str, *recipes: str, batch: Optional[int] = None,
+               keep_apks: Optional[str] = None, verbose: bool = False) -> None:
     """Update log."""
+    built = 0
     for recipe_file in recipes:
+        if built == batch:
+            break
         appid = os.path.splitext(os.path.basename(recipe_file))[0]
         if verbose:
             print(f"Updating {appid!r}...", file=sys.stderr)
@@ -79,6 +82,9 @@ def update_log(backend: str, *recipes: str, keep_apks: Optional[str] = None,
         for tag in new_tags:
             if tag not in old_tags:
                 to_build.append(f"{appid}:{tag}")
+                built += 1
+                if built == batch:
+                    break
         if not to_build:
             if verbose:
                 print("Nothing to build.", file=sys.stderr)
@@ -91,16 +97,21 @@ def update_log(backend: str, *recipes: str, keep_apks: Optional[str] = None,
         output = subprocess.run(args, check=True, stdout=subprocess.PIPE).stdout.decode()
         builds = json.loads(output)
         save_log(log_file, add_builds(load_log(log_file, appid), builds))
+    if verbose:
+        info = f" (batch of {batch})" if batch else ""
+        print(f"Tags built: {built}{info}.", file=sys.stderr)
 
 
 if __name__ == "__main__":
     backends = ("podman", "docker")
     parser = argparse.ArgumentParser(description="update log")
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("--batch", metavar="N", type=int, help="stop after N builds")
     parser.add_argument("--keep-apks", metavar="DIR", help="save APKs in DIR")
     parser.add_argument("backend", choices=backends, help="backend")
     parser.add_argument("recipes", metavar="RECIPE", nargs="*", help="recipe")
     args = parser.parse_args()
-    update_log(args.backend, *args.recipes, keep_apks=args.keep_apks, verbose=args.verbose)
+    update_log(args.backend, *args.recipes, batch=args.batch, keep_apks=args.keep_apks,
+               verbose=args.verbose)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :

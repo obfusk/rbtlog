@@ -148,7 +148,8 @@ build them, and adds the resulting output to `logs/<appid>.json`.
 
 ```bash
 $ scripts/update-log.py --help
-usage: update-log.py [-h] [-v] [--keep-apks DIR] {podman,docker} [RECIPE ...]
+usage: update-log.py [-h] [-v] [--batch N] [--keep-apks DIR]
+                     {podman,docker} [RECIPE ...]
 
 update log
 
@@ -159,6 +160,7 @@ positional arguments:
 options:
   -h, --help       show this help message and exit
   -v, --verbose
+  --batch N        stop after N builds
   --keep-apks DIR  save APKs in DIR
 
 $ scripts/update-log.py -v docker recipes/*.yml
@@ -210,7 +212,7 @@ new entry in the recipe (unless that tag already has an entry).
 
 ```bash
 $ scripts/update-recipes.py --help
-usage: update-recipes.py [-h] [-v] [--continue-on-errors] [RECIPE ...]
+usage: update-recipes.py [-h] [-q] [-v] [--continue-on-errors] [RECIPE ...]
 
 update recipes
 
@@ -219,6 +221,7 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  -q, --quiet
   -v, --verbose
   --continue-on-errors  continue on errors
 
