@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/diegoberaldin/RaccoonForLemmy.git
-updates: manual
+updates: disabled
 notes:
   - 'repository was deleted'
   - 'NB: not reproducible'
