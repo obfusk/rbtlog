@@ -54,10 +54,19 @@ else
   clone_opts=()
 fi
 
-retry 5 git clone "${clone_opts[@]}" -b "${APP_TAG}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
+if [ "${APP_TAG}" != :commit: ]; then
+  clone_opts+=( -b "${APP_TAG}" )
+fi
+
+retry 5 git clone "${clone_opts[@]}" -- "${APP_REPOSITORY}" "${BUILD_REPO_DIR}"
 cd "${BUILD_REPO_DIR}"
-git checkout refs/tags/"${APP_TAG}"
-test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
+
+if [ "${APP_TAG}" = :commit: ]; then
+  git checkout "${APP_COMMIT}"
+else
+  git checkout refs/tags/"${APP_TAG}"
+  test "$( git rev-parse HEAD )" = "${APP_COMMIT}"
+fi
 
 if [ -e .gitmodules ]; then
   sed -r 's!url = git@([a-z.]+):!url = https://\1/!' -i .gitmodules

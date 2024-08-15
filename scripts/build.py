@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 import argparse
+import dataclasses
 import hashlib
 import json
 import os
@@ -17,6 +18,7 @@ import zipfile
 
 from dataclasses import dataclass
 from enum import Enum
+from functools import reduce
 from typing import Any, Dict, Optional, Tuple
 
 import apksigcopier
@@ -26,6 +28,9 @@ import requests
 from ruamel.yaml import YAML
 
 BuildBackend = Enum("BuildBackend", ["PODMAN", "DOCKER"])   # FIXME
+
+NOAPK = "none"
+NOTAG = ":commit:"
 
 
 class Error(Exception):
@@ -75,7 +80,7 @@ class BuildRecipe:
     repository: str
     tag: str
     apk_pattern: str
-    apk_url: str
+    apk_url: Optional[str]
     build: str
     build_home_dir: str
     build_repo_dir: str
@@ -96,6 +101,14 @@ class AppRecipe:
     repository: str
     updates: str
     versions: Tuple[BuildRecipe, ...]
+
+
+@dataclass(frozen=True)
+class TmpApks:
+    signed_apk: str
+    unsigned_apk: str
+    copied_apk: str
+    output_apk: str
 
 
 def parse_yaml(recipe_file: str) -> AppRecipe:
@@ -164,20 +177,28 @@ def url_with_replacements(apk_url: str, tag: str, tag_pattern: Optional[str]) ->
 
 # FIXME
 def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *,
+                       commit: Optional[str] = None, apk_url: Optional[str] = None,
                        keep_apks: Optional[str] = None, verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with backend (e.g. podman/docker)."""
+    if commit:
+        recipe = dataclasses.replace(recipe, tag=NOTAG)
+    if apk_url:
+        recipe = dataclasses.replace(recipe, apk_url=None if apk_url == NOAPK else apk_url)
     result: Dict[str, Any] = dict(
-        appid=appid, version_code=None, version_name=None, tag=recipe.tag, commit=None,
+        appid=appid, version_code=None, version_name=None, tag=recipe.tag, commit=commit,
         recipe=recipe.for_json(), timestamp=int(time.time()), reproducible=None,
         error=None, build_log="", upstream_signed_apk_sha256=None,
         built_unsigned_apk_sha256=None, signature_copied_apk_sha256=None)
     try:
-        commit = result["commit"] = tag_to_commit(recipe.repository, recipe.tag)
+        if not commit:
+            commit = result["commit"] = tag_to_commit(recipe.repository, recipe.tag)
         with tempfile.TemporaryDirectory() as tmpdir:
             outputs, scripts = prepare_tmpdir(recipe, tmpdir)
-            signed_sha, vercode, vername = download_apk(recipe, appid, tmpdir, verbose=verbose)
-            result.update(version_code=vercode, version_name=vername,
-                          upstream_signed_apk_sha256=signed_sha)
+            if recipe.apk_url:
+                signed_sha, vercode, vername = download_apk(
+                    recipe.apk_url, appid, tmpdir, allow_local=bool(apk_url), verbose=verbose)
+                result.update(version_code=vercode, version_name=vername,
+                              upstream_signed_apk_sha256=signed_sha)
             if backend in (BuildBackend.PODMAN, BuildBackend.DOCKER):
                 pull_cmd = (backend.name.lower(), "pull", "--", recipe.provisioning.image)
                 run_cmd = podman_docker_cmd(recipe, backend, commit, outputs=outputs, scripts=scripts)
@@ -195,18 +216,24 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
                 if verbose:
                     print(f"--- BEGIN BUILD LOG ---\n{result['build_log']}\n"
                           "--- END BUILD LOG ---", file=sys.stderr)
-            unsigned_sha, copied_sha, error = compare_apks(
-                tmpdir, appid=appid, tag=recipe.tag, signed_sha=signed_sha,
-                keep_apks=keep_apks, verbose=verbose)
-            reproducible = signed_sha == copied_sha
-            if verbose:
-                print(f"Reproducible: {reproducible}", file=sys.stderr)
-            result.update(
-                reproducible=reproducible,      # FIXME
-                built_unsigned_apk_sha256=unsigned_sha,
-                signature_copied_apk_sha256=copied_sha,
-                error=error,
-            )
+            rev = commit if recipe.tag == NOTAG else recipe.tag
+            if not recipe.apk_url:
+                unsigned_sha = keep_built_apk_only(tmpdir, appid=appid, rev=rev,
+                                                   keep_apks=keep_apks, verbose=verbose)
+                result.update(built_unsigned_apk_sha256=unsigned_sha)
+            else:
+                unsigned_sha, copied_sha, error = compare_apks(
+                    tmpdir, appid=appid, rev=rev, signed_sha=signed_sha,
+                    keep_apks=keep_apks, verbose=verbose)
+                reproducible = signed_sha == copied_sha
+                if verbose:
+                    print(f"Reproducible: {reproducible}", file=sys.stderr)
+                result.update(
+                    reproducible=reproducible,      # FIXME
+                    built_unsigned_apk_sha256=unsigned_sha,
+                    signature_copied_apk_sha256=copied_sha,
+                    error=error,
+                )
             return result
     except subprocess.CalledProcessError as e:
         error = f"subprocess failed: {e}"
@@ -298,17 +325,27 @@ def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
 
 
 # FIXME: configure retries
-def download_apk(recipe: BuildRecipe, appid: str, tmpdir: str, *,
-                 verbose: bool = False) -> Tuple[str, int, str]:
+def download_apk(apk_url: str, appid: str, tmpdir: str, *,
+                 allow_local: bool = False, verbose: bool = False) -> Tuple[str, int, str]:
     """Download APK and get versionCode and versionName."""
     signed_apk = os.path.join(tmpdir, "upstream.apk")
     if verbose:
-        print(f"Downloading {recipe.apk_url!r}...", file=sys.stderr)
-    download_file_with_retries(recipe.apk_url, signed_apk, retries=5, verbose=verbose)
+        print(f"Downloading {apk_url!r}...", file=sys.stderr)
+    if is_http_url(apk_url):
+        download_file_with_retries(apk_url, signed_apk, retries=5, verbose=verbose)
+    elif allow_local:
+        shutil.copyfile(apk_url, signed_apk)
+    else:
+        raise Error(f"Non-http(s) URL: {apk_url!r}")
     appid_from_apk, vercode, vername = apk_version_info(signed_apk)
     if appid != appid_from_apk:
         raise Error(f"APK appid mismatch: expected {appid}, got {appid_from_apk}")
     return sha256_file(signed_apk), vercode, vername
+
+
+def is_http_url(url: str) -> bool:
+    """Does the URL start with http(s)://?"""
+    return url.startswith("https://") or url.startswith("http://")
 
 
 def apk_version_info(apkfile: str) -> Tuple[str, int, str]:
@@ -317,24 +354,18 @@ def apk_version_info(apkfile: str) -> Tuple[str, int, str]:
 
 
 # FIXME: diff on fail?
-def compare_apks(tmpdir: str, *, appid: str, tag: str, signed_sha: str,
+def compare_apks(tmpdir: str, *, appid: str, rev: str, signed_sha: str,
                  keep_apks: Optional[str] = None, verbose: bool = False) \
         -> Tuple[str, Optional[str], Optional[str]]:
     """Compare upstream APK to built APK (after some checks); optionally save them."""
-    signed_apk = os.path.join(tmpdir, "upstream.apk")
-    unsigned_apk = os.path.join(tmpdir, "unsigned.apk")
-    copied_apk = os.path.join(tmpdir, "copied.apk")
-    output_apk = os.path.join(tmpdir, "outputs", "unsigned.apk")
-    if not os.path.isfile(output_apk) or os.path.islink(output_apk):
-        raise Error("unsigned output APK is not a regular file")
-    shutil.copyfile(output_apk, unsigned_apk)   # copy w/o permission bits!
-    unsigned_sha = sha256_file(unsigned_apk)
+    ta = tmp_apks(tmpdir)
+    unsigned_sha = copy_output_apk(ta.output_apk, ta.unsigned_apk)
     if keep_apks:
-        keep_apk(appid, tag, keep_apks, signed_apk, signed_sha, verbose=verbose)
-        keep_apk(appid, tag, keep_apks, unsigned_apk, unsigned_sha, verbose=verbose)
+        keep_apk(appid, rev, keep_apks, ta.signed_apk, signed_sha, verbose=verbose)
+        keep_apk(appid, rev, keep_apks, ta.unsigned_apk, unsigned_sha, verbose=verbose)
     try:
-        apksigcopier.do_copy(signed_apk, unsigned_apk, copied_apk, v1_only=None)
-        copied_sha = sha256_file(copied_apk)
+        apksigcopier.do_copy(ta.signed_apk, ta.unsigned_apk, ta.copied_apk, v1_only=None)
+        copied_sha = sha256_file(ta.copied_apk)
         error = None
     except (apksigcopier.APKSigCopierError, zipfile.BadZipFile) as e:
         copied_sha = None
@@ -342,10 +373,38 @@ def compare_apks(tmpdir: str, *, appid: str, tag: str, signed_sha: str,
     return unsigned_sha, copied_sha, error
 
 
-def keep_apk(appid: str, tag: str, output_dir: str, apkfile: str, sha256: str, *,
+def keep_built_apk_only(tmpdir: str, *, appid: str, rev: str, keep_apks: Optional[str],
+                        verbose: bool = False) -> str:
+    """Keep built APK (no upstream APK)."""
+    ta = tmp_apks(tmpdir)
+    unsigned_sha = copy_output_apk(ta.output_apk, ta.unsigned_apk)
+    if keep_apks:
+        keep_apk(appid, rev, keep_apks, ta.unsigned_apk, unsigned_sha, verbose=verbose)
+    return unsigned_sha
+
+
+def copy_output_apk(output_apk: str, unsigned_apk: str) -> str:
+    """Check & copy output APK and return sha256."""
+    if not os.path.isfile(output_apk) or os.path.islink(output_apk):
+        raise Error("unsigned output APK is not a regular file")
+    shutil.copyfile(output_apk, unsigned_apk)   # copy w/o permission bits!
+    return sha256_file(unsigned_apk)
+
+
+def tmp_apks(tmpdir: str) -> TmpApks:
+    """Temporary APKs."""
+    return TmpApks(
+        signed_apk=os.path.join(tmpdir, "upstream.apk"),
+        unsigned_apk=os.path.join(tmpdir, "unsigned.apk"),
+        copied_apk=os.path.join(tmpdir, "copied.apk"),
+        output_apk=os.path.join(tmpdir, "outputs", "unsigned.apk"))
+
+
+def keep_apk(appid: str, rev: str, output_dir: str, apkfile: str, sha256: str, *,
              verbose: bool = False) -> None:
     """Copy APK."""
-    target = f"{sha256}-{appid}-{tag.replace('/', '_')}-{os.path.basename(apkfile)}"
+    rev = reduce(lambda t, c: t.replace(c, "_"), '"*/:<>?\\|', rev)
+    target = f"{sha256}-{appid}-{rev}-{os.path.basename(apkfile)}"
     if verbose:
         print(f"Keeping {target!r}...", file=sys.stderr)
     shutil.copyfile(apkfile, os.path.join(output_dir, target))
@@ -353,7 +412,7 @@ def keep_apk(appid: str, tag: str, output_dir: str, apkfile: str, sha256: str, *
 
 # FIXME
 def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
-          verbose: bool = False) -> int:
+          local: bool = False, verbose: bool = False) -> int:
     """Parse YAML & build apps."""
     bb = BuildBackend.__members__[backend.upper()]
     errors = 0
@@ -361,14 +420,22 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
     for spec in specs:
         if verbose:
             print(f"Building {spec!r}...", file=sys.stderr)
-        appid, tag = spec.split(":", 1)
+        commit: Optional[str]
+        apk_url: Optional[str]
+        if local and spec.count(":") > 1:
+            appid, tag, commit, apk_url = spec.split(":", 3)
+            commit, apk_url = commit or None, apk_url or None
+        else:
+            appid, tag = spec.split(":", 1)
+            commit = apk_url = None
         recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
         build_recipes = [br for br in recipe.versions if br.tag == tag]
         if build_recipes:
             for br in build_recipes:
-                out = build_with_backend(bb, appid, br, keep_apks=keep_apks, verbose=verbose)
+                out = build_with_backend(bb, appid, br, commit=commit, apk_url=apk_url,
+                                         keep_apks=keep_apks, verbose=verbose)
                 outputs.append(out)
-                if not out["upstream_signed_apk_sha256"]:
+                if not out["upstream_signed_apk_sha256"] and apk_url != NOAPK:
                     errors += 1
                     if not verbose:     # already printed otherwise
                         print(f"Error building {spec!r}: {out['error']}", file=sys.stderr)
@@ -474,13 +541,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="build apps from recipes")
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("--keep-apks", metavar="DIR", help="save APKs in DIR")
+    parser.add_argument("--local", action="store_true",
+                        help="allow APPID:TAG:[COMMIT]:[APK|none] build SPECs")
     parser.add_argument("backend", choices=backends, help="backend")
-    parser.add_argument("specs", metavar="SPEC", nargs="*", help="appid:tag to build")
+    parser.add_argument("specs", metavar="SPEC", nargs="*", help="APPID:TAG to build")
     args = parser.parse_args()
     if args.keep_apks and not os.path.isdir(args.keep_apks):
         print(f"Error: {args.keep_apks!r} is not an existing directory", file=sys.stderr)
         sys.exit(1)
-    elif build(args.backend, *args.specs, keep_apks=args.keep_apks, verbose=args.verbose) != 0:
+    elif build(args.backend, *args.specs, keep_apks=args.keep_apks, local=args.local,
+               verbose=args.verbose) != 0:
         sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
