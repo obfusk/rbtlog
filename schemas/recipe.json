@@ -15,6 +15,13 @@
       "type": "string",
       "pattern": "^((checkonly:)?(releases|tags:.*)|manual|disabled)$"
     },
+    "labels": {
+      "description": "labels (not required)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "notes": {
       "description": "notes (not required)",
       "type": "array",
