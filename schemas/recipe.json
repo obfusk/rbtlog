@@ -13,7 +13,7 @@
     "updates": {
       "description": "mode to check for upstream updates",
       "type": "string",
-      "pattern": "^((checkonly:)?(releases|tags:.*)|manual)$"
+      "pattern": "^((checkonly:)?(releases|tags:.*)|manual|disabled)$"
     },
     "notes": {
       "description": "notes (not required)",

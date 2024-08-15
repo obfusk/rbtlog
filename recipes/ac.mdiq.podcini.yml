@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/XilinJia/Podcini.git
-updates: manual
+updates: disabled
 notes:
   - '6.x changed the appid to ac.mdiq.podcini.R'
   - 'NB: not reproducible'

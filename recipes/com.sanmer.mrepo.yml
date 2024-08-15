@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/MRepoApp/MRepo.git
-updates: manual
+updates: disabled
 notes:
   - 'v2.5.0 changed the appid to dev.sanmer.mrepo'
   - 'repository is archived'

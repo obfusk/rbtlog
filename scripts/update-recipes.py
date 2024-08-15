@@ -220,7 +220,7 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, quiet: bool 
         updates = recipe["updates"]
         if verbose:
             print(f"Updates mode: {updates!r}.", file=sys.stderr)
-        if updates == "manual":
+        if updates in ("manual", "disabled"):
             continue
         if checkonly := updates.startswith("checkonly:"):
             updates = updates.replace("checkonly:", "", 1)
