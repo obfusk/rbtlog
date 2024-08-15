@@ -262,8 +262,8 @@ def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
     os.mkdir(scripts)
     os.chmod(outputs, 0o777)    # allow writing from within container
     os.chmod(scripts, 0o755)    # allow reading from within container
-    shutil.copyfile("scripts/provision-root.sh", provision_root_sh)
-    shutil.copyfile("scripts/provision.sh", provision_sh)
+    shutil.copyfile(os.path.join("scripts", "provision-root.sh"), provision_root_sh)
+    shutil.copyfile(os.path.join("scripts", "provision.sh"), provision_sh)
     os.chmod(provision_root_sh, 0o755)
     os.chmod(provision_sh, 0o755)
     with open(build_sh, "w", encoding="utf-8") as fh:
