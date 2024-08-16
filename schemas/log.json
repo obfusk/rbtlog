@@ -81,7 +81,10 @@
                 },
                 "build_timeout": {
                   "description": "build timeout in minutes (not required, default: null, older logs don't have this)",
-                  "type": "integer"
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
                 },
                 "build_user": {
                   "description": "build user name",
