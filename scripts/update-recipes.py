@@ -31,10 +31,12 @@ GITHUB_LATEST_RELEASE = "https://api.github.com/repos/{}/{}/releases/latest"
 # host, namespace, project
 GITLAB_LATEST_RELEASE = "https://{}/api/v4/projects/{}%2F{}/releases/permalink/latest"
 
-# host, namespace, project, upload
-GITLAB_UPLOAD = "https://{}/{}/{}/uploads/{}"
+# host, project_id, upload
+GITLAB_UPLOAD = "https://{}/-/project/{}/uploads/{}"
 # hash/filename
 GITLAB_UPLOAD_RX = re.compile(r"\(/uploads/([0-9a-f]{32}/[^/)]+)\)")
+# project_id
+GITLAB_RELEASES_PROJECT_ID_RX = re.compile(r"/api/v4/projects/(\d+)/releases/")
 
 
 class Error(Exception):
@@ -114,7 +116,10 @@ def latest_release_gitlab(url: urllib.parse.ParseResult, apk_patterns: List[str]
             continue
         for upload in GITLAB_UPLOAD_RX.findall(data["description"]):
             if re.fullmatch(apk_pattern, upload.rsplit("/", 1)[-1]):
-                apk_urls[apk_pattern] = GITLAB_UPLOAD.format(url.hostname, namespace, project, upload)
+                if not (m := re.search(GITLAB_RELEASES_PROJECT_ID_RX, data["_url"])):
+                    raise Error("Could not determine project ID from URL")
+                project_id = int(m.group(1))
+                apk_urls[apk_pattern] = GITLAB_UPLOAD.format(url.hostname, project_id, upload)
                 break
     return tag, apk_urls
 
@@ -169,7 +174,7 @@ def gitlab_latest_release(host: str, namespace: str, project: str, *,
         print(f"Checking {url!r}...", file=sys.stderr)
     with requests.get(url, timeout=60) as response:
         response.raise_for_status()
-        return response.json()      # type: ignore[no-any-return]
+        return {**response.json(), "_url": response.url}
 
 
 def load_recipe(recipe_file: str) -> Dict[Any, Any]:
