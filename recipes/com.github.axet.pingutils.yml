@@ -70,7 +70,7 @@ versions:
   - tag: pingutils-0.2.6
     apks:
       - apk_pattern: pingutils-.*-release\.apk
-        apk_url: https://gitlab.com/axet/android-ping-utils/uploads/8f433ada404c661783b02ed23b08bfb4/pingutils-0.2.6-release.apk
+        apk_url: https://gitlab.com/-/project/31631246/uploads/8f433ada404c661783b02ed23b08bfb4/pingutils-0.2.6-release.apk
         build:
           - wget -q -O /tmp/gradle-7.5-bin.zip -- https://services.gradle.org/distributions/gradle-7.5-bin.zip
           - sha256sum -c <<< 'cb87f222c5585bd46838ad4db78463a5c5f3d336e5e2b98dc7c0c586527351c2  /tmp/gradle-7.5-bin.zip'
