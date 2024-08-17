@@ -1663,6 +1663,20 @@
       "error": null
     }
   ],
+  "e37c0fd26004d13dd0bb98df6d32703d05fc6ca2fa09ea706883e25080478260": [
+    {
+      "repository": "https://gitlab.com/axet/android-ping-utils.git",
+      "apk_url": "https://gitlab.com/-/project/31631246/uploads/8f433ada404c661783b02ed23b08bfb4/pingutils-0.2.6-release.apk",
+      "appid": "com.github.axet.pingutils",
+      "version_code": 38,
+      "version_name": "0.2.6",
+      "tag": "pingutils-0.2.6",
+      "commit": "3b58e29a8d6b1cad3c5169354606202672e8c686",
+      "timestamp": 1723932687,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "89931b51411286d77d5c2943cfb8cdb4ed57aa9e2f0312dffa5b4f4f3b2aabfc": [
     {
       "repository": "https://github.com/diegoberaldin/RaccoonForLemmy.git",
