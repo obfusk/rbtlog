@@ -3441,6 +3441,20 @@
       "error": null
     }
   ],
+  "ce51582a83a22e1096fb10133130534c376cbf2b70d8b6d782f38bddc7ac1707": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.9.0/GreenStash-v3.9.0.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 390,
+      "version_name": "3.9.0",
+      "tag": "v3.9.0",
+      "commit": "9f1098fe5b269578104314a868bb2b326b185a0c",
+      "timestamp": 1723907196,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e52f94d148aa490d184295ddedd150db5f8f48cb5bf0496f44f22ff95ef3e611": [
     {
       "repository": "https://github.com/Pool-Of-Tears/Myne.git",
@@ -5023,6 +5037,20 @@
       "tag": "1.2222",
       "commit": "8e9a4e430ae7aaa672cf7326d8447eab104b7e21",
       "timestamp": 1723825507,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "cfde42321dd467ce1cab3619251777df262cb5f03584275bacb1c07f9bb140be": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2223/FairEmail-v1.2223a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2223,
+      "version_name": "1.2223",
+      "tag": "1.2223",
+      "commit": "df896966ad3dc6636ff69c355d87ec6a59a8bc81",
+      "timestamp": 1723907523,
       "reproducible": true,
       "error": null
     }
