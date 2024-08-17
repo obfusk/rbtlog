@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # encoding: utf-8
 # SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net>
 # SPDX-License-Identifier: AGPL-3.0-or-later
