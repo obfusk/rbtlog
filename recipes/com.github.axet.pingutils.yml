@@ -67,3 +67,34 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: false
+  - tag: pingutils-0.2.6
+    apks:
+      - apk_pattern: pingutils-.*-release\.apk
+        apk_url: https://gitlab.com/axet/android-ping-utils/uploads/8f433ada404c661783b02ed23b08bfb4/pingutils-0.2.6-release.apk
+        build:
+          - wget -q -O /tmp/gradle-7.5-bin.zip -- https://services.gradle.org/distributions/gradle-7.5-bin.zip
+          - sha256sum -c <<< 'cb87f222c5585bd46838ad4db78463a5c5f3d336e5e2b98dc7c0c586527351c2  /tmp/gradle-7.5-bin.zip'
+          - unzip -q -d /opt /tmp/gradle-7.5-bin.zip
+          - export PATH="${PATH}:/opt/gradle-7.5/bin"
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle
+          - gradle assembleRelease
+          - mv app/build/outputs/apk/release/pingutils-*-release.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bullseye-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: false
