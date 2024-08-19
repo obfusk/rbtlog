@@ -3847,6 +3847,20 @@
       "error": null
     }
   ],
+  "cc64c177e732fc1559ca9ba8804b7a6a04d8bc3e33b8b2c23ea8dbd3fa1ebf97": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.13.1/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 162,
+      "version_name": "2.13.1",
+      "tag": "v2.13.1",
+      "commit": "a0e0dd1e16b096aed12340808f803897da12e3fd",
+      "timestamp": 1724083162,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "56b13edd9e064c96ab6e1debe0b868a4137f3ce01dfc84d06cc0a4b9729726c2": [
     {
       "repository": "https://github.com/jarnedemeulemeester/findroid.git",
