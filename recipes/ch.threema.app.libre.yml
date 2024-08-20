@@ -3,7 +3,6 @@ repository: https://github.com/threema-ch/threema-android.git
 updates: tags:([\d.]+)
 notes:
   - 'FIXME: JARs & AARs'
-  - 'FIXME: NO_SUPPORTED_VCS_FOUND for 5.3'
 versions:
   - tag: 5.2.3
     apks:
