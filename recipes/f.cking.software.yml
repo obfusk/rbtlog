@@ -142,7 +142,10 @@ versions:
         build:
           - git reset --soft f143c1d894bab55a62dea9404f5d5c7db89c2a21
           - JAVA_CONFIG_VERSION=21 ./gradlew assembleGithubRelease
-          - mv app/build/outputs/apk/github/release/app-github-release-unsigned.apk /outputs/unsigned.apk
+          - OUT=app/build/outputs/apk/github/release/app-github-release-unsigned.apk
+          - git clone -b v0.2.8 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/21/22/g' kotlin-tooling-metadata.json
+          - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
@@ -154,7 +157,8 @@ versions:
             version: '12.0'
             url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
             sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
-          extra_packages: []
+          extra_packages:
+            - python3
           image: ubuntu:jammy
           jdk: openjdk-21-jdk-headless
           ndk:
