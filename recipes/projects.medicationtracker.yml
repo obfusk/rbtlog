@@ -2,7 +2,7 @@
 repository: https://github.com/AdamGuidarini/MediTrak.git
 updates: tags:v[\d.]+
 notes:
-  - 'FIXME: embedded build ID (use readelf --notes to extract from .so)'
+  - 'FIXME: embedded build ID (use elf-build-id.py to extract from .so)'
   - 'FIXME: embedded commit hash mismatch for v0.11.5'
   - 'FIXME: tag mismatch for v0.12.0'
 versions:
