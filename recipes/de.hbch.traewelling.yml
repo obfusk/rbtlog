@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/Traewelldroid/traewelldroid.git
 updates: releases
+notes:
+  - 'FIXME: JARs'
 versions:
   - tag: v2.6.1
     apks:

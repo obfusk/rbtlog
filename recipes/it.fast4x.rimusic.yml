@@ -4,6 +4,7 @@ updates: releases
 notes:
   - 'FIXME: embedded commit hash mismatch for v0.6.32, v0.6.37'
   - 'FIXME: tag mismatch for v0.6.36.1'
+  - 'FIXME: JARs'
 versions:
   - tag: v0.6.22
     apks:
