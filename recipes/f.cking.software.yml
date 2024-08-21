@@ -184,8 +184,7 @@ versions:
             version: '12.0'
             url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
             sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
-          extra_packages:
-            - python3
+          extra_packages: []
           image: ubuntu:jammy
           jdk: openjdk-21-jdk-headless
           ndk:
