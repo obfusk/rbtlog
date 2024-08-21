@@ -5167,6 +5167,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp55c8cu41/outputs:/outputs', '--volume', '/tmp/tmp55c8cu41/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/Semper-Viventem/MetaRadar.git', '--env', 'APP_TAG=v0.26.1-beta', '--env', 'APP_COMMIT=42993e29a331f0b29c8545385d33c765ee7f1d84', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "2c32def869ec58e63cac63e4d5eef3d4816d8f7a859c1239e4e267e1230bdc87": [
+    {
+      "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
+      "apk_url": "https://github.com/Semper-Viventem/MetaRadar/releases/download/v0.26.2-beta/app-github-release.apk",
+      "appid": "f.cking.software",
+      "version_code": 1708536358,
+      "version_name": "0.26.2-beta",
+      "tag": "v0.26.2-beta",
+      "commit": "9a7ef8ebc1c2fb2815bda91bc319b5bd7cbb24ad",
+      "timestamp": 1724198409,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a0039fd12a59afa2c27d34e278412db5e35141ad9aac2786bcc2b2bc4d5ae2f6": [
     {
       "repository": "https://github.com/gdzx/audiosource.git",
