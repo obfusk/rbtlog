@@ -2,6 +2,7 @@
 repository: https://github.com/meenbeese/Chronos.git
 updates: releases
 notes:
+  - 'FIXME: missing dependencies'
   - 'FIXME: .prof differs for v1.6.0 & v1.7.0'
 versions:
   - tag: v1.0.0
