@@ -14,10 +14,13 @@ fi
 
 apt-get update
 apt-get upgrade -y
+apt-get install --no-install-recommends -y git wget unzip "${PROVISIONING_JDK}"
 
-readarray -d , -t extra_packages < <( printf %s "${PROVISIONING_EXTRA_PACKAGES}" )
-apt-get install --no-install-recommends -y git wget unzip "${PROVISIONING_JDK}" \
-  "${extra_packages[@]}"
+if [ -n "${PROVISIONING_EXTRA_PACKAGES}" ]; then
+  readarray -d , -t extra_packages < <( printf %s "${PROVISIONING_EXTRA_PACKAGES}" )
+  apt-get install --no-install-recommends -y "${extra_packages[@]}"
+fi
+
 update-alternatives --auto java
 
 if adduser --help | grep -q -- --gecos; then
