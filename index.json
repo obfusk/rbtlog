@@ -2517,6 +2517,76 @@
       "error": null
     }
   ],
+  "94c80ea6b514aeae5bd35b75a06375e94fdd369648c4ea47daba59dabe1667fd": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.0/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 55,
+      "version_name": "0.25.0",
+      "tag": "v0.25.0",
+      "commit": "606e2564d9486a9df926732318506e9835678752",
+      "timestamp": 1724419322,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "bfa8ccae95fd198122122a2cdb107e102bbc568c6b5c36d9e50bfbf7ff25fd52": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.0/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 55,
+      "version_name": "0.25.0",
+      "tag": "v0.25.0",
+      "commit": "606e2564d9486a9df926732318506e9835678752",
+      "timestamp": 1724419710,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "0806dd5f7e8e1aa8e6d82da430845bce83c032e878d0b5d7e57e69fe6a9e7ea6": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.0/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 55,
+      "version_name": "0.25.0",
+      "tag": "v0.25.0",
+      "commit": "606e2564d9486a9df926732318506e9835678752",
+      "timestamp": 1724420098,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "631c7e19f99da2e6e022f130fee52c86c2193bab73a9f43e3714bcfbaf6ec6b6": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.0/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 55,
+      "version_name": "0.25.0",
+      "tag": "v0.25.0",
+      "commit": "606e2564d9486a9df926732318506e9835678752",
+      "timestamp": 1724420478,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "b979d883da261c7bd3894849f2de2d07de2516be892617a1a731d6081d2ecb96": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.0/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 55,
+      "version_name": "0.25.0",
+      "tag": "v0.25.0",
+      "commit": "606e2564d9486a9df926732318506e9835678752",
+      "timestamp": 1724420862,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
