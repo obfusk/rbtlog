@@ -6229,6 +6229,20 @@
       "error": null
     }
   ],
+  "0c1e5f3ef71cb2fcd3c0f9b083b284881d2835fce8be8f8842608037876c1f19": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.9.0/osc-1.9.0.apk",
+      "appid": "kittoku.osc",
+      "version_code": 41,
+      "version_name": "1.9.0",
+      "tag": "v1.9.0",
+      "commit": "8556c4c732e98a5aeac239342f7f3f272d9f947d",
+      "timestamp": 1724505228,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
     {
       "repository": "https://github.com/CatimaLoyalty/Android.git",
@@ -6321,6 +6335,20 @@
       "tag": "v2.31.0",
       "commit": "469ed374ad8e516463e2d246e233e68886ddf7da",
       "timestamp": 1722014674,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f79c39697875fc2f3853ff35d68fb1e92f04c13003aa3910c62a9783ab702c33": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.31.1/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 138,
+      "version_name": "2.31.1",
+      "tag": "v2.31.1",
+      "commit": "1c8c4924000a198e93156126069ab6b9d9147fbb",
+      "timestamp": 1724505408,
       "reproducible": true,
       "error": null
     }
