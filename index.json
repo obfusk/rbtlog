@@ -8227,6 +8227,20 @@
       "error": null
     }
   ],
+  "0161f9e7c66ff26f518273b91e0de552ca3105c8643cb8c139a8f560990d58d4": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.4.5/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 33,
+      "version_name": "1.4.5",
+      "tag": "1.4.5",
+      "commit": "c01e0c286c047928580d3f55222ae6654cea56be",
+      "timestamp": 1724768627,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "38681f3e16a18ec5e6bdef31d8ffea6674af0c24cf8a739f73ef9cac0c99db04": [
     {
       "repository": "https://github.com/karasevm/PrivateDNSAndroid.git",
