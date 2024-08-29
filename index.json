@@ -951,6 +951,20 @@
       "error": null
     }
   ],
+  "b00ce4fac47ec0194a41b44b7cd17c19011b060f58a29343417ed9b7b872815e": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.29/networksurvey-1.29-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 80,
+      "version_name": "1.29-cdr",
+      "tag": "v1.29",
+      "commit": "280559c40ed90ceed8c3be2deff92389f2bdeba2",
+      "timestamp": 1724943145,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -3732,6 +3746,20 @@
       "commit": "6bcd1584955ca62a6e12f648472b705a3ac5ca33",
       "timestamp": 1714931911,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "89c667ee0f67463a88de2da3a4ed30afb453f5c9d825a7b0117fb2a63ecdf847": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.0/MediLog-3.0.0.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5453,
+      "version_name": "3.0.0",
+      "tag": "v3.0.0",
+      "commit": "7e33ebf164a7ad9089d183af5d5eea77c4f4ef57",
+      "timestamp": 1724943445,
+      "reproducible": false,
       "error": null
     }
   ],
