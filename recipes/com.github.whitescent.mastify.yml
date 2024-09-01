@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/whitescent/Mastify.git
-updates: releases
+updates: disabled
 notes:
   - 'NB: NonFreeComp (>= 1.4.22-alpha, does not build w/o google-services.json)'
   - 'NB: tag mismatch on 1.4.2-alpha'
