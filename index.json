@@ -3763,6 +3763,20 @@
       "error": null
     }
   ],
+  "4cff9989f65b47acea1f63013b0db582e04bc0aed4338818543397ec75f17fae": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.1/MediLog-3.0.1.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5454,
+      "version_name": "3.0.1",
+      "tag": "v3.0.1",
+      "commit": "31caae350fef39c0b24ce3e2b6326d19060c3014",
+      "timestamp": 1725202491,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
@@ -4409,6 +4423,62 @@
       "tag": "v0.15.1",
       "commit": "482cfffd3abb33183533075c1aaf0bbb0f8ed748",
       "timestamp": 1723492915,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "43b0d7c2a32efcdd3d5702aded69ccd0c0c04d8dc22ff6f000dca2e577393880": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.2/findroid-v0.15.2-libre-arm64-v8a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 28,
+      "version_name": "0.15.2",
+      "tag": "v0.15.2",
+      "commit": "1bd5eeed98aebba3121d22e65da19e2de4a70657",
+      "timestamp": 1725202788,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "0373d0ec007dc364035a1eb9cb9cb8e135c53fb1cf654c0d8cc09fc70dde20f8": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.2/findroid-v0.15.2-libre-armeabi-v7a.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 28,
+      "version_name": "0.15.2",
+      "tag": "v0.15.2",
+      "commit": "1bd5eeed98aebba3121d22e65da19e2de4a70657",
+      "timestamp": 1725203233,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "e2c89d6e25f338c341063c64ef68f2ef0d5a8fb33ff2b7a41f1485a4916af854": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.2/findroid-v0.15.2-libre-x86.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 28,
+      "version_name": "0.15.2",
+      "tag": "v0.15.2",
+      "commit": "1bd5eeed98aebba3121d22e65da19e2de4a70657",
+      "timestamp": 1725203684,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "9a64e97864cbae9bb6cf981fc5eea7a5730ea2a84cf44a03a91bb0cedf1a9abe": [
+    {
+      "repository": "https://github.com/jarnedemeulemeester/findroid.git",
+      "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v0.15.2/findroid-v0.15.2-libre-x86_64.apk",
+      "appid": "dev.jdtech.jellyfin",
+      "version_code": 28,
+      "version_name": "0.15.2",
+      "tag": "v0.15.2",
+      "commit": "1bd5eeed98aebba3121d22e65da19e2de4a70657",
+      "timestamp": 1725204134,
       "reproducible": true,
       "error": null
     }
@@ -6423,6 +6493,20 @@
       "timestamp": 1724505228,
       "reproducible": false,
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
+  "73bc810190d28cd62f4a315628eb8ebdef4b9e7ce8842e4878dd7de843c453ae": [
+    {
+      "repository": "https://github.com/kittoku/Open-SSTP-Client.git",
+      "apk_url": "https://github.com/kittoku/Open-SSTP-Client/releases/download/v1.9.1/osc-1.9.1.apk",
+      "appid": "kittoku.osc",
+      "version_code": 42,
+      "version_name": "1.9.1",
+      "tag": "v1.9.1",
+      "commit": "4f1994fda0efba784c7880c79c6165de973eff5c",
+      "timestamp": 1725204585,
+      "reproducible": false,
+      "error": null
     }
   ],
   "406d52cb1c778444521adffc1d82afeaff37c0a2e33d3c9888a9e0361bcbd0fd": [
