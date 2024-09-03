@@ -575,3 +575,38 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v5.2.7
+    apks:
+      - apk_pattern: floccus-build-.*\.apk
+        apk_url: https://github.com/floccusaddon/floccus/releases/download/$$TAG$$/floccus-build-$$TAG$$.apk
+        build:
+          - wget -q -O /tmp/nodejs-lts.zip -- https://nodejs.org/dist/v20.17.0/node-v20.17.0-linux-x64.tar.xz
+          - sha256sum -c <<< 'a24db3dcd151a52e75965dba04cf1b3cd579ff30d6e0af9da1aede4d0f17486b  /tmp/nodejs-lts.zip'
+          - tar xf /tmp/nodejs-lts.zip -C /opt
+          - export PATH="${PATH}:/opt/node-v20.17.0-linux-x64/bin"
+          - npm install
+          - npx gulp
+          - npx cap sync
+          - cd android
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - xz-utils
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
