@@ -220,8 +220,8 @@ def append_latest_version(recipe: Dict[Any, Any], tag: str,
     return True
 
 
-def update_recipes(*recipes: str, continue_on_errors: bool = False, quiet: bool = False,
-                   verbose: bool = False) -> bool:
+def update_recipes(*recipes: str, continue_on_errors: bool = False, always_update_hashes: bool = False,
+                   quiet: bool = False, verbose: bool = False) -> bool:
     """Update recipes."""
     if verbose and GITHUB_TOKEN:
         print("Using $GITHUB_TOKEN.", file=sys.stderr)
@@ -259,7 +259,7 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, quiet: bool 
                 else:
                     save_recipe(recipe_file, recipe)
                     print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
-                    if "update-hashes" in recipe.get("labels", []):
+                    if always_update_hashes or "update-hashes" in recipe.get("labels", []):
                         update_hashes(recipe_file, tag, verbose=verbose)
                         print(f"Updated hashes for {f'{appid}:{tag}'!r}.", file=sys.stderr)
             elif verbose:
@@ -276,10 +276,12 @@ if __name__ == "__main__":
     parser.add_argument("-q", "--quiet", action="store_true")
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("--continue-on-errors", action="store_true", help="continue on errors")
+    parser.add_argument("--update-hashes", action="store_true", help="always update hashes")
     parser.add_argument("recipes", metavar="RECIPE", nargs="*", help="recipe")
     args = parser.parse_args()
     if not update_recipes(*args.recipes, continue_on_errors=args.continue_on_errors,
-                          quiet=args.quiet, verbose=args.verbose):
+                          always_update_hashes=args.update_hashes, quiet=args.quiet,
+                          verbose=args.verbose):
         sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
