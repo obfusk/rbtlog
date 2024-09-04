@@ -259,7 +259,9 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, always_updat
                 else:
                     save_recipe(recipe_file, recipe)
                     print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
-                    if always_update_hashes or "update-hashes" in recipe.get("labels", []):
+                    labels = recipe.get("labels", [])
+                    upd, no_upd = "update-hashes" in labels, "no-update-hashes" in labels
+                    if (always_update_hashes and not no_upd) or upd:
                         update_hashes(recipe_file, tag, verbose=verbose)
                         print(f"Updated hashes for {f'{appid}:{tag}'!r}.", file=sys.stderr)
             elif verbose:
