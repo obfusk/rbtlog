@@ -18,6 +18,8 @@ import requests
 
 from ruamel.yaml import YAML
 
+EXE = sys.executable or "python3"
+
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or None
 
 CODEBERG_DOT_ORG = "codeberg.org"
@@ -194,6 +196,13 @@ def save_recipe(recipe_file: str, data: Dict[Any, Any]) -> None:
         yaml.dump(data, fh)
 
 
+def update_flaky(recipe_file: str, tag: str, *, verbose: bool = False) -> None:
+    """Update flaky recipe."""
+    verb = ("--verbose",) if verbose else ()
+    args = (EXE, os.path.join("scripts", "update-flaky.py"), *verb, "--", recipe_file, tag)
+    subprocess.run(args, check=True)
+
+
 def append_latest_version(recipe: Dict[Any, Any], tag: str,
                           apk_urls: Optional[Dict[str, str]]) -> bool:
     """Add new version to recipe; modifies in-place!"""
@@ -250,6 +259,9 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, quiet: bool 
                 else:
                     save_recipe(recipe_file, recipe)
                     print(f"Updated {appid!r} to {tag!r}.", file=sys.stderr)
+                    if "update-flaky" in recipe.get("labels", []):
+                        update_flaky(recipe_file, tag, verbose=verbose)
+                        print(f"Updated {f'{appid}:{tag}'!r} for flaky build.", file=sys.stderr)
             elif verbose:
                 print(f"Tag already present: {tag!r}.", file=sys.stderr)
         except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
