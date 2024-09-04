@@ -73,8 +73,11 @@ def download_file_with_retries(url: str, output: str, *, retries: int = 5) -> No
     raise error
 
 
-def get_hashes(apk_url: str, files: List[str]) -> Tuple[Dict[str, str], Optional[str]]:
-    """Get SHA-1 hashes for specified files in APK + git commit (if any)."""
+def retrieve_apk_hashes(apk_url: str, files: List[str]) -> Tuple[Dict[str, str], Optional[str]]:
+    """
+    Download upstream APK and get SHA-1 hashes for specified files in APK +
+    embedded git commit (if any).
+    """
     hashes = {}
     commit = None
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -128,31 +131,34 @@ def tag_to_commit(repository: str, tag: str) -> str:
     raise Error(f"tag not found: {tag}")
 
 
-def update_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern: Optional[str], *,
-                  verbose: bool = False) -> bool:
-    """Update hashes."""
+def update_recipe_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern: Optional[str],
+                         *, verbose: bool = False) -> bool:
+    """Update recipe hashes."""
     modified = False
     for vsn in data["versions"]:
         if vsn["tag"] == tag:
             for apk in vsn["apks"]:
                 apk_url = url_with_replacements(apk["apk_url"], tag, tag_pattern)
-                lines_files = _find_file_hashes(apk)
-                hashes, apk_commit = get_hashes(apk_url, [path for _, path in lines_files])
+                lines_files = find_file_hashes(apk)
+                hashes, apk_commit = retrieve_apk_hashes(apk_url, [p for _, p in lines_files])
                 tag_commit = tag_to_commit(repo, tag)
                 for i, path in lines_files:
-                    prefix = apk["build"][i].split("=", 1)[0]
-                    apk["build"][i] = f"{prefix}={hashes[path]}"
+                    update_file_hash(apk, i, path, hashes)
                     modified = True
                     if verbose:
-                        print(f"SHA-1 for {path!r} is {hashes[path]!r}.", file=sys.stderr)
-                if _update_commit_hash(apk, apk_commit, tag_commit):
+                        print(f"SHA-1 {path!r}: {hashes[path]!r}.", file=sys.stderr)
+                if update_commit_hash(apk, apk_commit, tag_commit):
                     modified = True
                     if verbose:
-                        print(f"Reset to {apk_commit!r} (tag is {tag_commit!r}).", file=sys.stderr)
+                        if apk_commit:
+                            print(f"Reset: {apk_commit!r}, tag: {tag_commit!r}.", file=sys.stderr)
+                        else:
+                            print("Removed reset (no embedded commit hash).", file=sys.stderr)
     return modified
 
 
-def _find_file_hashes(apk: Dict[Any, Any]) -> List[Tuple[int, str]]:
+def find_file_hashes(apk: Dict[Any, Any]) -> List[Tuple[int, str]]:
+    """Find (line_index, apk_file_path) for .dex/.prof/.profm hashes in recipe."""
     files = []
     for i in range(len(apk["build"]) - 1):
         l1, l2 = apk["build"][i], apk["build"][i + 1]
@@ -168,37 +174,55 @@ def _find_file_hashes(apk: Dict[Any, Any]) -> List[Tuple[int, str]]:
     return files
 
 
-def _update_commit_hash(apk: Dict[Any, Any], apk_commit: Optional[str], tag_commit: str) -> bool:
+def update_file_hash(apk: Dict[Any, Any], i: int, path: str, hashes: Dict[str, str]) -> None:
+    """Update file hash."""
+    prefix = apk["build"][i].split("=", 1)[0]
+    apk["build"][i] = f"{prefix}={hashes[path]}"
+
+
+def update_commit_hash(apk: Dict[Any, Any], apk_commit: Optional[str], tag_commit: str) -> bool:
+    """Update 'git reset --soft' (or fix-files) for embedded commit hash mismatch."""
     reset, checkout = "git reset --soft", "git checkout"
+    cd = False
     for i in range(len(apk["build"])):
-        if apk["build"][i].startswith(reset) or apk["build"][i].startswith(checkout):
+        line = apk["build"][i]
+        if not cd and (line.startswith(reset) or line.startswith(checkout)):
             if apk_commit and tag_commit != apk_commit:
                 apk["build"][i] = f"{reset} {apk_commit}"
             else:
                 apk["build"].pop(i)
             return True
+        if VCSINFO_FILE in line and "fix-files" in line:
+            if apk_commit and tag_commit != apk_commit:
+                apk["build"][i] = re.sub(
+                    r"sed s/[0-9a-f]{40}/[0-9a-f]{40}/",
+                    f"sed s/{tag_commit}/{apk_commit}/", line)
+            else:
+                apk["build"].pop(i)
+            return True
+        if line.startswith("cd ") or line.startswith("pushd "):
+            cd = True
     if apk_commit and tag_commit != apk_commit:
         apk["build"].insert(0, f"{reset} {apk_commit}")
         return True
     return False
 
 
-def update_flaky(recipe_file: str, tag: str, *, verbose: bool = False) -> None:
-    """Update hashes for flaky build."""
+def update_hashes(recipe_file: str, tag: str, *, verbose: bool = False) -> None:
+    """Update hashes in build recipe."""
     recipe = load_recipe(recipe_file)
-    repository = recipe["repository"]
     updates = recipe["updates"]
     tag_pattern = updates.replace("tags:", "", 1) if updates.startswith("tags:") else None
-    if update_hashes(recipe, repository, tag, tag_pattern, verbose=verbose):
+    if update_recipe_hashes(recipe, recipe["repository"], tag, tag_pattern, verbose=verbose):
         save_recipe(recipe_file, recipe)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="update flaky")
+    parser = argparse.ArgumentParser(description="update hashes")
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("recipe", metavar="RECIPE")
     parser.add_argument("tag", metavar="TAG")
     args = parser.parse_args()
-    update_flaky(args.recipe, args.tag, verbose=args.verbose)
+    update_hashes(args.recipe, args.tag, verbose=args.verbose)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
