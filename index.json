@@ -2671,6 +2671,76 @@
       "error": null
     }
   ],
+  "debf5cd310f3b9d3dc653ac77193553afbaafd8c663f0ba1b5020a90ef5da7c3": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.2/app-arm64-v8a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 57,
+      "version_name": "0.25.2",
+      "tag": "v0.25.2",
+      "commit": "c47009c33fb9f955b116432520d033d482facb5b",
+      "timestamp": 1725546399,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "eeedba5122479b46350c1db81dea234c42f563172e62cb3b163fb115fc20b44d": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.2/app-armeabi-v7a-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 57,
+      "version_name": "0.25.2",
+      "tag": "v0.25.2",
+      "commit": "c47009c33fb9f955b116432520d033d482facb5b",
+      "timestamp": 1725546825,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "ec3db6395c40127e232768b5d53c5c6df4facde12cbf37d55297d66c77ae4c16": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.2/app-universal-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 57,
+      "version_name": "0.25.2",
+      "tag": "v0.25.2",
+      "commit": "c47009c33fb9f955b116432520d033d482facb5b",
+      "timestamp": 1725547230,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f84dbd1786b206dc86cff76c6e58e4b3235677f204dc61e9585d60f47c8a65d4": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.2/app-x86-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 57,
+      "version_name": "0.25.2",
+      "tag": "v0.25.2",
+      "commit": "c47009c33fb9f955b116432520d033d482facb5b",
+      "timestamp": 1725547598,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "5fa4bf693596c0df52700235c2097aed1867d07b237d2029808cfa925b1e7ef8": [
+    {
+      "repository": "https://github.com/libre-tube/LibreTube.git",
+      "apk_url": "https://github.com/libre-tube/LibreTube/releases/download/v0.25.2/app-x86_64-release.apk",
+      "appid": "com.github.libretube",
+      "version_code": 57,
+      "version_name": "0.25.2",
+      "tag": "v0.25.2",
+      "commit": "c47009c33fb9f955b116432520d033d482facb5b",
+      "timestamp": 1725548048,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "bd39548e1b565f30a1946166c1b4d06b6b65ab0ed0468101d4fe05468b61120f": [
     {
       "repository": "https://github.com/whitescent/Mastify.git",
@@ -2989,6 +3059,20 @@
       "tag": "0.0.72",
       "commit": "270ca0d0a8c5e200fd1df6dae2230142c1fd996d",
       "timestamp": 1725314990,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "7d6dca5fbf10ab60594192b5ba98754d12197e40486bda502632246c7ba5badf": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.73/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 73,
+      "version_name": "0.0.73",
+      "tag": "0.0.73",
+      "commit": "2c6790e9279f366b4090512c6ded6b0420aaab05",
+      "timestamp": 1725548451,
       "reproducible": false,
       "error": null
     }
