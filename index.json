@@ -3889,6 +3889,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "2e8bf8135299b210722341e6ad688de4107bced716d90de181dc6dc98813b82e": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.2/app-release.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5455,
+      "version_name": "3.0.2       ",
+      "tag": "v3.0.2",
+      "commit": "443cef1d3c973634c527c0d8cb199ffb0fb065f1",
+      "timestamp": 1725714745,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
