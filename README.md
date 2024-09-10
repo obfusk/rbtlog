@@ -89,8 +89,7 @@ status messages and a build log on stderr.
 
 ```bash
 $ scripts/build.py --help
-usage: build.py [-h] [-v] [--keep-apks DIR] [--local]
-                {podman,docker} [SPEC ...]
+usage: build.py [-h] [-v] [--keep-apks DIR] [--local] {podman,docker} [SPEC ...]
 
 build apps from recipes
 
@@ -179,8 +178,7 @@ build them, and adds the resulting output to `logs/<appid>.json`.
 
 ```bash
 $ scripts/update-log.py --help
-usage: update-log.py [-h] [-v] [--batch N] [--keep-apks DIR]
-                     {podman,docker} [RECIPE ...]
+usage: update-log.py [-h] [-v] [--batch N] [--keep-apks DIR] {podman,docker} [RECIPE ...]
 
 update log
 
@@ -239,11 +237,14 @@ For each specified `/path/to/<appid>.yml` (e.g. `recipes/*.yml`), checks the
 relevant forge (e.g. GitHub) for the latest release tag (and APK URL) and adds a
 new entry in the recipe (unless that tag already has an entry).
 
+See `update-hashes.py` below for information on how `--update-hashes` works and
+when `update-hashes.py` is called.
+
 <details>
 
 ```bash
 $ scripts/update-recipes.py --help
-usage: update-recipes.py [-h] [-q] [-v] [--continue-on-errors] [RECIPE ...]
+usage: update-recipes.py [-h] [-q] [-v] [--continue-on-errors] [--update-hashes] [RECIPE ...]
 
 update recipes
 
@@ -255,9 +256,11 @@ options:
   -q, --quiet
   -v, --verbose
   --continue-on-errors  continue on errors
+  --update-hashes       always update hashes
 
-$ ./scripts/update-recipes.py -q --continue-on-errors recipes/*.yml
+$ scripts/update-recipes.py -q --continue-on-errors --update-hashes recipes/*.yml
 Updated 'me.hackerchick.catima' to 'v2.31.0'.
+Updated hashes for 'me.hackerchick.catima:v2.31.0'.
 
 $ scripts/update-recipes.py -v recipes/*.yml
 Updating 'me.hackerchick.catima'...
@@ -271,6 +274,123 @@ Updating 'org.fossify.messages'...
 Checking 'https://api.github.com/repos/FossifyOrg/Messages/releases/latest'...
 Found tag '1.0.1' with APK URL 'https://github.com/FossifyOrg/Messages/releases/download/1.0.1/messages-2-foss-release.apk'.
 Tag already present: '1.0.1'.
+```
+
+</details>
+
+### update-hashes.py
+
+Generally, `update-recipes.py` does not modify the `build:` steps, or depend on
+their contents in any way: it simply copies the recipe from the previous tag
+when adding a new one to the YAML recipe.
+
+Unfortunately, some recipes require modifications to `build:` steps, which is
+what `update-hashes.py` tries to automate by downloading the upstream APK and
+making required modifications to the `build:` steps.  It currently supports 2
+specific things: embedded commit hashes and `.dex`/`.prof`/`.profm` hashes for
+flaky builds.
+
+The script can be called directly, but is mostly intended to be used via
+`update-recipes.py`, which calls it automatically: with `--update-hashes` it is
+called for all recipes that don't opt-out by using the `no-update-hashes` label,
+otherwise it is called for all recipes that opt-in by using the `update-hashes`
+label.
+
+<details>
+
+```bash
+$ scripts/update-hashes.py --help
+usage: update-hashes.py [-h] [-v] RECIPE TAG
+
+update hashes
+
+positional arguments:
+  RECIPE
+  TAG
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose
+```
+
+</details>
+
+#### Embedded commit hashes
+
+Android Gradle Plugin automatically embeds the commit hash since version 8.3:
+
+<details>
+
+```bash
+$ unzip -p catima-v2.31.1.apk META-INF/version-control-info.textproto
+repositories {
+  system: GIT
+  local_root_path: "$PROJECT_DIR"
+  revision: "1c8c4924000a198e93156126069ab6b9d9147fbb"
+}
+```
+
+</details>
+
+Unfortunately, an APK built before committing and tagging the release will thus
+have the wrong embedded commit hash.  In order to make Reproducible Builds work
+in these cases where only the embedded commit hash differs, a simple `git reset
+--soft $EMBEDDED_COMMIT_HASH` can be used to embed the correct hash whilst still
+building from the exact same source code the tag points to.
+
+To automate this, `update-hashes.py` will check for an embedded commit hash in
+the upstream APK and prepend such a `git reset --soft` line to the `build:`
+steps when the embedded hash doesn't match the tag's.  Any existing `git reset
+--soft` or `git checkout` lines are always removed.
+
+#### Flaky builds: .dex/.prof/.profm hashes
+
+Sometimes builds are "flaky": different clean builds produce different APKs,
+only one of which matches upstream's.  In these cases, common practice is
+rebuilding multiple times until the hash of the intermediate `.dex` or `.prof`
+or `.profm` file that is different between builds matches the one from
+upstream's APK.
+
+For build recipes that look like the examples below, `update-hashes.py` will get
+the SHA-1 hash of the file from the upstream APK and update the `DEX_SHA1=`,
+`PROF_SHA1=`, or `PROFM_SHA1=` line in the `build:` steps:
+
+<details>
+
+```yaml
+- DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+- DEX_SHA1=5e26a6cf4b5f0f0fb139333b7d34b0a10a939331
+- for _ in {1..10}; do
+- ./gradlew clean assembleRelease --no-build-cache --no-configuration-cache --no-daemon
+- test -e "$DEX_FILE"
+- if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+- break
+- fi
+- done
+```
+
+```yaml
+- PROF_FILE=app/build/intermediates/binary_art_profile/release/compileReleaseArtProfile/baseline.prof
+- PROF_SHA1=75208e2f34a5a17657bb524aa1d7fee0797ba8a3
+- for _ in {1..10}; do
+- ./gradlew clean assembleRelease --no-build-cache --no-configuration-cache --no-daemon
+- test -e "$PROF_FILE"
+- if [ "$( sha1sum "$PROF_FILE" | cut -d' ' -f1 )" = "$PROF_SHA1" ]; then
+- break
+- fi
+- done
+```
+
+```yaml
+- PROFM_FILE=presentation/build/intermediates/binary_art_profile_metadata/release/baseline.profm
+- PROFM_SHA1=85a9ff4e5e0618b7373a2652125b98201c9f6377
+- for _ in {1..60}; do
+- ./gradlew clean assembleRelease --no-build-cache --no-configuration-cache --no-daemon
+- test -e "$PROFM_FILE"
+- if [ "$( sha1sum "$PROFM_FILE" | cut -d' ' -f1 )" = "$PROFM_SHA1" ]; then
+- break
+- fi
+- done
 ```
 
 </details>
@@ -354,7 +474,7 @@ the app's repository, etc.
 
 The YAML recipes in `recipes/` provide the (re)build instructions for individual
 apps.  For example, the build recipe for Catima looks like this (with all but
-the last version elided):
+the last version elided and example labels added):
 
 <details>
 
@@ -362,6 +482,9 @@ the last version elided):
 ---
 repository: https://github.com/CatimaLoyalty/Android.git
 updates: releases
+labels:
+  - foo
+  - bar
 notes:
   - 'FIXME: embedded commit hash mismatch for v2.28.0'
 versions:
