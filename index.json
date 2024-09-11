@@ -5699,6 +5699,20 @@
       "error": null
     }
   ],
+  "696161767fec147956c3f20076fbe3dbc6361b9efcb8543439f47aa487481bf4": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2230/FairEmail-v1.2230a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2230,
+      "version_name": "1.2230",
+      "tag": "1.2230",
+      "commit": "bbf41e0085d0822d2eb70fa706c81f36ce152f17",
+      "timestamp": 1726086214,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "822d4997f04937397d0d3e95407a4c0d7d7ce8697c6fec143533ea3aec8ac7b8": [
     {
       "repository": "https://github.com/Semper-Viventem/MetaRadar.git",
