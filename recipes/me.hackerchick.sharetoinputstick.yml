@@ -7,7 +7,7 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/TheLastProject/ShareToInputStick/releases/download/$$TAG$$/app-release.apk
         build:
-          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_FILE=app/build/intermediates/dex/release/mergeDexRelease/classes.dex
           - DEX_SHA1=1f5efb891ceff9afcba7b9609abcc580b30eaff3
           - for _ in {1..10}; do
           - ./gradlew clean assembleRelease --no-build-cache --no-configuration-cache --no-daemon
