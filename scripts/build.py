@@ -19,7 +19,7 @@ import zipfile
 from dataclasses import dataclass
 from enum import Enum
 from functools import reduce
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import apksigcopier
 import repro_apk.binres as binres
@@ -35,6 +35,7 @@ NOTAG = ":commit:"
 PROVISION_ROOT_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_ROOT_TIMEOUT") or 10)
 PROVISION_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_TIMEOUT") or 10)
 BUILD_TIMEOUT = int(os.environ.get("RBTLOG_BUILD_TIMEOUT") or 20)
+PODMAN_USE_TASKSET = os.environ.get("RBTLOG_PODMAN_USE_TASKSET") not in ("0", "no", "false")
 
 
 class Error(Exception):
@@ -291,7 +292,13 @@ def prepare_tmpdir(recipe: BuildRecipe, tmpdir: str) -> Tuple[str, str]:
 def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *,
                       outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create podman/docker run command line from recipe."""
-    taskset = ("taskset", "--cpu-list", f"0-{recipe.build_cpus - 1}") if recipe.build_cpus else ()
+    if not recipe.build_cpus:
+        taskset: List[str] = []
+        cpus: List[str] = []
+    elif backend == BuildBackend.PODMAN and PODMAN_USE_TASKSET:
+        taskset, cpus = ["taskset", "--cpu-list", f"0-{recipe.build_cpus - 1}"], []
+    else:
+        taskset, cpus = [], ["--cpus", f"{recipe.build_cpus}"]
     timeout = int(recipe.build_timeout or BUILD_TIMEOUT)
     env, benv = [], build_env(recipe, commit)
     for k, v in benv.items():
@@ -307,7 +314,7 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
         *taskset, backend.name.lower(), "run", "--rm",
         "--volume", f"{outputs}:/outputs",
         "--volume", f"{scripts}:/scripts:ro",
-        *env, "--", recipe.provisioning.image,
+        *env, *cpus, "--", recipe.provisioning.image,
         "bash", "-c", " && ".join(cmd))
 
 
