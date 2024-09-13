@@ -222,6 +222,10 @@
               "description": "build timestamp",
               "type": "integer"
             },
+            "cpu_count": {
+              "description": "build host CPU count (not required, older logs don't have this)",
+              "type": "integer"
+            },
             "reproducible": {
               "description": "reproducibility test result",
               "type": [

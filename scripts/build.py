@@ -192,8 +192,8 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
         recipe = dataclasses.replace(recipe, apk_url=None if apk_url == NOAPK else apk_url)
     result: Dict[str, Any] = dict(
         appid=appid, version_code=None, version_name=None, tag=recipe.tag, commit=commit,
-        recipe=recipe.for_json(), timestamp=int(time.time()), reproducible=None,
-        error=None, build_log="", upstream_signed_apk_sha256=None,
+        recipe=recipe.for_json(), timestamp=int(time.time()), cpu_count=os.cpu_count(),
+        reproducible=None, error=None, build_log="", upstream_signed_apk_sha256=None,
         built_unsigned_apk_sha256=None, signature_copied_apk_sha256=None)
     try:
         if not commit:
