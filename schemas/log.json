@@ -71,6 +71,13 @@
                   "description": "build recipe (lines of a bash script)",
                   "type": "string"
                 },
+                "build_cpus": {
+                  "description": "number of CPUs to use for build (not required, default: null, older logs don't have this)",
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
                 "build_home_dir": {
                   "description": "home directory for the build user",
                   "type": "string"
