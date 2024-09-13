@@ -35,7 +35,6 @@ NOTAG = ":commit:"
 PROVISION_ROOT_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_ROOT_TIMEOUT") or 10)
 PROVISION_TIMEOUT = int(os.environ.get("RBTLOG_PROVISION_TIMEOUT") or 10)
 BUILD_TIMEOUT = int(os.environ.get("RBTLOG_BUILD_TIMEOUT") or 20)
-BUILD_CPUS = int(os.environ.get("RBTLOG_BUILD_CPUS") or len(os.sched_getaffinity(0)))
 
 
 class Error(Exception):
@@ -87,7 +86,6 @@ class BuildRecipe:
     apk_pattern: str
     apk_url: Optional[str]
     build: str
-    build_cpus: Optional[int]
     build_home_dir: str
     build_repo_dir: str
     build_timeout: Optional[int]
@@ -97,10 +95,9 @@ class BuildRecipe:
     def for_json(self) -> Dict[str, Any]:
         return dict(
             repository=self.repository, tag=self.tag, apk_pattern=self.apk_pattern,
-            apk_url=self.apk_url, build=self.build, build_cpus=self.build_cpus,
-            build_home_dir=self.build_home_dir, build_repo_dir=self.build_repo_dir,
-            build_timeout=self.build_timeout, build_user=self.build_user,
-            provisioning=self.provisioning.for_json())
+            apk_url=self.apk_url, build=self.build, build_home_dir=self.build_home_dir,
+            build_repo_dir=self.build_repo_dir, build_timeout=self.build_timeout,
+            build_user=self.build_user, provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
@@ -129,7 +126,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data.updates
     'releases'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_cpus=None, build_home_dir='/build', build_repo_dir='/build/repo', build_timeout=None, build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True, windows_like=False))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_home_dir='/build', build_repo_dir='/build/repo', build_timeout=None, build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_gradle_wrapper=True, windows_like=False))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
@@ -148,7 +145,6 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                     apk_pattern=apk["apk_pattern"],
                     apk_url=apk_url,
                     build="".join(line + "\n" for line in apk["build"]),
-                    build_cpus=apk.get("build_cpus"),
                     build_home_dir=apk["build_home_dir"],
                     build_repo_dir=apk["build_repo_dir"],
                     build_timeout=apk.get("build_timeout"),
@@ -190,8 +186,6 @@ def build_with_backend(backend: BuildBackend, appid: str, recipe: BuildRecipe, *
                        commit: Optional[str] = None, apk_url: Optional[str] = None,
                        keep_apks: Optional[str] = None, verbose: bool = False) -> Dict[Any, Any]:
     """Build recipe with backend (e.g. podman/docker)."""
-    if int(recipe.build_cpus or 0) > BUILD_CPUS:
-        print(f"Warning: build_cpus {recipe.build_cpus} > {BUILD_CPUS} (max available)", file=sys.stderr)
     if commit:
         recipe = dataclasses.replace(recipe, tag=NOTAG)
     if apk_url:
@@ -292,7 +286,6 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
                       outputs: str, scripts: str) -> Tuple[str, ...]:
     """Create podman/docker run command line from recipe."""
     timeout = int(recipe.build_timeout or BUILD_TIMEOUT)
-    cpus = min(int(recipe.build_cpus or BUILD_CPUS), BUILD_CPUS)
     env, benv = [], build_env(recipe, commit)
     for k, v in benv.items():
         env.extend(["--env", f"{k}={v}"])
@@ -307,7 +300,7 @@ def podman_docker_cmd(recipe: BuildRecipe, backend: BuildBackend, commit: str, *
         backend.name.lower(), "run", "--rm",
         "--volume", f"{outputs}:/outputs",
         "--volume", f"{scripts}:/scripts:ro",
-        *env, "--cpus", f"{cpus}", "--", recipe.provisioning.image,
+        *env, "--", recipe.provisioning.image,
         "bash", "-c", " && ".join(cmd))
 
 
