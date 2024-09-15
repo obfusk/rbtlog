@@ -1384,3 +1384,139 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v5.2.8
+    apks:
+      - apk_pattern: breezy-weather-arm64-v8a-(v[\d.]+)(-beta)?[_-]standard.apk
+        apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-arm64-v8a-$$TAG$$_standard.apk
+        build:
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleBasicRelease
+          - mv app/build/outputs/apk/basic/release/app-basic-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: breezy-weather-armeabi-v7a-(v[\d.]+)(-beta)?[_-]standard.apk
+        apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-armeabi-v7a-$$TAG$$_standard.apk
+        build:
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleBasicRelease
+          - mv app/build/outputs/apk/basic/release/app-basic-armeabi-v7a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: breezy-weather-(v[\d.]+)(-beta)?[_-]standard.apk
+        apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-$$TAG$$_standard.apk
+        build:
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleBasicRelease
+          - mv app/build/outputs/apk/basic/release/app-basic-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: breezy-weather-x86-(v[\d.]+)(-beta)?[_-]standard.apk
+        apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-x86-$$TAG$$_standard.apk
+        build:
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleBasicRelease
+          - mv app/build/outputs/apk/basic/release/app-basic-x86-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: breezy-weather-x86_64-(v[\d.]+)(-beta)?[_-]standard.apk
+        apk_url: https://github.com/breezy-weather/breezy-weather/releases/download/$$TAG$$/breezy-weather-x86_64-$$TAG$$_standard.apk
+        build:
+          - base64 -d > local.properties <<< YnJlZXp5LmFjY3Uua2V5PTQ2NmE0YTk1ZTJhOTQ4M2U4ZjNmYzIyZDliYjIzOTVmCmJyZWV6eS5hdG1vYXVyYS5rZXk9ZTEzOWVkNDFmODEyMzgzZWQ4ODY3OGY4ZTdmYTc0NGYKYnJlZXp5LmJhaWR1aXAua2V5PUdNMWV2dWxvdkdONUU0MXA2TkM3MkxXM3FsNWQwbk5HCmJyZWV6eS5jd2Eua2V5PUNXQS1DOTg3REZBQS03RERFLTRFNTktQjI4MS01REIwRDk4MEQyNzEKYnJlZXp5Lmdlb25hbWVzLmtleT1icmVlenl3ZWF0aGVyCmJyZWV6eS5tZi5qd3RLZXk9CmJyZWV6eS5tZi5rZXk9X19XajdkVlNUalY5WUd1MWd1dmVMeURxMGc3UzdUZlRqYUhCVFBUcE8wa2o4X18KYnJlZXp5Lm9wZW53ZWF0aGVyLmtleT1kOWM5MTAzYTc0YTQzOGVhYzA5NTJhMzRkMWI1ODBlNgo=
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - sed -r '/ndk \{/,/}/ { /abiFilters/d }' -i app/build.gradle.kts
+          - ./gradlew assembleBasicRelease
+          - mv app/build/outputs/apk/basic/release/app-basic-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
