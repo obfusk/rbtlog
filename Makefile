@@ -39,4 +39,4 @@ clean: cleanup
 
 cleanup:
 	find -name '*~' -delete -print
-	rm -fr scripts/__pycache__/ .mypy_cache/
+	rm -fr scripts/__pycache__/ .scripts/__pycache__/ .mypy_cache/
