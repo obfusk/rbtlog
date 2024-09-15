@@ -58,7 +58,7 @@ def append_builds(log_file: str) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="append builds")
+    parser = argparse.ArgumentParser(description="append builds to log")
     parser.add_argument("log")
     args = parser.parse_args()
     append_builds(args.log)
