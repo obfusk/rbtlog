@@ -7,7 +7,7 @@ import argparse
 import json
 import os
 
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 
 def load_log(log_file: str, appid: str) -> Dict[Any, Any]:
@@ -26,13 +26,11 @@ def save_log(log_file: str, data: Dict[Any, Any]) -> None:
         fh.write("\n")
 
 
-def merge_logs(log_file: str, second_log_file: str, tag: str) -> None:
-    """Merge logs."""
-    appid = os.path.splitext(os.path.basename(log_file))[0]
-    log_data = load_log(log_file, appid)
-    second_log_data = load_log(second_log_file, appid)
-    for build in second_log_data["tags"][tag]:
-        version_code = build["version_code"]
+# FIXME
+def add_builds(log_data: Dict[Any, Any], builds: List[Dict[Any, Any]]) -> Dict[Any, Any]:
+    """Add builds to log; modifies in-place!"""
+    for build in builds:
+        tag, version_code = build["tag"], build["version_code"]
         sha256 = build["upstream_signed_apk_sha256"]
         if tag not in log_data["tags"]:
             log_data["tags"][tag] = []
@@ -48,7 +46,15 @@ def merge_logs(log_file: str, second_log_file: str, tag: str) -> None:
                 log_data["sha256"][sha256] = []
             tags = log_data["sha256"][sha256]
             log_data["sha256"][sha256] = sorted(set(tags) | set([tag]))
-    save_log(log_file, log_data)
+    return log_data
+
+
+def merge_logs(log_file: str, second_log_file: str, tag: str) -> None:
+    """Merge logs."""
+    appid = os.path.splitext(os.path.basename(log_file))[0]
+    second_log_data = load_log(second_log_file, appid)
+    builds = second_log_data["tags"][tag]
+    save_log(log_file, add_builds(load_log(log_file, appid), builds))
 
 
 if __name__ == "__main__":
