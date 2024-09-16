@@ -3,7 +3,7 @@ charset-normalizer==3.3.2
 click==8.1.7
 git+https://github.com/obfusk/apksigcopier.git@v1.1.1
 git+https://github.com/obfusk/reproducible-apk-tools.git@v0.2.8
-idna==3.8
+idna==3.10
 requests==2.32.3
 ruamel.yaml==0.18.6
 ruamel.yaml.clib==0.2.8
