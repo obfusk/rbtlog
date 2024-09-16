@@ -3987,6 +3987,20 @@
       "error": null
     }
   ],
+  "463da2a184cb354501e33c8ecfdcf6cf5783bf305285b153facfa3d8825a7c17": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.4/MediLog-3.0.4.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5458,
+      "version_name": "3.0.4",
+      "tag": "v3.0.4",
+      "commit": "19cfc0f294593c074c5772bf66754409ea3a0c2a",
+      "timestamp": 1726498275,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
@@ -8839,6 +8853,20 @@
       "tag": "1.4.5",
       "commit": "c01e0c286c047928580d3f55222ae6654cea56be",
       "timestamp": 1724768627,
+      "reproducible": false,
+      "error": null
+    }
+  ],
+  "5d6c447bb2ddc2e6a602b983525c67d8405f4d78528f1ec43ddfe7a977fc794a": [
+    {
+      "repository": "https://github.com/pewaru-333/HomeMedkit-App.git",
+      "apk_url": "https://github.com/pewaru-333/HomeMedkit-App/releases/download/1.4.6/HomeMedkit.apk",
+      "appid": "ru.application.homemedkit",
+      "version_code": 34,
+      "version_name": "1.4.6",
+      "tag": "1.4.6",
+      "commit": "9aed8216dd8bc6f2251a0ed6d43df26101d6b138",
+      "timestamp": 1726499157,
       "reproducible": false,
       "error": null
     }
