@@ -1069,9 +1069,9 @@ versions:
       - apk_pattern: app-foss-release\.apk
         apk_url: https://github.com/fast4x/RiMusic/releases/download/v0.6.53/app-foss-release.apk
         build:
-          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i app/build.gradle.kts
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i composeApp/build.gradle.kts
           - ./gradlew assembleFossRelease
-          - OUT=app/build/outputs/apk/foss/release/app-foss-release-unsigned.apk
+          - OUT=composeApp/build/outputs/apk/foss/release/app-foss-release-unsigned.apk
           - git clone -b v0.2.8 https://github.com/obfusk/reproducible-apk-tools.git
           - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-newlines "$OUT" 'META-INF/services/*'
           - mv "$OUT" /outputs/unsigned.apk
