@@ -1073,7 +1073,7 @@ versions:
           - ./gradlew assembleFossRelease
           - OUT=composeApp/build/outputs/apk/foss/release/app-foss-release.apk
           - git clone -b v0.2.8 https://github.com/obfusk/reproducible-apk-tools.git
-          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-newlines "$OUT" 'META-INF/services/*'
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-newlines "$OUT" 'META-INF/services/*' 'composeResources/*.xml' 'res/*.html'
           - mv "$OUT" /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
