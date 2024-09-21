@@ -5881,6 +5881,20 @@
       "error": "signature copying failed: APK Signing Block offset < central directory offset"
     }
   ],
+  "197dff09cf92d1f8e7c571d3e0b5a9e6dfd033ffc0c851134c8bcffc27268468": [
+    {
+      "repository": "https://github.com/gdzx/audiosource.git",
+      "apk_url": "https://github.com/gdzx/audiosource/releases/download/v1.2/audiosource.apk",
+      "appid": "fr.dzx.audiosource",
+      "version_code": 4,
+      "version_name": "1.2",
+      "tag": "v1.2",
+      "commit": "6213d0f6f39bb8381e5c92d75cbedc458d38f9ea",
+      "timestamp": 1726939328,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "cfcc1eeee7a5466034f01b34c97554907df397847771a4cc7ddbe9ded35e4b85": [
     {
       "repository": "https://github.com/Helium314/HeliBoard.git",
