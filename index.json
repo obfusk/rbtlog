@@ -9191,6 +9191,20 @@
       "error": null
     }
   ],
+  "b7559c82b58f3626f56a82b3762f401710b6c4ff9b782facde550cd8f814d07b": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.1.8/flickboard-v0.1.8-plain-release.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 45,
+      "version_name": "0.1.8",
+      "tag": "v0.1.8",
+      "commit": "31dc517a808c9cf946b40608769680d39b6ba566",
+      "timestamp": 1726970675,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "0e0af9b6ba942963f1aa6e827bbf069b62daed6d359ee46cb3aea2dfe8d11fcc": [
     {
       "repository": "https://codeberg.org/oparaskos/android-pdf2images.git",
