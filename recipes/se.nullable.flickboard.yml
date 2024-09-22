@@ -310,7 +310,7 @@ versions:
           - break
           - fi
           - done
-          - mv app/build/outputs/apk/plain/release/app-plain-release-unsigned.apk /outputs/unsigned.apk
+          - mv app/build/outputs/apk/plain/release/flickboard-*-plain-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
