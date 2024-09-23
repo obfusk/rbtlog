@@ -39,7 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v7.0.3
+        uses: peter-evans/create-pull-request@v7.0.5
         with:
           title: "Update recipes"
           commit-message: "Update recipes"
