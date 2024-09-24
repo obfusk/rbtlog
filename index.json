@@ -965,6 +965,20 @@
       "error": null
     }
   ],
+  "6cd313752f238a2f5cbe1da15d8ce1853f43d938ac39c47d93ca5b8bf9bc9f88": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.30/networksurvey-1.30-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 82,
+      "version_name": "1.30-cdr",
+      "tag": "v1.30",
+      "commit": "f6c0d855f3662321af69f2a71df6952773ba7d76",
+      "timestamp": 1727210323,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
