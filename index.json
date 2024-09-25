@@ -979,6 +979,20 @@
       "error": null
     }
   ],
+  "faecfd4154b8026f88769595204c2a49556402f1a845810448fb177aa4a45f33": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.30.1/networksurvey-1.30.1-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 83,
+      "version_name": "1.30.1-cdr",
+      "tag": "v1.30.1",
+      "commit": "6d4c6b87379fec11ba3aff7506e333a69298eab4",
+      "timestamp": 1727303881,
+      "reproducible": false,
+      "error": "signature copying failed: APK Signing Block offset < central directory offset"
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -4026,6 +4040,20 @@
       "commit": "19cfc0f294593c074c5772bf66754409ea3a0c2a",
       "timestamp": 1726498275,
       "reproducible": true,
+      "error": null
+    }
+  ],
+  "c4b910d7037ed08fb49dbd7b1f03579ac45d7f01dcb504d1dd45ba44e3e8911d": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.5/MediLog-3.0.5.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5459,
+      "version_name": "3.0.5",
+      "tag": "v3.0.5",
+      "commit": "835db3b17c6d9bdd267fb628f5f4965416a17c65",
+      "timestamp": 1727304520,
+      "reproducible": false,
       "error": null
     }
   ],
