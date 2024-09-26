@@ -408,3 +408,31 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v1.30.2
+    apks:
+      - apk_pattern: networksurvey-.*-cdr-release\.apk
+        apk_url: https://github.com/christianrowlands/android-network-survey/releases/download/v1.30.2/networksurvey-1.30.2-cdr-release.apk
+        build:
+          - sed '/nsApiKey=/d' -i gradle.properties
+          - base64 -d >> gradle.properties <<< bnNBcGlLZXk9QUl6YVN5Q0xlald3YkZFa1dvVUlvVHdPdE4yMF8wVmxNOHh3NmkwCg==
+          - ./gradlew assembleCdrRelease
+          - mv networksurvey/build/outputs/apk/cdr/release/networksurvey-*-cdr-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
