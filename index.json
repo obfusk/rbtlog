@@ -993,6 +993,20 @@
       "error": null
     }
   ],
+  "9b7162d87e5602876ff5800bd3474a05af1073c917155704d7200a3944a68e4c": [
+    {
+      "repository": "https://github.com/christianrowlands/android-network-survey.git",
+      "apk_url": "https://github.com/christianrowlands/android-network-survey/releases/download/v1.30.2/networksurvey-1.30.2-cdr-release.apk",
+      "appid": "com.craxiom.networksurvey",
+      "version_code": 85,
+      "version_name": "1.30.2",
+      "tag": "v1.30.2",
+      "commit": "83b4800221a7b4b7ef959fa3438be7a4550c81af",
+      "timestamp": 1727366113,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5f3beb9a4193a1d4f20b5bcdb99e290bc9d389aa8e4c1ccaabdc40017312a357": [
     {
       "repository": "https://github.com/danilkinkin/buckwheat.git",
@@ -3833,6 +3847,20 @@
       "error": null
     }
   ],
+  "cef3175ef6bcbbe74bf13c2191e59d20f71c54ddd8db1115444732b4d32a980f": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/GreenStash.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/GreenStash/releases/download/v3.9.1/GreenStash-v3.9.1.apk",
+      "appid": "com.starry.greenstash",
+      "version_code": 391,
+      "version_name": "3.9.1",
+      "tag": "v3.9.1",
+      "commit": "7e2fab585a1c0e9f161a92da31507744dba249c9",
+      "timestamp": 1727366382,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e52f94d148aa490d184295ddedd150db5f8f48cb5bf0496f44f22ff95ef3e611": [
     {
       "repository": "https://github.com/Pool-Of-Tears/Myne.git",
@@ -3885,6 +3913,20 @@
       "tag": "v4.2.0",
       "commit": "5b9aaceee78970c12555ebfe43e4c89c84cb3677",
       "timestamp": 1727304175,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "e24d61c8a8077396109fb03a7ec30cb4f64f245b3d0f989e8a8346cc52fd6683": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/Myne.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/Myne/releases/download/v4.2.1/Myne-v4.2.1.apk",
+      "appid": "com.starry.myne",
+      "version_code": 421,
+      "version_name": "4.2.1",
+      "tag": "v4.2.1",
+      "commit": "4ad8b451a216d42d18c5f3b39978f2609614b5da",
+      "timestamp": 1727366716,
       "reproducible": true,
       "error": null
     }
@@ -5821,6 +5863,20 @@
       "tag": "1.2232",
       "commit": "8980d5698634975d92332fabc880009dd82e9bf0",
       "timestamp": 1726500829,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "08a15f778ee7d847dfe42f761a3c6210ddbe6c4616a083f55f854eeb77bb7c8c": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2233/FairEmail-v1.2233a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2233,
+      "version_name": "1.2233",
+      "tag": "1.2233",
+      "commit": "d67dda22041aea768f0eebe3109d45c784cb7690",
+      "timestamp": 1727367043,
       "reproducible": true,
       "error": null
     }
