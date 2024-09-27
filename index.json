@@ -8089,6 +8089,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpp5zmfdyt/outputs:/outputs', '--volume', '/tmp/tmpp5zmfdyt/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/FossifyOrg/Gallery.git', '--env', 'APP_TAG=1.2.0', '--env', 'APP_COMMIT=d5692219a15dd4653a3c431b85342fe5cda628b5', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "5a3ca97e6223ec4c34575a2d16508b721ace95f6d27e9cc8d598e1e286885acd": [
+    {
+      "repository": "https://github.com/FossifyOrg/Gallery.git",
+      "apk_url": "https://github.com/FossifyOrg/Gallery/releases/download/1.2.1/gallery-9-foss-release.apk",
+      "appid": "org.fossify.gallery",
+      "version_code": 9,
+      "version_name": "1.2.1",
+      "tag": "1.2.1",
+      "commit": "08cc4fc39ba2d1756aa148f1322150623d3c48e0",
+      "timestamp": 1727465021,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "ef86f07df15e4d5056f5a9ad962754fd5872680810b90a82ee1e72a779de4a14": [
     {
       "repository": "https://github.com/FossifyOrg/Keyboard.git",
