@@ -6299,6 +6299,20 @@
       "error": null
     }
   ],
+  "0504f18d07ebf1afbca4ba7e0f6e91e669a5f7ec6e34dc0377df504c0f9a680f": [
+    {
+      "repository": "https://gitlab.com/sunilpaulmathew/izzyondroid.git",
+      "apk_url": "https://gitlab.com/-/project/29159716/uploads/63385bc02aed0c53471928bb5cdfd40f/app-release.apk",
+      "appid": "in.sunilpaulmathew.izzyondroid",
+      "version_code": 13,
+      "version_name": "v0.13",
+      "tag": "v0.13",
+      "commit": "84daffa4479e75163fd0ead6844b3b0299e44c4a",
+      "timestamp": 1727395747,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "833c39456e0f3ac45e8fb3b814ac4ef293efe9da19f34e5d33229c712bbec005": [
     {
       "repository": "https://github.com/sunilpaulmathew/Weather.git",
