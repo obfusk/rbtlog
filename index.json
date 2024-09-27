@@ -3175,6 +3175,20 @@
       "error": null
     }
   ],
+  "38b5d831a25ea8f659bda7af1fc4f082805651e86aa196a1a71e07b82d8f10f4": [
+    {
+      "repository": "https://github.com/dessalines/jerboa.git",
+      "apk_url": "https://github.com/LemmyNet/jerboa/releases/download/0.0.77/app-release.apk",
+      "appid": "com.jerboa",
+      "version_code": 77,
+      "version_name": "0.0.77",
+      "tag": "0.0.77",
+      "commit": "8d5cdaf3a559e30b522ed4ff146b3a3c6d5627ae",
+      "timestamp": 1727450133,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "406a1212dd0ff181e3bdfcba5ba8866eec7ade3c1147ca87491a490cc6c6cf6f": [
     {
       "repository": "https://github.com/Ladsers/Passtable-Android.git",
