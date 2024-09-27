@@ -6929,6 +6929,20 @@
       "error": null
     }
   ],
+  "8072c337a6b73edc874854f82ac1b43357b918c21b2d742d7113582f6edd9150": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.54/app-foss-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 58,
+      "version_name": "0.6.54",
+      "tag": "v0.6.54",
+      "commit": "3f060bc9591d7f99dc8f9d34f6197642f73fa049",
+      "timestamp": 1727471688,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'pull', '--', 'debian:bookworm-slim')' returned non-zero exit status 125."
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
