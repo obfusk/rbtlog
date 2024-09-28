@@ -6957,6 +6957,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp_i195c4l/outputs:/outputs', '--volume', '/tmp/tmp_i195c4l/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/fast4x/RiMusic.git', '--env', 'APP_TAG=v0.6.54', '--env', 'APP_COMMIT=3f060bc9591d7f99dc8f9d34f6197642f73fa049', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=python3', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "dcf3b7dabc970def53cc2f77c421614f8d061024c197c88980ed7b4773673e9b": [
+    {
+      "repository": "https://github.com/fast4x/RiMusic.git",
+      "apk_url": "https://github.com/fast4x/RiMusic/releases/download/v0.6.54.1/app-foss-release.apk",
+      "appid": "it.fast4x.rimusic",
+      "version_code": 59,
+      "version_name": "0.6.54.1",
+      "tag": "v0.6.54.1",
+      "commit": "3ee849712116335a1f192f655eb283bab241ac0e",
+      "timestamp": 1727563547,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "3ee37c9b127ce03eca2afad66b943910da7ec7ddb2cc027420e41986a9f6ee96": [
     {
       "repository": "https://github.com/JunioJsv/minimum.git",
