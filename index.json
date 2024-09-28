@@ -8479,6 +8479,20 @@
       "error": null
     }
   ],
+  "280bba0ce2b645c30869b40a0ed645faa08ad287525dc02e087609cf3aa9fdb8": [
+    {
+      "repository": "https://github.com/floccusaddon/floccus.git",
+      "apk_url": "https://github.com/floccusaddon/floccus/releases/download/v5.3.0/floccus-build-v5.3.0.apk",
+      "appid": "org.handmadeideas.floccus",
+      "version_code": 5003000,
+      "version_name": "5.3.0",
+      "tag": "v5.3.0",
+      "commit": "9bbc80d9536ad8f55b38273f16508363ef8ba779",
+      "timestamp": 1727534253,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a668a39494380106de182cb40b99f76479b453dabbefef55115fbba3a53abb30": [
     {
       "repository": "https://github.com/LucasGGamerM/moshidon.git",
