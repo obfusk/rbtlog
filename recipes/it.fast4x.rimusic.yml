@@ -4,6 +4,7 @@ updates: releases
 notes:
   - 'FIXME: embedded commit hash mismatch for v0.6.32, v0.6.37'
   - 'FIXME: tag mismatch for v0.6.36.1'
+  - 'FIXME: version code/name mismatch for v0.6.54.1'
   - 'FIXME: JARs'
 versions:
   - tag: v0.6.22
@@ -1131,6 +1132,7 @@ versions:
       - apk_pattern: app-foss-release\.apk
         apk_url: https://github.com/fast4x/RiMusic/releases/download/v0.6.54.1/app-foss-release.apk
         build:
+          - sed -r 's/versionCode = 58/versionCode = 59/; s/versionName = "0.6.54"/versionName = "0.6.54.1"/' -i composeApp/build.gradle.kts
           - sed -r '/release \{/,/}/ { /signingConfig/d }' -i composeApp/build.gradle.kts
           - ./gradlew assembleFossRelease
           - OUT=composeApp/build/outputs/apk/foss/release/app-foss-release.apk
