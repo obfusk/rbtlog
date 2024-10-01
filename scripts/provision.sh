@@ -48,6 +48,12 @@ if [ -n "${PROVISIONING_TOOLS}" ]; then
   sdkmanager --sdk_root="${ANDROID_HOME}" "tools;${PROVISIONING_TOOLS}"
 fi
 
+if [ "${VERIFY_GIT}" = yes ]; then
+  for k in fetch receive transfer; do
+    git config --global "$k".fsckObjects true
+  done
+fi
+
 if [ "${WINDOWS_LIKE}" = yes ]; then
   clone_opts=( -c core.symlinks=false )
 else
