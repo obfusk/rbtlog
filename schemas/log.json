@@ -187,6 +187,10 @@
                         "null"
                       ]
                     },
+                    "verify_git": {
+                      "description": "whether to verify git objects (not required, default: true, older logs don't have this)",
+                      "type": "boolean"
+                    },
                     "verify_gradle_wrapper": {
                       "description": "whether to verify the gradle-wrapper.jar checksum (not required, older logs don't have this)",
                       "type": "boolean"

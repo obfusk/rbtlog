@@ -172,6 +172,10 @@
                         "null"
                       ]
                     },
+                    "verify_git": {
+                      "description": "whether to verify git objects (not required, default: true)",
+                      "type": "boolean"
+                    },
                     "verify_gradle_wrapper": {
                       "description": "whether to verify the gradle-wrapper.jar checksum",
                       "type": "boolean"
