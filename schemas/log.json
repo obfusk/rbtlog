@@ -188,7 +188,7 @@
                       ]
                     },
                     "verify_git": {
-                      "description": "whether to verify git objects (not required, default: true, older logs don't have this)",
+                      "description": "whether to verify git objects (not required, older logs don't have this)",
                       "type": "boolean"
                     },
                     "verify_gradle_wrapper": {
