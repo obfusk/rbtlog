@@ -4169,6 +4169,20 @@
       "error": null
     }
   ],
+  "90bff561cde6e63ec495aa69a5d139e2b08616d75c46e8a8c5062985453a1ed4": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.6/MediLog-3.0.6.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5461,
+      "version_name": "3.0.6",
+      "tag": "v3.0.6",
+      "commit": "313a9ca2ea0654c6dabd7b2be6e0e52b7266ade2",
+      "timestamp": 1728399458,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
@@ -4515,6 +4529,20 @@
       "tag": "v2.15.3",
       "commit": "0d9b829350dad9c5d1bee24314ca7b7e66281cea",
       "timestamp": 1727994954,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "274d6190d13e9bd6208563f0b5b7a955dcde43a0e8f4ca53a5d270bfb5cf0752": [
+    {
+      "repository": "https://github.com/Traewelldroid/traewelldroid.git",
+      "apk_url": "https://github.com/Traewelldroid/traewelldroid/releases/download/v2.15.4/app-foss-release.apk",
+      "appid": "de.hbch.traewelling",
+      "version_code": 170,
+      "version_name": "2.15.4",
+      "tag": "v2.15.4",
+      "commit": "b22cb641fa90dfd278ac8f242d407c31de1c6e20",
+      "timestamp": 1728399780,
       "reproducible": true,
       "error": null
     }
@@ -6045,6 +6073,20 @@
       "tag": "1.2235",
       "commit": "49e3c652cd9206eab26b4c8fbc315c5d47657031",
       "timestamp": 1728139052,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "8ee76ad98a24a76d05ba4d062424117db18ac809fb0a9fe234570a8886749def": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2236/FairEmail-v1.2236a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2236,
+      "version_name": "1.2236",
+      "tag": "1.2236",
+      "commit": "8298efe45157fb2759c8fc5c48c6e6bea57a4505",
+      "timestamp": 1728400087,
       "reproducible": true,
       "error": null
     }
