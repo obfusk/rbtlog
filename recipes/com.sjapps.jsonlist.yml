@@ -3,6 +3,7 @@ repository: https://github.com/SlaVcE14/JsonList.git
 updates: releases
 notes:
   - 'FIXME: small patch for v1.4 tag mismatch'
+  - 'FIXME: v1.5 is not RB (PNGs only)'
 versions:
   - tag: v1.4
     apks:
