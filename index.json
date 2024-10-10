@@ -4001,6 +4001,20 @@
       "error": null
     }
   ],
+  "bd8536c04b2f54d60211dddabb7083705f5d3205508cf89764852b60305f4858": [
+    {
+      "repository": "https://github.com/Pool-Of-Tears/Myne.git",
+      "apk_url": "https://github.com/Pool-Of-Tears/Myne/releases/download/v4.3.0/Myne-v4.3.0.apk",
+      "appid": "com.starry.myne",
+      "version_code": 430,
+      "version_name": "4.3.0",
+      "tag": "v4.3.0",
+      "commit": "bd9b20ede0ac45a3a5a3eb9242f934939d75082e",
+      "timestamp": 1728572569,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "9cda56dbb7ab53cb3ccf36526f636f11aed221dff856de4e8859129a3f447723": [
     {
       "repository": "https://github.com/vishal2376/git-coach.git",
