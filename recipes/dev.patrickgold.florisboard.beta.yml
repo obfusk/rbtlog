@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/florisboard/florisboard.git
-updates: tags:v([\d.]+-(alpha|beta)\d+)
+updates: disabled
 notes:
   - 'NB: not reproducible (big DEX diff)'
   - 'NB: cmake needs python3'
