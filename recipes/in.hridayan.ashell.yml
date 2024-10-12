@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/DP-Hridayan/aShellYou.git
-updates: releases
+updates: disabled
 notes:
   - 'NB: not reproducible'
   - 'FIXME: AAPT error (invalid package name in <manifest>)'
