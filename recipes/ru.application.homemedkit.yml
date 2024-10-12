@@ -1,6 +1,6 @@
 ---
 repository: https://github.com/pewaru-333/HomeMedkit-App.git
-updates: releases
+updates: disabled
 notes:
   - 'NB: not reproducible'
   - 'FIXME: compose-destinations UUID'
