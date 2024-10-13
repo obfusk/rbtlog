@@ -1221,3 +1221,34 @@ versions:
           platform_tools:
           tools:
           verify_gradle_wrapper: true
+  - tag: v0.6.56.1
+    apks:
+      - apk_pattern: app-foss-release\.apk
+        apk_url: https://github.com/fast4x/RiMusic/releases/download/v0.6.56.1/app-foss-release.apk
+        build:
+          - sed -r '/release \{/,/}/ { /signingConfig/d }' -i composeApp/build.gradle.kts
+          - ./gradlew assembleFossRelease
+          - OUT=composeApp/build/outputs/apk/foss/release/app-foss-release.apk
+          - git clone -b v0.2.8 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-newlines "$OUT" 'META-INF/services/*' 'composeResources/*.xml' 'res/*.html' 'res/*.json'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: ubuntu:jammy
+          jdk: openjdk-21-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
