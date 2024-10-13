@@ -4239,6 +4239,20 @@
       "error": null
     }
   ],
+  "b29f2583d7f852e0b05adc7ed6aed060eee5c90285ddaedb70bb4c503ea34a2c": [
+    {
+      "repository": "https://codeberg.org/toz/MediLog.git",
+      "apk_url": "https://codeberg.org/toz/MediLog/releases/download/v3.0.7/MediLog-3.0.7.apk",
+      "appid": "com.zell_mbc.medilog",
+      "version_code": 5462,
+      "version_name": "3.0.7",
+      "tag": "v3.0.7",
+      "commit": "ad36343ab7c3d2d3fac57686967c382294474fe0",
+      "timestamp": 1728782850,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "307434befea0834e222e4345723e133a3109c178c8b706976ac23824df6554d6": [
     {
       "repository": "https://github.com/grote/Transportr.git",
