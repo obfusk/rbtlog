@@ -40,6 +40,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: 'FIXME: remove ruamel.yaml.clib for 3.13'
+        run: sed '/ruamel.yaml.clib/d' -i requirements.txt
+        if: matrix.python-version == '3.13'
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
