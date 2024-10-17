@@ -296,6 +296,10 @@ called for all recipes that don't opt-out by using the `no-update-hashes` label,
 otherwise it is called for all recipes that opt-in by using the `update-hashes`
 label.
 
+NB: unless the recipe has the `no-update-repro-apk` label it will also update a
+build step performing a `git clone -b vX.Y.Z
+https://github.com/obfusk/reproducible-apk-tools.git` to use the latest release.
+
 <details>
 
 ```bash
