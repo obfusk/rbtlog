@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 import argparse
+import functools
 import hashlib
 import os
 import re
@@ -20,6 +21,8 @@ import requests
 from ruamel.yaml import YAML
 
 
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or None
+
 FILES = {
     "DEX": re.compile(r"classes\d*\.dex"),
     "PROF": "assets/dexopt/baseline.prof",
@@ -27,6 +30,10 @@ FILES = {
 }
 VCSINFO_FILE = "META-INF/version-control-info.textproto"
 VCSINFO_REGEX = re.compile(r'revision: "([0-9a-f]{40})"')
+
+REPRO_APK = "obfusk/reproducible-apk-tools"
+REPRO_APK_URL = f"https://github.com/{REPRO_APK}.git"
+REPRO_APK_LATEST = f"https://api.github.com/repos/{REPRO_APK}/releases/latest"
 
 
 class Error(Exception):
@@ -131,9 +138,11 @@ def tag_to_commit(repository: str, tag: str) -> str:
     raise Error(f"tag not found: {tag}")
 
 
+# FIXME: more no-update-* labels?!
 def update_recipe_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern: Optional[str],
                          *, verbose: bool = False) -> bool:
     """Update recipe hashes."""
+    labels = data.get("labels", [])
     modified = False
     for vsn in data["versions"]:
         if vsn["tag"] == tag:
@@ -154,6 +163,10 @@ def update_recipe_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern:
                             print(f"Reset: {apk_commit!r}, tag: {tag_commit!r}.", file=sys.stderr)
                         else:
                             print("Removed reset (no embedded commit hash).", file=sys.stderr)
+                if "no-update-repro-apk" not in labels and update_repro_apk(apk):
+                    modified = True
+                    if verbose:
+                        print(f"Updated repro-apk to {latest_repro_apk()}.", file=sys.stderr)
     return modified
 
 
@@ -206,6 +219,27 @@ def update_commit_hash(apk: Dict[Any, Any], apk_commit: Optional[str], tag_commi
         apk["build"].insert(0, f"{reset} {apk_commit}")
         return True
     return False
+
+
+def update_repro_apk(apk: Dict[Any, Any]) -> bool:
+    """Update 'git clone -b vX.Y.Z REPRO_APK_URL' to use latest version."""
+    clone = "git clone"
+    for i in range(len(apk["build"])):
+        line = apk["build"][i]
+        if line.startswith(clone) and REPRO_APK_URL in line:
+            version = latest_repro_apk()
+            apk["build"][i] = re.sub(r" -b v[\d.]+ ", f" -b {version} ", line)
+            return bool(line != apk["build"][i])
+    return False
+
+
+@functools.lru_cache(maxsize=None)
+def latest_repro_apk() -> str:
+    """Get latest repro-apk release from GitHub API."""
+    headers = dict(Authorization=f"token {GITHUB_TOKEN}") if GITHUB_TOKEN else {}
+    with requests.get(REPRO_APK_LATEST, headers=headers, timeout=60) as response:
+        response.raise_for_status()
+        return response.json()["tag_name"]  # type: ignore[no-any-return]
 
 
 def update_hashes(recipe_file: str, tag: str, *, verbose: bool = False) -> None:
