@@ -456,9 +456,9 @@ options:
   -v, --verbose
 
 $ scripts/update-versions.py -v
-Updated cmdline_tools to 12.0.
-Updated node.js LTS to v20.18.0.
-Updated repro-apk to v0.3.0.
+Recipe cmdline_tools updated to 12.0.
+Recipe node.js LTS updated to v20.18.0.
+Recipe repro-apk updated to v0.3.0.
 ```
 
 </details>
