@@ -280,6 +280,9 @@ Tag already present: '1.0.1'.
 
 ### update-hashes.py
 
+NB: this script will also update `cmdline_tools`, node.js LTS, and/or
+`reproducible-apk-tools` downloads to the latest version in `versions.json`.
+
 Generally, `update-recipes.py` does not modify the `build:` steps, or depend on
 their contents in any way: it simply copies the recipe from the previous tag
 when adding a new one to the YAML recipe.
@@ -295,10 +298,6 @@ The script can be called directly, but is mostly intended to be used via
 called for all recipes that don't opt-out by using the `no-update-hashes` label,
 otherwise it is called for all recipes that opt-in by using the `update-hashes`
 label.
-
-NB: unless the recipe has the `no-update-repro-apk` label it will also update a
-build step performing a `git clone -b vX.Y.Z
-https://github.com/obfusk/reproducible-apk-tools.git` to use the latest release.
 
 <details>
 
@@ -395,6 +394,71 @@ the SHA-1 hash of the file from the upstream APK and update the `DEX_SHA1=`,
 - break
 - fi
 - done
+```
+
+</details>
+
+#### Version updates: versions.json
+
+The following will be updated to use the latest release as specified in
+`versions.json` (which can itself be updated using `update-versions.py`):
+
+The `cmdline_tools:` in `provisioning:`; a `git clone -b vX.Y.Z
+https://github.com/obfusk/reproducible-apk-tools.git` in `build:`; and a node.js
+LTS download in `build:` that looks like:
+
+<details>
+
+```yaml
+- wget -q -O /tmp/nodejs-lts.tar.xz -- https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz
+- sha256sum -c <<< '4543670b589593f8fa5f106111fd5139081da42bb165a9239f05195e405f240a  /tmp/nodejs-lts.tar.xz'
+- tar xf /tmp/nodejs-lts.tar.xz -C /opt
+- export PATH="${PATH}:/opt/node-v20.18.0-linux-x64/bin"
+```
+
+</details>
+
+You can opt out of these updates with the `no-update-cmdline-tools`,
+`no-update-nodejs-lts`, and/or `no-update-repro-apk` labels, respectively.
+
+### update-versions.py (& versions.json)
+
+Updates `versions.json`, which looks like:
+
+<details>
+
+```json
+{
+  "cmdline_tools": {
+    "version": "12.0",
+    "url": "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip",
+    "sha256": "2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258"
+  },
+  "nodejs-lts": {
+    "version": "v20.18.0",
+    "url": "https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz",
+    "sha256": "4543670b589593f8fa5f106111fd5139081da42bb165a9239f05195e405f240a"
+  },
+  "repro-apk": {
+    "tag": "v0.3.0"
+  }
+}
+```
+
+```bash
+$ scripts/update-versions.py --help
+usage: update-versions.py [-h] [-v]
+
+update versions.json
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose
+
+$ scripts/update-versions.py -v
+Updated cmdline_tools to 12.0.
+Updated node.js LTS to v20.18.0.
+Updated repro-apk to v0.3.0.
 ```
 
 </details>
