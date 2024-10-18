@@ -27,14 +27,6 @@ lint-scripts:
 lint-logs:
 	scripts/lint-logs index.json logs/*.json
 
-check-commandlinetools:
-	diff -Naur \
-	  <( $(PYTHON) scripts/yaml2json < recipes/me.hackerchick.catima.yml \
-	    | jq -r '.versions[-1].apks[-1].provisioning.cmdline_tools.url' \
-	    | sed 's!.*/!!' ) \
-	  <( curl -s https://developer.android.com/studio \
-	    | grep -Eo 'commandlinetools-linux-[0-9]+_latest.zip' | head -1 )
-
 clean: cleanup
 
 cleanup:
