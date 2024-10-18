@@ -160,26 +160,26 @@ def update_recipe_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern:
                     update_file_hash(apk, i, path, hashes)
                     modified = True
                     if verbose:
-                        print(f"SHA-1 {path!r}: {hashes[path]!r}.", file=sys.stderr)
+                        print(f"Recipe SHA-1 {path!r}: {hashes[path]!r}.", file=sys.stderr)
                 if update_commit_hash(apk, apk_commit, tag_commit):
                     modified = True
                     if verbose:
                         if apk_commit:
-                            print(f"Reset: {apk_commit!r}, tag: {tag_commit!r}.", file=sys.stderr)
+                            print(f"Recipe git reset: {apk_commit!r}, tag: {tag_commit!r}.", file=sys.stderr)
                         else:
-                            print("Removed reset (no embedded commit hash).", file=sys.stderr)
+                            print("Recipe git reset removed (no embedded commit hash).", file=sys.stderr)
                 if "no-update-cmdline-tools" not in labels and (vsn := update_cmdline_tools(apk)):
                     modified = True
                     if verbose:
-                        print(f"Updated cmdline_tools to {vsn}.", file=sys.stderr)
+                        print(f"Recipe cmdline_tools updated to {vsn}.", file=sys.stderr)
                 if "no-update-nodejs-lts" not in labels and (vsn := update_nodejs_lts(apk)):
                     modified = True
                     if verbose:
-                        print(f"Updated node.js LTS to {vsn}.", file=sys.stderr)
+                        print(f"Recipe node.js LTS updated to {vsn}.", file=sys.stderr)
                 if "no-update-repro-apk" not in labels and (vsn := update_repro_apk(apk)):
                     modified = True
                     if verbose:
-                        print(f"Updated repro-apk to {vsn}.", file=sys.stderr)
+                        print(f"Recipe repro-apk updated to {vsn}.", file=sys.stderr)
     return modified
 
 
