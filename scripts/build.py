@@ -411,7 +411,7 @@ def keep_built_apk_only(tmpdir: str, *, appid: str, rev: str, keep_apks: Optiona
 def copy_output_apk(output_apk: str, unsigned_apk: str) -> str:
     """Check & copy output APK and return sha256."""
     if not os.path.isfile(output_apk) or os.path.islink(output_apk):
-        raise Error("unsigned output APK is not a regular file")
+        raise Error("Unsigned output APK is not a regular file")
     shutil.copyfile(output_apk, unsigned_apk)   # copy w/o permission bits!
     return sha256_file(unsigned_apk)
 
@@ -558,7 +558,7 @@ def tag_to_commit(repository: str, tag: str) -> str:
         return refs[peeled_ref]
     if tag_ref in refs:
         return refs[tag_ref]
-    raise Error(f"tag not found: {tag}")
+    raise Error(f"Tag not found: {tag}")
 
 
 if __name__ == "__main__":
