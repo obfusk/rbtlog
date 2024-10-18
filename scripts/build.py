@@ -357,15 +357,16 @@ def download_apk(apk_url: str, appid: str, tmpdir: str, *,
     if verbose:
         print(f"Downloading {apk_url!r}...", file=sys.stderr)
     if is_http_url(apk_url):
-        download_file_with_retries(apk_url, signed_apk, retries=5, verbose=verbose)
+        sha256 = download_file_with_retries(apk_url, signed_apk, retries=5, verbose=verbose)
     elif allow_local:
         shutil.copyfile(apk_url, signed_apk)
+        sha256 = sha256_file(signed_apk)
     else:
         raise Error(f"Non-http(s) URL: {apk_url!r}")
     appid_from_apk, vercode, vername = apk_version_info(signed_apk)
     if appid != appid_from_apk:
         raise Error(f"APK appid mismatch: expected {appid}, got {appid_from_apk}")
-    return sha256_file(signed_apk), vercode, vername
+    return sha256, vercode, vername
 
 
 def is_http_url(url: str) -> bool:
