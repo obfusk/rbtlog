@@ -262,7 +262,7 @@ def update_recipes(*recipes: str, continue_on_errors: bool = False, always_updat
                     labels = recipe.get("labels", [])
                     upd, no_upd = "update-hashes" in labels, "no-update-hashes" in labels
                     if (always_update_hashes and not no_upd) or upd:
-                        update_hashes(recipe_file, tag, verbose=verbose)
+                        update_hashes(recipe_file, tag, verbose=True)
                         print(f"Updated hashes for {f'{appid}:{tag}'!r}.", file=sys.stderr)
             elif verbose:
                 print(f"Tag already present: {tag!r}.", file=sys.stderr)
