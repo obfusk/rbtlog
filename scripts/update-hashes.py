@@ -140,7 +140,7 @@ def tag_to_commit(repository: str, tag: str) -> str:
         return refs[peeled_ref]
     if tag_ref in refs:
         return refs[tag_ref]
-    raise Error(f"tag not found: {tag}")
+    raise Error(f"Tag not found: {tag}")
 
 
 # FIXME: more no-update-* labels?!

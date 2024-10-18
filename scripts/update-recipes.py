@@ -60,7 +60,7 @@ def latest_release(repository: str, apk_patterns: List[str], *,
     else:
         raise NotImplementedError(f"Unsupported forge: {url.hostname}")
     if not set(apk_urls) == set(apk_patterns):
-        raise Error(f"could not find all APK assets for tag {tag!r}")
+        raise Error(f"Could not find all APK assets for tag {tag!r}")
     return tag, apk_urls
 
 
@@ -140,7 +140,7 @@ def latest_tag(repository: str, tag_pattern: str, *, quiet: bool = False,
         for tag in proc.stdout.decode().splitlines():
             if re.fullmatch(tag_pattern, tag):
                 return tag
-    raise Error(f"could not find a tag matching pattern {tag_pattern}")
+    raise Error(f"Could not find a tag matching pattern {tag_pattern}")
 
 
 # FIXME: retry, configure timeout, gitea vs forgejo
