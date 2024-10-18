@@ -1,19 +1,19 @@
-name: check commandlinetools
+name: update versions
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3 12 * * sun'
+    - cron: '3 12 * * *'
 permissions:
   actions: none
   checks: none
-  contents: none
+  contents: write
   deployments: none
   discussions: none
   id-token: none
   issues: none
   packages: none
   pages: none
-  pull-requests: none
+  pull-requests: write
   repository-projects: none
   security-events: none
   statuses: none
@@ -34,5 +34,13 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
-      - name: Check commandlinetools
-        run: make check-commandlinetools
+      - name: Update versions
+        run: python3 scripts/update-versions.py -v
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7.0.5
+        with:
+          title: "Update versions"
+          commit-message: "Update versions"
+          branch-suffix: timestamp
