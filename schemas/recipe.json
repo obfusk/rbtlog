@@ -63,7 +63,10 @@
                 },
                 "build_cpus": {
                   "description": "number of CPUs to use for build (not required, default: null)",
-                  "type": "integer",
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
                   "minimum": 1
                 },
                 "build_home_dir": {
@@ -76,7 +79,10 @@
                 },
                 "build_timeout": {
                   "description": "build timeout in minutes (not required, default: null)",
-                  "type": "integer"
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
                 },
                 "build_user": {
                   "description": "build user name",
