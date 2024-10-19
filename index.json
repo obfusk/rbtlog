@@ -8565,6 +8565,20 @@
       "error": null
     }
   ],
+  "724a171fef6a0d521915978b7a9db637704260cb823dc51b23ce7e0283b9c319": [
+    {
+      "repository": "https://github.com/FossifyOrg/Launcher.git",
+      "apk_url": "https://github.com/FossifyOrg/Launcher/releases/download/1.0.0/launcher-1-foss-release.apk",
+      "appid": "org.fossify.home",
+      "version_code": 1,
+      "version_name": "1.0.0",
+      "tag": "1.0.0",
+      "commit": "a22c9afdaa20e5ec6a08a1676247f6412d56632b",
+      "timestamp": 1729363757,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ef86f07df15e4d5056f5a9ad962754fd5872680810b90a82ee1e72a779de4a14": [
     {
       "repository": "https://github.com/FossifyOrg/Keyboard.git",
