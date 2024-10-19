@@ -3091,6 +3091,20 @@
       "error": null
     }
   ],
+  "6a6f1cfa7eaaf9db96929d0ef7716ca91db0795f5e1b2caca5175133035c5f3c": [
+    {
+      "repository": "https://github.com/tfonteyn/NeverTooManyBooks.git",
+      "apk_url": "https://github.com/tfonteyn/NeverTooManyBooks/releases/download/v6.3.0/NeverTooManyBooks-6.3.0.apk",
+      "appid": "com.hardbacknutter.nevertoomanybooks",
+      "version_code": 88,
+      "version_name": "6.3.0",
+      "tag": "v6.3.0",
+      "commit": "1a688283bf1958509242331faa162fa009f2e4c5",
+      "timestamp": 1729353967,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "429c7aefb7ddf9521cee8983765d3e94c5b8360952ae0ec83832cf04289248e9": [
     {
       "repository": "https://github.com/dessalines/jerboa.git",
@@ -6241,6 +6255,20 @@
       "tag": "1.2239",
       "commit": "b827966260e74a8dad10783035bc4eb55df1aa36",
       "timestamp": 1729273166,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "7db8ec76a506e20112d256ec9003bfbc6e2cd231e767ca01e5528f9e3632c22b": [
+    {
+      "repository": "https://github.com/M66B/FairEmail.git",
+      "apk_url": "https://github.com/M66B/FairEmail/releases/download/1.2240/FairEmail-v1.2240a-github-release.apk",
+      "appid": "eu.faircode.email",
+      "version_code": 2240,
+      "version_name": "1.2240",
+      "tag": "1.2240",
+      "commit": "ec645b9297dd1180ea87db19fbc2d772d2c951cc",
+      "timestamp": 1729354270,
       "reproducible": true,
       "error": null
     }
