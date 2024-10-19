@@ -2,8 +2,9 @@
 repository: https://github.com/floccusaddon/floccus.git
 updates: releases
 notes:
-  - 'FIXME: embedded sentry commit (hash) mismatch for >= v5.1.1 < v5.2.4'
-  - 'FIXME: >= v5.2.4 upstream has extraneous logo_128_white.png'
+  - 'FIXED: embedded sentry commit (hash) mismatch for >= v5.1.1 < v5.2.4'
+  - 'FIXED: >= v5.2.4 upstream has extraneous logo_128_white.png'
+  - 'FIXME: nodejs-lts.zip -> .tar.xz'
 versions:
   - tag: v5.0.8
     apks:
