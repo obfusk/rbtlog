@@ -43,7 +43,7 @@
 - [ ] security improvements #55
 - [ ] provisioning: non-debian images #56
 - [ ] get rid of "type: ignore" if possible #57
-- [ ] automated check for latest cmdline-tools #58
+- [x] automated check for latest cmdline-tools #58 (via versions.json)
 - [ ] ability to use SDK rebuilds #59
 - [ ] run update-log on PRs (unless head matches create-pull-request/) #60
 - [ ] git verify-commit/tag if `keys/<appid>.asc` #61
@@ -52,13 +52,13 @@
 
 # Maybe
 
-- [ ] rebuild when reproducibility is flaky? #64
+- [x] rebuild when reproducibility is flaky? #64 (part of recipes now)
 - [ ] diff on signature copying failure? #65
 - [ ] stream build log to stderr? #66
 - [ ] map commit to tag(s)? #67
 - [ ] map tag to commit(s)? #68
 - [ ] log hashes of .sh & .py? #69
-- [ ] use apksigner instead of shasum equality? #70
+- [x] use apksigner instead of shasum equality? #70 (rejected)
 - [ ] sigsum? #71
 - [ ] client support? #72
 
