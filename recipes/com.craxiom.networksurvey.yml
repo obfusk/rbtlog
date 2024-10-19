@@ -2,9 +2,9 @@
 repository: https://github.com/christianrowlands/android-network-survey.git
 updates: releases
 notes:
-  - 'FIXME: tag mismatch (version code/name updated after tagging)'
-  - 'FIXME: embedded commit hash mismatch for >= v1.23'
-  - 'FIXME: google-services.json'
+  - 'FIXED: tag mismatch (version code/name updated after tagging)'
+  - 'FIXED: embedded commit hash mismatch for >= v1.23'
+  - 'FIXED: google-services.json'
 versions:
   - tag: v1.21
     apks:

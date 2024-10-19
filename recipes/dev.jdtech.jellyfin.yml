@@ -3,8 +3,8 @@ repository: https://github.com/jarnedemeulemeester/findroid.git
 updates: releases
 notes:
   - 'NB: tag v2024.02 was renamed to v0.14.0'
-  - 'FIXME: timestamps'
   - 'FIXME: AARs'
+  - 'FIXED: timestamps'
 versions:
   - tag: v2024.02
     apks:
