@@ -3,7 +3,7 @@ repository: https://github.com/bitfireAT/davx5-ose.git
 updates: releases
 notes:
   - 'NB: flaky'
-  - 'FIXME: timestamps'
+  - 'FIXED: timestamps'
 versions:
   - tag: v4.3.12.1-ose
     apks:
