@@ -1,6 +1,8 @@
 ---
 repository: https://github.com/MarmadileManteater/FreeTubeAndroid.git
 updates: releases
+notes:
+  - 'FIXME: nodejs-lts.zip -> .tar.xz'
 versions:
   - tag: 0.21.1.119
     apks:
