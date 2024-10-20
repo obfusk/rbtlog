@@ -5309,6 +5309,20 @@
       "error": null
     }
   ],
+  "c84f391ae7c15df6c2b80c85418a602dcc63c0eed2d696c83ada1c524cd88462": [
+    {
+      "repository": "https://github.com/zacharee/MastodonRedirect.git",
+      "apk_url": "https://github.com/zacharee/MastodonRedirect/releases/download/1.14.0/LemmyRedirect_1.14.0-release-signed.apk",
+      "appid": "dev.zwander.lemmyredirect",
+      "version_code": 42,
+      "version_name": "1.14.0",
+      "tag": "1.14.0",
+      "commit": "33765d7e495c04153ffa59175dc28f419a9c5a71",
+      "timestamp": 1729455945,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "d9d651d67cfa915472d235f3a2b3ec662fe9041e6134b5b94059edec987c142d": [
     {
       "repository": "https://github.com/zacharee/MastodonRedirect.git",
@@ -5393,6 +5407,20 @@
       "error": null
     }
   ],
+  "531460d4c8433a9d6f291a3882ce6c039b73eaa34eab4399c858f585dfad0db0": [
+    {
+      "repository": "https://github.com/zacharee/MastodonRedirect.git",
+      "apk_url": "https://github.com/zacharee/MastodonRedirect/releases/download/1.14.0/MastodonRedirect_1.14.0-release-signed.apk",
+      "appid": "dev.zwander.mastodonredirect",
+      "version_code": 42,
+      "version_name": "1.14.0",
+      "tag": "1.14.0",
+      "commit": "33765d7e495c04153ffa59175dc28f419a9c5a71",
+      "timestamp": 1729456220,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "5579e7fe3789510cebaab7d508e10fceca03edb140213d48461d41ac7ce9bd81": [
     {
       "repository": "https://github.com/zacharee/MastodonRedirect.git",
@@ -5459,6 +5487,20 @@
       "tag": "1.13.5",
       "commit": "9c38869e5885ae47d7bb1f6c57feb2e5246dc199",
       "timestamp": 1724638471,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "f4486ca9cc727c311cc0087f2d1090cab4b12ffa996989a5037d204daff74c62": [
+    {
+      "repository": "https://github.com/zacharee/MastodonRedirect.git",
+      "apk_url": "https://github.com/zacharee/MastodonRedirect/releases/download/1.14.0/PeerTubeRedirect_1.14.0-release-signed.apk",
+      "appid": "dev.zwander.peertuberedirect",
+      "version_code": 42,
+      "version_name": "1.14.0",
+      "tag": "1.14.0",
+      "commit": "33765d7e495c04153ffa59175dc28f419a9c5a71",
+      "timestamp": 1729456494,
       "reproducible": true,
       "error": null
     }
