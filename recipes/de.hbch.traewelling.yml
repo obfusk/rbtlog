@@ -1,7 +1,8 @@
 ---
 repository: https://github.com/Traewelldroid/traewelldroid.git
-updates: releases
+updates: disabled
 notes:
+  - 'not in IoD any more'
   - 'FIXME: JARs'
 versions:
   - tag: v2.6.1
