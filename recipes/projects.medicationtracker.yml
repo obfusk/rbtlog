@@ -2,7 +2,8 @@
 repository: https://github.com/AdamGuidarini/MediTrak.git
 updates: tags:v[\d.]+
 notes:
-  - 'FIXME: embedded build ID (use elf-build-id.py to extract from .so)'
+  - 'FIXME: APK name cannot be built from tag name'
+  - 'FIXED: embedded build ID (use elf-build-id.py to extract from .so)'
   - 'FIXME: embedded commit hash mismatch for v0.11.5'
   - 'FIXME: tag mismatch for v0.12.0'
 versions:
@@ -605,6 +606,36 @@ versions:
         apk_url: https://github.com/AdamGuidarini/MediTrak/releases/download/$$TAG$$/meditrak.apk
         build:
           - git reset --soft e25cc732d67da08cc7961eac7eacf1b83abf1c0e
+          - wget -q -O /tmp/sqlite-amalgamation-3440200.zip -- https://www.sqlite.org/2023/sqlite-amalgamation-3440200.zip
+          - sha256sum -c <<< '833be89b53b3be8b40a2e3d5fedb635080e3edb204957244f3d6987c2bb2345f  /tmp/sqlite-amalgamation-3440200.zip'
+          - unzip -q -d /opt /tmp/sqlite-amalgamation-3440200.zip
+          - chmod +x gradlew
+          - SQLITE3_LIB_PATH=/opt/sqlite-amalgamation-3440200 ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.13.1
+    apks:
+      - apk_pattern: meditrak\.apk
+        apk_url: https://github.com/AdamGuidarini/MediTrak/releases/download/$$TAG$$/meditrak_0_13_1.apk
+        build:
           - wget -q -O /tmp/sqlite-amalgamation-3440200.zip -- https://www.sqlite.org/2023/sqlite-amalgamation-3440200.zip
           - sha256sum -c <<< '833be89b53b3be8b40a2e3d5fedb635080e3edb204957244f3d6987c2bb2345f  /tmp/sqlite-amalgamation-3440200.zip'
           - unzip -q -d /opt /tmp/sqlite-amalgamation-3440200.zip
