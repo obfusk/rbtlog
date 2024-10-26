@@ -164,7 +164,9 @@ def update_recipe_hashes(data: Dict[Any, Any], repo: str, tag: str, tag_pattern:
                 if update_commit_hash(apk, apk_commit, tag_commit):
                     modified = True
                     if verbose:
-                        if apk_commit:
+                        if apk_commit == tag_commit:
+                            print("Recipe git reset removed (embedded commit hash matches tag).", file=sys.stderr)
+                        elif apk_commit:
                             print(f"Recipe git reset: {apk_commit!r}, tag: {tag_commit!r}.", file=sys.stderr)
                         else:
                             print("Recipe git reset removed (no embedded commit hash).", file=sys.stderr)
