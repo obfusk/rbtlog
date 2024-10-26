@@ -276,13 +276,18 @@ def update_repro_apk(apk: Dict[Any, Any]) -> Optional[str]:
     return None
 
 
-def update_hashes(recipe_file: str, tag: str, *, verbose: bool = False) -> None:
+def update_hashes(recipe_file: str, tag: str, *, verbose: bool = False) -> bool:
     """Update hashes in build recipe."""
     recipe = load_recipe(recipe_file)
     updates = recipe["updates"]
     tag_pattern = updates.replace("tags:", "", 1) if updates.startswith("tags:") else None
-    if update_recipe_hashes(recipe, recipe["repository"], tag, tag_pattern, verbose=verbose):
-        save_recipe(recipe_file, recipe)
+    try:
+        if update_recipe_hashes(recipe, recipe["repository"], tag, tag_pattern, verbose=verbose):
+            save_recipe(recipe_file, recipe)
+    except (subprocess.CalledProcessError, requests.RequestException, Error) as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return False
+    return True
 
 
 if __name__ == "__main__":
@@ -291,6 +296,7 @@ if __name__ == "__main__":
     parser.add_argument("recipe", metavar="RECIPE")
     parser.add_argument("tag", metavar="TAG")
     args = parser.parse_args()
-    update_hashes(args.recipe, args.tag, verbose=args.verbose)
+    if not update_hashes(args.recipe, args.tag, verbose=args.verbose):
+        sys.exit(1)
 
 # vim: set tw=80 sw=4 sts=4 et fdm=marker :
