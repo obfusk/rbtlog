@@ -8607,6 +8607,20 @@
       "error": null
     }
   ],
+  "183e94b4d4dda98f3b4f71698987d1870389f26a273e168f1393f8fe4c9b73da": [
+    {
+      "repository": "https://github.com/FossifyOrg/Camera.git",
+      "apk_url": "https://github.com/FossifyOrg/Camera/releases/download/1.0.1/camera-2-foss-release.apk",
+      "appid": "org.fossify.camera",
+      "version_code": 2,
+      "version_name": "1.0.1",
+      "tag": "1.0.1",
+      "commit": "32bcedf99447e644aca95cc18ab153875b5f76d9",
+      "timestamp": 1730064422,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "410143c5d53106376bace38811a9559dad843b09ed0b8783c79809380a1bef0e": [
     {
       "repository": "https://github.com/FossifyOrg/Clock.git",
