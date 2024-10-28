@@ -7767,6 +7767,20 @@
       "error": null
     }
   ],
+  "1bc08981547adab3c1ce9b035416e99ba4703031975929e8c72e614ae8ce3265": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.32.0/app-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 139,
+      "version_name": "2.32.0",
+      "tag": "v2.32.0",
+      "commit": "fdeef6504cdd741fdf68d206ea78d0cfb2a7232d",
+      "timestamp": 1730137942,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "86783f35d33f4977d8fb0ebd56fbd5ed7ce55ad30d0be6100364bd531bde25ed": [
     {
       "repository": "https://github.com/TheLastProject/RaiseToAnswer.git",
