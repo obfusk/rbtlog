@@ -5,9 +5,9 @@
     "sha256": "2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258"
   },
   "nodejs-lts": {
-    "version": "v20.18.0",
-    "url": "https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz",
-    "sha256": "4543670b589593f8fa5f106111fd5139081da42bb165a9239f05195e405f240a"
+    "version": "v22.11.0",
+    "url": "https://nodejs.org/dist/v22.11.0/node-v22.11.0-linux-x64.tar.xz",
+    "sha256": "83bf07dd343002a26211cf1fcd46a9d9534219aad42ee02847816940bf610a72"
   },
   "repro-apk": {
     "tag": "v0.3.0"
