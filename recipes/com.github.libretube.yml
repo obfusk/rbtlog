@@ -1,0 +1,1370 @@
+---
+repository: https://github.com/libre-tube/LibreTube.git
+updates: releases
+notes:
+  - 'FIXED: flaky DEX (after AGP update to 8.4.0); seems OK in v0.24.0'
+  - 'FIXED: embedded commit hash mismatch for >= v0.22.1'
+versions:
+  - tag: v0.22.0
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.22.1
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft fa8eb014477ea107bea547a3879c95df08921093
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft fa8eb014477ea107bea547a3879c95df08921093
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft fa8eb014477ea107bea547a3879c95df08921093
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft fa8eb014477ea107bea547a3879c95df08921093
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft fa8eb014477ea107bea547a3879c95df08921093
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.22.2
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft 07b2b14183174cc7abc57f29216654f039d0247d
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft 07b2b14183174cc7abc57f29216654f039d0247d
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft 07b2b14183174cc7abc57f29216654f039d0247d
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft 07b2b14183174cc7abc57f29216654f039d0247d
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft 07b2b14183174cc7abc57f29216654f039d0247d
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.23.0
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - mv app/build/outputs/apk/release/app-x86_64-release-unsigned.apk /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.23.2
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=2d5ea241e98cbb3575f559f446cbf70b352074ed
+          - sed -r 's/versionCode = 52/versionCode = 53/; s/versionName = "0.23.1"/versionName = "0.23.2"/' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/9742b8cda596b9cc8b62eea1cb61250bb4f6edbb/6ab248c85c028f4d86adbc454b30501c13b11780/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=2d5ea241e98cbb3575f559f446cbf70b352074ed
+          - sed -r 's/versionCode = 52/versionCode = 53/; s/versionName = "0.23.1"/versionName = "0.23.2"/' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/9742b8cda596b9cc8b62eea1cb61250bb4f6edbb/6ab248c85c028f4d86adbc454b30501c13b11780/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=2d5ea241e98cbb3575f559f446cbf70b352074ed
+          - sed -r 's/versionCode = 52/versionCode = 53/; s/versionName = "0.23.1"/versionName = "0.23.2"/' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/9742b8cda596b9cc8b62eea1cb61250bb4f6edbb/6ab248c85c028f4d86adbc454b30501c13b11780/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=2d5ea241e98cbb3575f559f446cbf70b352074ed
+          - sed -r 's/versionCode = 52/versionCode = 53/; s/versionName = "0.23.1"/versionName = "0.23.2"/' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/9742b8cda596b9cc8b62eea1cb61250bb4f6edbb/6ab248c85c028f4d86adbc454b30501c13b11780/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=2d5ea241e98cbb3575f559f446cbf70b352074ed
+          - sed -r 's/versionCode = 52/versionCode = 53/; s/versionName = "0.23.1"/versionName = "0.23.2"/' -i app/build.gradle.kts
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86_64-release-unsigned.apk
+          - git clone -b v0.2.5 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/inplace-fix.py --internal --zipalign fix-files "$OUT" 'sed s/9742b8cda596b9cc8b62eea1cb61250bb4f6edbb/6ab248c85c028f4d86adbc454b30501c13b11780/' 'META-INF/version-control-info.textproto'
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.24.0
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft 5b19670fb625757802c5a9b6aca91c453147b67b
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=ddbc830f6111ef9fe0ef2062f77e76033a9c0098
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft 5b19670fb625757802c5a9b6aca91c453147b67b
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=ddbc830f6111ef9fe0ef2062f77e76033a9c0098
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft 5b19670fb625757802c5a9b6aca91c453147b67b
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=ddbc830f6111ef9fe0ef2062f77e76033a9c0098
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft 5b19670fb625757802c5a9b6aca91c453147b67b
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=ddbc830f6111ef9fe0ef2062f77e76033a9c0098
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft 5b19670fb625757802c5a9b6aca91c453147b67b
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=ddbc830f6111ef9fe0ef2062f77e76033a9c0098
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86_64-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.25.0
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft c18277d9c70e4db1cdb454357de82697e20451f7
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=f0ef2d365f1dcfc06aee06549a5257ed19bab8de
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft c18277d9c70e4db1cdb454357de82697e20451f7
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=f0ef2d365f1dcfc06aee06549a5257ed19bab8de
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft c18277d9c70e4db1cdb454357de82697e20451f7
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=f0ef2d365f1dcfc06aee06549a5257ed19bab8de
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft c18277d9c70e4db1cdb454357de82697e20451f7
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=f0ef2d365f1dcfc06aee06549a5257ed19bab8de
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft c18277d9c70e4db1cdb454357de82697e20451f7
+          - DEX_FILE=app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+          - DEX_SHA1=f0ef2d365f1dcfc06aee06549a5257ed19bab8de
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - for _ in {1..10}; do
+          - ./gradlew assembleRelease
+          - if [ "$( sha1sum "$DEX_FILE" | cut -d' ' -f1 )" = "$DEX_SHA1" ]; then
+          - break
+          - else
+          - rm "$DEX_FILE"
+          - fi
+          - done
+          - OUT=app/build/outputs/apk/release/app-x86_64-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages:
+            - python3
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.25.1
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft 6c6365d1552d18b4633be5106936cce37e137546
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft 6c6365d1552d18b4633be5106936cce37e137546
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft 6c6365d1552d18b4633be5106936cce37e137546
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft 6c6365d1552d18b4633be5106936cce37e137546
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-x86-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft 6c6365d1552d18b4633be5106936cce37e137546
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-x86_64-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+  - tag: v0.25.2
+    apks:
+      - apk_pattern: app-arm64-v8a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-arm64-v8a-release.apk
+        build:
+          - git reset --soft 56cf66809f4555d9133930d59565f19ba2e69b99
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("arm64-v8a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-armeabi-v7a-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-armeabi-v7a-release.apk
+        build:
+          - git reset --soft 56cf66809f4555d9133930d59565f19ba2e69b99
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("armeabi-v7a")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-universal-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-universal-release.apk
+        build:
+          - git reset --soft 56cf66809f4555d9133930d59565f19ba2e69b99
+          - sed -r '/abi \{/,/}/ { /include/d }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86-release.apk
+        build:
+          - git reset --soft 56cf66809f4555d9133930d59565f19ba2e69b99
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-x86-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
+      - apk_pattern: app-x86_64-release\.apk
+        apk_url: https://github.com/libre-tube/LibreTube/releases/download/$$TAG$$/app-x86_64-release.apk
+        build:
+          - git reset --soft 56cf66809f4555d9133930d59565f19ba2e69b99
+          - sed -r '/abi \{/,/}/ { s/include\(.*\)/include("x86_64")/ ; s/isUniversalApk = true/isUniversalApk = false/ }' -i app/build.gradle.kts
+          - ./gradlew assembleRelease
+          - OUT=app/build/outputs/apk/release/app-x86_64-release-unsigned.apk
+          - mv "$OUT" /outputs/unsigned.apk
+        build_home_dir: /build
+        build_repo_dir: /build/repo
+        build_user: build
+        provisioning:
+          android_home: /opt/sdk
+          build_tools:
+          cmake:
+          cmdline_tools:
+            version: '12.0'
+            url: https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            sha256: 2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258
+          extra_packages: []
+          image: debian:bookworm-slim
+          jdk: openjdk-17-jdk-headless
+          ndk:
+          platform:
+          platform_tools:
+          tools:
+          verify_gradle_wrapper: true
