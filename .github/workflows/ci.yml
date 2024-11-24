@@ -47,6 +47,7 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
+          python3 -m pip freeze
           python3 -m pip install flake8 pylint mypy types-{requests,PyYAML} jsonschema
       - name: Checkout test recipes
         run: git checkout origin/master -- recipes/me.hackerchick.catima.yml

@@ -16,7 +16,6 @@ import tempfile
 import time
 import zipfile
 
-from dataclasses import dataclass
 from enum import Enum
 from functools import reduce
 from typing import Any, Dict, List, Optional, Tuple
@@ -26,6 +25,12 @@ import repro_apk.binres as binres
 import requests
 
 from ruamel.yaml import YAML
+
+try:
+    from pydantic.dataclasses import dataclass
+except ImportError:
+    print("Warning: pydantic not available, validation disabled.", file=sys.stderr)
+    from dataclasses import dataclass   # type: ignore[no-redef]
 
 BuildBackend = Enum("BuildBackend", ["PODMAN", "DOCKER"])   # FIXME
 
@@ -56,20 +61,24 @@ class Download:
 @dataclass(frozen=True)
 class Provisioning:
     """Provisioning data."""
-    android_home: str
-    build_tools: Optional[str]
-    cmake: Optional[str]
-    cmdline_tools: Download
-    extra_packages: Tuple[str, ...]
-    image: str
-    jdk: str
-    ndk: Optional[str]
-    platform: Optional[str]
-    platform_tools: Optional[str]
-    tools: Optional[str]
-    verify_git: bool
-    verify_gradle_wrapper: bool
-    windows_like: bool
+    android_home: str = "/opt/sdk"
+    build_tools: Optional[str] = None
+    cmake: Optional[str] = None
+    cmdline_tools: Download = Download(
+        version="12.0",
+        url="https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip",
+        sha256="2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258",
+    )
+    extra_packages: Tuple[str, ...] = ()
+    image: str = "debian:bookworm-slim"
+    jdk: str = "openjdk-17-jdk-headless"
+    ndk: Optional[str] = None
+    platform: Optional[str] = None
+    platform_tools: Optional[str] = None
+    tools: Optional[str] = None
+    verify_git: bool = True
+    verify_gradle_wrapper: bool = True
+    windows_like: bool = False
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
@@ -88,12 +97,12 @@ class BuildRecipe:
     apk_pattern: str
     apk_url: Optional[str]
     build: str
-    build_cpus: Optional[int]
-    build_home_dir: str
-    build_repo_dir: str
-    build_timeout: Optional[int]
-    build_user: str
-    provisioning: Provisioning
+    build_cpus: Optional[int] = None
+    build_home_dir: str = "/build"
+    build_repo_dir: str = "/build/repo"
+    build_timeout: Optional[int] = None
+    build_user: str = "build"
+    provisioning: Provisioning = Provisioning()
 
     def for_json(self) -> Dict[str, Any]:
         return dict(
