@@ -9613,6 +9613,20 @@
       "error": null
     }
   ],
+  "d196fe395a9e487271b737d4de3696cb683284f3bcff5baaffbb71bba1aa53c8": [
+    {
+      "repository": "https://github.com/TeamNewPipe/NewPipe.git",
+      "apk_url": "https://github.com/TeamNewPipe/NewPipe/releases/download/v0.27.4/NewPipe_v0.27.4.apk",
+      "appid": "org.schabi.newpipe",
+      "version_code": 1001,
+      "version_name": "0.27.4",
+      "tag": "v0.27.4",
+      "commit": "3847b32c119d4054933393aa0147aad0c5293105",
+      "timestamp": 1733009628,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "710867b107470fefd009c043e2c8bee721cb038d2dcfc9e5d8d33e878cbbe038": [
     {
       "repository": "https://github.com/scheibler/WalkersGuide-Android.git",
