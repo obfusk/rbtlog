@@ -4477,6 +4477,20 @@
       "error": null
     }
   ],
+  "59c3e8bd977bf8f5af80c2092c00b9cd435e82ad1098bae332f4c2ad43592822": [
+    {
+      "repository": "https://github.com/grote/Transportr.git",
+      "apk_url": "https://github.com/grote/Transportr/releases/download/2.2.3/app-release.apk",
+      "appid": "de.grobox.liberario",
+      "version_code": 127,
+      "version_name": "2.2.3",
+      "tag": "2.2.3",
+      "commit": "b89392d137a91ce1d2158ad79e46b872010cf67d",
+      "timestamp": 1733601744,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "a777ab7f198abfde0b6e526021649ad86fc9996a3f45940d21a26a600f1a11a7": [
     {
       "repository": "https://github.com/Traewelldroid/traewelldroid.git",
