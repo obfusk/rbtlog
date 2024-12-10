@@ -3553,6 +3553,20 @@
       "error": null
     }
   ],
+  "f174b4457ead4968a1684f0a89a5503151c0425ed32ef5dcade932974ad19bdb": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Backup.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Backup/releases/download/8.3.9/Neo_Backup_839_release.apk",
+      "appid": "com.machiav3lli.backup",
+      "version_code": 8319,
+      "version_name": "8.3.9",
+      "tag": "8.3.9",
+      "commit": "de3e17c331ac02159f9873b15a2d628678fee89f",
+      "timestamp": 1733868360,
+      "reproducible": false,
+      "error": null
+    }
+  ],
   "3177e7a64564d7e19b01a0dfc8e60fe3b5ce347eb76b47b4227431d70c8702bb": [
     {
       "repository": "https://github.com/NeoApplications/Neo-Store.git",
