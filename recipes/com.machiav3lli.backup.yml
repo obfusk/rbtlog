@@ -2,8 +2,7 @@
 repository: https://github.com/NeoApplications/Neo-Backup.git
 updates: releases
 notes:
-  - 'NB: not reproducible'
-  - 'FIXME: locales & missing files (fixed on master)'
+  - 'FIXED: locales & missing files (fixed on master)'
 versions:
   - tag: 8.3.6
     apks:
