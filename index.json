@@ -10449,6 +10449,20 @@
       "error": null
     }
   ],
+  "4eb80a226382587ef7a4662b4b612d3e07b91321aa1b835faf68fd5059de15ea": [
+    {
+      "repository": "https://github.com/nightkr/flickboard.git",
+      "apk_url": "https://github.com/nightkr/flickboard/releases/download/v0.2.0.1/flickboard-v0.2.0-plain-release.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 56,
+      "version_name": "0.2.0",
+      "tag": "v0.2.0.1",
+      "commit": "3678de1f1d5969bda0deefd21a3544ddb113bb7d",
+      "timestamp": 1734469222,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp034rn1hm/outputs:/outputs', '--volume', '/tmp/tmp034rn1hm/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/nightkr/flickboard.git', '--env', 'APP_TAG=v0.2.0.1', '--env', 'APP_COMMIT=3678de1f1d5969bda0deefd21a3544ddb113bb7d', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-21-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GIT=yes', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'ubuntu:jammy', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 124."
+    }
+  ],
   "0e0af9b6ba942963f1aa6e827bbf069b62daed6d359ee46cb3aea2dfe8d11fcc": [
     {
       "repository": "https://codeberg.org/oparaskos/android-pdf2images.git",
