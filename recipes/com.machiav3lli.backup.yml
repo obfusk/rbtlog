@@ -3,6 +3,7 @@ repository: https://github.com/NeoApplications/Neo-Backup.git
 updates: releases
 notes:
   - 'FIXED: locales & missing files (fixed on master)'
+  - 'FIXME: 8.3.10 is not RB'
 versions:
   - tag: 8.3.6
     apks:
@@ -139,7 +140,7 @@ versions:
           - popd
           - export LD_LIBRARY_PATH=/opt/lib
           - ./gradlew assembleRelease
-          - mv build/outputs/apk/release/*-release-unsigned.apk /outputs/unsigned.apk
+          - mv build/outputs/apk/release/Neo_Backup_release_*.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
