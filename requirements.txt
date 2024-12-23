@@ -1,6 +1,6 @@
 certifi==2024.12.14
 charset-normalizer==3.4.0
-click==8.1.7
+click==8.1.8
 git+https://github.com/obfusk/apksigcopier.git@v1.1.1
 git+https://github.com/obfusk/reproducible-apk-tools.git@v0.3.0
 idna==3.10
