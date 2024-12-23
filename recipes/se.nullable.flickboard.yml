@@ -1,5 +1,5 @@
 ---
-repository: https://github.com/nightkr/flickboard.git
+repository: https://codeberg.org/natkr/flickboard.git
 updates: releases
 notes:
   - 'FIXME: flaky DEX'
