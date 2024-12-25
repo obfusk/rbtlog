@@ -3511,6 +3511,20 @@
       "error": null
     }
   ],
+  "ecba2ebf36746833fddff6891e1f0d12235c83812a145c0a2904770960cd354e": [
+    {
+      "repository": "https://github.com/Droid-ify/client.git",
+      "apk_url": "https://github.com/Droid-ify/client/releases/download/v0.6.4/app-release.apk",
+      "appid": "com.looker.droidify",
+      "version_code": 640,
+      "version_name": "0.6.4",
+      "tag": "v0.6.4",
+      "commit": "afd939ace04b036a747fae0d9b75db8e8dc2d22c",
+      "timestamp": 1735162511,
+      "reproducible": null,
+      "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmpxpzf8ap5/outputs:/outputs', '--volume', '/tmp/tmpxpzf8ap5/scripts:/scripts:ro', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/Droid-ify/client.git', '--env', 'APP_TAG=v0.6.4', '--env', 'APP_COMMIT=afd939ace04b036a747fae0d9b75db8e8dc2d22c', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--env', 'VERIFY_GIT=yes', '--env', 'VERIFY_GRADLE_WRAPPER=yes', '--env', 'WINDOWS_LIKE=no', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
+    }
+  ],
   "118ae83d5c5d63835b8c3188401aecda25584c159fa791aded54f2f0c3fa27dd": [
     {
       "repository": "https://github.com/NeoApplications/Neo-Backup.git",
