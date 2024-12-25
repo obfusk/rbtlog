@@ -88,7 +88,8 @@ versions:
       - apk_pattern: app-release\.apk
         apk_url: https://github.com/Droid-ify/client/releases/download/$$TAG$$/app-release.apk
         build:
-          - git checkout d5a0babcd53b8edcd1dd1a39ea99bc2817e12184
+          - git reset --soft d5a0babcd53b8edcd1dd1a39ea99bc2817e12184
+          - git checkout 71104e9ddbb124ca3dac7825904970a27d5a2e45 -- build-logic/structure/src/main/kotlin/AndroidLibraryPlugin.kt
           - chmod +x gradlew
           - ./gradlew assembleRelease
           - mv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk
