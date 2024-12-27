@@ -9109,6 +9109,20 @@
       "error": null
     }
   ],
+  "72996f27532cc403de28af68885ca3819bb78461c1edb3a1d154ca67f9514d04": [
+    {
+      "repository": "https://github.com/FossifyOrg/Messages.git",
+      "apk_url": "https://github.com/FossifyOrg/Messages/releases/download/1.1.0/messages-3-foss-release.apk",
+      "appid": "org.fossify.messages",
+      "version_code": 3,
+      "version_name": "1.1.0",
+      "tag": "1.1.0",
+      "commit": "79971924d5e55d643aecb25515e8f00563466fd3",
+      "timestamp": 1735318194,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "57b6aa6655d6b981cdf48075cbdbc4b7718bbf00244ea186171a17eb9d18836e": [
     {
       "repository": "https://github.com/FossifyOrg/Music-Player.git",
