@@ -20,14 +20,12 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - '3.8'
           - '3.9'
           - '3.10'
           - '3.11'
           - '3.12'
           - '3.13'
         # - '3.14.0-alpha - 3.14'
-          - pypy3.8
           - pypy3.9
           - pypy3.10
     steps:
@@ -40,9 +38,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: downgrade ruamel.yaml.clib for 3.8
-        run: sed 's/ruamel.yaml.clib==.*/ruamel.yaml.clib==0.2.8/' -i requirements.txt
-        if: contains(matrix.python-version, '3.8')
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
