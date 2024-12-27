@@ -707,7 +707,7 @@ $ git clone https://codeberg.org/obfusk/rbtlog.git  # mirror @ codeberg.org
 
 ## Dependencies
 
-Python >= 3.8 + several libraries (`requests`, `ruamel.yaml`) + `apksigcopier` +
+Python >= 3.9 + several libraries (`requests`, `ruamel.yaml`) + `apksigcopier` +
 `reproducible-apk-tools` + a backend like `podman` or `docker`.
 
 ### Debian/Ubuntu
