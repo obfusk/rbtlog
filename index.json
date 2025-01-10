@@ -9303,6 +9303,20 @@
       "error": "subprocess failed: Command '('podman', 'run', '--rm', '--volume', '/tmp/tmp235ytiah/outputs:/outputs', '--volume', '/tmp/tmp235ytiah/scripts:/scripts', '--env', 'ANDROID_HOME=/opt/sdk', '--env', 'APP_REPOSITORY=https://github.com/FossifyOrg/Voice-Recorder.git', '--env', 'APP_TAG=1.0.0', '--env', 'APP_COMMIT=ab41e541f0e8cb46e816e980a28c06b79bb54dd9', '--env', 'BUILD_USER=build', '--env', 'BUILD_HOME_DIR=/build', '--env', 'BUILD_REPO_DIR=/build/repo', '--env', 'PROVISIONING_BUILD_TOOLS=', '--env', 'PROVISIONING_CMAKE=', '--env', 'PROVISIONING_CMDLINE_TOOLS_VERSION=12.0', '--env', 'PROVISIONING_CMDLINE_TOOLS_URL=https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', '--env', 'PROVISIONING_CMDLINE_TOOLS_SHA256=2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258', '--env', 'PROVISIONING_EXTRA_PACKAGES=', '--env', 'PROVISIONING_JDK=openjdk-17-jdk-headless', '--env', 'PROVISIONING_NDK=', '--env', 'PROVISIONING_PLATFORM=', '--env', 'PROVISIONING_PLATFORM_TOOLS=', '--env', 'PROVISIONING_TOOLS=', '--', 'debian:bookworm-slim', 'bash', '-c', 'timeout 10m /scripts/provision-root.sh && cd /build && timeout 10m su build /scripts/provision.sh && cd /build/repo && timeout 20m su build /scripts/build.sh')' returned non-zero exit status 1."
     }
   ],
+  "1ef633d472e62b11a7e12baf41e8a0c982fcf40fe41f49a5075fffc6eec43b70": [
+    {
+      "repository": "https://github.com/FossifyOrg/Voice-Recorder.git",
+      "apk_url": "https://github.com/FossifyOrg/Voice-Recorder/releases/download/1.1.0/voicerecorder-2-foss-release.apk",
+      "appid": "org.fossify.voicerecorder",
+      "version_code": 2,
+      "version_name": "1.1.0",
+      "tag": "1.1.0",
+      "commit": "006953f819271d9ebe1d5e1958da7f4a1bec1e76",
+      "timestamp": 1736552664,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ec29841d32238b451ae99bc68e48de3f80386f2c38edb3c22fabc0e90eadc215": [
     {
       "repository": "https://github.com/floccusaddon/floccus.git",
