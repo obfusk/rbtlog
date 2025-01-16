@@ -8059,6 +8059,20 @@
       "error": null
     }
   ],
+  "c9b992d8d3bbefdee98bb985d3adc5563f0ebaac8ded3a1f506a27767652a0e9": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.34.3/app-foss-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 145,
+      "version_name": "2.34.3",
+      "tag": "v2.34.3",
+      "commit": "be54c5078626510cd2e42c3e42073d1b5ec201e4",
+      "timestamp": 1736988302,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "86783f35d33f4977d8fb0ebd56fbd5ed7ce55ad30d0be6100364bd531bde25ed": [
     {
       "repository": "https://github.com/TheLastProject/RaiseToAnswer.git",
