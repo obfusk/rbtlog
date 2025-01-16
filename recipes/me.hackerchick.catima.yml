@@ -349,7 +349,8 @@ versions:
         apk_url: https://github.com/CatimaLoyalty/Android/releases/download/$$TAG$$/app-foss-release.apk
         build:
           - ./gradlew assembleFossRelease
-          - mv app/build/outputs/apk/foss/release/app-foss-release-unsigned.apk /outputs/unsigned.apk
+          - git clone -b v0.3.0 https://github.com/obfusk/reproducible-apk-tools.git
+          - reproducible-apk-tools/zipalign.py --pad-like-apksigner --replace app/build/outputs/apk/foss/release/app-foss-release-unsigned.apk /outputs/unsigned.apk
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
