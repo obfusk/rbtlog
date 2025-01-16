@@ -9373,6 +9373,20 @@
       "error": null
     }
   ],
+  "86b35be3232040f2d7a8d5c1eae8727d5db01036ad9c3f547026dbfa945229c0": [
+    {
+      "repository": "https://github.com/FossifyOrg/Voice-Recorder.git",
+      "apk_url": "https://github.com/FossifyOrg/Voice-Recorder/releases/download/1.1.2/voicerecorder-4-foss-release.apk",
+      "appid": "org.fossify.voicerecorder",
+      "version_code": 4,
+      "version_name": "1.1.2",
+      "tag": "1.1.2",
+      "commit": "bf9ec69c3c59572017ba676f58437c9f2dd598cf",
+      "timestamp": 1737040331,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ec29841d32238b451ae99bc68e48de3f80386f2c38edb3c22fabc0e90eadc215": [
     {
       "repository": "https://github.com/floccusaddon/floccus.git",
