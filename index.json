@@ -8073,6 +8073,20 @@
       "error": null
     }
   ],
+  "2873ef0e8d680ffd45d2baa24038181f62148a2cb9036658f3d564df69180d98": [
+    {
+      "repository": "https://github.com/CatimaLoyalty/Android.git",
+      "apk_url": "https://github.com/CatimaLoyalty/Android/releases/download/v2.34.4/app-foss-release.apk",
+      "appid": "me.hackerchick.catima",
+      "version_code": 146,
+      "version_name": "2.34.4",
+      "tag": "v2.34.4",
+      "commit": "e7aac163c28581884972400cc49928c0e7b54bee",
+      "timestamp": 1737143038,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "86783f35d33f4977d8fb0ebd56fbd5ed7ce55ad30d0be6100364bd531bde25ed": [
     {
       "repository": "https://github.com/TheLastProject/RaiseToAnswer.git",
@@ -9387,6 +9401,20 @@
       "error": null
     }
   ],
+  "dae66a6a266fd94ad4beb013ee81a70f09b5361cc78bd8296c7d33c5fd7192d3": [
+    {
+      "repository": "https://github.com/FossifyOrg/Voice-Recorder.git",
+      "apk_url": "https://github.com/FossifyOrg/Voice-Recorder/releases/download/1.1.3/voicerecorder-5-foss-release.apk",
+      "appid": "org.fossify.voicerecorder",
+      "version_code": 5,
+      "version_name": "1.1.3",
+      "tag": "1.1.3",
+      "commit": "f06bd0a46cd9546fef1f28f25ff09e2721f43a5b",
+      "timestamp": 1737143353,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "ec29841d32238b451ae99bc68e48de3f80386f2c38edb3c22fabc0e90eadc215": [
     {
       "repository": "https://github.com/floccusaddon/floccus.git",
@@ -10683,6 +10711,20 @@
       "tag": "v0.2.2",
       "commit": "b219cedb77e071f565da6eb5e4df1e8448a73647",
       "timestamp": 1737074705,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "35c2e34a47f0f87fdcb45edec82bd5c9f61ee7a09b52f88568f757d70da528ad": [
+    {
+      "repository": "https://codeberg.org/natkr/flickboard.git",
+      "apk_url": "https://codeberg.org/natkr/flickboard/releases/download/v0.2.3/flickboard-v0.2.3-plain-release.apk",
+      "appid": "se.nullable.flickboard",
+      "version_code": 79,
+      "version_name": "0.2.3",
+      "tag": "v0.2.3",
+      "commit": "f151cad44f1fc296ff1a19799dbf4a3ebab6adba",
+      "timestamp": 1737143642,
       "reproducible": true,
       "error": null
     }
