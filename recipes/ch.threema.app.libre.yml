@@ -343,6 +343,7 @@ versions:
           extra_packages:
             - build-essential
             - protobuf-compiler
+            - python3
           image: ubuntu:noble
           jdk: openjdk-17-jdk-headless
           ndk: 25.2.9519653
