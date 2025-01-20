@@ -78,6 +78,13 @@
                     "null"
                   ]
                 },
+                "build_dirs": {
+                  "description": "additional build directories other than /opt (not required, default: [], older logs don't have this)",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "build_home_dir": {
                   "description": "home directory for the build user",
                   "type": "string"

@@ -89,6 +89,7 @@ class BuildRecipe:
     apk_url: Optional[str]
     build: str
     build_cpus: Optional[int]
+    build_dirs: Tuple[str, ...]
     build_home_dir: str
     build_repo_dir: str
     build_timeout: Optional[int]
@@ -99,9 +100,9 @@ class BuildRecipe:
         return dict(
             repository=self.repository, tag=self.tag, apk_pattern=self.apk_pattern,
             apk_url=self.apk_url, build=self.build, build_cpus=self.build_cpus,
-            build_home_dir=self.build_home_dir, build_repo_dir=self.build_repo_dir,
-            build_timeout=self.build_timeout, build_user=self.build_user,
-            provisioning=self.provisioning.for_json())
+            build_dirs=self.build_dirs, build_home_dir=self.build_home_dir,
+            build_repo_dir=self.build_repo_dir, build_timeout=self.build_timeout,
+            build_user=self.build_user, provisioning=self.provisioning.for_json())
 
 
 @dataclass(frozen=True)
@@ -130,7 +131,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     >>> data.updates
     'releases'
     >>> data.versions[0]
-    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_cpus=None, build_home_dir='/build', build_repo_dir='/build/repo', build_timeout=None, build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_git=True, verify_gradle_wrapper=True, windows_like=False))
+    BuildRecipe(repository='https://github.com/CatimaLoyalty/Android.git', tag='v2.27.0', apk_pattern='app-release\\.apk', apk_url='https://github.com/CatimaLoyalty/Android/releases/download/v2.27.0/app-release.apk', build='./gradlew assembleRelease\nmv app/build/outputs/apk/release/app-release-unsigned.apk /outputs/unsigned.apk\n', build_cpus=None, build_dirs=(), build_home_dir='/build', build_repo_dir='/build/repo', build_timeout=None, build_user='build', provisioning=Provisioning(android_home='/opt/sdk', build_tools=None, cmake=None, cmdline_tools=Download(version='12.0', url='https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip', sha256='2d2d50857e4eb553af5a6dc3ad507a17adf43d115264b1afc116f95c92e5e258'), extra_packages=(), image='debian:bookworm-slim', jdk='openjdk-17-jdk-headless', ndk=None, platform=None, platform_tools=None, tools=None, verify_git=True, verify_gradle_wrapper=True, windows_like=False))
 
     """
     with open(recipe_file, encoding="utf-8") as fh:
@@ -150,6 +151,7 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                     apk_url=apk_url,
                     build="".join(line + "\n" for line in apk["build"]),
                     build_cpus=apk.get("build_cpus"),
+                    build_dirs=tuple(apk.get("build_dirs", [])),
                     build_home_dir=apk["build_home_dir"],
                     build_repo_dir=apk["build_repo_dir"],
                     build_timeout=apk.get("build_timeout"),
@@ -333,6 +335,7 @@ def build_env(recipe: BuildRecipe, commit: str) -> Dict[str, str]:
         BUILD_USER=recipe.build_user,
         BUILD_HOME_DIR=recipe.build_home_dir,
         BUILD_REPO_DIR=recipe.build_repo_dir,
+        BUILD_DIRS=":".join(recipe.build_dirs),
         PROVISIONING_BUILD_TOOLS=recipe.provisioning.build_tools or "",
         PROVISIONING_CMAKE=recipe.provisioning.cmake or "",
         PROVISIONING_CMDLINE_TOOLS_VERSION=recipe.provisioning.cmdline_tools.version,
