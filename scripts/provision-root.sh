@@ -51,5 +51,11 @@ else
   exit 1
 fi
 
-mkdir -p /opt "${ANDROID_HOME}"
-chown "${BUILD_USER}:${BUILD_USER}" /opt "${ANDROID_HOME}"
+if [ -n "${BUILD_DIRS}" ]; then
+  readarray -d : -t build_dirs < <( printf %s "${BUILD_DIRS}" )
+else
+  build_dirs=()
+fi
+
+mkdir -p /opt "${ANDROID_HOME}" "${build_dirs[@]}"
+chown "${BUILD_USER}:${BUILD_USER}" /opt "${ANDROID_HOME}" "${build_dirs[@]}"
