@@ -73,16 +73,19 @@
                   "description": "additional build directories other than /opt (not required, default: [])",
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^(/[a-zA-Z0-9_-]+)+$"
                   }
                 },
                 "build_home_dir": {
                   "description": "home directory for the build user",
-                  "type": "string"
+                  "type": "string",
+                  "pattern": "^(/[a-zA-Z0-9_-]+)+$"
                 },
                 "build_repo_dir": {
                   "description": "directory the repo is cloned to and the build is run in",
-                  "type": "string"
+                  "type": "string",
+                  "pattern": "^(/[a-zA-Z0-9_-]+)+$"
                 },
                 "build_timeout": {
                   "description": "build timeout in minutes (not required, default: null)",
@@ -100,7 +103,8 @@
                   "properties": {
                     "android_home": {
                       "description": "android SDK directory",
-                      "type": "string"
+                      "type": "string",
+                      "pattern": "^(/[a-zA-Z0-9_-]+)+$"
                     },
                     "build_tools": {
                       "description": "optional Android SDK build-tools version",
