@@ -320,7 +320,7 @@ versions:
         apk_url: https://releases.threema.ch/fdroid/repo/ch.threema.app.libre-$$TAG:1$$l.apk
         build:
           - sed -r '/abi \{/,/}/ s/enable true/enable false/' -i app/build.gradle
-          - export RUSTUP_HOME=/opt/rustup CARGO_HOME=/opt/cargo
+          - export RUSTUP_HOME=/rust/rustup CARGO_HOME=/rust/cargo
           - ./scripts/rustup-init.sh -y --default-toolchain 1.80
           - export PATH="$CARGO_HOME/bin:$PATH"
           - rustup target add x86_64-linux-android
@@ -329,6 +329,8 @@ versions:
           - rustup target add aarch64-linux-android
           - ./gradlew assembleLibreRelease
           - mv app/build/outputs/apk/libre/release/app-libre-release-unsigned.apk /outputs/unsigned.apk
+        build_dirs:
+          - /rust
         build_home_dir: /build
         build_repo_dir: /build/repo
         build_user: build
