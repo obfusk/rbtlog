@@ -25,7 +25,9 @@ lint-scripts:
 	shellcheck $(SH_SCRIPTS)
 	flake8 $(PY_SCRIPTS)
 	pylint $(PY_SCRIPTS)
-	for script in $(PY_SCRIPTS); do mypy --strict --disallow-any-unimported "$$script"; done
+	set -e; for script in $(PY_SCRIPTS); do \
+	  mypy --strict --disallow-any-unimported "$$script"; \
+	done
 
 lint-logs:
 	PYTHONWARNINGS= scripts/lint-logs index.json logs/*.json
