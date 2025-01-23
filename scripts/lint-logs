@@ -1,15 +1,23 @@
-#!/bin/bash
-set -euo pipefail
-if jsonschema --help 2>&1 | grep -q pretty; then
-  out=( -o pretty )
-else
-  out=()
-fi
-for log in "$@"; do
-  echo "$log"
-  if [ "$log" = index.json ]; then
-    PYTHONWARNINGS=ignore jsonschema "${out[@]}" -i index.json schemas/log-index.json
-  else
-    PYTHONWARNINGS=ignore jsonschema "${out[@]}" -i "$log" schemas/log.json
-  fi
-done
+#!/usr/bin/env python3
+# encoding: utf-8
+# SPDX-FileCopyrightText: 2025 FC (Fay) Stegerman <flx@obfusk.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+import json
+import os
+import sys
+
+import jsonschema
+
+with open(os.path.join("schemas", "log.json"), encoding="utf-8") as fh:
+    log_schema = json.load(fh)
+
+with open(os.path.join("schemas", "log-index.json"), encoding="utf-8") as fh:
+    log_index_schema = json.load(fh)
+
+for log in sys.argv[1:]:
+    print(log)
+    with open(log, encoding="utf-8") as fh:
+        data = json.load(fh)
+    schema = log_index_schema if log == "index.json" else log_schema
+    jsonschema.validate(instance=data, schema=schema)
