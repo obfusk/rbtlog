@@ -1,4 +1,4 @@
-<!-- SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net> -->
+<!-- SPDX-FileCopyrightText: 2025 FC (Fay) Stegerman <flx@obfusk.net> -->
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 
 [![CI](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml/badge.svg)](https://github.com/obfusk/rbtlog/actions/workflows/ci.yml)
@@ -707,8 +707,8 @@ $ git clone https://codeberg.org/obfusk/rbtlog.git  # mirror @ codeberg.org
 
 ## Dependencies
 
-Python >= 3.9 + several libraries (`requests`, `ruamel.yaml`) + `apksigcopier` +
-`reproducible-apk-tools` + a backend like `podman` or `docker`.
+Python >= 3.9 + several libraries (`jsonschema`, `requests`, `ruamel.yaml`) +
+`apksigcopier` + `reproducible-apk-tools` + a backend like `podman` or `docker`.
 
 ### Debian/Ubuntu
 
