@@ -3747,6 +3747,20 @@
       "error": null
     }
   ],
+  "19e5bccc476c57b8f6c1c05b2d3766129537276a66d117c083cc61f3ea4bc001": [
+    {
+      "repository": "https://github.com/NeoApplications/Neo-Store.git",
+      "apk_url": "https://github.com/NeoApplications/Neo-Store/releases/download/1.0.6/Neo_Store_106_release.apk",
+      "appid": "com.machiav3lli.fdroid",
+      "version_code": 1023,
+      "version_name": "1.0.6",
+      "tag": "1.0.6",
+      "commit": "5b5ce5faef7843240124de6f9ad10616491d9653",
+      "timestamp": 1737597684,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "27618df3ab4ea4a68c8fdf40139e95eb0008ac045194e20abc8c2f96dbb4df59": [
     {
       "repository": "https://github.com/martinmimigames/little-file-explorer.git",
