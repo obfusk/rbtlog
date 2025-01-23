@@ -1,5 +1,8 @@
-SHELL   := /bin/bash
-PYTHON  ?= python3
+SHELL      := /bin/bash
+PYTHON     ?= python3
+
+SH_SCRIPTS := scripts/*.sh .scripts/*.sh
+PY_SCRIPTS := scripts/*.py .scripts/*.py scripts/lint-{logs,recipes}
 
 export PYTHONWARNINGS := default
 
@@ -11,21 +14,21 @@ all:
 test: doctest lint
 
 doctest:
-	$(PYTHON) -m doctest scripts/*.py .scripts/*.py
+	$(PYTHON) -m doctest $(PY_SCRIPTS)
 
 lint: lint-recipes lint-scripts
 
 lint-recipes:
-	PYTHON=$(PYTHON) scripts/lint-recipes recipes/*.yml
+	PYTHONWARNINGS= scripts/lint-recipes recipes/*.yml
 
 lint-scripts:
-	shellcheck scripts/*.sh .scripts/*.sh
-	flake8 scripts/*.py .scripts/*.py
-	pylint scripts/*.py .scripts/*.py
-	mypy --strict --disallow-any-unimported scripts/*.py .scripts/*.py
+	shellcheck $(SH_SCRIPTS)
+	flake8 $(PY_SCRIPTS)
+	pylint $(PY_SCRIPTS)
+	for script in $(PY_SCRIPTS); do mypy --strict --disallow-any-unimported "$$script"; done
 
 lint-logs:
-	scripts/lint-logs index.json logs/*.json
+	PYTHONWARNINGS= scripts/lint-logs index.json logs/*.json
 
 clean: cleanup
 

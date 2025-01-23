@@ -1,14 +1,25 @@
-#!/bin/bash
-set -euo pipefail
-if jsonschema --help 2>&1 | grep -q pretty; then
-  out=( -o pretty )
-else
-  out=()
-fi
-yamllint "$@"
-for recipe in "$@"; do
-  echo "$recipe"
-  PYTHONWARNINGS=ignore jsonschema "${out[@]}" \
-    -i <( "${PYTHON:-python3}" scripts/yaml2json < "$recipe" ) \
-    schemas/recipe.json
-done
+#!/usr/bin/env python3
+# encoding: utf-8
+# SPDX-FileCopyrightText: 2025 FC (Fay) Stegerman <flx@obfusk.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+import json
+import os
+import subprocess
+import sys
+
+import jsonschema
+
+from ruamel.yaml import YAML
+
+subprocess.run(["yamllint"] + sys.argv[1:], check=True)
+
+with open(os.path.join("schemas", "recipe.json"), encoding="utf-8") as fh:
+    recipe_schema = json.load(fh)
+
+for recipe in sys.argv[1:]:
+    print(recipe)
+    with open(recipe, encoding="utf-8") as fh:
+        yaml = YAML(typ="safe")
+        data = yaml.load(fh)
+    jsonschema.validate(instance=data, schema=recipe_schema)

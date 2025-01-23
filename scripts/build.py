@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # encoding: utf-8
-# SPDX-FileCopyrightText: 2024 FC (Fay) Stegerman <flx@obfusk.net>
+# SPDX-FileCopyrightText: 2025 FC (Fay) Stegerman <flx@obfusk.net>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 import argparse
 import dataclasses
+import functools
 import hashlib
 import json
 import os
@@ -22,6 +23,7 @@ from functools import reduce
 from typing import Any, Dict, List, Optional, Tuple
 
 import apksigcopier
+import jsonschema
 import repro_apk.binres as binres
 import requests
 
@@ -121,7 +123,7 @@ class TmpApks:
     output_apk: str
 
 
-def parse_yaml(recipe_file: str) -> AppRecipe:
+def parse_yaml(recipe_file: str, *, validate: bool = True) -> AppRecipe:
     r"""
     Parse recipe YAML.
 
@@ -137,6 +139,8 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
     with open(recipe_file, encoding="utf-8") as fh:
         yaml = YAML(typ="safe")
         data = yaml.load(fh)
+        if validate:
+            validate_yaml(data)
         versions = []   # FIXME pylint: disable=W0101
         tag_pattern = data["updates"][5:] if data["updates"].startswith("tags:") else None
         for vsn in data["versions"]:
@@ -178,6 +182,31 @@ def parse_yaml(recipe_file: str) -> AppRecipe:
                 ))
         return AppRecipe(repository=data["repository"], updates=data["updates"],
                          versions=tuple(versions))
+
+
+def validate_yaml(data: Dict[str, Any]) -> None:
+    r"""
+    Validate recipe YAML.
+
+    >>> try:
+    ...     validate_yaml({})
+    ... except jsonschema.exceptions.ValidationError as e:
+    ...     e.message
+    "'repository' is a required property"
+    >>> try:
+    ...     validate_yaml({"repository": "oops", "updates": "releases", "versions": []})
+    ... except jsonschema.exceptions.ValidationError as e:
+    ...     e.message
+    "'oops' does not match '^https://.*\\\\.git$'"
+
+    """
+    jsonschema.validate(instance=data, schema=_schema())
+
+
+@functools.lru_cache(maxsize=None)
+def _schema() -> Dict[str, Any]:
+    with open(os.path.join("schemas", "recipe.json"), encoding="utf-8") as fh:
+        return json.load(fh)            # type: ignore[no-any-return]
 
 
 def url_with_replacements(apk_url: str, tag: str, tag_pattern: Optional[str]) -> str:
@@ -457,7 +486,12 @@ def build(backend: str, *specs: str, keep_apks: Optional[str] = None,
         else:
             appid, tag = spec.split(":", 1)
             commit = apk_url = None
-        recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
+        try:
+            recipe = parse_yaml(os.path.join("recipes", f"{appid}.yml"))
+        except jsonschema.exceptions.ValidationError as e:
+            errors += 1
+            print(f"Error building {appid!r}: recipe validation error:\n  {e}", file=sys.stderr)
+            continue
         build_recipes = [br for br in recipe.versions if br.tag == tag]
         if build_recipes:
             for br in build_recipes:
