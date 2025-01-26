@@ -9031,6 +9031,20 @@
       "error": null
     }
   ],
+  "e6237f0f9508106abba54733ca623c3e487152dbf3beced4ef3ba01bbc3c828f": [
+    {
+      "repository": "https://github.com/FossifyOrg/Calendar.git",
+      "apk_url": "https://github.com/FossifyOrg/Calendar/releases/download/1.2.0/calendar-6-foss-release.apk",
+      "appid": "org.fossify.calendar",
+      "version_code": 6,
+      "version_name": "1.2.0",
+      "tag": "1.2.0",
+      "commit": "ef8e1069cd158b2ad8f56bd3cdab660149aaeec3",
+      "timestamp": 1737922551,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "183e94b4d4dda98f3b4f71698987d1870389f26a273e168f1393f8fe4c9b73da": [
     {
       "repository": "https://github.com/FossifyOrg/Camera.git",
