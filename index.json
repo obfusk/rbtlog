@@ -9325,6 +9325,20 @@
       "error": null
     }
   ],
+  "f0e78a6ba711ffadf454806668b780393d61e75171e1183f7347094bfdc57e83": [
+    {
+      "repository": "https://github.com/FossifyOrg/Messages.git",
+      "apk_url": "https://github.com/FossifyOrg/Messages/releases/download/1.1.5/messages-8-foss-release.apk",
+      "appid": "org.fossify.messages",
+      "version_code": 8,
+      "version_name": "1.1.5",
+      "tag": "1.1.5",
+      "commit": "79d4782caf0447f6532712f7793dfb615704a9d9",
+      "timestamp": 1738694776,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "57b6aa6655d6b981cdf48075cbdbc4b7718bbf00244ea186171a17eb9d18836e": [
     {
       "repository": "https://github.com/FossifyOrg/Music-Player.git",
