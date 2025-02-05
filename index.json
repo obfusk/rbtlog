@@ -9995,6 +9995,20 @@
       "error": null
     }
   ],
+  "136ebb5caafe51fe72eb072bc779cc88db34b4ce4dd3552109d572e4ffaad089": [
+    {
+      "repository": "https://github.com/polymorphicshade/Tubular.git",
+      "apk_url": "https://github.com/polymorphicshade/Tubular/releases/download/v0.27.6/tubular_v0.27.6.apk",
+      "appid": "org.polymorphicshade.tubular",
+      "version_code": 1003,
+      "version_name": "0.27.6",
+      "tag": "v0.27.6",
+      "commit": "dfe7a6160a529ee1e8f20dc0b802a4671226407c",
+      "timestamp": 1738774171,
+      "reproducible": true,
+      "error": null
+    }
+  ],
   "e4990b0b717f6095c9ecf5ff939d5697436b833e8f8ebf3d4cfd8e79da5f08c0": [
     {
       "repository": "https://github.com/TeamNewPipe/NewPipe.git",
@@ -10089,6 +10103,20 @@
       "tag": "v0.27.5",
       "commit": "58393ad4efba0b60b982fc898cf024fa024a9c6e",
       "timestamp": 1737576222,
+      "reproducible": true,
+      "error": null
+    }
+  ],
+  "7b3ee61a449259e69d45e92628df1baacc639cf69c1438cc800468ed133f00d0": [
+    {
+      "repository": "https://github.com/TeamNewPipe/NewPipe.git",
+      "apk_url": "https://github.com/TeamNewPipe/NewPipe/releases/download/v0.27.6/NewPipe_v0.27.6.apk",
+      "appid": "org.schabi.newpipe",
+      "version_code": 1003,
+      "version_name": "0.27.6",
+      "tag": "v0.27.6",
+      "commit": "c6e17218843e59f264f39d9cd719c1173a95abfd",
+      "timestamp": 1738774453,
       "reproducible": true,
       "error": null
     }
